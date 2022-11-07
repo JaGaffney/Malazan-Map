@@ -6,6 +6,7 @@ import { createNoise2D } from "simplex-noise";
 import { STONE_HEIGHT, DIRT_HEIGHT, GRASS_HEIGHT, SAND_HEIGHT, DIRT2_HEIGHT, MAX_TILES, CIRCLE_CUTOFF, MAX_HEIGHT } from "./contants";
 
 import world from "./world";
+import { JsxElement } from "typescript";
 
 export default function Hex() {
     const textures = {
@@ -15,14 +16,18 @@ export default function Hex() {
         sand: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/sand.jpg"),
         stone: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/stone.png"),
         forest: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/forest.jpg"),
+        town: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/town.jpg"),
+        city: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/city.jpg"),
     };
 
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
 
     const textureCalc = (height) => {
         switch (height) {
+            case 9:
+                return textures.city;
             case 8:
-                return textures.stone;
+                return textures.town;
             case 7:
                 return textures.stone;
             case 6:
@@ -40,11 +45,11 @@ export default function Hex() {
         }
     };
 
-    const tileToPosition = (tileX, tileY) => {
+    const tileToPosition = (tileX: number, tileY: number): Vector2 => {
         return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535);
     };
 
-    const hexGeometry = (height, position, terrain) => {
+    const hexGeometry = (height: number, position: Vector2, terrain: number): any => {
         return (
             <mesh position={[position.x, height * 0.5, position.y]} castShadow receiveShadow>
                 <cylinderBufferGeometry args={[1, 1, height, 6, 1, false]} />
@@ -58,8 +63,8 @@ export default function Hex() {
         for (let i = 0; i < world.length; i++) {
             const data = world[i];
             if (data.z >= 1) {
-                let position = tileToPosition(data.y, data.x);
-                tiles.push(hexGeometry(data.z, position, data.t));
+                let position = tileToPosition(data.y, data.x)
+                tiles.push(hexGeometry(data.z, position, data.t))
             }
         }
         return tiles;
