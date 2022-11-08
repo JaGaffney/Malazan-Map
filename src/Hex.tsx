@@ -3,8 +3,8 @@ import React from "react";
 import { CylinderBufferGeometry, BoxGeometry, MeshNormalMaterial, Mesh, Vector2, TextureLoader, RepeatWrapping, Color } from "three";
 import { createNoise2D } from "simplex-noise";
 
-import world from "./world";
-//import world from "./sample.json"
+// import world from "./world";
+import world from "./sample.json"
 
 
 export default function Hex() {
@@ -21,6 +21,8 @@ export default function Hex() {
 
     const hexGeos = {
         hexGeo1: new CylinderBufferGeometry(1, 1, 1, 6, 1, false),
+        hexGeo11: new CylinderBufferGeometry(1, 1, 1.1, 6, 1, false),
+        hexGeo12: new CylinderBufferGeometry(1, 1, 1.2, 6, 1, false),
         hexGeo2: new CylinderBufferGeometry(1, 1, 2, 6, 1, false),
         hexGeo3: new CylinderBufferGeometry(1, 1, 3, 6, 1, false),
         hexGeo4: new CylinderBufferGeometry(1, 1, 4, 6, 1, false),
@@ -77,6 +79,10 @@ export default function Hex() {
                 return hexGeometry(height, position, terrain, hexGeos.hexGeo3)
             case 2:
                 return hexGeometry(height, position, terrain, hexGeos.hexGeo2)
+            case 1.1:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo11)
+            case 1.2:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo12)
             case 1:
                 return hexGeometry(height, position, terrain, hexGeos.hexGeo1)
             default:
@@ -90,7 +96,7 @@ export default function Hex() {
         for (let i = 0; i < world.length; i++) {
             const data = world[i];
             if (data.z >= 1) {
-                let position = tileToPosition(data.y, data.x)
+                let position = tileToPosition(data.x, data.y)
                 tiles.push(calculateGeometry(data.z, position, data.t))
             }
         }
