@@ -1,12 +1,11 @@
 import { Merged, useEnvironment } from "@react-three/drei";
 import React from "react";
-import { BoxGeometry, MeshNormalMaterial, Mesh, Vector2, TextureLoader, RepeatWrapping, Color } from "three";
+import { CylinderBufferGeometry, BoxGeometry, MeshNormalMaterial, Mesh, Vector2, TextureLoader, RepeatWrapping, Color } from "three";
 import { createNoise2D } from "simplex-noise";
 
-import { STONE_HEIGHT, DIRT_HEIGHT, GRASS_HEIGHT, SAND_HEIGHT, DIRT2_HEIGHT, MAX_TILES, CIRCLE_CUTOFF, MAX_HEIGHT } from "./contants";
-
 import world from "./world";
-import { JsxElement } from "typescript";
+//import world from "./sample.json"
+
 
 export default function Hex() {
     const textures = {
@@ -20,10 +19,18 @@ export default function Hex() {
         city: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/city.jpg"),
     };
 
+    const hexGeos = {
+        hexGeo1: new CylinderBufferGeometry(1, 1, 1, 6, 1, false),
+        hexGeo2: new CylinderBufferGeometry(1, 1, 2, 6, 1, false),
+        hexGeo3: new CylinderBufferGeometry(1, 1, 3, 6, 1, false),
+        hexGeo4: new CylinderBufferGeometry(1, 1, 4, 6, 1, false),
+        hexGeo5: new CylinderBufferGeometry(1, 1, 5, 6, 1, false)
+    }
+
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
 
-    const textureCalc = (height) => {
-        switch (height) {
+    const textureCalc = (terrain) => {
+        switch (terrain) {
             case 9:
                 return textures.city;
             case 8:
@@ -46,17 +53,37 @@ export default function Hex() {
     };
 
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
-        return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535);
+        return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535)
     };
 
-    const hexGeometry = (height: number, position: Vector2, terrain: number): any => {
+
+
+    const hexGeometry = (height: number, position: Vector2, terrain: number, geo): any => {
         return (
-            <mesh position={[position.x, height * 0.5, position.y]} castShadow receiveShadow>
-                <cylinderBufferGeometry args={[1, 1, height, 6, 1, false]} />
+            <mesh position={[position.x, height * 0.5, position.y]} geometry={geo} castShadow receiveShadow>
                 <meshPhysicalMaterial envMap={envMap} flatShading={true} map={textureCalc(terrain)} envMapIntensity={0.75} />
             </mesh>
         );
     };
+
+
+    const calculateGeometry = (height: number, position: Vector2, terrain: number) => {
+        switch (height) {
+            case 5:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo5)
+            case 4:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo4)
+            case 3:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo3)
+            case 2:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo2)
+            case 1:
+                return hexGeometry(height, position, terrain, hexGeos.hexGeo1)
+            default:
+                return null;
+        }
+    }
+
 
     const makeHex = () => {
         const tiles = [];
@@ -64,7 +91,7 @@ export default function Hex() {
             const data = world[i];
             if (data.z >= 1) {
                 let position = tileToPosition(data.y, data.x)
-                tiles.push(hexGeometry(data.z, position, data.t))
+                tiles.push(calculateGeometry(data.z, position, data.t))
             }
         }
         return tiles;
