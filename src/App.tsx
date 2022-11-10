@@ -5,6 +5,10 @@ import React from "react";
 function App() {
     return (
         <>
+            {/* <div className="tester">
+            <h1>text</h1>
+            <button>test</button>
+        </div> */}
             <Canvas shadows>
                 <SceneContainer />
             </Canvas>

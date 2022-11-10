@@ -12,8 +12,8 @@ export default function Sea() {
     seaTexture.wrapT = RepeatWrapping;
 
     return (
-        <mesh position={[0, 0, 0]} receiveShadow>
-            <cylinderGeometry args={[CIRCLE_CUTOFF + 2, CIRCLE_CUTOFF + 2, 1, 50]} />
+        <mesh position={[60, 0, 60]} receiveShadow>
+            <cylinderGeometry args={[100, 100, 1, 50]} />
             <meshPhysicalMaterial
                 envMap={envMap}
                 flatShading={true}

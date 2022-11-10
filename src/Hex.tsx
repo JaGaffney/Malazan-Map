@@ -1,13 +1,15 @@
 import { Merged, useEnvironment } from "@react-three/drei";
 import React from "react";
-import { CylinderBufferGeometry, BoxGeometry, MeshNormalMaterial, Mesh, Vector2, TextureLoader, RepeatWrapping, Color } from "three";
-import { createNoise2D } from "simplex-noise";
+import { CylinderBufferGeometry, SphereGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
 
 // import world from "./world";
 import world from "./sample.json"
 
 
 export default function Hex() {
+
+    const reduxTester = [98.235, 112.05499999999999]
+
     const textures = {
         dirt: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt.jpg"),
         dirt2: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt2.jpg"),
@@ -17,6 +19,24 @@ export default function Hex() {
         forest: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/forest.jpg"),
         town: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/town.jpg"),
         city: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/city.jpg"),
+        ice: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/ice.jpg"),
+        sandBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/sandmap.jpg"),
+        stoneBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/stone.jpg"),
+        grassBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/grass.jpg"),
+    };
+
+    const envMaps = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
+
+    const mesh = {
+        dirt: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.dirt }),
+        dirt2: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.dirt2 }),
+        grass: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.grass, bumpMap: textures.grassBump, bumpScale: 0.01 }),
+        sand: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.sand, bumpMap: textures.sandBump, bumpScale: 0.03 }),
+        stone: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.stone, bumpMap: textures.stoneBump, bumpScale: 0.08 }),
+        forest: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.forest }),
+        town: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.town }),
+        city: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.city }),
+        ice: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.ice }),
     };
 
     const hexGeos = {
@@ -29,64 +49,67 @@ export default function Hex() {
         hexGeo5: new CylinderBufferGeometry(1, 1, 5, 6, 1, false)
     }
 
-    const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
-
-    const textureCalc = (terrain) => {
-        switch (terrain) {
-            case 9:
-                return textures.city;
-            case 8:
-                return textures.town;
-            case 7:
-                return textures.stone;
-            case 6:
-                return textures.forest;
-            case 5:
-                return textures.grass;
-            case 4:
-                return textures.dirt;
-            case 3:
-                return textures.dirt2;
-            case 2:
-                return textures.sand;
-            default:
-                return null;
-        }
-    };
+    const bushGeo = new SphereGeometry(0.6, 6, 6)
 
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
         return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535)
     };
 
-
-
-    const hexGeometry = (height: number, position: Vector2, terrain: number, geo): any => {
+    const hexGeometry = (position: Vector2, geo, mat): any => {
         return (
-            <mesh position={[position.x, height * 0.5, position.y]} geometry={geo} castShadow receiveShadow>
-                <meshPhysicalMaterial envMap={envMap} flatShading={true} map={textureCalc(terrain)} envMapIntensity={0.75} />
+            <mesh position={[position.x, 1, position.y]}
+                geometry={geo}
+                material={mat}
+                castShadow
+                receiveShadow
+            >
             </mesh>
         );
     };
 
-
-    const calculateGeometry = (height: number, position: Vector2, terrain: number) => {
-        switch (height) {
-            case 5:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo5)
-            case 4:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo4)
-            case 3:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo3)
-            case 2:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo2)
-            case 1.1:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo11)
-            case 1.2:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo12)
+    const calculateMesh = (terrain) => {
+        switch (terrain) {
             case 1:
-                return hexGeometry(height, position, terrain, hexGeos.hexGeo1)
+                return mesh.ice
+            case 2:
+                return mesh.sand
+            case 3:
+                return mesh.dirt
+            case 4:
+                return mesh.dirt2
+            case 5:
+                return mesh.grass
+            case 6:
+                return mesh.forest
+            case 7:
+                return mesh.stone
+            case 8:
+                return mesh.town
+            case 9:
+                return mesh.city
             default:
-                return null;
+                return mesh.sand;
+        }
+    }
+
+    const calculateGeometry = (height: number) => {
+        switch (height) {
+            case 1:
+                return hexGeos.hexGeo1
+            case 1.1:
+                return hexGeos.hexGeo11
+            case 1.2:
+                return hexGeos.hexGeo12
+            case 2:
+                return hexGeos.hexGeo2
+            case 3:
+                return hexGeos.hexGeo3
+            case 4:
+                return hexGeos.hexGeo4
+            case 5:
+                return hexGeos.hexGeo5
+            default:
+                return hexGeos.hexGeo1;
         }
     }
 
@@ -97,11 +120,42 @@ export default function Hex() {
             const data = world[i];
             if (data.z >= 1) {
                 let position = tileToPosition(data.x, data.y)
-                tiles.push(calculateGeometry(data.z, position, data.t))
+                const terrain = calculateMesh(data.t)
+                const geometry = calculateGeometry(data.z)
+
+                // add bushes might lag though
+                if (data.t === 5) {
+                    // if (Math.random() > 0.99) {
+                    //     tiles.push(bush(data.z, position))
+                    // }
+                }
+
+                console.log(position)
+                if (position.x === reduxTester[0] && position.y === reduxTester[1]) {
+                    tiles.push(bush(10, position))
+                }
+
+                tiles.push(hexGeometry(position, geometry, terrain))
             }
         }
         return tiles;
     };
+
+    const bush = (height, position) => {
+        // const px = Math.random() * 0.4
+        // const pz = Math.random() * 0.4
+
+        const x = position.x
+        const y = position.y
+        return (
+            <mesh position={[x, height, y]}
+                geometry={bushGeo}
+                material={mesh.grass}
+
+            >
+            </mesh>
+        );
+    }
 
     return (
         <Merged meshes={[new Mesh(new BoxGeometry(0, 0, 0), new MeshNormalMaterial())]}>
