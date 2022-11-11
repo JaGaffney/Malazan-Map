@@ -15,13 +15,13 @@ export default function Hex() {
         dirt2: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt2.jpg"),
         grass: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/grass.jpg"),
         sand: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/sand.jpg"),
-        stone: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/stone.png"),
+        stone: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/rocks.jpg"),
         forest: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/forest.jpg"),
         town: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/town.jpg"),
         city: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/city.jpg"),
-        ice: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/ice.jpg"),
+        ice: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/snow.jpg"),
         sandBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/sandmap.jpg"),
-        stoneBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/stone.jpg"),
+        stoneBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/rocks.jpg"),
         grassBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/grass.jpg"),
     };
 

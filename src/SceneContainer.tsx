@@ -7,6 +7,7 @@ import { Color } from "three";
 import Sea from "./Sea";
 import Border from "./Border";
 import Floor from "./Floor";
+import FloatingGrid from "./FloatingGrid";
 
 
 let lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
@@ -27,6 +28,7 @@ export function SceneContainer() {
             <Hex />
             <Border />
             <Floor />
+            <FloatingGrid />
         </Suspense>
     );
 }
