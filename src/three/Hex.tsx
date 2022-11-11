@@ -3,12 +3,11 @@ import React from "react";
 import { CylinderBufferGeometry, SphereGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
 
 // import world from "./world";
-import world from "./sample.json"
+import world from "../data/sample.json"
 
 
 export default function Hex() {
 
-    const reduxTester = [98.235, 112.05499999999999]
 
     const textures = {
         dirt: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt.jpg"),
@@ -53,6 +52,7 @@ export default function Hex() {
 
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
         return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535)
+        // return new Vector2(tileX, tileY)
     };
 
     const hexGeometry = (position: Vector2, geo, mat): any => {
@@ -62,6 +62,7 @@ export default function Hex() {
                 material={mat}
                 castShadow
                 receiveShadow
+                onClick={(e) => console.log(position)}
             >
             </mesh>
         );
@@ -114,6 +115,8 @@ export default function Hex() {
     }
 
 
+    const moonSpawn = tileToPosition(16.0, 38.0)
+
     const makeHex = () => {
         const tiles = [];
         for (let i = 0; i < world.length; i++) {
@@ -129,10 +132,8 @@ export default function Hex() {
                     //     tiles.push(bush(data.z, position))
                     // }
                 }
-
-                console.log(position)
-                if (position.x === reduxTester[0] && position.y === reduxTester[1]) {
-                    tiles.push(bush(10, position))
+                if (position.x === moonSpawn.x && position.y === moonSpawn.y) {
+                    tiles.push(moon(6, position))
                 }
 
                 tiles.push(hexGeometry(position, geometry, terrain))
@@ -151,6 +152,18 @@ export default function Hex() {
             <mesh position={[x, height, y]}
                 geometry={bushGeo}
                 material={mesh.grass}
+
+            >
+            </mesh>
+        );
+    }
+    const moon = (height, position) => {
+        const x = position.x + 1
+        const y = position.y + 2
+        return (
+            <mesh position={[x, height, y]} onClick={(e) => console.log(x, y)}
+                geometry={bushGeo}
+                material={mesh.city}
 
             >
             </mesh>

@@ -4,6 +4,7 @@ body {
     height: 100%;
     margin: 0;
     overflow: hidden;
+    font-family: "Poppins", sans-serif;
 }
 canvas {
     width: 100%;
@@ -14,10 +15,3 @@ canvas {
     left: 0;
     overflow: hidden;
 }
-
-/* .tester {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-} */

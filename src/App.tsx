@@ -1,17 +1,20 @@
-import { Canvas } from "@react-three/fiber";
-import { SceneContainer } from "./SceneContainer";
 import React from "react";
+
+import { Canvas } from "@react-three/fiber";
+
+import { SceneContainer } from "./three/SceneContainer";
+import Panel from "./panel/Panel";
+import { BakeShadows } from "@react-three/drei";
 
 function App() {
     return (
         <>
-            {/* <div className="tester">
-            <h1>text</h1>
-            <button>test</button>
-        </div> */}
+
             <Canvas shadows>
                 <SceneContainer />
+                <BakeShadows />
             </Canvas>
+            <Panel />
         </>
     );
 }
