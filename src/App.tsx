@@ -2,8 +2,8 @@ import React from "react";
 
 import { Canvas } from "@react-three/fiber";
 
-import { SceneContainer } from "./three/SceneContainer";
-import Panel from "./panel/Panel";
+import { SceneContainer } from "./components/three/SceneContainer";
+import Panel from "./components/panel/Panel";
 import { BakeShadows } from "@react-three/drei";
 
 function App() {

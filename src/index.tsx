@@ -3,12 +3,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import { Provider } from 'react-redux'
-import { store } from "../src/state/store"
+import { store } from "./state/store"
 
 import App from './App';
 
-import './index.css';
-import "./styles/sidepanel.css"
+import './index.scss';
+import "./styles/sidepanel.scss"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

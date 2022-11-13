@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from "react-redux"
-import { update } from "../state/features/engine"
+import { update } from "../../state/features/engine"
 import { useSelector } from "react-redux"
 
 export default function WorldMap() {

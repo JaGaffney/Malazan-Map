@@ -3,7 +3,7 @@ import React from "react";
 import { CylinderBufferGeometry, SphereGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
 
 // import world from "./world";
-import world from "../data/sample.json"
+import world from "../../data/sample.json"
 
 
 export default function Hex() {

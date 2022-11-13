@@ -8,14 +8,15 @@ import { Color } from "three";
 import React from "react";
 import Hex from "./Hex";
 
-import Sea from "../Sea";
+import Sea from "./Sea";
 import Border from "./Border";
 import Floor from "./Floor";
 import FloatingGrid from "./FloatingGrid";
 import Highlight from "./Highlight";
 
+// have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
-import { store } from "../state/store"
+import { store } from "../../state/store"
 
 
 let lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
@@ -47,11 +48,11 @@ export function SceneContainer() {
                 <Hex />
                 <Highlight />
                 {/* makes it better but lags */}
-                {/* <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-            <Sea />
-            <Border />
-            <Floor />
-            <FloatingGrid /> */}
+                <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+                <Sea />
+                <Border />
+                <Floor />
+                <FloatingGrid />
 
             </Suspense>
 
