@@ -2,21 +2,25 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     activeCord: { x: 0, y: 0 },
+    activeID: 0,
 };
 
 export const activeCordSlice = createSlice({
     name: "activeCord",
     initialState,
     reducers: {
-        update: (state) => {
-            state.activeCord = { x: 28.32, y: 58.33 };
+        update: (state, action) => {
+            state.activeCord = action.payload;
         },
         reset: (state) => {
             state.activeCord = { x: 0, y: 0 };
         },
+        updateActiveID: (state, action) => {
+            state.activeID = action.payload;
+        },
     },
 });
 
-export const { update, reset } = activeCordSlice.actions;
+export const { update, reset, updateActiveID } = activeCordSlice.actions;
 
 export default activeCordSlice.reducer;

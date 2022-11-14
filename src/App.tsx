@@ -1,10 +1,11 @@
 import React from "react";
 
 import { Canvas } from "@react-three/fiber";
-
 import { SceneContainer } from "./components/three/SceneContainer";
-import Panel from "./components/panel/Panel";
 import { BakeShadows } from "@react-three/drei";
+
+import Panel from "./components/panel/Panel";
+import Timeline from "./components/timeline/Timeline"
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <BakeShadows />
             </Canvas>
             <Panel />
+            <Timeline />
         </>
     );
 }

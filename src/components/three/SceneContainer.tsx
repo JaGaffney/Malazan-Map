@@ -1,8 +1,5 @@
 import { Suspense } from "react";
 import { OrbitControls, PerspectiveCamera, Environment, Stars } from "@react-three/drei";
-import { EffectComposer, GodRays } from "@react-three/postprocessing";
-import { BlendFunction, Resizer, KernelSize } from "postprocessing";
-import { CylinderGeometry, Mesh, MeshBasicMaterial } from "three";
 import { Color } from "three";
 
 import React from "react";
@@ -20,18 +17,6 @@ import { store } from "../../state/store"
 
 
 let lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
-
-let mesh = new Mesh(
-    new CylinderGeometry(0.3, 0.3, 0.2, 20),
-    new MeshBasicMaterial({
-        color: lightColor,
-        transparent: true,
-        opacity: 1,
-    })
-);
-mesh.rotation.x = Math.PI * 0.5;
-mesh.position.set(1.17, 10.7, -4.1);
-mesh.scale.set(1.5, 1, 1);
 
 export function SceneContainer() {
     return (
