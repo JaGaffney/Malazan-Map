@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 import timelineData from "../../data/timelineData"
-
 import { TimeEvent } from './TimeEvent'
 
 const Timeline = (props) => {
+    const ref = useRef(null)
+
+    const scroll = (movement) => {
+        ref.current.scrollLeft += movement;
+    };
+
     return (
-        <div className="timeline__container">
+        <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"}>
             {Object.keys(timelineData).map((i, k) => {
                 return (
                     <div className="timeline" key={k}>
@@ -21,7 +27,7 @@ const Timeline = (props) => {
                     </div>
                 )
             })}
-        </div>
+        </ScrollContainer>
     )
 }
 

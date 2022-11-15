@@ -1,17 +1,16 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { update, updateActiveID } from "../../state/features/engine"
+import { update, updateActiveID, updateActiveData } from "../../state/features/engine"
 
 import ReactTooltip from 'react-tooltip';
 
 export const TimeEvent = (props) => {
     const activeID = useSelector((state) => state.activeCord.activeID)
     const dispatch = useDispatch()
-    console.log(props.data.id)
-    console.log(activeID)
     return (
         <div className="timeline__event-item" onClick={() => {
             dispatch(updateActiveID(props.data.id))
+            dispatch(updateActiveData(props.data.id))
             dispatch(update({ x: props.data.loc[0], y: props.data.loc[1] }));
         }}
             data-tip={props.data.name}

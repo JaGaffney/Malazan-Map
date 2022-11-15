@@ -1,6 +1,5 @@
 .timeline__container {
     width: 100%;
-    height: auto;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -9,8 +8,11 @@
     border: var(--border);
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
     gap: 4rem;
+    cursor: ew-resize;
+    &-drag {
+        cursor: grab;
+    }
 }
 
 .timeline {
@@ -35,23 +37,54 @@
     }
     &-item {
         width: 3rem;
-        height: 3rem;
+        height: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         cursor: pointer;
-        margin: 0.2rem 0.5rem 0 0;
+        margin: 0.2rem 1rem 0.5rem 0;
         &-icon {
             background: black;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 3rem;
+            height: 3rem;
             box-sizing: border-box;
             -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
             -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
             &-active {
-                background: var(--teal900);
+                background: var(--blue900);
             }
         }
     }
+}
+
+.indiana-scroll-container {
+    overflow: auto;
+    &--dragging {
+        scroll-behavior: auto !important;
+        > * {
+            pointer-events: none;
+            cursor: grab;
+        }
+    }
+    &--hide-scrollbars {
+        overflow: hidden;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            background: transparent !important;
+            -webkit-appearance: none !important;
+        }
+    }
+    &--native-scroll {
+        overflow: auto;
+    }
+}
+
+.indiana-dragging {
+    cursor: grab;
 }
