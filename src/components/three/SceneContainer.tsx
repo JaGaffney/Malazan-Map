@@ -30,8 +30,11 @@ export function SceneContainer() {
                 <OrbitControls maxDistance={250} dampingFactor={0.05} enableDamping={true} />
                 <pointLight position={[165, 33, 93]} castShadow color={lightColor} intensity={5} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
 
-                <Hex />
-                <Highlight />
+                <group position={[-110, 0, -100]}>
+                    <Hex />
+                    <Highlight />
+                </group>
+
                 {/* makes it better but lags */}
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
                 <Sea />

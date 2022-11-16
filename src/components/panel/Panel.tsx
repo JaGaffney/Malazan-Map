@@ -10,7 +10,7 @@ export default function Panel() {
             <Header />
             <WorldMap />
             <Characters />
-            <Locations />
+            {/* <Locations /> */}
         </div>
     )
 }

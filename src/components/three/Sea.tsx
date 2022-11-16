@@ -1,7 +1,6 @@
 import { useEnvironment } from "@react-three/drei";
 import React from "react";
 import { Color, RepeatWrapping, TextureLoader, Vector2 } from "three";
-import { CIRCLE_CUTOFF, MAX_HEIGHT } from "./contants";
 
 export default function Sea() {
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
@@ -12,8 +11,8 @@ export default function Sea() {
     seaTexture.wrapT = RepeatWrapping;
 
     return (
-        <mesh position={[60, 0, 60]} receiveShadow>
-            <cylinderGeometry args={[100, 100, 1, 50]} />
+        <mesh position={[25, -4, 0]}>
+            <cylinderBufferGeometry args={[170, 1, 100 * 0.1, 50]} />
             <meshPhysicalMaterial
                 envMap={envMap}
                 flatShading={true}

@@ -1,8 +1,9 @@
-import { Merged, useEnvironment } from "@react-three/drei";
+import { Merged, meshBounds, useEnvironment } from "@react-three/drei";
 import React from "react";
 import { CylinderBufferGeometry, SphereGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
 
 // import world from "./world";
+// import world from "../../data/genabackis.json"
 import world from "../../data/sample.json"
 
 
@@ -14,10 +15,12 @@ export default function Hex() {
         dirt2: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt2.jpg"),
         grass: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/grass.jpg"),
         sand: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/sand.jpg"),
+        sand2: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/sand2.jpg"),
         stone: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/rocks.jpg"),
         forest: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/forest.jpg"),
         town: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/town.jpg"),
         city: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/city.jpg"),
+        cap: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/cap.jpg"),
         ice: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/snow.jpg"),
         sandBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/sandmap.jpg"),
         stoneBump: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/bumps/rocks.jpg"),
@@ -31,10 +34,12 @@ export default function Hex() {
         dirt2: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.dirt2 }),
         grass: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.grass, bumpMap: textures.grassBump, bumpScale: 0.01 }),
         sand: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.sand, bumpMap: textures.sandBump, bumpScale: 0.03 }),
+        sand2: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.sand2, bumpMap: textures.sandBump, bumpScale: 0.03 }),
         stone: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.stone, bumpMap: textures.stoneBump, bumpScale: 0.08 }),
         forest: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.forest }),
         town: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.town }),
         city: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.city }),
+        cap: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.cap }),
         ice: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: textures.ice }),
     };
 
@@ -50,9 +55,14 @@ export default function Hex() {
 
     const bushGeo = new SphereGeometry(0.6, 6, 6)
 
+    const activeTile = new Vector2()
+
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
+        // activeTile.x = (tileX + (tileY % 2) * 0.5) * 1.77
+        // activeTile.y = tileY * 1.535
+        // return activeTile
         return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535)
-        // return new Vector2(tileX, tileY)
+        //return new Vector2(tileX, tileY)
     };
 
     const hexGeometry = (position: Vector2, geo, mat): any => {
@@ -62,7 +72,7 @@ export default function Hex() {
                 material={mat}
                 castShadow
                 receiveShadow
-                onClick={(e) => console.log(position)}
+            // onClick={() => console.log(position)}
             >
             </mesh>
         );
@@ -75,9 +85,9 @@ export default function Hex() {
             case 2:
                 return mesh.sand
             case 3:
-                return mesh.dirt
+                return mesh.sand2
             case 4:
-                return mesh.dirt2
+                return mesh.stone
             case 5:
                 return mesh.grass
             case 6:
@@ -88,8 +98,10 @@ export default function Hex() {
                 return mesh.town
             case 9:
                 return mesh.city
+            case 10:
+                return mesh.cap
             default:
-                return mesh.sand;
+                return mesh.dirt;
         }
     }
 
@@ -115,7 +127,7 @@ export default function Hex() {
     }
 
 
-    const moonSpawn = tileToPosition(16.0, 38.0)
+    const moonSpawn = new Vector2(177.885, 69.075)
 
     const makeHex = () => {
         const tiles = [];
@@ -158,8 +170,8 @@ export default function Hex() {
         );
     }
     const moon = (height, position) => {
-        const x = position.x + 1
-        const y = position.y + 2
+        const x = position.x + 2
+        const y = position.y
         return (
             <mesh position={[x, height, y]} onClick={(e) => console.log(x, y)}
                 geometry={bushGeo}
@@ -171,6 +183,7 @@ export default function Hex() {
     }
 
     return (
+
         <Merged meshes={[new Mesh(new BoxGeometry(0, 0, 0), new MeshNormalMaterial())]}>
             {(Box) => (
                 <>
@@ -179,5 +192,6 @@ export default function Hex() {
                 </>
             )}
         </Merged>
+
     );
 }

@@ -3,6 +3,17 @@ import { v4 as uuidv4 } from "uuid";
 import { eventIcons } from "../data/icons";
 
 const timelineData = {
+    1154: {
+        1: {
+            id: uuidv4(),
+            book: 1,
+            name: "Start of book 1 - Laseen becomes empress",
+            icon: eventIcons.city,
+            description: "",
+            char: [1, 5, 19],
+            loc: [76.995, 179.595],
+        },
+    },
     1161: {
         1: {
             id: uuidv4(),
@@ -10,26 +21,17 @@ const timelineData = {
             name: "Sorry is born",
             icon: eventIcons.assassin,
             description: "Sorry is born, Lorn and Parnn investiage, Sorry enlists in nearby garrison",
-            char: [1, 2],
-            loc: [0, 0],
+            char: [1, 2, 17],
+            loc: [48.675, 173.454],
         },
         2: {
             id: uuidv4(),
             book: 1,
             name: "Paran travels the imperial warren",
             icon: eventIcons.warren,
-            description: "Topper brings Paran through the imperail warren and arrive at Mocks's Hold inront of Empress Lassen",
-            char: [1],
-            loc: [0, 0],
-        },
-        3: {
-            id: uuidv4(),
-            book: 1,
-            name: "Paran goes home",
-            icon: eventIcons.city,
-            description: "Paran goes home to Unta where he meets Tavore Paran but Felisin Paran isnt there",
-            char: [1],
-            loc: [0, 0],
+            description: "Topper brings Paran through the imperail warren to Unta infront of Empress Lassen and then returns home to see his sister Tavore",
+            char: [1, 10, 17],
+            loc: [72.5701, 159.64],
         },
     },
     1163: {
@@ -40,7 +42,7 @@ const timelineData = {
             icon: eventIcons.battle,
             description: "",
             char: [2, 3, 4, 5, 6, 7, 8, 11, 12, 14],
-            loc: [27.435, 56.794999999999995],
+            loc: [177.885, 69.075],
         },
         2: {
             id: uuidv4(),
@@ -49,7 +51,7 @@ const timelineData = {
             icon: eventIcons.travelHorse,
             description: "",
             char: [1],
-            loc: [23.895, 19.955],
+            loc: [174.345, 29.165],
         },
         3: {
             id: uuidv4(),
@@ -58,7 +60,7 @@ const timelineData = {
             icon: eventIcons.death,
             description: "",
             char: [1, 2, 3, 4, 5, 6, 7, 11, 12, 13],
-            loc: [28.32, 58.33],
+            loc: [177.885, 69.075],
         },
         4: {
             id: uuidv4(),
@@ -67,7 +69,7 @@ const timelineData = {
             icon: eventIcons.city,
             description: "",
             char: [15, 16, 14],
-            loc: [30.975, 69.075],
+            loc: [179.655, 78.285],
         },
         5: {
             id: uuidv4(),
@@ -76,7 +78,7 @@ const timelineData = {
             icon: eventIcons.warren,
             description: "Kruppe meets the elder god K'rul",
             char: [16],
-            loc: [29.205000000000002, 69.075],
+            loc: [177.885, 78.285],
         },
         6: {
             id: uuidv4(),
@@ -85,7 +87,7 @@ const timelineData = {
             icon: eventIcons.travelBoat,
             description: "the Bridgeburners find a boat to sail accross to Darujhistan where Sorry reveals she knows how to sail.",
             char: [2, 4, 5, 11, 12],
-            loc: [29.205000000000002, 64],
+            loc: [179.655, 74],
         },
         7: {
             id: uuidv4(),
@@ -94,7 +96,7 @@ const timelineData = {
             icon: eventIcons.travelHorse,
             description: "Tool and Toc the Younger save Adjunct Lorn",
             char: [7, 17, 18],
-            loc: [38.94, 46.05],
+            loc: [188.505, 53.724],
         },
         8: {
             id: uuidv4(),
@@ -103,7 +105,7 @@ const timelineData = {
             icon: eventIcons.city,
             description: "Lorn confronts Tattersail on her killing her family",
             char: [1, 3, 6, 7, 13, 17, 18],
-            loc: [28.32, 58.33],
+            loc: [177.885, 69.075],
         },
         9: {
             id: uuidv4(),
@@ -112,7 +114,7 @@ const timelineData = {
             icon: eventIcons.travelFly,
             description: "",
             char: [14, 9],
-            loc: [37.17, 36.839999999999996],
+            loc: [187.62, 46.05],
         },
         10: {
             id: uuidv4(),
@@ -121,7 +123,7 @@ const timelineData = {
             icon: eventIcons.warren,
             description: "Tattersail opens her warren but due to being near tool it explodes killing her. Paran and Toc finder her reamins the next day",
             char: [3, 17, 18, 1, 7],
-            loc: [39.825, 66.005],
+            loc: [187.62, 73.679],
         },
         11: {
             id: uuidv4(),
@@ -130,7 +132,7 @@ const timelineData = {
             icon: eventIcons.travelFly,
             description: "Hairlock attacks Crone and other crows",
             char: [6, 14],
-            loc: [35.4, 61.4],
+            loc: [185.85, 70.61],
         },
         12: {
             id: uuidv4(),
@@ -139,7 +141,7 @@ const timelineData = {
             icon: eventIcons.city,
             description: "",
             char: [],
-            loc: [30.975, 69.075],
+            loc: [179.655, 78.285],
         },
         13: {
             id: uuidv4(),
@@ -148,7 +150,7 @@ const timelineData = {
             icon: eventIcons.sleeping,
             description: "Lorn and Tool find the barrow for the Jaghut Tyrant",
             char: [17, 18],
-            loc: [38.055, 69.075],
+            loc: [186.735, 78.285],
         },
         14: {
             id: uuidv4(),
@@ -157,7 +159,7 @@ const timelineData = {
             icon: eventIcons.travelHorse,
             description: "The gang heads off on a secret mission to protect Crocus",
             char: [2, 15, 16],
-            loc: [34.515, 72.145],
+            loc: [184.08, 79.82],
         },
         15: {
             id: uuidv4(),
@@ -166,7 +168,7 @@ const timelineData = {
             icon: eventIcons.assassin,
             description: "Quick Ben springs his trap on Hairlock and the hounds attack",
             char: [1, 6, 7],
-            loc: [39.825, 66.005],
+            loc: [190.275, 75.214],
         },
         16: {
             id: uuidv4(),
@@ -175,7 +177,7 @@ const timelineData = {
             icon: eventIcons.assassin,
             description: "Lorn easily defeats the group protecting Crocus but let's them live due to being no threat.",
             char: [2, 15, 16, 17],
-            loc: [37.17, 70.61],
+            loc: [185.85, 79.82],
         },
         17: {
             id: uuidv4(),
@@ -184,7 +186,7 @@ const timelineData = {
             icon: eventIcons.battle,
             description: "Rake kills 2 hounds of the shadow and released Cotailions bind on Sorry indirectly",
             char: [1, 8, 14],
-            loc: [39.825, 66.005],
+            loc: [190.275, 75.2145],
         },
         18: {
             id: uuidv4(),
@@ -193,7 +195,7 @@ const timelineData = {
             icon: eventIcons.sleeping,
             description: "The Jaghut Tyrant awakens, and Tool leaves Lorn to go his own way.",
             char: [17, 18],
-            loc: [38.055, 69.075],
+            loc: [186.735, 78.285],
         },
         19: {
             id: uuidv4(),
@@ -202,7 +204,7 @@ const timelineData = {
             icon: eventIcons.travelHorse,
             description: "Paran meets the reborn Tattersail who is a Rhivi child known as Silverfox",
             char: [1, 3],
-            loc: [40.71, 70.61],
+            loc: [189.39, 76.75],
         },
         20: {
             id: uuidv4(),
@@ -211,7 +213,7 @@ const timelineData = {
             icon: eventIcons.campfire,
             description: "Paran and Coll talk about how it sucks to be a noble and make their way back to Darujhistan slowly. ",
             char: [1],
-            loc: [37.17, 70.61],
+            loc: [185.85, 79.82],
         },
         21: {
             id: uuidv4(),
@@ -220,7 +222,7 @@ const timelineData = {
             icon: eventIcons.city,
             description: "Everyone makes their way back to Darujhistan and arrive at various times.",
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16],
-            loc: [30.975, 69.075],
+            loc: [179.655, 78.285],
         },
         22: {
             id: uuidv4(),
@@ -229,7 +231,7 @@ const timelineData = {
             icon: eventIcons.ruins,
             description: "Tool and Lorn look for the Jaghut Tyrant’s Finnest ",
             char: [17, 18],
-            loc: [37.17, 70.61],
+            loc: [186.735, 78.285],
         },
         23: {
             id: uuidv4(),
@@ -238,25 +240,16 @@ const timelineData = {
             icon: eventIcons.city,
             description: "Lorn arrives and finds the Bridgeburners.",
             char: [17],
-            loc: [30.975, 69.075],
+            loc: [179.655, 78.285],
         },
         24: {
             id: uuidv4(),
             book: 1,
-            name: "Gadrobi Hills - Awakening",
-            icon: eventIcons.sleeping,
-            description: "The Jaghut Tyrant’s Raest awakens and heads for Darujhistan to gather his Finnest. ",
-            char: [],
-            loc: [37.17, 70.61],
-        },
-        25: {
-            id: uuidv4(),
-            book: 1,
             name: "Gadrobi Hills - Jaghut Tyrant",
-            icon: eventIcons.battle,
-            description: "Raest battles 4 black dragons and the rez dragon Silanah. ",
+            icon: eventIcons.sleeping,
+            description: "The Jaghut Tyrant’s Raest awakens and fights 4 black dragons and the rez dragon Silanah. ",
             char: [],
-            loc: [37.17, 70.61],
+            loc: [186.735, 78.285],
         },
         26: {
             id: uuidv4(),
@@ -265,7 +258,7 @@ const timelineData = {
             icon: eventIcons.fete,
             description: "The Adjunct plants the acorn in a garden in the midst of the Gedderone’s Fete parade",
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16, 17],
-            loc: [30.975, 69.075],
+            loc: [179.655, 78.285],
         },
         27: {
             id: uuidv4(),
@@ -274,7 +267,7 @@ const timelineData = {
             icon: eventIcons.tlanimass,
             description: "Raest enters Kruppes dream and meets K'rul, Tool destorys his body but he escapes into a new body. ",
             char: [16, 18],
-            loc: [37.17, 70.61],
+            loc: [186.735, 78.285],
         },
         28: {
             id: uuidv4(),
@@ -283,7 +276,7 @@ const timelineData = {
             icon: eventIcons.seed,
             description: "The Finnest grows into a monster, and the Tyrant attacks the city",
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16, 17, 18],
-            loc: [30.975, 69.075],
+            loc: [179.655, 78.285],
         },
         29: {
             id: uuidv4(),
@@ -292,7 +285,7 @@ const timelineData = {
             icon: eventIcons.travelBoat,
             description: "Returning Sorry home",
             char: [2, 11, 12, 15],
-            loc: [23.895, 66.005],
+            loc: [174.345, 75.214],
         },
     },
 };
