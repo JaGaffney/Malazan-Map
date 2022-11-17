@@ -5,6 +5,7 @@ const initialState = {
     activeID: 0,
     activeData: {},
     flattern: false,
+    moon: [0, 0, 0],
 };
 
 export const activeCordSlice = createSlice({
@@ -26,9 +27,12 @@ export const activeCordSlice = createSlice({
         flattern: (state) => {
             state.flattern = !state.flattern;
         },
+        updateMoon: (state, action) => {
+            state.moon = action.payload;
+        },
     },
 });
 
-export const { update, reset, updateActiveID, updateActiveData, flattern } = activeCordSlice.actions;
+export const { update, reset, updateActiveID, updateActiveData, flattern, updateMoon } = activeCordSlice.actions;
 
 export default activeCordSlice.reducer;

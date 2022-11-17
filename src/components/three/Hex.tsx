@@ -1,4 +1,4 @@
-import { Merged, meshBounds, useEnvironment } from "@react-three/drei";
+import { Merged, useEnvironment } from "@react-three/drei";
 import React from "react";
 import { CylinderBufferGeometry, SphereGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
 
@@ -8,8 +8,6 @@ import world from "../../data/sample.json"
 
 
 export default function Hex() {
-
-
     const textures = {
         dirt: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt.jpg"),
         dirt2: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt2.jpg"),
@@ -53,9 +51,9 @@ export default function Hex() {
         hexGeo5: new CylinderBufferGeometry(1, 1, 5, 6, 1, false)
     }
 
-    const bushGeo = new SphereGeometry(0.6, 6, 6)
+    //const bushGeo = new SphereGeometry(0.6, 6, 6)
 
-    const activeTile = new Vector2()
+    // const activeTile = new Vector2()
 
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
         // activeTile.x = (tileX + (tileY % 2) * 0.5) * 1.77
@@ -127,7 +125,7 @@ export default function Hex() {
     }
 
 
-    const moonSpawn = new Vector2(177.885, 69.075)
+
 
     const makeHex = () => {
         const tiles = [];
@@ -144,9 +142,7 @@ export default function Hex() {
                     //     tiles.push(bush(data.z, position))
                     // }
                 }
-                if (position.x === moonSpawn.x && position.y === moonSpawn.y) {
-                    tiles.push(moon(6, position))
-                }
+
 
                 tiles.push(hexGeometry(position, geometry, terrain))
             }
@@ -169,18 +165,7 @@ export default function Hex() {
             </mesh>
         );
     }
-    const moon = (height, position) => {
-        const x = position.x + 2
-        const y = position.y
-        return (
-            <mesh position={[x, height, y]} onClick={(e) => console.log(x, y)}
-                geometry={bushGeo}
-                material={mesh.city}
 
-            >
-            </mesh>
-        );
-    }
 
     return (
 
