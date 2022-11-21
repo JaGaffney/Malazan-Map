@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { HiMagnifyingGlass } from "react-icons/hi2";
+import { HiOutlineMapPin } from "react-icons/hi2";
 
 
 import { updateCity } from "../../state/features/engine"
@@ -25,14 +25,14 @@ export default function Locations() {
                     return (
                         <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: moon, name: "Moonspawn" }))}>
                             <span>Moonspawn</span>
-                            <HiMagnifyingGlass />
+                            <HiOutlineMapPin />
                         </div>
                     )
                 }
                 return (
                     <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: cityData[i].loc, name: cityData[i].name }))}>
                         <span>{cityData[i].name}</span>
-                        <HiMagnifyingGlass />
+                        <HiOutlineMapPin />
                     </div>
                 )
             })}

@@ -1,13 +1,14 @@
 import { Merged, useEnvironment } from "@react-three/drei";
 import React from "react";
-import { CylinderBufferGeometry, SphereGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
+import { useDispatch } from "react-redux";
+import { CylinderBufferGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
 
-// import world from "./world";
-// import world from "../../data/genabackis.json"
 import world from "../../data/sample.json"
-
+import { loaded } from "../../state/features/engine";
 
 export default function Hex() {
+    const dispatch = useDispatch()
+
     const textures = {
         dirt: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt.jpg"),
         dirt2: new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt2.jpg"),
@@ -70,7 +71,7 @@ export default function Hex() {
                 material={mat}
                 castShadow
                 receiveShadow
-            // onClick={() => console.log(position)}
+            //onClick={() => console.log(position)}
             >
             </mesh>
         );
@@ -147,24 +148,24 @@ export default function Hex() {
                 tiles.push(hexGeometry(position, geometry, terrain))
             }
         }
+        dispatch(loaded())
         return tiles;
     };
 
-    const bush = (height, position) => {
-        // const px = Math.random() * 0.4
-        // const pz = Math.random() * 0.4
+    // const bush = (height, position) => {
+    //     // const px = Math.random() * 0.4
+    //     // const pz = Math.random() * 0.4
 
-        const x = position.x
-        const y = position.y
-        return (
-            <mesh position={[x, height, y]}
-                geometry={bushGeo}
-                material={mesh.grass}
-
-            >
-            </mesh>
-        );
-    }
+    //     const x = position.x
+    //     const y = position.y
+    //     return (
+    //         <mesh position={[x, height, y]}
+    //             geometry={bushGeo}
+    //             material={mesh.grass}
+    //         >
+    //         </mesh>
+    //     );
+    // }
 
 
     return (
