@@ -1,7 +1,7 @@
 .panel {
     position: absolute;
     width: 14%;
-    height: 100%;
+    height: calc(100% - 7rem);
     margin: 0;
     top: 0;
     left: 0;
@@ -11,6 +11,58 @@
     color: var(--gray300);
 }
 
+.panel__item {
+    padding-bottom: 3rem;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    grid-template-rows: 1fr;
+    padding: 1rem;
+    margin: 1rem;
+
+    h5 {
+        margin: 0 0 1rem 0;
+        font-size: 1.2rem;
+    }
+    &-button {
+        grid-column: 2;
+        grid-row: 1;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: inherit;
+        color: var(--gray100);
+        border: none;
+        z-index: 1;
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &-container {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        &-info {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            &:hover {
+                background: var(--gray800);
+            }
+            &-active {
+                background: var(--teal900);
+                color: var(--teal100);
+            }
+        }
+    }
+}
+
 .header {
     padding: 0.5rem 1rem;
 }
@@ -18,5 +70,9 @@
 .worldmap {
     width: 100%;
     height: 10rem;
-    background-color: black;
+    background-color: #c4dfff;
+    img {
+        width: 100%;
+        height: 10rem;
+    }
 }

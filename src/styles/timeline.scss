@@ -51,9 +51,13 @@
             box-sizing: border-box;
             -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
             -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+            clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
             &-active {
                 background: var(--teal900);
             }
+        }
+        &-filter {
+            background: var(--gray900);
         }
     }
 }

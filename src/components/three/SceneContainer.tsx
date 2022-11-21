@@ -10,6 +10,7 @@ import Border from "./Border";
 import Floor from "./Floor";
 import FloatingGrid from "./FloatingGrid";
 import Highlight from "./Highlight";
+import Words from "./Words"
 
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
@@ -35,14 +36,15 @@ export function SceneContainer() {
                     <Hex />
                     <Highlight />
                     <Moonspawn />
+                    <Words />
                 </group>
 
                 {/* makes it better but lags */}
-                <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+                {/* <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
                 <Sea />
                 <Border />
                 <Floor />
-                <FloatingGrid />
+                <FloatingGrid /> */}
 
             </Suspense>
 

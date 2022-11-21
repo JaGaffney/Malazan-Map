@@ -101,9 +101,9 @@ body {
 }
 
 body {
-    background-color: var(--gray100);
-    background-color: -webkit-linear-gradient(to bottom, var(--gray100), var(--gray200));
-    background-color: linear-gradient(to bottom, var(--gray100), var(--gray200));
+    background-color: var(--gray900);
+    background-color: -webkit-linear-gradient(to bottom, var(--gray900), var(--gray800));
+    background-color: linear-gradient(to bottom, var(--gray900), var(--gray800));
 }
 
 ul {
@@ -136,4 +136,5 @@ canvas {
     top: 0;
     left: 0;
     overflow: hidden;
+    background-color: var(--gray900);
 }

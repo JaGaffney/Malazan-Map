@@ -1,8 +1,5 @@
 import React from "react";
 
-import { useEnvironment } from "@react-three/drei";
-import { TextureLoader } from "three";
-
 import { useSelector } from "react-redux"
 
 

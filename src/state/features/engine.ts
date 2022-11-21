@@ -4,8 +4,10 @@ const initialState = {
     activeCord: { x: 0, y: 0 },
     activeID: 0,
     activeData: {},
+    activeCharacter: null,
     flattern: false,
-    moon: [0, 0, 0],
+    moon: [47, -5, 70],
+    city: { location: [47, -5, 70], name: "" },
 };
 
 export const activeCordSlice = createSlice({
@@ -30,9 +32,15 @@ export const activeCordSlice = createSlice({
         updateMoon: (state, action) => {
             state.moon = action.payload;
         },
+        updateCity: (state, action) => {
+            state.city = action.payload;
+        },
+        updateActiveCharacter: (state, action) => {
+            state.activeCharacter = action.payload;
+        },
     },
 });
 
-export const { update, reset, updateActiveID, updateActiveData, flattern, updateMoon } = activeCordSlice.actions;
+export const { update, reset, updateActiveID, updateActiveData, flattern, updateMoon, updateCity, updateActiveCharacter } = activeCordSlice.actions;
 
 export default activeCordSlice.reducer;

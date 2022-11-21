@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector } from "react-redux"
 
-import { Vector3, TextureLoader } from "three";
-
+import { TextureLoader } from "three";
 
 export const Moonspawn = () => {
     const moon = useSelector((state) => state.activeCord.moon)
