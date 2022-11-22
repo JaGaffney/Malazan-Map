@@ -13,7 +13,12 @@ export const TimeEvent = (props) => {
                 dispatch(updateActiveID(props.data.id))
                 dispatch(updateActiveData(props.data.id))
                 dispatch(updateMoon(props.data.moon))
-                dispatch(update({ x: props.data.loc[0], y: props.data.loc[1] }));
+                if (props.data.loc !== null) {
+                    dispatch(update({ x: props.data.loc[0], y: props.data.loc[1] }));
+                } else {
+                    dispatch(update(props.data.loc));
+                }
+
             }
         }}
             data-tip={props.data.name}

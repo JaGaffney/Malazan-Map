@@ -5,7 +5,7 @@ const characters = {
         job: "soldier",
     },
     2: {
-        name: "Sorry",
+        name: "Sorry/Apsala",
         defaultFaction: "",
         job: "assassin",
     },
@@ -45,7 +45,7 @@ const characters = {
         job: "mage",
     },
     10: {
-        name: "Laseen",
+        name: "Empress Laseen",
         defaultFaction: "Malazan",
         job: "empress",
     },
@@ -88,6 +88,56 @@ const characters = {
         name: "Tool",
         defaultFaction: "T'lan Imass",
         job: "",
+    },
+    19: {
+        name: "Felisin Paran",
+        defaultFaction: "",
+        job: "",
+    },
+    20: {
+        name: "Heboric",
+        defaultFaction: "",
+        job: "Priest",
+    },
+    21: {
+        name: "Baudin",
+        defaultFaction: "",
+        job: "",
+    },
+    22: {
+        name: "Adjunct Tavore Paran",
+        defaultFaction: "",
+        job: "Adjunct",
+    },
+    23: {
+        name: "Mappo Runt",
+        defaultFaction: "",
+        job: "Chad",
+    },
+    24: {
+        name: "Icarium",
+        defaultFaction: "",
+        job: "",
+    },
+    25: {
+        name: "Duiker",
+        defaultFaction: "malazan",
+        job: "Imperial Historian",
+    },
+    26: {
+        name: "Coltaine ",
+        defaultFaction: "wickan",
+        job: "",
+    },
+    27: {
+        name: "Kulp ",
+        defaultFaction: "malazan",
+        job: "Mage",
+    },
+    28: {
+        name: "Iskaral Pust",
+        defaultFaction: "shadow",
+        job: "priest",
     },
 };
 

@@ -18,7 +18,7 @@ const Timeline = (props) => {
                             {Object.keys(timelineData[i]).map((ii, kk) => {
                                 let filter = ""
                                 if (activeCharacter !== null) {
-                                    if (timelineData[i][ii].char.includes(activeCharacter)) {
+                                    if (!timelineData[i][ii].char.includes(activeCharacter)) {
                                         filter = "timeline__event-item-filter"
                                     }
                                 }

@@ -57,12 +57,10 @@ export default function Hex() {
     // const activeTile = new Vector2()
 
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
-        // activeTile.x = (tileX + (tileY % 2) * 0.5) * 1.77
-        // activeTile.y = tileY * 1.535
-        // return activeTile
         return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535)
-        //return new Vector2(tileX, tileY)
+        // return new Vector2(tileX * 2, tileY * 2)
     };
+
 
     const hexGeometry = (position: Vector2, geo, mat): any => {
         return (
@@ -71,6 +69,7 @@ export default function Hex() {
                 material={mat}
                 castShadow
                 receiveShadow
+                key={position.x + position.y}
             //onClick={() => console.log(position)}
             >
             </mesh>
