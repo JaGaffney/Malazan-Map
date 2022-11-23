@@ -1,17 +1,22 @@
 import React from 'react'
+import { bookColor } from '../utils/color'
+
+
+const Book = (props) => {
+    return (
+        <div className="panel__item-container-info" style={{ color: bookColor(props.book) }}>
+            <span>Book {props.book}</span>
+            <span>{props.status}</span>
+        </div>
+    )
+}
 
 export default function Books() {
     return (
         <div className="panel__item-container">
             <h5>Progress</h5>
-            <div className="panel__item-container-info">
-                <span>Book 1</span>
-                <span>Complete</span>
-            </div>
-            <div className="panel__item-container-info">
-                <span>Book 2</span>
-                <span>inprogress</span>
-            </div>
+            <Book book={1} status={"complete"} />
+            <Book book={2} status={"inprogress"} />
         </div>
     )
 }

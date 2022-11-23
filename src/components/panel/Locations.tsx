@@ -16,6 +16,9 @@ export default function Locations() {
     return (
         <div className="panel__item-container">
             <h5>Points of interest</h5>
+            <div className={`panel__item-container-info`} onClick={() => dispatch(updateCity({ location: [0, 0], name: "" }))}>
+                <span>Reset</span>
+            </div>
             {Object.keys(cityData).map((i, k) => {
                 let active = ""
                 if (cityData[i].name === city.name) {

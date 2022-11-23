@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 import { eventIcons } from "../data/icons";
 
 const timelineData = {
-    1154: {
-        1: {
+    1154: [
+        {
             id: uuidv4(),
             book: 1,
             name: "Start of book 1 - Laseen becomes empress",
@@ -14,9 +14,9 @@ const timelineData = {
             loc: [76.995, 179.595],
             moon: [179, 0, 70],
         },
-    },
-    1161: {
-        1: {
+    ],
+    1161: [
+        {
             id: uuidv4(),
             book: 1,
             name: "Sorry is born",
@@ -26,7 +26,7 @@ const timelineData = {
             loc: [48.675, 173.454],
             moon: [179, 0, 70],
         },
-        2: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Paran travels the imperial warren",
@@ -36,9 +36,9 @@ const timelineData = {
             loc: [72.5701, 159.64],
             moon: [179, 0, 70],
         },
-    },
-    1163: {
-        1: {
+    ],
+    1163: [
+        {
             id: uuidv4(),
             book: 1,
             name: "Siege of Pale",
@@ -48,7 +48,7 @@ const timelineData = {
             loc: [177.885, 69.075],
             moon: [179, 5, 70],
         },
-        2: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Paran arrives on Genabackis",
@@ -58,7 +58,7 @@ const timelineData = {
             loc: [174.345, 29.165],
             moon: [179, 5, 70],
         },
-        3: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Paran arrives at Pale as captain of the Bridgeburners",
@@ -68,7 +68,7 @@ const timelineData = {
             loc: [177.885, 69.075],
             moon: [178.08, 4, 79.82],
         },
-        4: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Darujhistan",
@@ -78,7 +78,7 @@ const timelineData = {
             loc: [179.655, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        5: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Kruppes dream",
@@ -88,7 +88,7 @@ const timelineData = {
             loc: [177.885, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        6: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Bridgeburners arrive north of Darujhistan",
@@ -98,7 +98,7 @@ const timelineData = {
             loc: [179.655, 74],
             moon: [178.08, 4, 79.82],
         },
-        7: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Toc the Younger meets Adjunct Lorn",
@@ -108,7 +108,7 @@ const timelineData = {
             loc: [188.505, 53.724],
             moon: [178.08, 4, 79.82],
         },
-        8: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Adjunct Lorn arrives at Pale",
@@ -118,7 +118,7 @@ const timelineData = {
             loc: [177.885, 69.075],
             moon: [178.08, 4, 79.82],
         },
-        9: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Crone meets Caladin brood",
@@ -128,7 +128,7 @@ const timelineData = {
             loc: [187.62, 46.05],
             moon: [178.08, 4, 79.82],
         },
-        10: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Tattersail opens her warren",
@@ -138,7 +138,7 @@ const timelineData = {
             loc: [187.62, 73.679],
             moon: [178.08, 4, 79.82],
         },
-        11: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Crone is attacked",
@@ -148,7 +148,7 @@ const timelineData = {
             loc: [185.85, 70.61],
             moon: [178.08, 4, 79.82],
         },
-        12: {
+        {
             id: uuidv4(),
             book: 1,
             name: "The Bridgeburners do Bridgeburners stuff in Darujhistan",
@@ -158,7 +158,7 @@ const timelineData = {
             loc: [179.655, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        13: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Barrow",
@@ -168,7 +168,7 @@ const timelineData = {
             loc: [186.735, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        14: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Secret Mission",
@@ -178,7 +178,7 @@ const timelineData = {
             loc: [184.08, 79.82],
             moon: [178.08, 4, 79.82],
         },
-        15: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Ambush I",
@@ -188,7 +188,7 @@ const timelineData = {
             loc: [190.275, 75.214],
             moon: [178.08, 4, 79.82],
         },
-        16: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Ambush II",
@@ -198,7 +198,7 @@ const timelineData = {
             loc: [185.85, 79.82],
             moon: [178.08, 4, 79.82],
         },
-        17: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Ascended",
@@ -208,7 +208,7 @@ const timelineData = {
             loc: [190.275, 75.2145],
             moon: [178.08, 4, 79.82],
         },
-        18: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Tyrant",
@@ -218,7 +218,7 @@ const timelineData = {
             loc: [186.735, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        19: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Reunion",
@@ -228,7 +228,7 @@ const timelineData = {
             loc: [189.39, 76.75],
             moon: [178.08, 4, 79.82],
         },
-        20: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Campfire",
@@ -238,7 +238,7 @@ const timelineData = {
             loc: [185.85, 79.82],
             moon: [178.08, 4, 79.82],
         },
-        21: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Return to Darujhistan",
@@ -248,7 +248,7 @@ const timelineData = {
             loc: [179.655, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        22: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Finnest",
@@ -258,7 +258,7 @@ const timelineData = {
             loc: [186.735, 78.285],
             moon: [178.08, 4, 79.82],
         },
-        23: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Lorn enters Darujhistan",
@@ -268,7 +268,7 @@ const timelineData = {
             loc: [179.655, 78.285],
             moon: [178.08, 4, 78.82],
         },
-        24: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Jaghut Tyrant",
@@ -278,7 +278,7 @@ const timelineData = {
             loc: [186.735, 78.285],
             moon: [178.08, 4, 78.82],
         },
-        26: {
+        {
             id: uuidv4(),
             book: 1,
             name: "The Fete",
@@ -288,7 +288,7 @@ const timelineData = {
             loc: [179.655, 78.285],
             moon: [178.08, 4, 78.82],
         },
-        27: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Dreamscape",
@@ -298,7 +298,7 @@ const timelineData = {
             loc: [186.735, 78.285],
             moon: [178.08, 4, 78.82],
         },
-        28: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Battle over Darujhistan",
@@ -308,7 +308,7 @@ const timelineData = {
             loc: [179.655, 78.285],
             moon: [178.6, 2.5, 78.3],
         },
-        29: {
+        {
             id: uuidv4(),
             book: 1,
             name: "Return home",
@@ -318,7 +318,7 @@ const timelineData = {
             loc: [174.345, 75.214],
             moon: [184.08, 5, 79.82],
         },
-        30: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Start of book 2 - The cull",
@@ -328,9 +328,9 @@ const timelineData = {
             loc: [72.5701, 159.64],
             moon: [179, 0, 70],
         },
-    },
-    1164: {
-        1: {
+    ],
+    1164: [
+        {
             id: uuidv4(),
             book: 2,
             name: "Convergence?",
@@ -340,7 +340,7 @@ const timelineData = {
             loc: [63.72, 52.19],
             moon: [179, 0, 70],
         },
-        2: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Coltain arrives",
@@ -350,7 +350,7 @@ const timelineData = {
             loc: [81.42, 52.19],
             moon: [179, 0, 70],
         },
-        3: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Offpage Journey",
@@ -360,7 +360,7 @@ const timelineData = {
             loc: [84.075, 19.955],
             moon: [179, 0, 70],
         },
-        4: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Soletaken at sea",
@@ -370,17 +370,17 @@ const timelineData = {
             loc: [80.535, 29.165],
             moon: [179, 0, 70],
         },
-        5: {
+        {
             id: uuidv4(),
             book: 2,
-            name: "The book",
+            name: "The holy book",
             icon: eventIcons.prayer,
-            description: "Kalam takes the holy book and plans to leave on his own to complete his quest.",
+            description: "Kalam takes the holy book and Fiddler goes his seperate way in order to complete their intitial goal.",
             char: [2, 11, 12, 15],
             loc: [65.49, 42.98],
             moon: [179, 0, 70],
         },
-        6: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Panpot'sun Odhan",
@@ -390,7 +390,7 @@ const timelineData = {
             loc: [61.95, 46.05],
             moon: [179, 0, 70],
         },
-        7: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Slave",
@@ -400,47 +400,27 @@ const timelineData = {
             loc: [90.27, 46.05],
             moon: [179, 0, 70],
         },
-        8: {
+        {
             id: uuidv4(),
             book: 2,
             name: "War games",
             icon: eventIcons.battle,
             description: "Coultain carrys out mock battles to prepare the Malazan army to protect civilians in a time of war, much to their distain.",
             char: [25, 26, 27],
-            loc: [90.27, 46.05],
+            loc: [81.42, 52.19],
             moon: [179, 0, 70],
         },
-        9: {
+        {
             id: uuidv4(),
             book: 2,
-            name: "Parting ways",
-            icon: eventIcons.travelHorse,
-            description: "Fiddler and Kalam seperate in order to complete their goals.",
-            char: [2, 11, 12, 15],
-            loc: [65.49, 42.98],
-            moon: [179, 0, 70],
-        },
-        10: {
-            id: uuidv4(),
-            book: 2,
-            name: "Tesem Temple - I",
+            name: "Tesem Temple",
             icon: eventIcons.ruins,
             description: "Mappo and Icarium explore.",
             char: [23, 24, 28],
             loc: [61.95, 46.05],
             moon: [179, 0, 70],
         },
-        11: {
-            id: uuidv4(),
-            book: 2,
-            name: "Trapped",
-            icon: eventIcons.slave,
-            description: "Felisin is beaten by Beneth and Baudin escapes and is in hiding.",
-            char: [19, 20, 21],
-            loc: [90.27, 46.05],
-            moon: [179, 0, 70],
-        },
-        12: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Solo",
@@ -450,17 +430,7 @@ const timelineData = {
             loc: [59.295, 47.585],
             moon: [179, 0, 70],
         },
-        13: {
-            id: uuidv4(),
-            book: 2,
-            name: "Tesem Temple - II",
-            icon: eventIcons.ruins,
-            description: "Mappo and Icarium find an old warren which they believe is the Path of Hands.",
-            char: [23, 24, 28],
-            loc: [61.95, 46.05],
-            moon: [179, 0, 70],
-        },
-        14: {
+        {
             id: uuidv4(),
             book: 2,
             name: "The Ritual",
@@ -470,17 +440,17 @@ const timelineData = {
             loc: [80.535, 50.65],
             moon: [179, 0, 70],
         },
-        15: {
+        {
             id: uuidv4(),
             book: 2,
             name: "The poor disguise",
             icon: eventIcons.fete,
-            description: "Fiddlers group pretend to newly weds in order to travel the 3 citys and the group work out that Dancer is now Cotillion.",
+            description: "Fiddlers group pretend to be newly weds in order to travel the 3 citys and the group work out that Dancer is now Cotillion.",
             char: [2, 12, 15],
             loc: [62.835, 50.65],
             moon: [179, 0, 70],
         },
-        16: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Sha'ik",
@@ -490,47 +460,27 @@ const timelineData = {
             loc: [55.75, 47.58],
             moon: [179, 0, 70],
         },
-        17: {
-            id: uuidv4(),
-            book: 2,
-            name: "Freedom?",
-            icon: eventIcons.rally,
-            description: "Felisn, Herboric and Baudin escape into the desert.",
-            char: [19, 20, 21],
-            loc: [90.27, 46.05],
-            moon: [179, 0, 70],
-        },
-        18: {
+        {
             id: uuidv4(),
             book: 2,
             name: "The Whirlwind begins",
             icon: eventIcons.whirlwind,
-            description: "The Whirlwind begins, which casues Duiker and Kulp to be split up.",
+            description: "The Whirlwind begins, which casues Duiker and Kulp to be split up from each other and Colatines warband.",
             char: [25, 27],
             loc: [80.535, 50.65],
             moon: [179, 0, 70],
         },
-        19: {
+        {
             id: uuidv4(),
             book: 2,
-            name: "Aftermath",
-            icon: eventIcons.death,
+            name: "Army of the Apocalypse",
+            icon: eventIcons.rally,
             description: "Duiker returns to Hissar to see the chaos and pretends to be member of the Apocalypse with a deathwish of revenge, Coltaine is attemping to bring the refugses back to Aran",
             char: [25],
             loc: [81.42, 52.19],
             moon: [179, 0, 70],
         },
-        20: {
-            id: uuidv4(),
-            book: 2,
-            name: "Tesem Temple - III",
-            icon: eventIcons.ruins,
-            description: "Mappo and Icarium set off to the Holy Desert.",
-            char: [23, 24, 28],
-            loc: [61.95, 46.05],
-            moon: [179, 0, 70],
-        },
-        22: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Into the Whirlwind",
@@ -540,37 +490,37 @@ const timelineData = {
             loc: [57.525, 47.585],
             moon: [179, 0, 70],
         },
-        23: {
+        {
             id: uuidv4(),
             book: 2,
-            name: "Sha'ik",
+            name: "Unexpected saviour",
             icon: eventIcons.assassin,
-            description: "Kalam is attacked by D'ivers but Apt protects him",
+            description: "Kalam is attacked by D'ivers but the demon Apt protects him but sustains damage.",
             char: [11],
             loc: [55.755, 50.65],
             moon: [179, 0, 70],
         },
-        24: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Hope?",
             icon: eventIcons.uprising,
-            description: "Duiker returns to Hissar to see the chaos and pretends to be member of the Apocalypse with a deathwish of revenge, Coltaine is attemping to bring the refugses back to Aran",
+            description: "Duiker returns to Hissar to see the chaos and pretends to be member of the Apocalypse with a deathwish of revenge, Coltaine is attemping to bring the refugses back to Aran.",
             char: [25],
             loc: [79.65, 52.19],
             moon: [179, 0, 70],
         },
-        25: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Freedom?",
             icon: eventIcons.travelFoot,
-            description: "The Boar cult god Fener heals Herboric but is brought into the mortal world..",
+            description: "The group travels the desert and almost die but the Boar cult god Fener heals Herboric but is brought into the mortal world.",
             char: [19, 20, 21],
             loc: [88.5, 42.98],
             moon: [179, 0, 70],
         },
-        26: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Happenstance",
@@ -580,37 +530,117 @@ const timelineData = {
             loc: [57.525, 47.585],
             moon: [179, 0, 70],
         },
-        27: {
+        {
             id: uuidv4(),
             book: 2,
             name: "Scorched earth",
             icon: eventIcons.travelHorse,
             description: "Duiker is in pursuit of the Chain of Dogs, and is impressed by how well Coltaine is doing.",
             char: [25],
-            loc: [74.34, 55.26],
+            loc: [76.995, 53.724],
             moon: [179, 0, 70],
         },
-        28: {
+        {
             id: uuidv4(),
             book: 2,
-            name: "Saftey?",
-            icon: eventIcons.travelBoat,
-            description: "Felisins group are on their last legs, and then Kulp appears asking for their help from an insane mage.",
+            name: "Saftey or death?",
+            icon: eventIcons.warren,
+            description: "Felisins group are on their last legs, and then Kulp appears asking for their help from an insane mage who brings them into an elder warren.",
             char: [19, 20, 21, 27],
             loc: [84.96, 42.98],
             moon: [179, 0, 70],
         },
-        29: {
+        {
             id: uuidv4(),
             book: 2,
-            name: "Into a warren",
-            icon: eventIcons.warren,
-            description: "",
-            char: [19, 20, 21, 27],
-            loc: [null],
+            name: "Tesem Temple",
+            icon: eventIcons.ruins,
+            description: "Fiddler recovers and Aspala leaves with her father and the group go after her.",
+            char: [23, 24, 28, 2, 12, 15],
+            loc: [61.95, 46.05],
             moon: [179, 0, 70],
         },
-    },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Kalam, the Kalam?",
+            icon: eventIcons.assassin,
+            description: "Kalam saves a group from bandits and join forces with them heading for Aren.",
+            char: [11],
+            loc: [55.755, 53.72],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Chain of Dogs - I",
+            icon: eventIcons.dog,
+            description: "Duiker rejoins Coltaine army.",
+            char: [25, 26],
+            loc: [76.995, 53.724],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Back to the desert?",
+            icon: eventIcons.warren,
+            description: "Felisins group and Kulp escape the warren and end up on the mainland.",
+            char: [19, 20, 21, 27],
+            loc: [56.64, 46.05],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Imperial Warren",
+            icon: eventIcons.warren,
+            description: "Kalam group go into the Imperial warren aiming for Aren.",
+            char: [11],
+            loc: [55.755, 53.72],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Chain of Dogs - II",
+            icon: eventIcons.dog,
+            description: "Duiker joins a skirmish on the enemy camp.",
+            char: [25, 26],
+            loc: [63.72, 58.33],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "The First Empire",
+            icon: eventIcons.travelFoot,
+            description: "Felisins group find remnants of the first empire.",
+            char: [19, 20, 27],
+            loc: [56.64, 46.05],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Tracking",
+            icon: eventIcons.whirlwind,
+            description: "Fiddler groups trys to find Apsalar and her father.",
+            char: [23, 24, 28, 2, 12, 15],
+            loc: [57.525, 47.585],
+            moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 2,
+            name: "Chain of Dogs - III",
+            icon: eventIcons.dog,
+            description: "Duiker joins a skirmish on the enemy camp.",
+            char: [25, 26],
+            loc: [63.72, 58.33],
+            moon: [179, 0, 70],
+        },
+    ],
 };
 
 export default timelineData;

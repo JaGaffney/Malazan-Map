@@ -15,15 +15,15 @@ const Timeline = (props) => {
                     <div className="timeline" key={k}>
                         <span className="timeline__date">{i}</span>
                         <div className="timeline__event-container">
-                            {Object.keys(timelineData[i]).map((ii, kk) => {
+                            {timelineData[i].map((ii, kk) => {
                                 let filter = ""
                                 if (activeCharacter !== null) {
-                                    if (!timelineData[i][ii].char.includes(activeCharacter)) {
+                                    if (!ii.char.includes(activeCharacter)) {
                                         filter = "timeline__event-item-filter"
                                     }
                                 }
                                 return (
-                                    <TimeEvent year={i} data={timelineData[i][ii]} key={kk} filter={filter} />)
+                                    <TimeEvent year={i} data={ii} key={kk} filter={filter} />)
                             })
                             }</div>
                     </div>

@@ -45,19 +45,24 @@
         cursor: pointer;
         margin: 0.2rem 1rem 0.5rem 0;
         &-icon {
-            background: black;
+            background: var(--gray900);
             width: 3rem;
             height: 3rem;
             box-sizing: border-box;
             -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
             -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
             clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+            &:hover {
+                transform: translateY(-2px);
+            }
             &-active {
-                background: var(--teal900);
+                transform: translateY(-10px) !important;
+                background: var(--gray800) !important;
+                clip-path: circle(62.9% at 50% 50%);
             }
         }
         &-filter {
-            background: var(--gray900);
+            background: var(--gray900) !important;
         }
     }
 }

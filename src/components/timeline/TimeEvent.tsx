@@ -1,8 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { update, updateActiveID, updateActiveData, updateMoon } from "../../state/features/engine"
-
 import ReactTooltip from 'react-tooltip';
+
+import { update, updateActiveID, updateActiveData, updateMoon } from "../../state/features/engine"
+import { bookColor } from '../utils/color';
+
+
 
 export const TimeEvent = (props) => {
     const activeID = useSelector((state) => state.activeCord.activeID)
@@ -25,7 +28,9 @@ export const TimeEvent = (props) => {
         >
             <div className={`
                 timeline__event-item-icon 
-                ${activeID === props.data.id ? "timeline__event-item-icon-active" : ""} ${props.filter}`}>
+                ${activeID === props.data.id ? "timeline__event-item-icon-active" : ""} ${props.filter}`}
+                style={{ backgroundColor: bookColor(props.data.book) }}
+            >
                 <img src={props.filter === "" && props.data.icon} />
             </div>
             <ReactTooltip effect="solid" />
