@@ -1,6 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface Cord {
+    x: number;
+    y: number;
+}
+
+export interface IRootState {
+    loaded: boolean;
+    activeCord: Cord;
+    activeID: number;
+    activeData: Object;
+    activeCharacter: null | number;
+    flattern: boolean;
+    moon: Array<number>;
+    city: Object;
+}
+
+const initialState: IRootState = {
     loaded: false,
     activeCord: { x: 0, y: 0 },
     activeID: 0,

@@ -16,7 +16,7 @@ export default function Books() {
         <div className="panel__item-container">
             <h5>Progress</h5>
             <Book book={1} status={"complete"} />
-            <Book book={2} status={"inprogress"} />
+            <Book book={2} status={"complete"} />
         </div>
     )
 }
