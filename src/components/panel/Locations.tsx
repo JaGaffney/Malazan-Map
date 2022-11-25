@@ -5,7 +5,7 @@ import { HiOutlineMapPin } from "react-icons/hi2";
 
 import { updateCity } from "../../state/features/engine"
 
-import cityData from "../../data/city"
+import { cityData } from "../../data/city"
 
 
 
@@ -19,12 +19,12 @@ export default function Locations() {
             <div className={`panel__item-container-info`} onClick={() => dispatch(updateCity({ location: [0, 0], name: "" }))}>
                 <span>Reset</span>
             </div>
-            {Object.keys(cityData).map((i, k) => {
+            {cityData.map((i, k) => {
                 let active = ""
-                if (cityData[i].name === city.name) {
+                if (i.name === city.name) {
                     active = "panel__item-container-info-active"
                 }
-                if (i === "moonspawn") {
+                if (i.name === "moonspawn") {
                     return (
                         <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: moon, name: "Moonspawn" }))}>
                             <span>Moonspawn</span>
@@ -33,8 +33,8 @@ export default function Locations() {
                     )
                 }
                 return (
-                    <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: cityData[i].loc, name: cityData[i].name }))}>
-                        <span>{cityData[i].name}</span>
+                    <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: i.loc, name: i.name }))}>
+                        <span>{i.name}</span>
                         <HiOutlineMapPin />
                     </div>
                 )

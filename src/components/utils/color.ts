@@ -4,6 +4,8 @@ export const bookColor = (bookNumber: number): string => {
             return "var(--teal900)";
         case 2:
             return "var(--amber800)";
+        case 3:
+            return "var(--red900)";
         default:
             return "";
     }

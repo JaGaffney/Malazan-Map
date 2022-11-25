@@ -1,3 +1,48 @@
+.sidepanel__open {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1;
+    background-color: inherit;
+    color: var(--gray100);
+    border: none;
+    cursor: pointer;
+    transition: transform ease-in 100ms;
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+    &:hover {
+        transform: translateY(-4px);
+        color: var(--gray400);
+    }
+}
+.sidepanel__close {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+    background-color: inherit;
+    color: var(--red500);
+    border: none;
+    cursor: pointer;
+    transition: transform ease-in 100ms;
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+    &:hover {
+        transform: translateY(-1px);
+        color: var(--red600);
+    }
+}
+
 .panel {
     position: absolute;
     width: 14%;
@@ -57,6 +102,9 @@
             &-active {
                 background: var(--teal900);
                 color: var(--teal100);
+            }
+            &-small {
+                font-size: 0.7rem;
             }
         }
     }

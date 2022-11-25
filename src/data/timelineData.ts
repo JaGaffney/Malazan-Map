@@ -3,6 +3,30 @@ import { v4 as uuidv4 } from "uuid";
 import { eventIcons } from "../data/icons";
 
 const timelineData = {
+    [-298655]: [
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Start of book 3 - 33rd Jaghut War",
+            icon: eventIcons.tlanimass,
+            description: "",
+            char: [],
+            loc: [179.655, 130.475],
+            moon: [0, 0, 0],
+        },
+    ],
+    [-119736]: [
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "3 years after the Fall of the Crippled God",
+            icon: eventIcons.warren,
+            description: "3 years after the Fall of the Crippled God",
+            char: [14, 29],
+            loc: [0, 0],
+            moon: [0, 0, 0],
+        },
+    ],
     1154: [
         {
             id: uuidv4(),
@@ -13,6 +37,18 @@ const timelineData = {
             char: [1, 5, 19],
             loc: [76.995, 179.595],
             moon: [179, 0, 70],
+        },
+    ],
+    1160: [
+        {
+            id: uuidv4(),
+            book: 1,
+            name: "Siege of Pale",
+            icon: eventIcons.battle,
+            description: "",
+            char: [3, 4, 5, 6, 7, 8, 11, 12, 14],
+            loc: [177.885, 69.075],
+            moon: [179, 5, 70],
         },
     ],
     1161: [
@@ -41,7 +77,7 @@ const timelineData = {
         {
             id: uuidv4(),
             book: 1,
-            name: "Siege of Pale",
+            name: "Conquest of Pale",
             icon: eventIcons.battle,
             description: "",
             char: [2, 3, 4, 5, 6, 7, 8, 11, 12, 14],

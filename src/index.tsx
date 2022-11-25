@@ -10,6 +10,7 @@ import App from './App';
 import './index.scss';
 import "./styles/sidepanel.scss"
 import "./styles/timeline.scss"
+import "./styles/responsive.scss"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

@@ -139,6 +139,11 @@ const characters = {
         defaultFaction: "shadow",
         job: "priest",
     },
+    29: {
+        name: "Kallor",
+        defaultFaction: "",
+        job: "king",
+    },
 };
 
 export default characters;

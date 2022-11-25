@@ -17,6 +17,7 @@ export default function Books() {
             <h5>Progress</h5>
             <Book book={1} status={"complete"} />
             <Book book={2} status={"complete"} />
+            <Book book={3} status={"in progress"} />
         </div>
     )
 }

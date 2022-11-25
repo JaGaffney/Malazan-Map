@@ -7,10 +7,10 @@ import { TimeEvent } from './TimeEvent'
 
 const Timeline = (props) => {
     const activeCharacter = useSelector((state) => state.activeCord.activeCharacter)
-
+    console.log(timelineData)
     return (
         <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
-            {Object.keys(timelineData).map((i, k) => {
+            {Object.keys(timelineData).sort((a, b) => a - b).map((i, k) => {
                 return (
                     <div className="timeline" key={k}>
                         <span className="timeline__date">{i}</span>
