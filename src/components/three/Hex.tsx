@@ -1,12 +1,20 @@
 import { Merged, useEnvironment } from "@react-three/drei";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { CylinderBufferGeometry, BoxGeometry, MeshStandardMaterial, MeshNormalMaterial, Mesh, Vector2, TextureLoader } from "three";
+import { CylinderBufferGeometry, MeshStandardMaterial, Vector2, TextureLoader } from "three";
 
 import world from "../../data/sample.json"
 import { loaded } from "../../state/features/engine";
 
 export default function Hex() {
+    const [hexTile, setHexTile] = useState([])
+
+    useEffect(() => {
+        setHexTile(makeHex())
+
+    }, [])
+
+
     const dispatch = useDispatch()
 
     const textures = {
@@ -72,6 +80,7 @@ export default function Hex() {
                 key={position.x + position.y}
             //onClick={() => console.log(position)}
             >
+
             </mesh>
         );
     };
@@ -151,32 +160,9 @@ export default function Hex() {
         return tiles;
     };
 
-    // const bush = (height, position) => {
-    //     // const px = Math.random() * 0.4
-    //     // const pz = Math.random() * 0.4
-
-    //     const x = position.x
-    //     const y = position.y
-    //     return (
-    //         <mesh position={[x, height, y]}
-    //             geometry={bushGeo}
-    //             material={mesh.grass}
-    //         >
-    //         </mesh>
-    //     );
-    // }
-
-
     return (
+        hexTile
 
-        <Merged meshes={[new Mesh(new BoxGeometry(0, 0, 0), new MeshNormalMaterial())]}>
-            {(Box) => (
-                <>
-                    <Box position={[0, 0, 0]} />
-                    {makeHex()}
-                </>
-            )}
-        </Merged>
 
     );
 }

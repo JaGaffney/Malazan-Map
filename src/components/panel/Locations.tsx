@@ -28,14 +28,14 @@ export default function Locations() {
                 if (i.name === "moonspawn") {
                     const newMoon = [moon[0], moon[1] + 14.5, moon[2]]
                     return (
-                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: newMoon, name: "Moonspawn" }))}>
+                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: newMoon, name: "Moonspawn", type: 1, owner: "Anomander Rake" }))}>
                             <span>Moonspawn</span>
                             <HiOutlineMapPin />
                         </div>
                     )
                 }
                 return (
-                    <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: i.loc, name: i.name }))}>
+                    <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: i.loc, name: i.name, type: i.type, owner: i.owner }))}>
                         <span>{i.name}</span>
                         <HiOutlineMapPin />
                     </div>
