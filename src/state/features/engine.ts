@@ -10,6 +10,7 @@ export interface IRootState {
     activeCord: Cord;
     activeID: number;
     activeData: Object;
+    activeBooks: Array<number | "">;
     activeCharacter: null | number;
     flattern: boolean;
     moon: Array<number>;
@@ -21,11 +22,22 @@ const initialState: IRootState = {
     activeCord: { x: 0, y: 0 },
     activeID: 0,
     activeData: {},
+    activeBooks: [1, 2, 3],
     activeCharacter: null,
     flattern: false,
     moon: [47, -5, 70],
     city: { location: [47, -5, 70], name: "" },
 };
+
+function filterArray(array, value) {
+    let returnValue = array;
+    if (array.includes(value)) {
+        returnValue = array.filter((i) => i !== value);
+    } else {
+        returnValue.push(value);
+    }
+    return returnValue;
+}
 
 export const activeCordSlice = createSlice({
     name: "activeCord",
@@ -58,9 +70,15 @@ export const activeCordSlice = createSlice({
         updateActiveCharacter: (state, action) => {
             state.activeCharacter = action.payload;
         },
+        updateActiveBooks: (state, action) => {
+            state.activeBooks = filterArray(state.activeBooks, action.payload);
+        },
+        resetActiveBooks: (state) => {
+            state.activeBooks = [1, 2, 3];
+        },
     },
 });
 
-export const { loaded, update, reset, updateActiveID, updateActiveData, flattern, updateMoon, updateCity, updateActiveCharacter } = activeCordSlice.actions;
+export const { loaded, update, reset, updateActiveID, updateActiveData, flattern, updateMoon, updateCity, updateActiveCharacter, updateActiveBooks, resetActiveBooks } = activeCordSlice.actions;
 
 export default activeCordSlice.reducer;

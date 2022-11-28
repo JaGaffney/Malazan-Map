@@ -25,6 +25,10 @@ export default function Panel() {
                 <Header />
                 <WorldMap />
                 <div className="panel__item">
+                    <button className="panel__item-button" onClick={() => setBooks(!books)}>{books ? <HiOutlineEyeOff /> : <HiOutlineEye />}</button>
+                    {books ? <Books /> : <div className="panel__item-container"><h5>Books</h5></div>}
+                </div>
+                <div className="panel__item">
                     <button className="panel__item-button" onClick={() => setCharacters(!characters)}>{characters ? <HiOutlineEyeOff /> : <HiOutlineEye />}</button>
                     {characters ? <Characters /> : <div className="panel__item-container"><h5>Characters</h5></div>}
                 </div>
@@ -32,10 +36,7 @@ export default function Panel() {
                     <button className="panel__item-button" onClick={() => setLocations(!locations)}>{locations ? <HiOutlineEyeOff /> : <HiOutlineEye />}</button>
                     {locations ? <Locations /> : <div className="panel__item-container"><h5>Points of interest</h5></div>}
                 </div>
-                <div className="panel__item">
-                    <button className="panel__item-button" onClick={() => setBooks(!books)}>{books ? <HiOutlineEyeOff /> : <HiOutlineEye />}</button>
-                    {books ? <Books /> : <div className="panel__item-container"><h5>Books</h5></div>}
-                </div>
+
                 <div className="panel__item">
                     <Acknowledgements />
                 </div>

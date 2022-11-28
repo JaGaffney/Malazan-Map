@@ -7,6 +7,7 @@ import { TimeEvent } from './TimeEvent'
 
 const Timeline = (props) => {
     const activeCharacter = useSelector((state) => state.activeCord.activeCharacter)
+    const activeBooks = useSelector((state) => state.activeCord.activeBooks)
     return (
         <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
             {Object.keys(timelineData).sort((a, b) => a - b).map((i, k) => {
@@ -20,6 +21,9 @@ const Timeline = (props) => {
                                     if (!ii.char.includes(activeCharacter)) {
                                         filter = "timeline__event-item-filter"
                                     }
+                                }
+                                if (!activeBooks.includes(ii.book)) {
+                                    filter = "timeline__event-item-filter"
                                 }
                                 return (
                                     <TimeEvent year={i} data={ii} key={kk} filter={filter} />)
