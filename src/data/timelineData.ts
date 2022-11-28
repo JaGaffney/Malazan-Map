@@ -36,7 +36,7 @@ const timelineData = {
             description: "",
             char: [1, 5, 19],
             loc: [76.995, 179.595],
-            moon: [179, 0, 70],
+            moon: [0, 0, 0],
         },
     ],
     1160: [
@@ -60,7 +60,7 @@ const timelineData = {
             description: "Sorry is born, Lorn and Parnn investiage, Sorry enlists in nearby garrison",
             char: [1, 2, 17],
             loc: [48.675, 173.454],
-            moon: [179, 0, 70],
+            moon: [179, 5, 70],
         },
         {
             id: uuidv4(),
@@ -70,7 +70,7 @@ const timelineData = {
             description: "Topper brings Paran through the imperail warren to Unta infront of Empress Lassen and then returns home to see his sister Tavore",
             char: [1, 10, 17],
             loc: [72.5701, 159.64],
-            moon: [179, 0, 70],
+            moon: [179, 5, 70],
         },
     ],
     1163: [

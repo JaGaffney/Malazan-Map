@@ -8,16 +8,28 @@ export default function Highlight() {
     const activeCord = useSelector((state: IRootState) => state.activeCord.activeCord)
     const activeID = useSelector((state: IRootState) => state.activeCord.activeID)
 
-    const mat = new MeshStandardMaterial({ emissive: [10, 10, 10], color: [0, 0, 0] })
-
     return (
         activeID !== 0 && activeCord !== null ? (
             <group>
-                <mesh position={[activeCord.x, 8, activeCord.y]} material={mat}>
+                <mesh position={[activeCord.x, 8, activeCord.y]}>
                     <cylinderBufferGeometry args={[0.7, 0, 15, 6]} />
+                    <meshPhysicalMaterial
+                        clearcoat={1}
+                        clearCoatRoughness={0.5}
+                        color={"white"}
+                        envMapIntensity={0.5}
+                        roughness={0.5}
+                        metalness={0.8} />
                 </mesh>
-                <mesh position={[activeCord.x, 17, activeCord.y]} material={mat}>
-                    <sphereBufferGeometry args={[2, 16, 8]} />
+                <mesh position={[activeCord.x, 17, activeCord.y]}>
+                    <sphereBufferGeometry args={[2, 16, 16]} />
+                    <meshPhysicalMaterial
+                        clearcoat={1}
+                        clearCoatRoughness={0.5}
+                        color={"red"}
+                        envMapIntensity={0.5}
+                        roughness={0.5}
+                        metalness={0.8} />
                 </mesh>
             </group>
         ) : null

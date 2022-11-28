@@ -13,6 +13,7 @@ export default function Locations() {
     const moon = useSelector((state) => state.activeCord.moon)
     const city = useSelector((state) => state.activeCord.city)
     const dispatch = useDispatch()
+
     return (
         <div className="panel__item-container">
             <h5>Points of interest</h5>
@@ -25,8 +26,9 @@ export default function Locations() {
                     active = "panel__item-container-info-active"
                 }
                 if (i.name === "moonspawn") {
+                    const newMoon = [moon[0], moon[1] + 14.5, moon[2]]
                     return (
-                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: moon, name: "Moonspawn" }))}>
+                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateCity({ location: newMoon, name: "Moonspawn" }))}>
                             <span>Moonspawn</span>
                             <HiOutlineMapPin />
                         </div>

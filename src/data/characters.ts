@@ -144,6 +144,21 @@ const characters = {
         defaultFaction: "",
         job: "king",
     },
+    30: {
+        name: "Gruntle",
+        defaultFaction: "",
+        job: "guard",
+    },
+    31: {
+        name: "Keruli",
+        defaultFaction: "",
+        job: "merchant",
+    },
+    32: {
+        name: "Bauchelain ",
+        defaultFaction: "",
+        job: "necromancer",
+    },
 };
 
 export default characters;
