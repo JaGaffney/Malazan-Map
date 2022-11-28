@@ -13,7 +13,6 @@ export default function Characters() {
             <h5>Characters</h5>
             <div className="panel__item-container-info" onClick={() => dispatch(updateActiveCharacter(null))}>
                 <span>Show all</span>
-
             </div>
             {Object.keys(characters).map((i, k) => {
                 let active = ""
