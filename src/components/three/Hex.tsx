@@ -1,20 +1,28 @@
-import { Merged, useEnvironment } from "@react-three/drei";
-import React, { useState, useEffect } from "react";
+import { useEnvironment } from "@react-three/drei";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { CylinderBufferGeometry, MeshStandardMaterial, Vector2, TextureLoader } from "three";
 
 import world from "../../data/sample.json"
 import { loaded } from "../../state/features/engine";
 
+
+const HexGeometry = (props): any => {
+    return (
+        <mesh
+            position={[props.position.x, 1, props.position.y]}
+            geometry={props.geometry}
+            material={props.material}
+            key={props.k}
+            castShadow
+            receiveShadow
+        //onClick={() => console.log(props.position)}
+        >
+        </mesh>
+    );
+};
+
 export default function Hex() {
-    const [hexTile, setHexTile] = useState([])
-
-    useEffect(() => {
-        setHexTile(makeHex())
-
-    }, [])
-
-
     const dispatch = useDispatch()
 
     const textures = {
@@ -70,20 +78,7 @@ export default function Hex() {
     };
 
 
-    const hexGeometry = (position: Vector2, geo, mat): any => {
-        return (
-            <mesh position={[position.x, 1, position.y]}
-                geometry={geo}
-                material={mat}
-                castShadow
-                receiveShadow
-                key={position.x + position.y}
-            //onClick={() => console.log(position)}
-            >
 
-            </mesh>
-        );
-    };
 
     const calculateMesh = (terrain) => {
         switch (terrain) {
@@ -133,36 +128,17 @@ export default function Hex() {
         }
     }
 
-
-
-
-    const makeHex = () => {
-        const tiles = [];
-        for (let i = 0; i < world.length; i++) {
-            const data = world[i];
-            if (data.z >= 1) {
-                let position = tileToPosition(data.x, data.y)
-                const terrain = calculateMesh(data.t)
-                const geometry = calculateGeometry(data.z)
-
-                // add bushes might lag though
-                if (data.t === 5) {
-                    // if (Math.random() > 0.99) {
-                    //     tiles.push(bush(data.z, position))
-                    // }
-                }
-
-
-                tiles.push(hexGeometry(position, geometry, terrain))
-            }
-        }
-        dispatch(loaded())
-        return tiles;
-    };
-
+    // any attempt to reduce overhead in this area, must be a better way to handle loading screen
     return (
-        hexTile
-
+        Object.keys(world).map((i, k, array) => {
+            const data = world[i];
+            if (parseInt(i) === array.length - 1) {
+                dispatch(loaded())
+            }
+            return (
+                <HexGeometry position={tileToPosition(data.x, data.y)} geometry={calculateGeometry(data.z)} material={calculateMesh(data.t)} k={k} />
+            )
+        })
 
     );
 }

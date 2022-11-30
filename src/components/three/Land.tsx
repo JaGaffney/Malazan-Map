@@ -1,7 +1,5 @@
 import { Box, Cylinder, Merged } from "@react-three/drei";
 import React from "react";
-import { BoxGeometry, MeshNormalMaterial, Mesh } from "three";
-
 
 import Hex from "./Hex"
 
