@@ -147,7 +147,35 @@ canvas {
     top: 0;
     left: 0;
     position: absolute;
-    color: var(--gray100);
+    color: var(--gray300);
     background-color: var(--gray900);
     z-index: 5;
+    &-title {
+        h1 {
+            font-size: 3rem;
+            color: var(--gray100);
+        }
+        text-align: center;
+    }
+    &-quote {
+        background-color: var(--gray800);
+        padding: 1rem;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 35%;
+        p {
+            width: 100%;
+        }
+        span {
+            width: 100%;
+            text-align: end;
+        }
+    }
+    &-loading {
+        text-align: center;
+        strong {
+            font-size: 2rem;
+        }
+    }
 }

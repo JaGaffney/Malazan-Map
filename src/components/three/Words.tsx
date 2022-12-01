@@ -30,10 +30,6 @@ function Words(props) {
 
     const city = useSelector((state) => state.activeCord.city)
 
-    let fabricNormal = new TextureLoader().load(process.env.PUBLIC_URL + "/textures/fabric/textures/normal.jpg");
-    let fabricDiff = new TextureLoader().load(process.env.PUBLIC_URL + "/textures/fabric/textures/diff.jpg");
-    let fabricRoughness = new TextureLoader().load(process.env.PUBLIC_URL + "/textures/fabric/textures/rough.jpg");
-
     const defaultLength = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
     const defaultColorOwner = calculateColorOwner(city.owner)
@@ -47,7 +43,6 @@ function Words(props) {
                         clearcoat={1}
                         clearCoatRoughness={0.5}
                         color={"white"}
-                        map={fabricDiff}
                         envMapIntensity={0.5}
                         roughness={0.5}
                         metalness={0.8}
@@ -74,7 +69,7 @@ function Words(props) {
                         />
                     </mesh>
 
-                    <Text position={[defaultLength / 2, 1.5, 0]} fontSize={5}>{city.name}</Text>
+                    <Text position={[defaultLength / 2, 1.5, 0]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
                 </Billboard>
             </group>
         </>

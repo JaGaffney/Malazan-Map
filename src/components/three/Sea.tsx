@@ -1,11 +1,12 @@
 import { useEnvironment } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
 import React from "react";
 import { Color, RepeatWrapping, TextureLoader, Vector2 } from "three";
 
 export default function Sea() {
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
 
-    let seaTexture = new TextureLoader().load(process.env.PUBLIC_URL + "/textures/water.jpg");
+    let seaTexture = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/water.jpg");
     seaTexture.repeat = new Vector2(1, 1);
     seaTexture.wrapS = RepeatWrapping;
     seaTexture.wrapT = RepeatWrapping;

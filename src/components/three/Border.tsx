@@ -1,10 +1,11 @@
 import { useEnvironment } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
 import React from "react";
 import { DoubleSide, TextureLoader } from "three";
 
 export default function Border() {
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
-    const dirt2 = new TextureLoader().load(process.env.PUBLIC_URL + "/textures/dirt2.jpg");
+    const dirt2 = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/dirt2.jpg");
 
     return (
         <mesh position={[25, 1, 0]}>

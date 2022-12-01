@@ -6,7 +6,6 @@ interface Cord {
 }
 
 export interface IRootState {
-    loaded: boolean;
     activeCord: Cord;
     activeID: number;
     activeData: Object;
@@ -18,7 +17,6 @@ export interface IRootState {
 }
 
 const initialState: IRootState = {
-    loaded: false,
     activeCord: { x: 0, y: 0 },
     activeID: 0,
     activeData: {},
@@ -43,9 +41,6 @@ export const activeCordSlice = createSlice({
     name: "activeCord",
     initialState,
     reducers: {
-        loaded: (state) => {
-            state.loaded = true;
-        },
         update: (state, action) => {
             state.activeCord = action.payload;
         },
@@ -79,6 +74,6 @@ export const activeCordSlice = createSlice({
     },
 });
 
-export const { loaded, update, reset, updateActiveID, updateActiveData, flattern, updateMoon, updateCity, updateActiveCharacter, updateActiveBooks, resetActiveBooks } = activeCordSlice.actions;
+export const { update, reset, updateActiveID, updateActiveData, flattern, updateMoon, updateCity, updateActiveCharacter, updateActiveBooks, resetActiveBooks } = activeCordSlice.actions;
 
 export default activeCordSlice.reducer;
