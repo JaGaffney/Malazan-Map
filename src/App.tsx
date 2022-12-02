@@ -19,7 +19,7 @@ function Loader() {
         buffeted in squealing protest with every gust of wind"`
     ]
 
-    console.log({ active, progress, errors, item, loaded, total })
+    console.log("Loading: ", { active, progress, errors, item, loaded, total })
 
     return active ? (
         <Html fullscreen>
