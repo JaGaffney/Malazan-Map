@@ -125,12 +125,12 @@ const characters = {
         job: "Imperial Historian",
     },
     26: {
-        name: "Coltaine ",
+        name: "Coltaine",
         defaultFaction: "wickan",
         job: "",
     },
     27: {
-        name: "Kulp ",
+        name: "Kulp",
         defaultFaction: "malazan",
         job: "Mage",
     },
@@ -155,9 +155,14 @@ const characters = {
         job: "merchant",
     },
     32: {
-        name: "Bauchelain ",
+        name: "Bauchelain",
         defaultFaction: "",
         job: "necromancer",
+    },
+    33: {
+        name: "Lady Envy",
+        defaultFaction: "",
+        job: "",
     },
 };
 

@@ -368,6 +368,16 @@ const timelineData = {
     1164: [
         {
             id: uuidv4(),
+            book: 3,
+            name: "Crater",
+            icon: eventIcons.travelCart,
+            description: "A caravan of merchants heading eastward towards Darujhistan are blocked by a river whose bridge was destroyed,",
+            char: [30, 31, 32],
+            loc: [186.73, 78.28],
+            moon: [182.31, 0, 82.89],
+        },
+        {
+            id: uuidv4(),
             book: 2,
             name: "Convergence?",
             icon: eventIcons.ruins,
@@ -375,6 +385,16 @@ const timelineData = {
             char: [23, 24],
             loc: [63.72, 52.19],
             moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "The tower",
+            icon: eventIcons.warren,
+            description: "Toc the Younger wakes up after being spat out of the warren, Tool finds him and they make their way to Lady Envy's tower",
+            char: [7, 18, 33],
+            loc: [179.655, 130.475],
+            moon: [182.31, 0, 82.89],
         },
         {
             id: uuidv4(),
@@ -396,6 +416,7 @@ const timelineData = {
             loc: [84.075, 19.955],
             moon: [179, 0, 70],
         },
+
         {
             id: uuidv4(),
             book: 2,
@@ -435,6 +456,16 @@ const timelineData = {
             char: [19, 20, 21],
             loc: [90.27, 46.05],
             moon: [179, 0, 70],
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Rivals",
+            icon: eventIcons.rally,
+            description: "Everyone meets together to discuss the attack on the Pannion Domin",
+            char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
+            loc: [180.54, 67.53],
+            moon: [182.31, 0, 82.89],
         },
         {
             id: uuidv4(),
