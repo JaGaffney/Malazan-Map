@@ -1,23 +1,10 @@
-import { useEnvironment, useTexture } from "@react-three/drei";
 import React from "react";
-import { CylinderBufferGeometry, MeshStandardMaterial, Vector2 } from "three";
+import { useEnvironment, useTexture } from "@react-three/drei";
+import { CylinderBufferGeometry, MeshStandardMaterial } from "three";
 
-import d from "../../data/sample.json"
+import d from "../../../data/sorted.json"
 
-const HexGeometry = (props): any => {
-    return (
-        <mesh
-            position={[props.position.x, 1, props.position.y]}
-            geometry={props.geometry}
-            material={props.material}
-            key={props.k}
-            castShadow
-            receiveShadow
-        //onClick={() => console.log(props.position)}
-        >
-        </mesh>
-    );
-};
+import HexGeometryContainer from "./HexGeometryContainer"
 
 export default function Hex() {
     const world = d
@@ -62,11 +49,7 @@ export default function Hex() {
         hexGeo4: new CylinderBufferGeometry(1, 1, 4, 6, 1, false),
     }
 
-    //const activeTile = new Vector2()
-    const tileToPosition = (tileX: number, tileY: number): Vector2 => {
-        return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535)
-        // return new Vector2(tileX * 2, tileY * 2)
-    };
+
 
     // is this more memory efficent?
     const calculateMesh = {
@@ -95,17 +78,36 @@ export default function Hex() {
     return (
         <>
             {Object.keys(world).map((i, k) => {
-                const data = world[i];
-                return (
-                    <HexGeometry
-                        position={tileToPosition(data.x, data.y)}
-                        geometry={calculateGeometry[data.z]}
-                        material={calculateMesh[data.t]}
-                        key={k}
-                        k={k}
-                    />
-                )
+                const adjust = parseInt(i)
+                const height = Object.keys(world[i])
+                if (adjust === 5) {
+                    return (
+                        height.map((ii, kk) => {
+                            return (
+                                <HexGeometryContainer
+                                    data={world[adjust][ii]}
+                                    material={calculateMesh[adjust]}
+                                    geometry={calculateGeometry[ii]}
+                                    key={kk}
+                                />
+                            )
+                        }))
+                } else {
+                    return (
+                        <HexGeometryContainer
+                            data={world[adjust][height[0]]}
+                            material={calculateMesh[adjust]}
+                            geometry={calculateGeometry[height[0]]}
+                            key={k}
+                        />
+                    )
+                }
+
+
             })}
+
+
+
         </>
 
     );

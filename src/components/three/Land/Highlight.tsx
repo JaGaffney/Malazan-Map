@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux"
 import { MeshStandardMaterial } from "three"
-import { IRootState } from "../../state/features/engine";
+import { IRootState } from "../../../state/features/engine";
 
 
 export default function Highlight() {

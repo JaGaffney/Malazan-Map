@@ -1,8 +1,6 @@
 import React from 'react'
-import { Billboard, Text, useEnvironment } from "@react-three/drei";
+import { Billboard, Text } from "@react-three/drei";
 import { useSelector } from 'react-redux';
-import { TextureLoader, } from "three";
-
 
 function Words(props) {
     const calculateColorCityType = (cityType: number): string => {

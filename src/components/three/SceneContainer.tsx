@@ -2,15 +2,18 @@ import React from "react";
 import { OrbitControls, Environment, Stars } from "@react-three/drei";
 import { Color } from "three";
 
-import Hex from "./Hex";
-import Sea from "./Sea";
-import Border from "./Border";
-import Floor from "./Floor";
-import FloatingGrid from "./FloatingGrid";
-import Highlight from "./Highlight";
-import Words from "./Words"
+
+import Sea from "./World/Sea";
+import Border from "./World/Border";
+import Floor from "./World/Floor";
+import FloatingGrid from "./World/FloatingGrid";
+
+import Hex from "./Hex/Hex";
+import Highlight from "./Land/Highlight";
+import Words from "./Land/Words"
+import Moonspawn from "./Land/Moonspawn";
 import Cam from "./Cam"
-import { Moonspawn } from "./Moonspawn";
+
 
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
