@@ -9,9 +9,9 @@ import Floor from "./World/Floor";
 import FloatingGrid from "./World/FloatingGrid";
 
 import Hex from "./Hex/Hex";
-import Highlight from "./Land/Highlight";
-import Words from "./Land/Words"
-import Moonspawn from "./Land/Moonspawn";
+import Highlight from "./Overlay/Highlight";
+import Words from "./Overlay/Words"
+import Moonspawn from "./Overlay/Moonspawn";
 import Cam from "./Cam"
 
 
@@ -33,23 +33,23 @@ export function SceneContainer() {
 
             <Cam />
             {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
-            <OrbitControls maxDistance={250} dampingFactor={0.05} enableDamping={true} />
+            <OrbitControls maxDistance={500} dampingFactor={0.1} enableDamping={true} />
             <pointLight position={[165, 33, 93]} castShadow color={lightColor} intensity={5} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
 
 
-            <group position={[-110, 0, -100]}>
+            <group position={[-400, 0, -100]}>
                 <Hex />
                 <Highlight />
                 <Moonspawn />
-                <Words />
+                {/* <Words /> */}
             </group>
 
             {/* makes it better but lags */}
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+            <Stars radius={10} depth={500} count={5000} factor={4} saturation={0} fade speed={1} />
             <Sea />
-            <Border />
             <Floor />
             <FloatingGrid />
+            {/* <Border /> */}
 
 
 

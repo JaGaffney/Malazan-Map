@@ -8,8 +8,8 @@ export default function Floor() {
     const dirt2 = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/dirt2.jpg");
 
     return (
-        <mesh position={[25, -5, 0]}>
-            <cylinderBufferGeometry args={[170 + 3.5, 1, 100 * 0.1, 50]} />
+        <mesh position={[0, -5, 60]} rotation-x={-Math.PI * 0.5}>
+            <planeGeometry args={[1000, 500]} />
             <meshPhysicalMaterial envMap={envMap} map={dirt2} envMapIntensity={0.2} side={DoubleSide} />
         </mesh>
     );

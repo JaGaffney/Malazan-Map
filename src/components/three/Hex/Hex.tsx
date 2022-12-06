@@ -74,13 +74,12 @@ export default function Hex() {
         4: hexGeos.hexGeo4,
     }
 
-    // any attempt to reduce overhead in this area
     return (
         <>
             {Object.keys(world).map((i, k) => {
                 const adjust = parseInt(i)
                 const height = Object.keys(world[i])
-                if (adjust === 5) {
+                if (height.length > 1) {
                     return (
                         height.map((ii, kk) => {
                             return (

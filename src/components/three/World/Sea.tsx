@@ -12,8 +12,8 @@ export default function Sea() {
     seaTexture.wrapT = RepeatWrapping;
 
     return (
-        <mesh position={[25, -4, 0]}>
-            <cylinderBufferGeometry args={[170, 1, 100 * 0.1, 50]} />
+        <mesh position={[0, -4, 50]} rotation-x={-Math.PI * 0.5}>
+            <planeGeometry args={[1000, 500]} />
             <meshPhysicalMaterial
                 envMap={envMap}
                 flatShading={true}
