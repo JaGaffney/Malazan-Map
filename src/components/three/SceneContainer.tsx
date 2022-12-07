@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { OrbitControls, Environment, Stars, MapControls } from "@react-three/drei";
 import { Color } from "three";
 
@@ -42,7 +42,10 @@ export function SceneContainer() {
                 <Hex />
                 <Highlight />
                 <Moonspawn />
-                <Words />
+                <Suspense fallback={null} >
+                    <Words />
+                </Suspense>
+
             </group>
 
             {/* makes it better but lags */}

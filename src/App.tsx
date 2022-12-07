@@ -48,8 +48,8 @@ function App() {
             <Canvas shadows frameloop={"demand"} >
                 <Suspense fallback={<Loader />} >
                     <SceneContainer />
-
                 </Suspense>
+
                 <BakeShadows />
                 {/* <Stats /> */}
             </Canvas>

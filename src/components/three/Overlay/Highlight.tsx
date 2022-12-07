@@ -12,7 +12,7 @@ export default function Highlight() {
         activeID !== 0 && activeCord !== null ? (
             <group>
                 <mesh position={[activeCord.x, 8, activeCord.y]}>
-                    <cylinderBufferGeometry args={[0.7, 0, 15, 6]} />
+                    <cylinderBufferGeometry args={[1.5, 0, 15, 6]} />
                     <meshPhysicalMaterial
                         clearcoat={1}
                         clearCoatRoughness={0.5}
@@ -22,7 +22,7 @@ export default function Highlight() {
                         metalness={0.8} />
                 </mesh>
                 <mesh position={[activeCord.x, 17, activeCord.y]}>
-                    <sphereBufferGeometry args={[2, 16, 16]} />
+                    <sphereBufferGeometry args={[4, 16, 16]} />
                     <meshPhysicalMaterial
                         clearcoat={1}
                         clearCoatRoughness={0.5}
