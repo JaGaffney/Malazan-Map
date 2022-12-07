@@ -5,6 +5,11 @@
 }
 
 @media only screen and (max-width: 1025px) {
+    canvas {
+        width: 100vh !important;
+        height: 100vh !important;
+    }
+
     .tempLoading {
         &-title {
             h1 {
