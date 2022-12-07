@@ -1,7 +1,3 @@
-# Getting Started with Create React App
+# Malazan, book of the fallen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-### `npm start`
+## Interactive 3D world map

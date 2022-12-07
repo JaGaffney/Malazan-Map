@@ -51,7 +51,7 @@ function App() {
 
                 </Suspense>
                 <BakeShadows />
-                <Stats />
+                {/* <Stats /> */}
             </Canvas>
 
             <Panel />
