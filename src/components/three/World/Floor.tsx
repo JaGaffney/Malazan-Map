@@ -1,7 +1,7 @@
 import { useEnvironment } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import React from "react";
-import { DoubleSide, TextureLoader } from "three";
+import { TextureLoader } from "three";
 
 export default function Floor() {
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
@@ -10,7 +10,7 @@ export default function Floor() {
     return (
         <mesh position={[0, -5, 60]} rotation-x={-Math.PI * 0.5}>
             <planeGeometry args={[1000, 500]} />
-            <meshPhysicalMaterial envMap={envMap} map={dirt2} envMapIntensity={0.2} side={DoubleSide} />
+            <meshPhysicalMaterial envMap={envMap} map={dirt2} envMapIntensity={0.2} />
         </mesh>
     );
 }

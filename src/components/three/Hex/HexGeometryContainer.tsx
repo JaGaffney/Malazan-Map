@@ -15,15 +15,11 @@ export default function HexGeometryContainer(props) {
         // @ts-expect-error
         <Instances limit={props.data.length - 1} castShadow receiveShadow material={props.material} geometry={props.geometry}>
             {props.data.map((i, k) => {
-
                 return (
-                    <>
-                        {/* <cylinderBufferGeometry args={[1, 1, props.height, 6]} /> */}
-                        <HexGeometry
-                            position={tileToPosition(i.x, i.y)}
-                            key={k}
-                        />
-                    </>
+                    <HexGeometry
+                        position={tileToPosition(i.x, i.y)}
+                        key={k}
+                    />
                 )
             })}
         </Instances>

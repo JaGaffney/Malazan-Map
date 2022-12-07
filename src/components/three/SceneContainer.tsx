@@ -1,5 +1,5 @@
 import React from "react";
-import { OrbitControls, Environment, Stars } from "@react-three/drei";
+import { OrbitControls, Environment, Stars, MapControls } from "@react-three/drei";
 import { Color } from "three";
 
 
@@ -25,6 +25,7 @@ import { store } from "../../state/store"
 let lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
 
 export function SceneContainer() {
+    //const firefox = navigator.userAgent.search("Firefox")
     return (
         <Provider store={store}>
 
@@ -33,7 +34,7 @@ export function SceneContainer() {
 
             <Cam />
             {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
-            <OrbitControls maxDistance={500} dampingFactor={0.1} enableDamping={true} />
+            <MapControls enableRotate={false} maxDistance={600} dampingFactor={0.1} enableDamping={true} />
             <pointLight position={[165, 33, 93]} castShadow color={lightColor} intensity={5} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
 
 
@@ -41,7 +42,7 @@ export function SceneContainer() {
                 <Hex />
                 <Highlight />
                 <Moonspawn />
-                {/* <Words /> */}
+                <Words />
             </group>
 
             {/* makes it better but lags */}

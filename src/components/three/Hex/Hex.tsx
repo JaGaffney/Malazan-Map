@@ -42,8 +42,8 @@ export default function Hex() {
 
     const hexGeos = {
         hexGeo1: new CylinderBufferGeometry(1, 1, 1, 6, 1, false),
-        hexGeo11: new CylinderBufferGeometry(1, 1, 1.1, 6, 1, false),
-        hexGeo12: new CylinderBufferGeometry(1, 1, 1.2, 6, 1, false),
+        hexGeo11: new CylinderBufferGeometry(1, 1, 1.2, 6, 1, false),
+        hexGeo12: new CylinderBufferGeometry(1, 1, 1.4, 6, 1, false),
         hexGeo2: new CylinderBufferGeometry(1, 1, 2, 6, 1, false),
         hexGeo3: new CylinderBufferGeometry(1, 1, 3, 6, 1, false),
         hexGeo4: new CylinderBufferGeometry(1, 1, 4, 6, 1, false),

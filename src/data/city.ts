@@ -1,6 +1,6 @@
 const cityData = [
     {
-        id: "malaz",
+        id: "malazan",
         name: "Malaz City",
         loc: [420, 15, 185.59],
         type: 1,
@@ -12,7 +12,7 @@ const cityData = [
         type: 1,
         owner: "Anomander Rake",
     },
-    { id: "unta", name: "Unta", loc: [520.88, 15, 75.07], type: 1, owner: "malazan" },
+    { id: "unta", name: "Unta", loc: [415.57, 15, 165.64], type: 1, owner: "malazan" },
     {
         id: "pale",
         name: "Pale",

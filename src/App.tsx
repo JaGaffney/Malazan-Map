@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { SceneContainer } from "./components/three/SceneContainer";
-import { BakeShadows, Html, useProgress } from "@react-three/drei";
+import { BakeShadows, Html, Stats, useProgress } from "@react-three/drei";
 
 import Panel from "./components/panel/Panel";
 import Timeline from "./components/timeline/Timeline"
@@ -19,7 +19,7 @@ function Loader() {
         buffeted in squealing protest with every gust of wind"`
     ]
 
-    console.log("Loading: ", { active, progress, errors, item, loaded, total })
+    //console.log("Loading: ", { active, progress, errors, item, loaded, total })
 
     return active ? (
         <Html fullscreen>
@@ -45,12 +45,13 @@ function Loader() {
 function App() {
     return (
         <>
-            <Canvas shadows>
+            <Canvas shadows frameloop={"demand"} >
                 <Suspense fallback={<Loader />} >
                     <SceneContainer />
+
                 </Suspense>
                 <BakeShadows />
-
+                <Stats />
             </Canvas>
 
             <Panel />

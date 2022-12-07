@@ -5,6 +5,22 @@
 }
 
 @media only screen and (max-width: 1025px) {
+    .tempLoading {
+        &-title {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        &-quote {
+            width: 90%;
+        }
+        &-loading {
+            strong {
+                font-size: 4rem;
+            }
+        }
+    }
+
     .panel {
         width: 80%;
         height: 100%;

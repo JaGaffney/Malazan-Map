@@ -4,7 +4,7 @@ from collections import Counter
 from random import *
 import json
 
-img = Image.open('map-crop.png')
+img = Image.open('map-base.png')
 pixels = img.load() 
 
 width, height = img.size

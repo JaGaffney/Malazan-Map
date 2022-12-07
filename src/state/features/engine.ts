@@ -24,7 +24,7 @@ const initialState: IRootState = {
     activeCharacter: null,
     flattern: false,
     moon: [47, -5, 70],
-    city: { location: [47, -5, 70], name: "" },
+    city: { location: [420, 15, 185.59], name: "Malaz City", owner: "malazan", type: 1 },
 };
 
 function filterArray(array, value) {

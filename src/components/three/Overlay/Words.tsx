@@ -54,20 +54,20 @@ function Words(props) {
                     lockY={false}
                     lockZ={false} // Lock the rotation on the z axis (default=false)
                 >
-                    <mesh position={[defaultLength / 2, 1.5, 0]}>
+                    <mesh position={[defaultLength / 2, 1.5, 1]}>
                         <planeBufferGeometry args={[defaultLength, 9]} />
                         <meshBasicMaterial
                             color={defaultColorOwner}
                         />
                     </mesh>
-                    <mesh position={[defaultLength / 2, 1.5, -0.2]}>
+                    <mesh position={[defaultLength / 2, 1.5, 0]}>
                         <planeBufferGeometry args={[defaultLength + 2, 11]} />
                         <meshBasicMaterial
                             color={defaultColorType}
                         />
                     </mesh>
 
-                    <Text position={[defaultLength / 2, 1.5, 0]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
+                    <Text position={[defaultLength / 2, 1.5, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
                 </Billboard>
             </group>
         </>
