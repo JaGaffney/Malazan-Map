@@ -3,8 +3,13 @@ import { Instances } from "@react-three/drei";
 import { Vector2 } from "three";
 
 import HexGeometry from './HexGeometry';
+import { useSelector } from 'react-redux';
 
 export default function HexGeometryContainer(props) {
+    const flatternData = useSelector((state) => state.settings.flattern)
+    const shadowData = useSelector((state) => state.settings.shadows)
+
+
     const ref = useRef()
     //const activeTile = new Vector2()
     const tileToPosition = (tileX: number, tileY: number): Vector2 => {
@@ -14,7 +19,13 @@ export default function HexGeometryContainer(props) {
 
     return (
         // @ts-expect-error
-        <Instances limit={props.data.length - 1} castShadow receiveShadow material={props.material} geometry={props.geometry}>
+        <Instances
+            limit={props.data.length - 1}
+            castShadow={flatternData || !shadowData ? false : true}
+            receiveShadow={flatternData || !shadowData ? false : true}
+            material={props.material}
+            geometry={props.geometry}
+        >
             {props.data.map((i, k) => {
                 return (
                     <HexGeometry

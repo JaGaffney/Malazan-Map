@@ -1,14 +1,17 @@
 import React from 'react'
 
 import { useSelector } from 'react-redux'
-import { PerspectiveCamera } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 
 function Cam(props) {
     // need to do it this way in order to access redux for the camera
     const activeCord = useSelector((state) => state.activeCord.activeCord)
 
-    return (
+    return (<>
         <PerspectiveCamera makeDefault fov={45} position={[0, 200, 85]} />
+        {/* <OrbitControls enableRotate={false} maxDistance={600} dampingFactor={0.1} enableDamping={true} target={[activeCord.x, 0, 0]} /> */}
+
+    </>
     )
 }
 

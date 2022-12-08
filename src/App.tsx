@@ -6,6 +6,7 @@ import { BakeShadows, Html, Stats, useProgress } from "@react-three/drei";
 
 import Panel from "./components/panel/Panel";
 import Timeline from "./components/timeline/Timeline"
+import Settings from "./components/settings/Settings";
 
 function Loader() {
     const { active, progress, errors, item, loaded, total } = useProgress()
@@ -55,6 +56,7 @@ function App() {
             </Canvas>
 
             <Panel />
+            <Settings />
             <Timeline />
         </>
     );

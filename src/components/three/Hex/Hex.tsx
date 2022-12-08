@@ -5,8 +5,14 @@ import { CylinderBufferGeometry, MeshStandardMaterial } from "three";
 import d from "../../../data/sorted.json"
 
 import HexGeometryContainer from "./HexGeometryContainer"
+import { useSelector } from "react-redux";
 
 export default function Hex() {
+    const flatternData = useSelector((state) => state.settings.flattern)
+    const desertsData = useSelector((state) => state.settings.deserts)
+    const forestData = useSelector((state) => state.settings.forest)
+
+
     const world = d
 
     const hexTextures = useTexture({
@@ -52,26 +58,87 @@ export default function Hex() {
 
 
     // is this more memory efficent?
-    const calculateMesh = {
-        1: mesh.ice,
-        2: mesh.sand,
-        3: mesh.sand2,
-        4: mesh.stone,
-        5: mesh.grass,
-        6: mesh.forest,
-        7: mesh.stone,
-        8: mesh.town,
-        9: mesh.city,
-        10: mesh.cap,
+    // const calculateMesh = {
+    //     1: mesh.ice,
+    //     2: mesh.sand,
+    //     3: mesh.sand2,
+    //     4: mesh.stone,
+    //     5: mesh.grass,
+    //     6: mesh.forest,
+    //     7: mesh.stone,
+    //     8: mesh.town,
+    //     9: mesh.city,
+    //     10: mesh.cap,
+    // }
+
+    // const calculateGeometry = {
+    //     1: hexGeos.hexGeo1,
+    //     11: hexGeos.hexGeo11,
+    //     12: hexGeos.hexGeo12,
+    //     2: hexGeos.hexGeo2,
+    //     3: hexGeos.hexGeo3,
+    //     4: hexGeos.hexGeo4,
+    // }
+
+    const calculateGeometry = (height) => {
+        if (flatternData) {
+            return hexGeos.hexGeo1
+        }
+        switch (parseInt(height)) {
+            case (1):
+                return hexGeos.hexGeo1;
+            case (11):
+                return hexGeos.hexGeo11;
+            case (12):
+                return hexGeos.hexGeo12;
+            case (2):
+                if (!desertsData || !forestData) {
+                    return hexGeos.hexGeo1
+                }
+                return hexGeos.hexGeo2;
+            case (3):
+                return hexGeos.hexGeo3;
+            case (4):
+                return hexGeos.hexGeo4;
+            default:
+                return hexGeos.hexGeo1
+        }
     }
 
-    const calculateGeometry = {
-        1: hexGeos.hexGeo1,
-        11: hexGeos.hexGeo11,
-        12: hexGeos.hexGeo12,
-        2: hexGeos.hexGeo2,
-        3: hexGeos.hexGeo3,
-        4: hexGeos.hexGeo4,
+    const calculateMesh = (terrain) => {
+        switch (terrain) {
+            case (1):
+                return mesh.ice;
+            case (2):
+                if (!desertsData) {
+                    return mesh.grass
+                }
+                return mesh.sand;
+            case (3):
+                if (!desertsData) {
+                    return mesh.grass
+                }
+                return mesh.sand2;
+            case (4):
+                return mesh.stone;
+            case (5):
+                return mesh.grass;
+            case (6):
+                if (!forestData) {
+                    return mesh.grass
+                }
+                return mesh.forest;
+            case (7):
+                return mesh.stone;
+            case (8):
+                return mesh.town;
+            case (9):
+                return mesh.city;
+            case (10):
+                return mesh.cap;
+            default:
+                return mesh.ice
+        }
     }
 
     return (
@@ -79,14 +146,15 @@ export default function Hex() {
             {Object.keys(world).map((i, k) => {
                 const adjust = parseInt(i)
                 const height = Object.keys(world[i])
+
                 if (height.length > 1) {
                     return (
                         height.map((ii, kk) => {
                             return (
                                 <HexGeometryContainer
                                     data={world[adjust][ii]}
-                                    material={calculateMesh[adjust]}
-                                    geometry={calculateGeometry[ii]}
+                                    material={calculateMesh(adjust)}
+                                    geometry={calculateGeometry(ii)}
                                     key={kk}
                                 />
                             )
@@ -95,8 +163,8 @@ export default function Hex() {
                     return (
                         <HexGeometryContainer
                             data={world[adjust][height[0]]}
-                            material={calculateMesh[adjust]}
-                            geometry={calculateGeometry[height[0]]}
+                            material={calculateMesh(adjust)}
+                            geometry={calculateGeometry(height[0])}
                             key={k}
                         />
                     )

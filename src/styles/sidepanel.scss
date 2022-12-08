@@ -42,6 +42,9 @@
         color: var(--red600);
     }
 }
+.settings__button {
+    top: 6rem;
+}
 
 .panel {
     position: absolute;
@@ -51,7 +54,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
     background-color: var(--gray900);
     color: var(--gray300);
 }
