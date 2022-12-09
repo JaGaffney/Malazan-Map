@@ -4,6 +4,7 @@ import { HiCog, HiX } from "react-icons/hi";
 
 import Shape from './Shape';
 import Textures from './Textures';
+import Areas from './Areas';
 
 export default function Panel() {
     const [display, setDisplay] = useState(false)
@@ -18,6 +19,8 @@ export default function Panel() {
                 </div>
 
                 <Shape />
+
+                <Areas />
 
                 <Textures />
 

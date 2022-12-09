@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { filterArray } from "../../components/utils/filter";
 
 export interface IRootState {
     flattern: boolean;
@@ -7,7 +8,7 @@ export interface IRootState {
     mourtains: boolean;
     ice: boolean;
     forest: boolean;
-    areas: Object;
+    areas: Array<number>;
 }
 
 const initialState: IRootState = {
@@ -17,18 +18,7 @@ const initialState: IRootState = {
     forest: true,
     mourtains: true,
     ice: true,
-
-    areas: {
-        genabackis: true,
-        seven_cities: true,
-        quon_tali: true,
-        korelri: true,
-        jacuruku: true,
-        bael: true,
-        lether: true,
-        stratem: true,
-        genostel: true,
-    },
+    areas: [1, 2, 3],
 };
 
 export const settingsSlice = createSlice({
@@ -62,9 +52,15 @@ export const settingsSlice = createSlice({
         removeForests: (state) => {
             state.forest = false;
         },
+        updateActiveAreas: (state, action) => {
+            state.areas = filterArray(state.areas, action.payload);
+        },
+        resetActiveAreas: (state) => {
+            state.areas = [1, 2, 3, 4, 5, 6, 7, 8];
+        },
     },
 });
 
-export const { reset, flattern, raise, addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests } = settingsSlice.actions;
+export const { reset, flattern, raise, addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests, updateActiveAreas, resetActiveAreas } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 export default function Hex() {
     const flatternData = useSelector((state) => state.settings.flattern)
+    const areaData = useSelector((state) => state.settings.areas)
     const desertsData = useSelector((state) => state.settings.deserts)
     const forestData = useSelector((state) => state.settings.forest)
 

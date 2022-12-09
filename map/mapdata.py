@@ -4,7 +4,9 @@ from collections import Counter
 from random import *
 import json
 
-img = Image.open('map-base.png')
+image_name = "genostel"
+
+img = Image.open(f"{image_name}.png")
 pixels = img.load() 
 
 width, height = img.size
@@ -119,7 +121,7 @@ for i in map:
 
     terrain = i["t"]
     height = i["z"]
-    temp_data = {"x": i["x"], "y": i["y"]}
+    temp_data = {"x": i["x"], "y": i["y"], "a": 8}
     if (terrain not in sorted_data):
         sorted_data[terrain] = {}
     
@@ -129,5 +131,5 @@ for i in map:
     sorted_data[terrain][height].append(temp_data)
     
 
-with open("sorted.json", "w") as outfile:
+with open(f"{image_name}.json", "w") as outfile:
     json.dump(sorted_data, outfile)

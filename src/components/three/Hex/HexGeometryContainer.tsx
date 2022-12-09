@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 export default function HexGeometryContainer(props) {
     const flatternData = useSelector((state) => state.settings.flattern)
     const shadowData = useSelector((state) => state.settings.shadows)
+    const areaData = useSelector((state) => state.settings.areas)
 
 
     const ref = useRef()
@@ -27,13 +28,16 @@ export default function HexGeometryContainer(props) {
             geometry={props.geometry}
         >
             {props.data.map((i, k) => {
-                return (
-                    <HexGeometry
-                        position={tileToPosition(i.x, i.y)}
-                        key={k}
-                        ref={ref}
-                    />
-                )
+                if (areaData.includes(i.a)) {
+                    return (
+                        <HexGeometry
+                            position={tileToPosition(i.x, i.y)}
+                            key={k}
+                            ref={ref}
+                        />
+                    )
+                }
+
             })}
         </Instances>
     )

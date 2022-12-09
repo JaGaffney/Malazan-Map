@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { filterArray } from "../../components/utils/filter";
 
 interface Cord {
     x: number;
@@ -26,16 +27,6 @@ const initialState: IRootState = {
     moon: [47, -5, 70],
     city: { location: [420, 15, 185.59], name: "Malaz City", owner: "malazan", type: 1 },
 };
-
-function filterArray(array, value) {
-    let returnValue = array;
-    if (array.includes(value)) {
-        returnValue = array.filter((i) => i !== value);
-    } else {
-        returnValue.push(value);
-    }
-    return returnValue;
-}
 
 export const activeCordSlice = createSlice({
     name: "activeCord",
