@@ -32,6 +32,7 @@ export default function HexGeometryContainer(props) {
                     return (
                         <HexGeometry
                             position={tileToPosition(i.x, i.y)}
+                            realPosition={i}
                             key={k}
                             ref={ref}
                         />
