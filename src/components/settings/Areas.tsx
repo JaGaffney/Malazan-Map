@@ -1,17 +1,17 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { HiStar, HiOutlineStar } from "react-icons/hi";
+import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 
 import { resetActiveAreas, updateActiveAreas } from "../../state/features/settings"
 
 const Area = (props) => {
-    const areas = useSelector((state) => state.settings.areas)
+    const areas = useSelector((state: any) => state.settings.areas)
     const dispatch = useDispatch()
     return (
 
         <div className="panel__item-container-info" onClick={() => dispatch(updateActiveAreas(props.area))}>
             <span>{props.name}</span>
-            <span>{areas.includes(props.area) ? <HiStar /> : <HiOutlineStar />}</span>
+            <span>{areas.includes(props.area) ? <HiCheckCircle /> : <HiOutlineCheckCircle />}</span>
         </div>
     )
 }

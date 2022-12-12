@@ -2,19 +2,18 @@ import React from "react";
 import { useEnvironment, useTexture } from "@react-three/drei";
 import { CylinderBufferGeometry, MeshStandardMaterial } from "three";
 
-import d from "../../../data/sorted.json"
+import worldData from "../../../data/sorted.json"
 
 import HexGeometryContainer from "./HexGeometryContainer"
 import { useSelector } from "react-redux";
 
 export default function Hex() {
-    const flatternData = useSelector((state) => state.settings.flattern)
-    const areaData = useSelector((state) => state.settings.areas)
-    const desertsData = useSelector((state) => state.settings.deserts)
-    const forestData = useSelector((state) => state.settings.forest)
+    const flatternData = useSelector((state: any) => state.settings.flattern)
+    const desertsData = useSelector((state: any) => state.settings.deserts)
+    const forestData = useSelector((state: any) => state.settings.forest)
 
 
-    const world = d
+    const world = worldData
 
     const hexTextures = useTexture({
         dirt: process.env.PUBLIC_URL + "/textures/dirt.png",
@@ -55,31 +54,6 @@ export default function Hex() {
         hexGeo3: new CylinderBufferGeometry(1, 1, 3, 6, 1, false),
         hexGeo4: new CylinderBufferGeometry(1, 1, 4, 6, 1, false),
     }
-
-
-
-    // is this more memory efficent?
-    // const calculateMesh = {
-    //     1: mesh.ice,
-    //     2: mesh.sand,
-    //     3: mesh.sand2,
-    //     4: mesh.stone,
-    //     5: mesh.grass,
-    //     6: mesh.forest,
-    //     7: mesh.stone,
-    //     8: mesh.town,
-    //     9: mesh.city,
-    //     10: mesh.cap,
-    // }
-
-    // const calculateGeometry = {
-    //     1: hexGeos.hexGeo1,
-    //     11: hexGeos.hexGeo11,
-    //     12: hexGeos.hexGeo12,
-    //     2: hexGeos.hexGeo2,
-    //     3: hexGeos.hexGeo3,
-    //     4: hexGeos.hexGeo4,
-    // }
 
     const calculateGeometry = (height) => {
         if (flatternData) {
@@ -147,7 +121,6 @@ export default function Hex() {
             {Object.keys(world).map((i, k) => {
                 const adjust = parseInt(i)
                 const height = Object.keys(world[i])
-
                 if (height.length > 1) {
                     return (
                         height.map((ii, kk) => {

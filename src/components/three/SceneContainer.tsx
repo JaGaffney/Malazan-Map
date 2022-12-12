@@ -12,12 +12,14 @@ import Hex from "./Hex/Hex";
 import Highlight from "./Overlay/Highlight";
 import Words from "./Overlay/Words"
 import Moonspawn from "./Overlay/Moonspawn";
+import Building from "./Building/Building";
 import Cam from "./Cam"
 
 
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
 import { store } from "../../state/store"
+
 
 let lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
 
@@ -40,7 +42,7 @@ export function SceneContainer() {
                 <Highlight />
                 <Moonspawn />
                 <Words />
-
+                <Building />
             </group>
 
             {/* makes it better but lags */}

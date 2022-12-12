@@ -7,9 +7,9 @@ import { addShadows, removeShadows, addDeserts, removeDeserts, addForests, remov
 
 
 export default function Textures() {
-    const shadowsData = useSelector((state) => state.settings.shadows)
-    const desertData = useSelector((state) => state.settings.deserts)
-    const forestData = useSelector((state) => state.settings.forest)
+    const shadowsData = useSelector((state: any) => state.settings.shadows)
+    const desertData = useSelector((state: any) => state.settings.deserts)
+    const forestData = useSelector((state: any) => state.settings.forest)
     const dispatch = useDispatch()
 
     return (
@@ -18,17 +18,17 @@ export default function Textures() {
                 <h5>Textures</h5>
 
                 <div className="panel__item-container-info" onClick={() => dispatch(shadowsData ? removeShadows() : addShadows())}>
-                    <span>Remove Shadows</span>
-                    <span>{shadowsData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+                    <span>Shadows</span>
+                    <span>{!shadowsData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                 </div>
                 <div className="panel__item-container-info" onClick={() => dispatch(desertData ? removeDeserts() : addDeserts())}>
-                    <span>Remove Deserts</span>
-                    <span>{desertData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+                    <span>Deserts</span>
+                    <span>{!desertData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                 </div>
 
                 <div className="panel__item-container-info" onClick={() => dispatch(forestData ? removeForests() : addForests())}>
-                    <span>Remove Forests</span>
-                    <span>{forestData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+                    <span>Forests</span>
+                    <span>{!forestData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                 </div>
             </div>
         </div>
