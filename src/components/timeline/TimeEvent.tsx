@@ -8,7 +8,7 @@ import { bookColor } from '../utils/color';
 
 
 export const TimeEvent = (props) => {
-    const activeID = useSelector((state) => state.activeCord.activeID)
+    const activeID = useSelector((state: any) => state.activeCord.activeID)
     const dispatch = useDispatch()
     return (
         <div className="timeline__event-item" onClick={() => {
