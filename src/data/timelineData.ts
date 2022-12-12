@@ -15,6 +15,7 @@ const timelineData = {
             char: [],
             loc: [522.65, 136.47],
             moon: [0, 0, 0],
+            area: 1,
         },
     ],
     [-119736]: [
@@ -27,6 +28,7 @@ const timelineData = {
             char: [14, 29],
             loc: [315.06, 251.73],
             moon: [0, 0, 0],
+            area: 4,
         },
     ],
     1154: [
@@ -39,6 +41,7 @@ const timelineData = {
             char: [1, 5, 19],
             loc: [420.0, 185.59],
             moon: [0, 0, 0],
+            area: 3,
         },
     ],
     1160: [
@@ -51,6 +54,7 @@ const timelineData = {
             char: [3, 4, 5, 6, 7, 8, 11, 12, 14],
             loc: [520.8, 75.0],
             moon: [179, 5, 70],
+            area: 1,
         },
     ],
     1161: [
@@ -63,6 +67,7 @@ const timelineData = {
             char: [1, 2, 17],
             loc: [391.67, 179.45],
             moon: [179, 5, 70],
+            area: 3,
         },
         {
             id: uuidv4(),
@@ -73,6 +78,7 @@ const timelineData = {
             char: [1, 10, 17],
             loc: [415.57, 165.64],
             moon: [179, 5, 70],
+            area: 3,
         },
     ],
     1163: [
@@ -85,6 +91,7 @@ const timelineData = {
             char: [2, 3, 4, 5, 6, 7, 8, 11, 12, 14],
             loc: [520.88, 75.07],
             moon: [179, 5, 70],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -95,6 +102,7 @@ const timelineData = {
             char: [1],
             loc: [517.34, 35.16],
             moon: [179, 5, 70],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -105,6 +113,7 @@ const timelineData = {
             char: [1, 2, 3, 4, 5, 6, 7, 11, 12, 13],
             loc: [520.88, 75.07],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -115,6 +124,7 @@ const timelineData = {
             char: [15, 16, 14],
             loc: [522.65, 84.28],
             moon: [522.655, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -125,6 +135,7 @@ const timelineData = {
             char: [2, 4, 5, 11, 12],
             loc: [522.65, 81],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -135,6 +146,7 @@ const timelineData = {
             char: [1, 3, 6, 7, 13, 17, 18],
             loc: [520.88, 75.07],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -145,6 +157,7 @@ const timelineData = {
             char: [14, 9],
             loc: [530.62, 52.05],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -155,6 +168,7 @@ const timelineData = {
             char: [3, 17, 18, 1, 7],
             loc: [530.62, 79.67],
             moon: [530.62, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -165,6 +179,7 @@ const timelineData = {
             char: [6, 14],
             loc: [528.85, 76.61],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -175,6 +190,7 @@ const timelineData = {
             char: [17, 18, 2, 15, 16, 1, 6, 7, 8, 14, 3],
             loc: [529.73, 84.28],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -185,6 +201,7 @@ const timelineData = {
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16],
             loc: [522.65, 84.28],
             moon: [178.08, 4, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -196,6 +213,7 @@ const timelineData = {
             char: [],
             loc: [529.73, 84.28],
             moon: [178.08, 4, 78.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -206,6 +224,7 @@ const timelineData = {
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16, 17, 18],
             loc: [522.65, 84.28],
             moon: [178.6, 2.5, 78.3],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -216,6 +235,7 @@ const timelineData = {
             char: [2, 11, 12, 15],
             loc: [517.34, 81.14],
             moon: [184.08, 5, 79.82],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -226,6 +246,7 @@ const timelineData = {
             char: [19, 20, 21, 22],
             loc: [415.57, 165.64],
             moon: [179, 0, 70],
+            area: 3,
         },
     ],
     1164: [
@@ -238,6 +259,7 @@ const timelineData = {
             char: [30, 31, 32],
             loc: [529.73, 84.28],
             moon: [182.31, 0, 82.89],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -248,6 +270,7 @@ const timelineData = {
             char: [23, 24],
             loc: [406.72, 58.19],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -258,6 +281,7 @@ const timelineData = {
             char: [7, 18, 33],
             loc: [522.655, 136.475],
             moon: [182.31, 0, 82.89],
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -268,6 +292,7 @@ const timelineData = {
             char: [25, 26, 27],
             loc: [424.42, 58.19],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -278,6 +303,7 @@ const timelineData = {
             char: [2, 11, 12, 15],
             loc: [423.54, 40.17],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -288,6 +314,7 @@ const timelineData = {
             char: [2, 11, 12, 15],
             loc: [408.49, 48.98],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -298,6 +325,7 @@ const timelineData = {
             char: [23, 24, 28],
             loc: [406.95, 52.05],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -308,6 +336,7 @@ const timelineData = {
             char: [19, 20, 21],
             loc: [433.27, 52.05],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -318,6 +347,7 @@ const timelineData = {
             char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
             loc: [523.54, 73.53],
             moon: [182.31, 0, 82.89],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -328,6 +358,7 @@ const timelineData = {
             char: [23, 24, 28],
             loc: [404.3, 53.25],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -338,6 +369,7 @@ const timelineData = {
             char: [11],
             loc: [402.3, 53.59],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -348,6 +380,7 @@ const timelineData = {
             char: [2, 12, 15],
             loc: [405.84, 56.65],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -358,6 +391,7 @@ const timelineData = {
             char: [11],
             loc: [398.75, 53.58],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -368,6 +402,7 @@ const timelineData = {
             char: [25, 27],
             loc: [423.54, 56.65],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -378,6 +413,7 @@ const timelineData = {
             char: [25],
             loc: [424.42, 58.19],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -388,6 +424,7 @@ const timelineData = {
             char: [2, 12, 15],
             loc: [400.53, 53.59],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -398,6 +435,7 @@ const timelineData = {
             char: [11],
             loc: [398.76, 56.65],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -408,6 +446,7 @@ const timelineData = {
             char: [19, 20, 21],
             loc: [431.5, 48.98],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -418,6 +457,7 @@ const timelineData = {
             char: [2, 12, 15, 23, 24],
             loc: [400.53, 53.59],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -428,6 +468,7 @@ const timelineData = {
             char: [19, 20, 21, 27],
             loc: [427.96, 48.98],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -438,6 +479,7 @@ const timelineData = {
             char: [23, 24, 28, 2, 12, 15],
             loc: [404.3, 53.25],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -448,6 +490,7 @@ const timelineData = {
             char: [11],
             loc: [398.76, 59.72],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -458,6 +501,7 @@ const timelineData = {
             char: [25, 26],
             loc: [420.0, 59.72],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -468,16 +512,18 @@ const timelineData = {
             char: [19, 20, 21, 27],
             loc: [399.64, 52.05],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
             book: 2,
             name: "Imperial Warren",
             icon: eventIcons.warren,
-            description: "Kalam group go into the Imperial warren aiming for Aren.",
+            description: "Kalam's group go into the Imperial warren aiming for Aren.",
             char: [11],
             loc: [398.76, 59.72],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -488,6 +534,7 @@ const timelineData = {
             char: [25, 26],
             loc: [406.72, 64.33],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -498,6 +545,7 @@ const timelineData = {
             char: [19, 20, 21, 27],
             loc: [399.64, 52.05],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -508,6 +556,7 @@ const timelineData = {
             char: [23, 24, 28, 2, 12, 15],
             loc: [400.53, 53.59],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -518,6 +567,7 @@ const timelineData = {
             char: [25, 26],
             loc: [406.72, 64.33],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -528,6 +578,7 @@ const timelineData = {
             char: [25, 26],
             loc: [403.18, 64.33],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -538,6 +589,7 @@ const timelineData = {
             char: [11],
             loc: [390.79, 85.82],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -548,6 +600,7 @@ const timelineData = {
             char: [11],
             loc: [404.95, 90.15],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -558,6 +611,7 @@ const timelineData = {
             char: [25, 26],
             loc: [396.98, 62.79],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -568,6 +622,7 @@ const timelineData = {
             char: [19, 20],
             loc: [398.76, 53.59],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -578,6 +633,7 @@ const timelineData = {
             char: [23, 24, 28, 2, 12, 15],
             loc: [396.1, 52.05],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -598,6 +654,7 @@ const timelineData = {
             char: [25, 26],
             loc: [392.56, 67.4],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -608,6 +665,7 @@ const timelineData = {
             char: [11],
             loc: [418.93, 106.75],
             moon: [179, 0, 70],
+            area: 3,
         },
         {
             id: uuidv4(),
@@ -618,6 +676,7 @@ const timelineData = {
             char: [25, 26],
             loc: [385.48, 73.53],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -628,6 +687,7 @@ const timelineData = {
             char: [25],
             loc: [385.48, 79.67],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -638,6 +698,7 @@ const timelineData = {
             char: [11],
             loc: [420.0, 185.6],
             moon: [179, 0, 70],
+            area: 3,
         },
         {
             id: uuidv4(),
@@ -649,6 +710,7 @@ const timelineData = {
             char: [25, 26],
             loc: [390.79, 85.82],
             moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -659,6 +721,7 @@ const timelineData = {
             char: [2, 12, 15, 10, 11],
             loc: [420.0, 185.59],
             moon: [179, 0, 70],
+            area: 3,
         },
         {
             id: uuidv4(),
@@ -670,6 +733,7 @@ const timelineData = {
             char: [19, 20, 23, 24],
             loc: [389.91, 84.29],
             moon: [179, 0, 70],
+            area: 2,
         },
     ],
 };

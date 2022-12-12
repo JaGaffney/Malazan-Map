@@ -9,7 +9,7 @@ interface Cord {
 export interface IRootState {
     activeCord: Cord;
     activeID: number;
-    activeData: Object;
+    activeData: number;
     activeBooks: Array<number | "">;
     activeCharacter: null | number;
     flattern: boolean;
@@ -20,7 +20,7 @@ export interface IRootState {
 const initialState: IRootState = {
     activeCord: { x: 0, y: 0 },
     activeID: 0,
-    activeData: {},
+    activeData: 0,
     activeBooks: [1, 2, 3],
     activeCharacter: null,
     flattern: false,

@@ -131,6 +131,9 @@
         top: 0;
         left: 0;
     }
+    &-hightlight {
+        filter: hue-rotate(225deg);
+    }
     &-dark {
         filter: brightness(0%);
     }
@@ -164,7 +167,7 @@
             grid-row: 4 / 5;
         }
         &-5 {
-            grid-column: 6 / 7;
+            grid-column: 6 / 8;
             grid-row: 4 / 6;
         }
         &-6 {
