@@ -5,6 +5,10 @@
 }
 
 @media only screen and (max-width: 1025px) {
+    :root {
+        --header-size: 8rem;
+    }
+
     canvas {
         width: 100vw !important;
         height: 100vh !important;
@@ -26,20 +30,37 @@
         }
     }
 
+    .header {
+        height: fit-content;
+        min-height: var(--header-size);
+        flex-wrap: wrap;
+        text-align: center;
+        h1 {
+            padding-top: 1rem;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        &-title {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+    .buttons__container {
+        width: 100%;
+    }
+    .buttons__item {
+        width: 100%;
+        padding: 1rem 0;
+        justify-content: space-evenly;
+        span {
+            display: none;
+        }
+    }
+
     .panel {
         width: 80%;
         height: 100%;
-    }
-    .sidepanel__open {
-        right: 2rem;
-    }
-    .settings__button {
-        top: 2rem;
-        left: 66%;
-    }
-    .map__button {
-        top: 2rem;
-        left: 99%;
     }
 
     .timeline__container {
@@ -72,4 +93,10 @@
 }
 
 @media only screen and (max-width: 450px) {
+    .panel {
+        width: 100%;
+    }
+    .worldmap {
+        width: 100%;
+    }
 }

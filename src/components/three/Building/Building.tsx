@@ -33,16 +33,16 @@ const Building = () => {
     const geo = new BoxGeometry(1.2, 3, 1.3)
 
     return (
-        world.map((i, k: number) => {
-            if (areaData.includes(i.a)) {
-                const pos = tileToPosition(i.x, i.y)
-                return (
-                    <mesh material={mat} geometry={geo} position={[pos[0], 3, pos[1]]} castShadow recieveShadow key={k}></mesh>
-                )
-            } else {
-                return null
-            }
-        })
+        <>
+            {world.map((i, k: number) => {
+                if (areaData.includes(i.a)) {
+                    const pos = tileToPosition(i.x, i.y)
+                    return (
+                        <mesh material={mat} geometry={geo} position={[pos[0], 3, pos[1]]} castShadow recieveShadow key={k}></mesh>
+                    )
+                }
+            })}
+        </>
     )
 }
 
