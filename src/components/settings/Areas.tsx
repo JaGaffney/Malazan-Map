@@ -10,7 +10,6 @@ const Area = (props) => {
     const areas = useSelector((state: any) => state.settings.areas)
     const dispatch = useDispatch()
     return (
-
         <div className="panel__item-container-info" onClick={() => dispatch(updateActiveAreas(props.area))}>
             <span>{props.name}</span>
             <span>{areas.includes(props.area) ? <HiCheckCircle /> : <HiOutlineCheckCircle />}</span>
@@ -33,7 +32,7 @@ export default function Areas() {
 
                 {areaData.map((i, k) => {
                     return (
-                        <Area area={k + 1} name={i.name} />
+                        <Area area={k + 1} name={i.name} key={k} />
                     )
                 })}
             </div>

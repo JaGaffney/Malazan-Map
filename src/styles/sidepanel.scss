@@ -1,66 +1,18 @@
-.sidepanel__open {
-    position: absolute;
-    width: 4rem;
-    height: 4rem;
-    margin: 0;
-    top: 2rem;
-    left: 2rem;
-    z-index: 1;
-    background-color: inherit;
-    color: var(--gray100);
-    border: none;
-    cursor: pointer;
-    transition: transform ease-in 100ms;
-    svg {
-        height: 100%;
-        width: 100%;
-    }
-    &:hover {
-        transform: translateY(-4px);
-        color: var(--gray400);
-    }
-}
-.sidepanel__close {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    margin: 0;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 1;
-    background-color: inherit;
-    color: var(--red500);
-    border: none;
-    cursor: pointer;
-    transition: transform ease-in 100ms;
-    svg {
-        height: 100%;
-        width: 100%;
-    }
-    &:hover {
-        transform: translateY(-1px);
-        color: var(--red600);
-    }
-}
-.settings__button {
-    top: 6rem;
-}
-
 .panel {
     position: absolute;
     width: 14%;
-    height: calc(100% - 7rem);
+    height: 100%;
     margin: 0;
-    top: 0;
+    top: var(--header-size);
     left: 0;
     overflow: hidden;
     z-index: 2;
     background-color: var(--gray900);
     color: var(--gray300);
+    margin-bottom: 13rem;
 }
 
 .panel__item {
-    padding-bottom: 3rem;
     width: auto;
     display: grid;
     grid-template-columns: 1fr 1rem;
@@ -69,7 +21,8 @@
     margin: 1rem;
     h5 {
         margin: 0 0 1rem 0;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        color: var(--gray200);
     }
     &-button {
         grid-column: 2;
@@ -112,16 +65,25 @@
         }
     }
 }
+.panel__item-last {
+    padding-bottom: 15rem;
+}
 
-.header {
-    padding: 0.5rem 1rem;
+.disclaimer {
+    font-size: 0.8rem;
+    color: var(--gray600);
 }
 
 .worldmap {
-    width: 100%;
-    height: 10rem;
+    width: 18rem;
+    height: 11rem;
     background-color: #c4dfff;
-    position: relative;
+    position: absolute;
+    top: var(--header-size);
+    right: 0;
+    border-left: solid 8px var(--gray900);
+    border-bottom: solid 8px var(--gray900);
+    border-radius: 0 0 0 5px;
     img {
         width: 100%;
         height: 10rem;

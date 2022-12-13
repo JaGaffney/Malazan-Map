@@ -1,31 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ScrollContainer from 'react-indiana-drag-scroll';
-import { HiCog, HiX } from "react-icons/hi";
 
 import Shape from './Shape';
 import Textures from './Textures';
 import Areas from './Areas';
 
 export default function Panel() {
-    const [display, setDisplay] = useState(false)
-
     return (
-        display ? (
-            <ScrollContainer className="panel" draggingClassName={"timeline__container-drag"} horizontal={false}>
-                <button className="sidepanel__close" onClick={() => setDisplay(false)}><HiX /></button>
-                <div className="header">
-                    <h3>Settings</h3>
-                    <h5>These settings will help reduce lag for none Firefox users</h5>
+        <ScrollContainer className="panel" draggingClassName={"timeline__container-drag"} horizontal={false}>
+            <div className="panel__item">
+                <div className="panel__item-container">
+                    <i className="disclaimer">These settings map help reduce lag*</i>
                 </div>
+            </div>
 
-                <Shape />
-
-                <Areas />
-
-                <Textures />
-
-            </ScrollContainer>
-
-        ) : (<button className="sidepanel__open  settings__button" onClick={() => setDisplay(true)}><HiCog /></button>)
+            <Shape />
+            <Areas />
+            <Textures />
+        </ScrollContainer>
     )
 }

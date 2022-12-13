@@ -4,9 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { SceneContainer } from "./components/three/SceneContainer";
 import { BakeShadows, Html, Stats, useProgress } from "@react-three/drei";
 
-import Panel from "./components/panel/Panel";
-import Timeline from "./components/timeline/Timeline"
-import Settings from "./components/settings/Settings";
+import Header from "./components/header/Header";
 
 function Loader() {
     const { active, progress, errors, item, loaded, total } = useProgress()
@@ -26,7 +24,7 @@ function Loader() {
         <Html fullscreen>
             <div className="tempLoading">
                 <div className="tempLoading-title">
-                    <h1>Malazan, Book of the fallen</h1>
+                    <h1>Malazan Book of the fallen</h1>
                     <h2>Interactive 3D world map</h2>
                 </div>
                 <div className="tempLoading-quote">
@@ -55,9 +53,7 @@ function App() {
                 {/* <Stats /> */}
             </Canvas>
 
-            <Panel />
-            <Settings />
-            <Timeline />
+            <Header />
         </>
     );
 }

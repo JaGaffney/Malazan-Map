@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { HiOutlineEyeOff, HiMap, HiMenu, HiX } from "react-icons/hi";
 
 import { updateActiveAreas } from "../../state/features/settings"
+
+
 
 
 import AREAS from "../../data/areas"

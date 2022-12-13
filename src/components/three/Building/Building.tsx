@@ -30,7 +30,7 @@ const Building = () => {
             if (areaData.includes(i.a)) {
                 const pos = tileToPosition(i.x, i.y)
                 return (
-                    <mesh material={mat} geometry={geo} position={[pos[0], 3.3, pos[1]]} castShadow recieveShadow></mesh>
+                    <mesh material={mat} geometry={geo} position={[pos[0], 3.3, pos[1]]} castShadow recieveShadow key={k}></mesh>
                 )
             } else {
                 return null
