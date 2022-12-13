@@ -21,10 +21,12 @@ import { Provider } from 'react-redux'
 import { store } from "../../state/store"
 
 
-let lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
+
 
 export function SceneContainer() {
     //const firefox = navigator.userAgent.search("Firefox")
+    const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
+
     return (
         <Provider store={store}>
 
