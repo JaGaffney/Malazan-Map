@@ -8,7 +8,7 @@ import { bookColor } from '../utils/color'
 
 
 const Book = (props) => {
-    const activeBooks = useSelector((state) => state.activeCord.activeBooks)
+    const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 
     return (

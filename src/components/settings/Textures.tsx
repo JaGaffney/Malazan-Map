@@ -4,8 +4,6 @@ import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 
 import { addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests } from "../../state/features/settings"
 
-
-
 export default function Textures() {
     const shadowsData = useSelector((state: any) => state.settings.shadows)
     const desertData = useSelector((state: any) => state.settings.deserts)

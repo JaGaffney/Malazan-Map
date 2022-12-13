@@ -10,6 +10,7 @@ import App from './App';
 import './index.scss';
 import "./styles/sidepanel.scss"
 import "./styles/timeline.scss"
+import "./styles/map.scss"
 import "./styles/header.scss"
 import "./styles/responsive.scss"
 

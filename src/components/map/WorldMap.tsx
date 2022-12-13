@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { HiOutlineEyeOff, HiMap, HiMenu, HiX } from "react-icons/hi";
 
 import { updateActiveAreas } from "../../state/features/settings"
-
-
-
-
 import AREAS from "../../data/areas"
 
 const MapImage = (props) => {
-    const activeData = useSelector((state: any) => state.activeCord.activeData)
+    const activeData = useSelector((state: any) => state.filter.activeData)
     const areaData = useSelector((state: any) => state.settings.areas)
 
     return (
@@ -24,7 +19,7 @@ export default function WorldMap() {
     const areas = AREAS
     return (
         <div className="worldmap" >
-            <img src={process.env.PUBLIC_URL + "/images/map.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/images/map.jpg"} alt="full map" />
             {areas.map((i, k) => {
                 return (
                     <MapImage key={k} areaNumber={k + 1} url={`${process.env.PUBLIC_URL}/images/small/${i.id}.png`} name={i.name} />
@@ -40,7 +35,6 @@ export default function WorldMap() {
                         >
                         </div>
                     )
-
                 })}
             </div>
         </div>

@@ -10,8 +10,8 @@ import { cityData } from "../../data/city"
 
 
 export default function Locations() {
-    const moon = useSelector((state) => state.activeCord.moon)
-    const city = useSelector((state) => state.activeCord.city)
+    const moon = useSelector((state: any) => state.filter.moon)
+    const city = useSelector((state: any) => state.filter.city)
     const dispatch = useDispatch()
 
     return (

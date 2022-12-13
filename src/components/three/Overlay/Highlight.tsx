@@ -1,12 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux"
-import { MeshStandardMaterial } from "three"
-import { IRootState } from "../../../state/features/engine";
-
 
 export default function Highlight() {
-    const activeCord = useSelector((state: IRootState) => state.activeCord.activeCord)
-    const activeID = useSelector((state: IRootState) => state.activeCord.activeID)
+    const activeCord = useSelector((state: any) => state.filter.activeCord)
+    const activeID = useSelector((state: any) => state.filter.activeID)
 
     return (
         activeID !== 0 && activeCord !== null ? (

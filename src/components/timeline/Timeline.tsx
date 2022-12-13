@@ -6,11 +6,11 @@ import timelineData from "../../data/timelineData"
 import { TimeEvent } from './TimeEvent'
 
 const Timeline = (props) => {
-    const activeCharacter = useSelector((state: any) => state.activeCord.activeCharacter)
-    const activeBooks = useSelector((state: any) => state.activeCord.activeBooks)
+    const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
+    const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     return (
         <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
-            {Object.keys(timelineData).sort((a, b) => a - b).map((i, k) => {
+            {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {
                 return (
                     <div className="timeline" key={k}>
                         <span className="timeline__date">{i}</span>

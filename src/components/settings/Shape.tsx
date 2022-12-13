@@ -4,10 +4,8 @@ import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 
 import { flattern, raise } from "../../state/features/settings"
 
-
-
 export default function Shape() {
-    const flatternData = useSelector((state) => state.settings.flattern)
+    const flatternData = useSelector((state: any) => state.settings.flattern)
     const dispatch = useDispatch()
 
     return (

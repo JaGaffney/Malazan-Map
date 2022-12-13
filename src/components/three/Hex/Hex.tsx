@@ -2,7 +2,7 @@ import React from "react";
 import { useEnvironment, useTexture } from "@react-three/drei";
 import { CylinderBufferGeometry, MeshStandardMaterial } from "three";
 
-import worldData from "../../../data/sorted.json"
+import WORLDDATA from "../../../data/sorted.json"
 
 import HexGeometryContainer from "./HexGeometryContainer"
 import { useSelector } from "react-redux";
@@ -12,8 +12,7 @@ export default function Hex() {
     const desertsData = useSelector((state: any) => state.settings.deserts)
     const forestData = useSelector((state: any) => state.settings.forest)
 
-
-    const world = worldData
+    const world = WORLDDATA
 
     const hexTextures = useTexture({
         dirt: process.env.PUBLIC_URL + "/textures/dirt.png",
@@ -144,13 +143,7 @@ export default function Hex() {
                         />
                     )
                 }
-
-
             })}
-
-
-
         </>
-
     );
 }

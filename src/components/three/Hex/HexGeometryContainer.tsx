@@ -3,15 +3,12 @@ import { Instances } from "@react-three/drei";
 
 import HexGeometry from './HexGeometry';
 import { useSelector } from 'react-redux';
+import { tileToPosition } from '../../utils/helpers';
 
 export default function HexGeometryContainer(props) {
     const flatternData = useSelector((state: any) => state.settings.flattern)
     const shadowData = useSelector((state: any) => state.settings.shadows)
     const areaData = useSelector((state: any) => state.settings.areas)
-
-    const tileToPosition = (tileX: number, tileY: number): Array<number> => {
-        return [(tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535]
-    };
 
     return (
         // @ts-expect-error
@@ -29,9 +26,10 @@ export default function HexGeometryContainer(props) {
                             position={tileToPosition(i.x, i.y)}
                             realPosition={i}
                             key={k}
-
                         />
                     )
+                } else {
+                    return null
                 }
             })}
         </Instances>

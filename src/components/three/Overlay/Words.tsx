@@ -26,7 +26,7 @@ function Words(props) {
         }
     }
 
-    const city = useSelector((state) => state.activeCord.city)
+    const city = useSelector((state: any) => state.filter.city)
 
     const defaultLength = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)

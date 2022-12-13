@@ -10,9 +10,8 @@ export interface IRootState {
     activeCord: Cord;
     activeID: number;
     activeData: number;
-    activeBooks: Array<number | "">;
+    activeBooks: Array<number>;
     activeCharacter: null | number;
-    flattern: boolean;
     moon: Array<number>;
     city: Object;
 }
@@ -23,13 +22,12 @@ const initialState: IRootState = {
     activeData: 0,
     activeBooks: [1, 2, 3],
     activeCharacter: null,
-    flattern: false,
     moon: [47, -5, 70],
     city: { location: [420, 15, 185.59], name: "Malaz City", owner: "malazan", type: 1 },
 };
 
-export const activeCordSlice = createSlice({
-    name: "activeCord",
+export const filterSlice = createSlice({
+    name: "filter",
     initialState,
     reducers: {
         update: (state, action) => {
@@ -43,9 +41,6 @@ export const activeCordSlice = createSlice({
         },
         updateActiveData: (state, action) => {
             state.activeData = action.payload;
-        },
-        flattern: (state) => {
-            state.flattern = !state.flattern;
         },
         updateMoon: (state, action) => {
             state.moon = action.payload;
@@ -65,6 +60,6 @@ export const activeCordSlice = createSlice({
     },
 });
 
-export const { update, reset, updateActiveID, updateActiveData, flattern, updateMoon, updateCity, updateActiveCharacter, updateActiveBooks, resetActiveBooks } = activeCordSlice.actions;
+export const { update, reset, updateActiveID, updateActiveData, updateMoon, updateCity, updateActiveCharacter, updateActiveBooks, resetActiveBooks } = filterSlice.actions;
 
-export default activeCordSlice.reducer;
+export default filterSlice.reducer;

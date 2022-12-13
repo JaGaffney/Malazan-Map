@@ -6,7 +6,7 @@ import { updateActiveCharacter } from "../../state/features/engine"
 import characters from "../../data/characters"
 
 export default function Characters() {
-    const activeCharacter = useSelector((state) => state.activeCord.activeCharacter)
+    const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const dispatch = useDispatch()
     return (
         <div className="panel__item-container">

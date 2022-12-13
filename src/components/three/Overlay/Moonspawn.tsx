@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 import { TextureLoader } from "three";
 
 export default function Moonspawn() {
-    const moon = useSelector((state) => state.activeCord.moon)
+    const moon = useSelector((state: any) => state.filter.moon)
 
     const moonTexture = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/dirt2.jpg");
 

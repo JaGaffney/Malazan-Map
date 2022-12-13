@@ -8,7 +8,7 @@ import { bookColor } from '../utils/color';
 
 
 export const TimeEvent = (props) => {
-    const activeID = useSelector((state: any) => state.activeCord.activeID)
+    const activeID = useSelector((state: any) => state.filter.activeID)
     const dispatch = useDispatch()
     return (
         <div className="timeline__event-item" onClick={() => {
@@ -31,7 +31,7 @@ export const TimeEvent = (props) => {
                 ${activeID === props.data.id ? "timeline__event-item-icon-active" : ""} ${props.filter}`}
                 style={{ backgroundColor: bookColor(props.data.book) }}
             >
-                <img src={props.filter === "" && props.data.icon} />
+                <img src={props.filter === "" && props.data.icon} alt={props.data.name} />
             </div>
             <ReactTooltip effect="solid" />
         </div>
