@@ -31,7 +31,7 @@ export const TimeEvent = (props) => {
                 ${activeID === props.data.id ? "timeline__event-item-icon-active" : ""} ${props.filter}`}
                 style={{ backgroundColor: bookColor(props.data.book) }}
             >
-                <img src={props.filter === "" && props.data.icon} alt={props.data.name} />
+                <img src={props.filter === "" && props.data.icon} />
             </div>
             <ReactTooltip effect="solid" />
         </div>
