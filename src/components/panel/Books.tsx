@@ -26,10 +26,12 @@ export default function Books() {
 
     return (
         <div className="panel__item-container">
-            <h5>Books</h5>
-            <div className="panel__item-container-info" onClick={() => dispatch(resetActiveBooks())}>
-                <span>Show all</span>
-            </div>
+            <>
+                <h5>Books</h5>
+                <div className="panel__item-container-info" onClick={() => dispatch(resetActiveBooks())}>
+                    <span>Show all</span>
+                </div>
+            </>
             <Book book={1} status={"complete"} />
             <Book book={2} status={"complete"} />
             <Book book={3} status={"in progress"} />

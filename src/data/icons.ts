@@ -24,6 +24,7 @@ import DIVEROCEAN from "../images/diverOcean.svg";
 import DIVERLAND from "../images/diverLand.svg";
 import UPRSING from "../images/uprising.svg";
 import DOG from "../images/dog.svg";
+import CARD from "../images/card.svg";
 
 export const eventIcons = {
     assassin: ASSASSIN,
@@ -50,4 +51,5 @@ export const eventIcons = {
     diverLand: DIVERLAND,
     uprising: UPRSING,
     dog: DOG,
+    card: CARD,
 };

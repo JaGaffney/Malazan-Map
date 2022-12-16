@@ -347,7 +347,7 @@ const timelineData = {
             char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
             loc: [523.54, 73.53],
             moon: [182.31, 0, 82.89],
-            area: 2,
+            area: 1,
         },
         {
             id: uuidv4(),
@@ -404,6 +404,29 @@ const timelineData = {
             moon: [179, 0, 70],
             area: 2,
         },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "The new card?",
+            icon: eventIcons.card,
+            description: "The Whirlwind begins, which casues Duiker and Kulp to be split up from each other and Colatines warband.",
+            char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
+            loc: [523.54, 73.53],
+            moon: [179, 0, 70],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Vision Mountains?",
+            icon: eventIcons.travelFly,
+            description: "Black Moranth transported Captain Paran and the Bridgeburners to the Vision Mountains",
+            char: [1],
+            loc: [544.275, 87.49],
+            moon: [179, 0, 70],
+            area: 1,
+        },
+
         {
             id: uuidv4(),
             book: 2,
