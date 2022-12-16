@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
-import { Environment, Stars, MapControls } from "@react-three/drei";
+import { Environment, Stars, MapControls, PerspectiveCamera, Hud } from "@react-three/drei";
 import { Color } from "three";
 
 import Sea from "./World/Sea";
 import Border from "./World/Border";
 import Floor from "./World/Floor";
 import FloatingGrid from "./World/FloatingGrid";
+import Map from "./Map/Map"
 
 import Hex from "./Hex/Hex";
 import Highlight from "./Overlay/Highlight";
@@ -40,6 +41,8 @@ export function SceneContainer() {
                 <Words />
                 <Building />
             </group>
+
+            {/* <Map /> */}
 
             {/* makes it better but lags */}
             <Stars radius={10} depth={500} count={5000} factor={4} saturation={0} fade speed={1} />
