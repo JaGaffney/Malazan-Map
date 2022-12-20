@@ -1,6 +1,6 @@
 import React from 'react'
 
-const City = (props) => {
+const Capital = (props) => {
     return (
         <group position={[props.pos[0] - 0.05, 2, props.pos[1]]} key={props.k}>
             <mesh position={[0, 0.01, 0]} rotation-x={-Math.PI * 0.5} material={props.mat}>
@@ -31,4 +31,4 @@ const City = (props) => {
     )
 }
 
-export default City
+export default Capital
