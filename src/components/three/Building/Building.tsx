@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useEnvironment, useTexture } from "@react-three/drei";
-import { BoxGeometry, MeshStandardMaterial } from "three";
+import { BoxGeometry, CylinderBufferGeometry, MeshStandardMaterial } from "three";
 
 import worldData from "../../../data/sorted.json"
 import { tileToPosition } from '../../utils/helpers';
+import City from './City';
+
 
 const Building = () => {
     const areaData = useSelector((state: any) => state.settings.areas)
@@ -25,7 +27,8 @@ const Building = () => {
         map: wallTextures.map,
         normalMap: wallTextures.normalMap,
     })
-    const geo = new BoxGeometry(1.2, 3, 1.3)
+    const geo = new BoxGeometry(1, 0.7, 0.2)
+    const geoTower = new CylinderBufferGeometry(0.2, 0.2, 1.2, 6, 1, false)
 
     return (
         <>
@@ -33,7 +36,7 @@ const Building = () => {
                 if (areaData.includes(i.a)) {
                     const pos = tileToPosition(i.x, i.y)
                     return (
-                        <mesh material={mat} geometry={geo} position={[pos[0], 3, pos[1]]} castShadow recieveShadow key={k}></mesh>
+                        <City pos={pos} mat={mat} geo={geo} geoTower={geoTower} k={k} />
                     )
                 } else {
                     return null

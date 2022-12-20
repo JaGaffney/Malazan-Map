@@ -19,7 +19,8 @@ export default function Hex() {
         grass: process.env.PUBLIC_URL + "/textures/grass.jpg",
         sand: process.env.PUBLIC_URL + "/textures/sand.jpg",
         sand2: process.env.PUBLIC_URL + "/textures/sand2.jpg",
-        stone: process.env.PUBLIC_URL + "/textures/rocks.jpg",
+        stone: process.env.PUBLIC_URL + "/textures/moutain.png",
+        stone2: process.env.PUBLIC_URL + "/textures/moutain2.png",
         forest: process.env.PUBLIC_URL + "/textures/forest.jpg",
         town: process.env.PUBLIC_URL + "/textures/town.jpg",
         city: process.env.PUBLIC_URL + "/textures/city.jpg",
@@ -36,9 +37,10 @@ export default function Hex() {
     const mesh = {
         dirt: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.dirt }),
         grass: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.grass, bumpMap: hexTextures.grassBump, bumpScale: 0.01 }),
-        sand: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.sand, bumpMap: hexTextures.sandBump, bumpScale: 0.03 }),
-        sand2: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.sand2, bumpMap: hexTextures.sandBump, bumpScale: 0.03 }),
-        stone: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.stone, bumpMap: hexTextures.stoneBump, bumpScale: 0.08 }),
+        sand: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.sand }),
+        sand2: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.sand2 }),
+        stone: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.stone, }),
+        stone2: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.stone2, }),
         forest: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.forest }),
         town: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.town }),
         city: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.city }),
@@ -48,10 +50,10 @@ export default function Hex() {
 
     const hexGeos = {
         hexGeo1: new CylinderBufferGeometry(1, 1, 1, 6, 1, false),
-        hexGeo11: new CylinderBufferGeometry(1, 1, 1.2, 6, 1, false),
-        hexGeo12: new CylinderBufferGeometry(1, 1, 1.4, 6, 1, false),
+        hexGeo11: new CylinderBufferGeometry(1, 1, 1.3, 6, 1, false),
+        hexGeo12: new CylinderBufferGeometry(1, 1, 1.6, 6, 1, false),
         hexGeo2: new CylinderBufferGeometry(1, 1, 2, 6, 1, false),
-        hexGeo3: new CylinderBufferGeometry(1, 1, 3, 6, 1, false),
+        hexGeo3: new CylinderBufferGeometry(1, 1, 3.5, 6, 1, false),
         hexGeo4: new CylinderBufferGeometry(1, 1, 4, 6, 1, false),
     }
 
@@ -95,7 +97,7 @@ export default function Hex() {
                 }
                 return mesh.sand2;
             case (4):
-                return mesh.stone;
+                return mesh.stone2;
             case (5):
                 return mesh.grass;
             case (6):
