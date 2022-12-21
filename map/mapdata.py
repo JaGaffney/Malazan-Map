@@ -71,7 +71,7 @@ for x in range(0, width, incriement):
 
                             if (hexColor == (255, 240, 189)): # sand
                                 t = 2
-                                z = 2
+                                z = 11
                             if (hexColor == (227, 183, 110)): # sand 2
                                 t = 3
                                 z = 2

@@ -24,7 +24,7 @@ export default function Hex() {
         forest: process.env.PUBLIC_URL + "/textures/forest.jpg",
         town: process.env.PUBLIC_URL + "/textures/town.jpg",
         city: process.env.PUBLIC_URL + "/textures/city.jpg",
-        capDiff: process.env.PUBLIC_URL + "/textures/cobble/diff.jpg",
+        cap: process.env.PUBLIC_URL + "/textures/cap.jpg",
         capNormal: process.env.PUBLIC_URL + "/textures/cobble/normal.jpg",
         ice: process.env.PUBLIC_URL + "/textures/snow.jpg",
         sandBump: process.env.PUBLIC_URL + "/textures/bumps/sandmap.jpg",
@@ -44,13 +44,13 @@ export default function Hex() {
         forest: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.forest }),
         town: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.town }),
         city: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.city }),
-        cap: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.capDiff, normalMap: hexTextures.capNormal }),
+        cap: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.cap }),
         ice: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.ice }),
     };
 
     const hexGeos = {
         hexGeo1: new CylinderBufferGeometry(1, 1, 1, 6, 1, false),
-        hexGeo11: new CylinderBufferGeometry(1, 1, 1.3, 6, 1, false),
+        hexGeo11: new CylinderBufferGeometry(1, 1, 0.8, 6, 1, false),
         hexGeo12: new CylinderBufferGeometry(1, 1, 1.6, 6, 1, false),
         hexGeo2: new CylinderBufferGeometry(1, 1, 2, 6, 1, false),
         hexGeo3: new CylinderBufferGeometry(1, 1, 3.5, 6, 1, false),
