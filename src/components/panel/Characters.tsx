@@ -16,7 +16,6 @@ export default function Characters() {
             </div>
             {Object.keys(characters).map((i, k) => {
                 let active = ""
-                console.log(activeCharacter, parseInt(i))
                 if (activeCharacter.includes(parseInt(i))) {
                     active = "panel__item-container-info-active"
                 }

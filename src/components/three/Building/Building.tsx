@@ -78,7 +78,7 @@ const Building = () => {
                 if (areaData.includes(i.a)) {
                     const pos = tileToPosition(i.x, i.y)
                     return (
-                        <Capital pos={pos} matBrick={matBrick} matPlank={matPlank} matStone={matStone} geo={geoCapWall} geoTower={geoTower} geoTowerRoof={geoTowerRoof} k={k} />
+                        <Capital key={k} pos={pos} matBrick={matBrick} matPlank={matPlank} matStone={matStone} geo={geoCapWall} geoTower={geoTower} geoTowerRoof={geoTowerRoof} k={k} />
                     )
                 } else {
                     return null
@@ -88,7 +88,7 @@ const Building = () => {
                 if (areaData.includes(i.a)) {
                     const pos = tileToPosition(i.x, i.y)
                     return (
-                        <City pos={pos} matPlank={matPlank} matStone={matStone} matMud={matMud} geoCityGround={geoCityGround} geoCityWall={geoCityWall} geoCityBuilding1={geoCityBuilding1} geoCityBuilding2={geoCityBuilding2} k={k} />
+                        <City key={k} pos={pos} matPlank={matPlank} matStone={matStone} matMud={matMud} geoCityGround={geoCityGround} geoCityWall={geoCityWall} geoCityBuilding1={geoCityBuilding1} geoCityBuilding2={geoCityBuilding2} k={k} />
                     )
                 } else {
                     return null

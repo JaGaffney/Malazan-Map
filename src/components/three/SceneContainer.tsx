@@ -18,6 +18,7 @@ import Cam from "./Cam"
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
 import { store } from "../../state/store"
+import Flags from "./Overlay/Flags";
 
 export function SceneContainer() {
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
@@ -38,7 +39,7 @@ export function SceneContainer() {
                 <Hex />
                 <Highlight />
                 <Moonspawn />
-                <Words />
+                <Flags />
                 <Building />
             </group>
 

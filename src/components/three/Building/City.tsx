@@ -1,6 +1,6 @@
 import React from 'react'
 
-const City = (props) => {
+const City = (props): any => {
     return (
         <group position={[props.pos[0] - 0.05, 2, props.pos[1]]} key={props.k}>
             <mesh material={props.matPlank} geometry={props.geoCityWall} position={[0, 0, 0]} castShadow recieveShadow ></mesh>

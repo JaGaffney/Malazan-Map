@@ -12,8 +12,8 @@ export interface IRootState {
     activeData: number;
     activeBooks: Array<number>;
     activeCharacter: Array<number>;
+    activeCity: Array<number>;
     moon: Array<number>;
-    city: Object;
 }
 
 const initialState: IRootState = {
@@ -23,7 +23,7 @@ const initialState: IRootState = {
     activeBooks: [1, 2, 3],
     activeCharacter: [],
     moon: [47, -5, 70],
-    city: { location: [420, 15, 185.59], name: "Malaz City", owner: "malazan", type: 1 },
+    activeCity: [0],
 };
 
 export const filterSlice = createSlice({
@@ -45,8 +45,11 @@ export const filterSlice = createSlice({
         updateMoon: (state, action) => {
             state.moon = action.payload;
         },
-        updateCity: (state, action) => {
-            state.city = action.payload;
+        updateActiveCity: (state, action) => {
+            state.activeCity = filterArray(state.activeCity, action.payload);
+        },
+        resetActiveCity: (state) => {
+            state.activeCity = [];
         },
         updateActiveCharacter: (state, action) => {
             state.activeCharacter = filterArray(state.activeCharacter, action.payload);
@@ -63,6 +66,7 @@ export const filterSlice = createSlice({
     },
 });
 
-export const { update, reset, updateActiveID, updateActiveData, updateMoon, updateCity, updateActiveCharacter, resetActiveCharacter, updateActiveBooks, resetActiveBooks } = filterSlice.actions;
+export const { update, reset, updateActiveID, updateActiveData, updateMoon, updateActiveCity, resetActiveCity, updateActiveCharacter, resetActiveCharacter, updateActiveBooks, resetActiveBooks } =
+    filterSlice.actions;
 
 export default filterSlice.reducer;

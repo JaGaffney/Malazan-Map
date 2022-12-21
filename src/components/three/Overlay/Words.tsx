@@ -26,7 +26,7 @@ function Words(props) {
         }
     }
 
-    const city = useSelector((state: any) => state.filter.city)
+    const city = props.data
 
     const defaultLength = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
@@ -34,7 +34,7 @@ function Words(props) {
 
     return (
         <>
-            <group position={city.location}>
+            <group position={city.loc}>
                 <mesh position={[0.5, -9, 0]}>
                     <cylinderBufferGeometry args={[0.4, 0.1, 10, 10]} />
                     <meshPhysicalMaterial

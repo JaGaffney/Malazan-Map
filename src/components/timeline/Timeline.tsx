@@ -17,10 +17,8 @@ const Timeline = (props) => {
                         <div className="timeline__event-container">
                             {timelineData[i].map((ii, kk) => {
                                 let filter = ""
-
-
                                 if (activeCharacter.length !== 0) {
-                                    if (activeCharacter.some(item => ii.char.includes(item))) {
+                                    if (activeCharacter.some((item: number) => ii.char.includes(item))) {
                                         filter = "timeline__event-item-filter"
                                     }
                                 }
