@@ -12,6 +12,7 @@ import "./styles/sidepanel.scss"
 import "./styles/timeline.scss"
 import "./styles/map.scss"
 import "./styles/header.scss"
+import "./styles/landing.scss"
 import "./styles/responsive.scss"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

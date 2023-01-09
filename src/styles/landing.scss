@@ -1,0 +1,118 @@
+.landing {
+    height: 100%;
+    width: 100%;
+    background-color: var(--gray900);
+    display: flex;
+    justify-content: center;
+}
+
+.landing__background-image {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.01;
+    filter: grayscale(0.7);
+    pointer-events: none;
+}
+
+.landing__hero {
+    width: 100%;
+    max-width: 150rem;
+    display: grid;
+    grid-template-columns: 10% 40% 50%;
+    gap: 1rem;
+
+    &-content {
+        margin-top: 45%;
+        z-index: 2;
+        height: fit-content;
+        grid-column: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    h1 {
+        margin: 0;
+        font-size: 4rem;
+        color: var(--gray100);
+        line-height: 4.7rem;
+    }
+    &-title {
+        width: 80%;
+        span {
+            margin-right: 0.5rem;
+            color: var(--gray600);
+        }
+    }
+    &-description {
+        width: 70%;
+        font-size: 1.2rem;
+        color: var(--gray500);
+    }
+
+    &-image {
+        overflow: hidden;
+        grid-column: 3;
+
+        filter: grayscale(1);
+        z-index: 1;
+        pointer-events: none;
+        -webkit-transition: all 12000ms;
+        -webkit-mask-image: url("../../public//images/compass.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+    }
+    &-imageColor {
+        filter: grayscale(0.2);
+    }
+}
+
+.landing__mode {
+    margin-top: 4rem;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    gap: 2rem;
+    &-button {
+        z-index: 2;
+        border: solid 3px var(--blue900);
+        background-color: var(--gray900);
+        border-radius: 4px;
+        color: var(--blue100);
+        min-width: 20rem;
+        padding: 0.75rem 0;
+        box-shadow: var(--shadow900);
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &:hover,
+        &:focus {
+            border-color: var(--teal800);
+            color: var(--teal100);
+            transform: translateY(-4px);
+        }
+
+        &-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            width: 100%;
+            svg {
+                font-size: 2.5rem;
+                opacity: 0.5;
+                margin-right: 0.1rem;
+            }
+            margin-bottom: 0.3rem;
+        }
+        &-description {
+            font-size: 0.7rem;
+            color: var(--gray600);
+            text-transform: uppercase;
+        }
+    }
+}

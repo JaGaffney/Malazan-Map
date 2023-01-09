@@ -20,7 +20,7 @@ import { Provider } from 'react-redux'
 import { store } from "../../state/store"
 import Flags from "./Overlay/Flags";
 
-export function SceneContainer() {
+export function SceneContainer(props) {
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
 
     return (

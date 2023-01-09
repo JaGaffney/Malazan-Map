@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1500px) {
+@media only screen and (min-width: 00px) {
 }
 
 @media only screen and (max-width: 1200px) {
@@ -85,6 +85,31 @@
                     transform: translateY(0) !important;
                 }
             }
+        }
+    }
+
+    .landing__hero {
+        grid-template-columns: 5% 90% 5%;
+        gap: 0;
+        &-content {
+            text-align: center;
+            margin-top: 1rem;
+            width: 100%;
+        }
+        &-title,
+        &-description {
+            width: 100%;
+            padding: 1rem;
+        }
+        &-image {
+            display: none;
+        }
+    }
+    .landing__mode {
+        flex-wrap: wrap;
+        width: 100%;
+        &-button {
+            width: 100%;
         }
     }
 }

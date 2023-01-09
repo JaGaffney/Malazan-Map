@@ -1,10 +1,14 @@
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { SceneContainer } from "./components/three/SceneContainer";
+import { SceneContainerBasic } from "./components/three/SceneContainerBasic";
 import { BakeShadows, Html, Stats, useProgress } from "@react-three/drei";
 
 import Header from "./components/header/Header";
+import Landing from "./components/landing/Landing";
+import { useDispatch } from "react-redux";
+import { setBasic, resetActiveAreas } from "./state/features/settings"
 
 function Loader() {
     const { active, progress, errors, item, loaded, total } = useProgress()
@@ -42,18 +46,55 @@ function Loader() {
 }
 
 function App() {
+    const [landing, setLanding] = useState<boolean>(true)
+    const [mode, setMode] = useState<number>(0)
+
+    const dispatch = useDispatch()
+
+
+    const onModeHandler = (data) => {
+        if (data === 1) {
+            dispatch(setBasic())
+        }
+        if (data === 2) {
+            dispatch(resetActiveAreas())
+        }
+        setLanding(false)
+        setMode(data)
+    }
+
     return (
         <>
-            <Canvas shadows frameloop={"demand"} >
-                <Suspense fallback={<Loader />} >
-                    <SceneContainer />
-                </Suspense>
+            {!landing ? (
+                <>
+                    {mode === 0 && (
+                        <Canvas shadows frameloop={"demand"} >
+                            <Suspense fallback={<Loader />} >
+                                <SceneContainer />
+                            </Suspense>
 
-                <BakeShadows />
-                {/* <Stats /> */}
-            </Canvas>
+                            <BakeShadows />
+                            {/* <Stats /> */}
+                        </Canvas>
+                    )}
+                    {mode === 1 && (
+                        <Canvas frameloop={"demand"} >
+                            <Suspense fallback={null} >
+                                <SceneContainerBasic />
+                            </Suspense>
+                        </Canvas>
+                    )}
+                    {mode === 2 && (
+                        <Canvas shadows frameloop={"demand"} >
+                            <Suspense fallback={<Loader />} >
+                                <SceneContainer />
+                            </Suspense>
+                        </Canvas>
+                    )}
 
-            <Header />
+                    <Header />
+                </>
+            ) : <Landing onModeHandler={onModeHandler} />}
         </>
     );
 }
