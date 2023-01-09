@@ -1,4 +1,7 @@
 .landing {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background-color: var(--gray900);
@@ -18,14 +21,14 @@
 }
 
 .landing__hero {
+    overflow: hidden;
     width: 100%;
-    max-width: 150rem;
+    max-width: 160rem;
     display: grid;
     grid-template-columns: 10% 40% 50%;
     gap: 1rem;
-
     &-content {
-        margin-top: 45%;
+        margin-top: 40%;
         z-index: 2;
         height: fit-content;
         grid-column: 2;
@@ -54,19 +57,14 @@
     }
 
     &-image {
-        overflow: hidden;
+        animation: toColor 60s infinite;
+        animation-timing-function: cubic-bezier(1, 0, 0.5, 1);
         grid-column: 3;
-
-        filter: grayscale(1);
         z-index: 1;
         pointer-events: none;
-        -webkit-transition: all 12000ms;
         -webkit-mask-image: url("../../public//images/compass.svg");
         -webkit-mask-size: contain;
         -webkit-mask-repeat: no-repeat;
-    }
-    &-imageColor {
-        filter: grayscale(0.2);
     }
 }
 
@@ -114,5 +112,28 @@
             color: var(--gray600);
             text-transform: uppercase;
         }
+    }
+}
+
+@keyframes toColor {
+    0% {
+        -webkit-filter: grayscale(80%);
+        filter: grayscale(80%);
+    }
+    25% {
+        -webkit-filter: grayscale(60%);
+        filter: grayscale(60%);
+    }
+    50% {
+        -webkit-filter: grayscale(40%);
+        filter: grayscale(40%);
+    }
+    75% {
+        -webkit-filter: grayscale(60%);
+        filter: grayscale(60%);
+    }
+    100% {
+        -webkit-filter: grayscale(80%);
+        filter: grayscale(80%);
     }
 }
