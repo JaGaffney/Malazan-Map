@@ -89,6 +89,7 @@
     }
 
     .landing__hero {
+        overflow-y: scroll;
         grid-template-columns: 5% 90% 5%;
         gap: 0;
         &-content {
@@ -100,12 +101,20 @@
         &-description {
             width: 100%;
             padding: 1rem;
+            font-size: 0.9rem;
+        }
+        &-title {
+            h1 {
+                font-size: 1.8rem;
+                line-height: 2.3rem;
+            }
         }
         &-image {
             display: none;
         }
     }
     .landing__mode {
+        margin-top: 1rem;
         flex-wrap: wrap;
         width: 100%;
         &-button {
