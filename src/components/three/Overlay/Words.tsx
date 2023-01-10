@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Billboard, Text } from "@react-three/drei";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateActiveCity } from '../../../state/features/engine';
+import { tileToPosition } from '../../utils/helpers';
 
 function Words(props) {
     const dispatch = useDispatch()
@@ -46,9 +47,13 @@ function Words(props) {
     const defaultColorType = calculateColorCityType(city.type)
     const defaultColorOwner = calculateColorOwner(city.owner)
 
+    const convertedPosition = tileToPosition(city.loc[0], city.loc[2])
+    const newPos = [convertedPosition[0], city.loc[1], convertedPosition[1]]
+
+
     return (
         <>
-            <group position={city.loc}
+            <group position={newPos}
                 onClick={() => dispatch(updateActiveCity(props.cityKey))}
                 onPointerOver={() => setHovered(true)}
                 onPointerOut={() => setHovered(false)}
