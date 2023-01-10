@@ -16,7 +16,7 @@ export default function Panel() {
         <ScrollContainer className="panel" draggingClassName={"timeline__container-drag"} horizontal={false}>
             <div className="panel__item">
                 <button className="panel__item-button" onClick={() => setBooks(!books)}>{books ? <HiOutlineEyeOff /> : <HiOutlineEye />}</button>
-                {books ? <Books /> : <div className="panel__item-container"><h5>Bookss</h5></div>}
+                {books ? <Books /> : <div className="panel__item-container"><h5>Books</h5></div>}
             </div>
             <div className="panel__item">
                 <button className="panel__item-button" onClick={() => setCharacters(!characters)}>{characters ? <HiOutlineEyeOff /> : <HiOutlineEye />}</button>

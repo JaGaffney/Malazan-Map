@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Billboard, Text } from "@react-three/drei";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateActiveCity } from '../../../state/features/engine';
 
 function Words(props) {
+    const dispatch = useDispatch()
+
+    const [hovered, setHovered] = useState(false)
+
+    useEffect(() => {
+        document.body.style.cursor = hovered ? 'pointer' : 'auto'
+
+        return () => {
+            document.body.style.cursor = 'auto'
+        }
+    }, [hovered])
+
+
     const calculateColorCityType = (cityType: number): string => {
         switch (cityType) {
             case (1):
@@ -34,7 +48,11 @@ function Words(props) {
 
     return (
         <>
-            <group position={city.loc}>
+            <group position={city.loc}
+                onClick={() => dispatch(updateActiveCity(props.cityKey))}
+                onPointerOver={() => setHovered(true)}
+                onPointerOut={() => setHovered(false)}
+            >
                 <mesh position={[0.5, -9, 0]}>
                     <cylinderBufferGeometry args={[0.4, 0.1, 10, 10]} />
                     <meshPhysicalMaterial

@@ -12,7 +12,7 @@ const Flags = (props) => {
         <>
             {activeCity.map((i, k) => {
                 return (
-                    <Words data={data[i]} key={k} />
+                    <Words data={data[i]} key={k} cityKey={i} />
                 )
             })}
         </>
