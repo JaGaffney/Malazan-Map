@@ -8,10 +8,10 @@ const HexGeometry = (props) => {
     const [hovered, setHovered] = useState(false)
 
     useEffect(() => {
-        document.body.style.cursor = hovered ? 'pointer' : 'auto'
+        document.body.style.cursor = hovered ? 'pointer' : 'all-scroll'
 
         return () => {
-            document.body.style.cursor = 'auto'
+            document.body.style.cursor = 'all-scroll'
         }
     }, [hovered])
 

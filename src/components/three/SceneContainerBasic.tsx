@@ -12,6 +12,7 @@ import Cam from "./Cam"
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
 import { store } from "../../state/store"
+import Flags from "./Overlay/Flags";
 
 
 export function SceneContainerBasic() {
@@ -27,6 +28,7 @@ export function SceneContainerBasic() {
 
             <group position={[-400, 0, -100]}>
                 <Hex />
+                <Flags />
                 <Highlight />
             </group>
 

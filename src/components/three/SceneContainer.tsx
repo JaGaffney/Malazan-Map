@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Environment, Stars, MapControls, PerspectiveCamera, Hud } from "@react-three/drei";
 import { Color } from "three";
 
@@ -21,6 +21,11 @@ import { store } from "../../state/store"
 import Flags from "./Overlay/Flags";
 
 export function SceneContainer(props) {
+    useEffect(() => {
+        document.body.style.cursor = 'all-scroll'
+    }, [])
+
+
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
 
     return (

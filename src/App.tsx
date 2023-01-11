@@ -9,6 +9,7 @@ import Header from "./components/header/Header";
 import Landing from "./components/landing/Landing";
 import { useDispatch } from "react-redux";
 import { setBasic, resetActiveAreas } from "./state/features/settings"
+import { updateActiveCity } from "./state/features/engine";
 
 function Loader() {
     const { active, progress, errors, item, loaded, total } = useProgress()
@@ -55,6 +56,9 @@ function App() {
     const onModeHandler = (data) => {
         if (data === 1) {
             dispatch(setBasic())
+            dispatch(updateActiveCity(0))
+            dispatch(updateActiveCity(2))
+            dispatch(updateActiveCity(3))
         }
         if (data === 2) {
             dispatch(resetActiveAreas())
