@@ -19,11 +19,13 @@ import Cam from "./Cam"
 import { Provider } from 'react-redux'
 import { store } from "../../state/store"
 import Flags from "./Overlay/Flags";
+import { useFrame } from "@react-three/fiber";
 
 export function SceneContainer(props) {
     useEffect(() => {
         document.body.style.cursor = 'all-scroll'
     }, [])
+
 
 
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();

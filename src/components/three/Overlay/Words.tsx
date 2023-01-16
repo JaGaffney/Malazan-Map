@@ -3,6 +3,9 @@ import { Billboard, Text } from "@react-three/drei";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateActiveCity } from '../../../state/features/engine';
 import { tileToPosition } from '../../utils/helpers';
+import { calculateColorCityType, calculateColorOwner } from '../../utils/color';
+
+import { MeshBasicMaterial } from "three";
 
 function Words(props) {
     const dispatch = useDispatch()
@@ -18,38 +21,19 @@ function Words(props) {
     }, [hovered])
 
 
-    const calculateColorCityType = (cityType: number): string => {
-        switch (cityType) {
-            case (1):
-                return "#b91c1c"
-            case (2):
-                return "#296bb1"
-            default:
-                return "#2c384b"
-        }
-    }
-    const calculateColorOwner = (owner: string): string => {
-        switch (owner) {
-            case ("malazan"):
-                return "#7f1d1d"
-            case ("Anomander Rake"):
-                return "#4c1d95"
-            case ("Army of the Apocalpse"):
-                return "#92400e"
-            default:
-                return "#2c384b"
-        }
-    }
 
     const city = props.data
 
     const defaultLength = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
-    const defaultColorOwner = calculateColorOwner(city.owner)
+    const defaultColorOwner = calculateColorOwner(city.owner).hex
 
     const convertedPosition = tileToPosition(city.loc[0], city.loc[2])
     const newPos = [convertedPosition[0], city.loc[1], convertedPosition[1]]
 
+    const triangleArray = new Float32Array([200, 200, 10, 10, 20, 30, 200, 10, 1]);
+
+    const flagStandardMaterial = new MeshBasicMaterial({ color: defaultColorType.hex })
 
     return (
         <>
@@ -71,6 +55,22 @@ function Words(props) {
                     />
                 </mesh>
 
+                <mesh>
+                    <bufferGeometry attach="geometry">
+                        <bufferAttribute
+                            attachObject={["attributes", "position"]}
+                            count={3}
+                            array={triangleArray}
+                            itemSize={3}
+                        />
+                    </bufferGeometry>
+                    <meshBasicMaterial
+                        attach="material"
+                        color="#5243aa"
+                        wireframe={true}
+                    />
+                </mesh>
+
                 <Billboard
                     follow={true}
                     lockX={false}
@@ -78,19 +78,35 @@ function Words(props) {
                     lockZ={false} // Lock the rotation on the z axis (default=false)
                 >
                     <mesh position={[defaultLength / 2, 1.5, 1]}>
-                        <planeBufferGeometry args={[defaultLength, 9]} />
+                        <planeBufferGeometry args={[defaultLength - 5, 7]} />
                         <meshBasicMaterial
-                            color={defaultColorOwner}
+                            color={defaultColorType.hexOverlay}
                         />
                     </mesh>
-                    <mesh position={[defaultLength / 2, 1.5, 0]}>
+                    <mesh position={[defaultLength / 2, 1.5, 0]} material={flagStandardMaterial}>
                         <planeBufferGeometry args={[defaultLength + 2, 11]} />
-                        <meshBasicMaterial
-                            color={defaultColorType}
-                        />
+
                     </mesh>
 
-                    <Text position={[defaultLength / 2, 1.5, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
+                    {city.type <= 2 && (
+                        <mesh position={[defaultLength / 2, 6, 0]} material={flagStandardMaterial}>
+                            <planeBufferGeometry args={[defaultLength + 14, 2]} />
+                        </mesh>
+                    )}
+
+                    {city.type <= 3 && city.type !== 2 && (
+                        <mesh position={[defaultLength / 2, 1.5, 0]} material={flagStandardMaterial}>
+                            <planeBufferGeometry args={[defaultLength + 10, 3]} />
+                        </mesh>
+                    )}
+
+                    {city.type <= 2 && (
+                        <mesh position={[defaultLength / 2, -3, 0]} material={flagStandardMaterial}>
+                            <planeBufferGeometry args={[defaultLength + 14, 2]} />
+                        </mesh>
+                    )}
+
+                    <Text color={defaultColorOwner} position={[defaultLength / 2, 1.5, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
                 </Billboard>
             </group>
         </>

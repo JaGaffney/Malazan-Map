@@ -13,6 +13,7 @@ import Cam from "./Cam"
 import { Provider } from 'react-redux'
 import { store } from "../../state/store"
 import Flags from "./Overlay/Flags";
+import Controls from "./Controls";
 
 
 export function SceneContainerBasic() {
@@ -24,6 +25,7 @@ export function SceneContainerBasic() {
             {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
 
             <MapControls enableRotate={navigator.userAgent.search("Firefox") === 67 ? true : false} maxDistance={600} dampingFactor={0.1} enableDamping={true} />
+            {/* <Controls /> */}
             <pointLight position={[165, 33, 93]} color={lightColor} intensity={5} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
 
             <group position={[-400, 0, -100]}>

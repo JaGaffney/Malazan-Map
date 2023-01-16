@@ -57,7 +57,7 @@
                 background: var(--gray800);
             }
             &-active {
-                color: var(--teal500);
+                color: var(--teal500) !important;
             }
             &-small {
                 font-size: 0.7rem;

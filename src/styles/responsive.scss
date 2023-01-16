@@ -92,9 +92,11 @@
         overflow-y: auto;
         grid-template-columns: 5% 90% 5%;
         gap: 0;
+        display: grid;
         &-content {
             text-align: center;
             margin-top: 1rem;
+            margin-right: 0;
             width: 100%;
         }
         &-title,

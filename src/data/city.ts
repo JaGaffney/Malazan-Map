@@ -5,7 +5,12 @@ const cityData = [
         type: 1,
         owner: "malazan",
     },
-    { name: "Unta", loc: [235.0, 15, 108.0], type: 1, owner: "malazan" },
+    {
+        name: "Unta",
+        loc: [235.0, 15, 108.0],
+        type: 1,
+        owner: "malazan",
+    },
     {
         name: "Pale",
         loc: [294.0, 15, 49.0],
