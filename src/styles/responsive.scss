@@ -35,6 +35,7 @@
         min-height: var(--header-size);
         flex-wrap: wrap;
         text-align: center;
+        justify-content: center;
         h1 {
             padding-top: 1rem;
             width: 100%;
@@ -44,6 +45,13 @@
         &-title {
             width: 100%;
             flex-wrap: wrap;
+        }
+        &-search {
+            width: 90%;
+            height: 2.5rem;
+            svg {
+                top: 0.5rem;
+            }
         }
     }
     .buttons__container {
