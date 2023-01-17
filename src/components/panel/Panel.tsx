@@ -8,9 +8,10 @@ import Acknowledgements from './Acknowledgements'
 import Books from './Books'
 
 export default function Panel() {
-    const [characters, setCharacters] = useState(true)
-    const [locations, setLocations] = useState(true)
-    const [books, setBooks] = useState(true)
+    const [characters, setCharacters] = useState<boolean>(true)
+    const [locations, setLocations] = useState<boolean>(true)
+    const [books, setBooks] = useState<boolean>(true)
+
 
     return (
         <ScrollContainer className="panel" draggingClassName={"timeline__container-drag"} horizontal={false}>

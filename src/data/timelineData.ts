@@ -409,7 +409,7 @@ const timelineData = {
             book: 3,
             name: "The new card?",
             icon: eventIcons.card,
-            description: "The Whirlwind begins, which casues Duiker and Kulp to be split up from each other and Colatines warband.",
+            description: "Anamanda Rake meets with the aliance and a new card in the deck of dragons appears bearing Parans appereance.",
             char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
             loc: [523.54, 73.53],
             moon: [179, 0, 70],

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Billboard, Text } from "@react-three/drei";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateActiveCity } from '../../../state/features/engine';
 import { tileToPosition } from '../../utils/helpers';
 import { calculateColorCityType, calculateColorOwner } from '../../utils/color';
@@ -85,26 +85,42 @@ function Words(props) {
                     </mesh>
                     <mesh position={[defaultLength / 2, 1.5, 0]} material={flagStandardMaterial}>
                         <planeBufferGeometry args={[defaultLength + 2, 11]} />
-
                     </mesh>
 
-                    {city.type <= 2 && (
-                        <mesh position={[defaultLength / 2, 6, 0]} material={flagStandardMaterial}>
-                            <planeBufferGeometry args={[defaultLength + 14, 2]} />
-                        </mesh>
+                    {city.type === 1 && (
+                        <group >
+                            <mesh position={[defaultLength / 2, 6, 0]} material={flagStandardMaterial}>
+                                <planeBufferGeometry args={[defaultLength + 14, 2]} />
+                            </mesh>
+                            <mesh position={[defaultLength / 2, 1.5, 0]} material={flagStandardMaterial}>
+                                <planeBufferGeometry args={[defaultLength + 10, 3]} />
+                            </mesh>
+                            <mesh position={[defaultLength / 2, -3, 0]} material={flagStandardMaterial}>
+                                <planeBufferGeometry args={[defaultLength + 14, 2]} />
+                            </mesh>
+                        </group>
                     )}
 
-                    {city.type <= 3 && city.type !== 2 && (
-                        <mesh position={[defaultLength / 2, 1.5, 0]} material={flagStandardMaterial}>
-                            <planeBufferGeometry args={[defaultLength + 10, 3]} />
-                        </mesh>
+                    {city.type === 2 && (
+                        <group >
+                            <mesh position={[defaultLength / 2, 1.5, 0]} material={flagStandardMaterial}>
+                                <planeBufferGeometry args={[defaultLength + 6, 4]} />
+                            </mesh>
+                            <mesh position={[defaultLength / 2, -2, 0]} material={flagStandardMaterial}>
+                                <planeBufferGeometry args={[defaultLength + 10, 4]} />
+                            </mesh>
+                        </group>
                     )}
 
-                    {city.type <= 2 && (
-                        <mesh position={[defaultLength / 2, -3, 0]} material={flagStandardMaterial}>
-                            <planeBufferGeometry args={[defaultLength + 14, 2]} />
-                        </mesh>
+                    {city.type === 3 && (
+                        <group >
+                            <mesh position={[defaultLength, 1.5, 0]} material={flagStandardMaterial}>
+                                <circleGeometry args={[defaultLength - 28.6, 24]} />
+                            </mesh>
+                        </group>
                     )}
+
+
 
                     <Text color={defaultColorOwner} position={[defaultLength / 2, 1.5, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
                 </Billboard>

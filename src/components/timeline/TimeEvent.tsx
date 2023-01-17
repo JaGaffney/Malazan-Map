@@ -10,6 +10,7 @@ import { bookColor } from '../utils/color';
 export const TimeEvent = (props) => {
     const activeID = useSelector((state: any) => state.filter.activeID)
     const dispatch = useDispatch()
+
     return (
         <div className="timeline__event-item" onClick={() => {
             if (props.filter === "") {
@@ -24,7 +25,7 @@ export const TimeEvent = (props) => {
 
             }
         }}
-            data-tip={props.data.name}
+            data-tip={props.filter === "" ? props.data.name : null}
         >
             <div className={`
                 timeline__event-item-icon 
