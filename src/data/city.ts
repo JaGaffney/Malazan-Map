@@ -43,9 +43,27 @@ const cityData = [
     },
     {
         name: "Skullcup",
-        loc: [245.0, 15, 35.0],
+        loc: [245.0, 15, 34.0],
         type: 3,
-        owner: "malazan",
+        owner: "Army of the Apocalpse",
+    },
+    {
+        name: "Capustan",
+        loc: [311.0, 15, 57.0],
+        type: 2,
+        owner: "",
+    },
+    {
+        name: "Bastion",
+        loc: [300.0, 15, 66.0],
+        type: 2,
+        owner: "Pannion Domin",
+    },
+    {
+        name: "Morn",
+        loc: [294.0, 15, 89.0],
+        type: 4,
+        owner: "",
     },
 ];
 

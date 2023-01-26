@@ -38,6 +38,11 @@ export const calculateColorCityType = (cityType: number): IColorCtyType => {
             color.hexOverlay = "#105752";
             color.classname = "cityThree";
             return color;
+        case 4:
+            color.hex = "#115e59";
+            color.hexOverlay = "#105752";
+            color.classname = "cityFour";
+            return color;
         default:
             return color;
     }
@@ -61,6 +66,11 @@ export const calculateColorOwner = (owner: string): IColorCtyType => {
         case "Army of the Apocalpse":
             color.hex = "#d97706";
             color.classname = "cityOwnerOrange";
+            return color;
+        case "Pannion Domin":
+        case "House of Chains":
+            color.hex = "#718096";
+            color.classname = "cityOwnerGray";
             return color;
         default:
             return color;
