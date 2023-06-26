@@ -85,6 +85,22 @@
     &-container {
         grid-column: 1 / 3;
         grid-row: 1;
+        &-header {
+            button {
+                position: absolute;
+                right: 1.3rem;
+                top: 0.5rem;
+                border: none;
+                background: inherit;
+                color: inherit;
+                font-size: inherit;
+                cursor: pointer;
+                &:hover,
+                &:focus {
+                    color: var(--red600);
+                }
+            }
+        }
         &-info {
             display: flex;
             flex-wrap: nowrap;

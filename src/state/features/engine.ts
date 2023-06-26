@@ -26,18 +26,20 @@ export interface IRootState {
     search: string;
 }
 
+const defaultActiveData = {
+    id: "",
+    book: 0,
+    name: "",
+    icon: "",
+    description: "",
+    char: [],
+    loc: [],
+    area: 0,
+};
+
 const initialState: IRootState = {
     activeCord: { x: 0, y: 0 },
-    activeData: {
-        id: "",
-        book: 0,
-        name: "",
-        icon: "",
-        description: "",
-        char: [],
-        loc: [],
-        area: 0,
-    },
+    activeData: defaultActiveData,
     activeBooks: [1, 2, 3, 4],
     activeCharacter: [],
     activeCity: [0],
@@ -56,6 +58,9 @@ export const filterSlice = createSlice({
         },
         updateActiveData: (state, action) => {
             state.activeData = action.payload;
+        },
+        resetActiveData: (state) => {
+            state.activeData = defaultActiveData;
         },
         updateActiveCity: (state, action) => {
             state.activeCity = filterArray(state.activeCity, action.payload);
@@ -81,7 +86,7 @@ export const filterSlice = createSlice({
     },
 });
 
-export const { update, reset, updateActiveData, updateActiveCity, resetActiveCity, updateActiveCharacter, resetActiveCharacter, updateActiveBooks, resetActiveBooks, updateSearch } =
+export const { update, reset, updateActiveData, resetActiveData, updateActiveCity, resetActiveCity, updateActiveCharacter, resetActiveCharacter, updateActiveBooks, resetActiveBooks, updateSearch } =
     filterSlice.actions;
 
 export default filterSlice.reducer;

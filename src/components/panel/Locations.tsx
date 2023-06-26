@@ -8,8 +8,9 @@ import { calculateColorCityType, calculateColorOwner } from '../utils/color';
 import { validFilterQuery } from '../utils/helpers';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Draggable from 'react-draggable';
+import Title from './Title';
 
-export default function Locations() {
+export default function Locations(props) {
     const activeCity = useSelector((state: any) => state.filter.activeCity)
     const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()
@@ -22,7 +23,9 @@ export default function Locations() {
                     <div className="panel__item">
 
                         <div className="panel__item-container  panel__header-draggable">
-                            <h5>Points of interest</h5>
+
+                            <Title name={"Points of interest"} onCloseHandler={props.onCloseHandler} />
+
                             <div className={`panel__item-container-info`} onClick={() => dispatch(resetActiveCity())}>
                                 <span>Reset</span>
                             </div>

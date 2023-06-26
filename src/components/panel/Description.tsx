@@ -6,11 +6,16 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import { bookColor } from '../utils/color';
 import characters from "../../data/characters"
 import AREAS from "../../data/areas"
+import { resetActiveData } from "../../state/features/engine"
+import Title from './Title';
 
 export default function Description() {
     const activeData = useSelector((state: any) => state.filter.activeData)
     const dispatch = useDispatch()
 
+    const onCloseHandler = (value) => {
+        dispatch(resetActiveData())
+    }
 
     return (
 
@@ -21,7 +26,8 @@ export default function Description() {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
                             <>
-                                <h5 style={{ color: bookColor(activeData.book) }}>{activeData.name}</h5>
+                                <Title name={activeData.name} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
+
                                 <div className="panel__item-container-info">
                                     <span>Location: {AREAS[activeData.area - 1].name}</span>
                                     <span>Book: {activeData.book}</span>

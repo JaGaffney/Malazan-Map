@@ -10,6 +10,7 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import Draggable from 'react-draggable';
 
 import { eventIcons } from "../../data/icons";
+import Title from './Title';
 
 
 export default function Characters(props) {
@@ -50,7 +51,9 @@ export default function Characters(props) {
 
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable">
-                            <h5>Characters</h5>
+
+                            <Title name={"Characters"} onCloseHandler={props.onCloseHandler} />
+
 
                             <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCharacter())}>
                                 <span>Show all</span>

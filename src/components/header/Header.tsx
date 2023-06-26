@@ -53,9 +53,9 @@ export default function Header() {
 
 
 
-            {books && <Books />}
-            {places && <Locations />}
-            {characters && <Characters />}
+            {books && <Books onCloseHandler={setBooks} />}
+            {places && <Locations onCloseHandler={setPlaces} />}
+            {characters && <Characters onCloseHandler={setCharacters} />}
 
             {worldMap && <WorldMap />}
             {settings && <Settings />}

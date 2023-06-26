@@ -6,6 +6,7 @@ import Draggable, { DraggableCore } from "react-draggable"
 import { resetActiveBooks, updateActiveBooks } from "../../state/features/engine"
 import { bookColor } from '../utils/color'
 import ScrollContainer from 'react-indiana-drag-scroll';
+import Title from './Title';
 
 const Book = (props) => {
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
@@ -19,7 +20,7 @@ const Book = (props) => {
     )
 }
 
-export default function Books() {
+export default function Books(props) {
     const dispatch = useDispatch()
 
     return (
@@ -29,12 +30,13 @@ export default function Books() {
                 <ScrollContainer className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
-                            <>
-                                <h5>Books</h5>
-                                <div className="panel__item-container-info" onClick={() => dispatch(resetActiveBooks())}>
-                                    <span>Show all</span>
-                                </div>
-                            </>
+
+                            <Title name={"Books"} onCloseHandler={props.onCloseHandler} />
+
+                            <div className="panel__item-container-info" onClick={() => dispatch(resetActiveBooks())}>
+                                <span>Show all</span>
+                            </div>
+
                             <Book book={1} name={"Gardens of the Moon"} />
                             <Book book={2} name={"Deadhouse Gates"} />
                             <Book book={3} name={"Memories of Ice"} />
