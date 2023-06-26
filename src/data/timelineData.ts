@@ -10,11 +10,10 @@ const timelineData = {
             id: uuidv4(),
             book: 3,
             name: "Start of book 3 - 33rd Jaghut War",
-            icon: eventIcons.tlanimass,
+            icon: eventIcons.old,
             description: "",
             char: [],
             loc: [522.65, 136.47],
-            moon: [0, 0, 0],
             area: 1,
         },
     ],
@@ -27,7 +26,6 @@ const timelineData = {
             description: "3 years after the Fall of the Crippled God",
             char: [14, 29],
             loc: [315.06, 251.73],
-            moon: [0, 0, 0],
             area: 4,
         },
     ],
@@ -40,8 +38,19 @@ const timelineData = {
             description: "",
             char: [1, 5, 19],
             loc: [420.0, 185.59],
-            moon: [0, 0, 0],
             area: 3,
+        },
+    ],
+    1159: [
+        {
+            id: uuidv4(),
+            book: 4,
+            name: "Start of book 4 - Teblor",
+            icon: eventIcons.tribal,
+            description: "",
+            char: [39],
+            loc: [532.77, 30.7],
+            area: 1,
         },
     ],
     1160: [
@@ -53,7 +62,6 @@ const timelineData = {
             description: "",
             char: [3, 4, 5, 6, 7, 8, 11, 12, 14],
             loc: [520.8, 75.0],
-            moon: [179, 5, 70],
             area: 1,
         },
     ],
@@ -66,7 +74,6 @@ const timelineData = {
             description: "Sorry is born, Lorn and Parnn investiage, Sorry enlists in nearby garrison",
             char: [1, 2, 17],
             loc: [391.67, 179.45],
-            moon: [179, 5, 70],
             area: 3,
         },
         {
@@ -77,7 +84,6 @@ const timelineData = {
             description: "Topper brings Paran through the imperail warren to Unta infront of Empress Lassen and then returns home to see his sister Tavore",
             char: [1, 10, 17],
             loc: [415.57, 165.64],
-            moon: [179, 5, 70],
             area: 3,
         },
     ],
@@ -90,7 +96,16 @@ const timelineData = {
             description: "",
             char: [2, 3, 4, 5, 6, 7, 8, 11, 12, 14],
             loc: [520.88, 75.07],
-            moon: [179, 5, 70],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 4,
+            name: "Karsa trapped",
+            icon: eventIcons.tribal,
+            description: "",
+            char: [39],
+            loc: [519.495, 35.305],
             area: 1,
         },
         {
@@ -101,7 +116,6 @@ const timelineData = {
             description: "",
             char: [1],
             loc: [517.34, 35.16],
-            moon: [179, 5, 70],
             area: 1,
         },
         {
@@ -112,7 +126,6 @@ const timelineData = {
             description: "",
             char: [1, 2, 3, 4, 5, 6, 7, 11, 12, 13],
             loc: [520.88, 75.07],
-            moon: [178.08, 4, 79.82],
             area: 1,
         },
         {
@@ -123,7 +136,6 @@ const timelineData = {
             description: "",
             char: [15, 16, 14],
             loc: [522.65, 84.28],
-            moon: [522.655, 4, 79.82],
             area: 1,
         },
         {
@@ -134,8 +146,17 @@ const timelineData = {
             description: "the Bridgeburners find a boat to sail accross to Darujhistan where Sorry reveals she knows how to sail.",
             char: [2, 4, 5, 11, 12],
             loc: [522.65, 81],
-            moon: [178.08, 4, 79.82],
             area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 4,
+            name: "Karsa escapes the warren",
+            icon: eventIcons.warren,
+            description: "Karsa escapes the Narscent warren and ends up in Seven Cities.",
+            char: [39],
+            loc: [412.41, 46.05],
+            area: 3,
         },
         {
             id: uuidv4(),
@@ -145,7 +166,6 @@ const timelineData = {
             description: "Lorn confronts Tattersail on her killing her family",
             char: [1, 3, 6, 7, 13, 17, 18],
             loc: [520.88, 75.07],
-            moon: [178.08, 4, 79.82],
             area: 1,
         },
         {
@@ -156,7 +176,6 @@ const timelineData = {
             description: "",
             char: [14, 9],
             loc: [530.62, 52.05],
-            moon: [178.08, 4, 79.82],
             area: 1,
         },
         {
@@ -167,7 +186,6 @@ const timelineData = {
             description: "Tattersail opens her warren but due to being near tool it explodes killing her. Paran and Toc finder her reamins the next day",
             char: [3, 17, 18, 1, 7],
             loc: [530.62, 79.67],
-            moon: [530.62, 4, 79.82],
             area: 1,
         },
         {
@@ -178,7 +196,6 @@ const timelineData = {
             description: "Hairlock attacks Crone and other crows",
             char: [6, 14],
             loc: [528.85, 76.61],
-            moon: [178.08, 4, 79.82],
             area: 1,
         },
         {
@@ -189,7 +206,6 @@ const timelineData = {
             description: "Lorn and Tool find the barrow for the Jaghut Tyrant",
             char: [17, 18, 2, 15, 16, 1, 6, 7, 8, 14, 3],
             loc: [529.73, 84.28],
-            moon: [178.08, 4, 79.82],
             area: 1,
         },
         {
@@ -200,19 +216,17 @@ const timelineData = {
             description: "Everyone makes their way back to Darujhistan and arrive at various times.",
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16],
             loc: [522.65, 84.28],
-            moon: [178.08, 4, 79.82],
             area: 1,
         },
         {
             id: uuidv4(),
             book: 1,
             name: "Gadrobi Hills - Jaghut Tyrant",
-            icon: eventIcons.tlanimass,
+            icon: eventIcons.jaghurt,
             description:
                 "The Jaghut Tyrant's Raest awakens and fights 4 black dragons and the red dragon Silanah. Raest enters Kruppes dream and meets K'rul, Tool destorys his body but he escapes into a new body ",
             char: [],
             loc: [529.73, 84.28],
-            moon: [178.08, 4, 78.82],
             area: 1,
         },
         {
@@ -223,7 +237,6 @@ const timelineData = {
             description: "The Finnest grows into a monster, and the Tyrant attacks the city",
             char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16, 17, 18],
             loc: [522.65, 84.28],
-            moon: [178.6, 2.5, 78.3],
             area: 1,
         },
         {
@@ -234,7 +247,6 @@ const timelineData = {
             description: "Returning Sorry home",
             char: [2, 11, 12, 15],
             loc: [517.34, 81.14],
-            moon: [184.08, 5, 79.82],
             area: 1,
         },
         {
@@ -245,7 +257,6 @@ const timelineData = {
             description: "The Nobles of Unta are culled and Felisin is enslaved by her sister.",
             char: [19, 20, 21, 22],
             loc: [415.57, 165.64],
-            moon: [179, 0, 70],
             area: 3,
         },
     ],
@@ -258,7 +269,6 @@ const timelineData = {
             description: "A caravan of merchants heading eastward towards Darujhistan are blocked by a river whose bridge was destroyed,",
             char: [30, 31, 32],
             loc: [529.73, 84.28],
-            moon: [182.31, 0, 82.89],
             area: 1,
         },
         {
@@ -269,7 +279,6 @@ const timelineData = {
             description: "Soultaken are searching for something in the desert",
             char: [23, 24],
             loc: [406.72, 58.19],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -280,7 +289,6 @@ const timelineData = {
             description: "Toc the Younger wakes up after being spat out of the warren, Tool finds him and they make their way to Lady Envy's tower",
             char: [7, 18, 33],
             loc: [522.655, 136.475],
-            moon: [182.31, 0, 82.89],
             area: 1,
         },
         {
@@ -291,7 +299,6 @@ const timelineData = {
             description: "Coltain is made commander of the 7th Malazan army",
             char: [25, 26, 27],
             loc: [424.42, 58.19],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -302,7 +309,6 @@ const timelineData = {
             description: "Fiddler explodes a Soletaken while at sea",
             char: [2, 11, 12, 15],
             loc: [423.54, 40.17],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -313,7 +319,6 @@ const timelineData = {
             description: "Kalam takes the holy book and Fiddler goes his seperate way in order to complete their intitial goal.",
             char: [2, 11, 12, 15],
             loc: [408.49, 48.98],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -324,9 +329,9 @@ const timelineData = {
             description: "Mappo and Icarium meet Iskaral Pust and serverant.",
             char: [23, 24, 28],
             loc: [406.95, 52.05],
-            moon: [179, 0, 70],
             area: 2,
         },
+
         {
             id: uuidv4(),
             book: 2,
@@ -335,7 +340,6 @@ const timelineData = {
             description: "Felisin sells her body to try and make a better life for Herboric and Baudin even though they dont care.",
             char: [19, 20, 21],
             loc: [433.27, 52.05],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -346,7 +350,6 @@ const timelineData = {
             description: "Everyone meets together to discuss the attack on the Pannion Domin",
             char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
             loc: [523.54, 73.53],
-            moon: [182.31, 0, 82.89],
             area: 1,
         },
         {
@@ -357,7 +360,6 @@ const timelineData = {
             description: "Mappo and Icarium explore.",
             char: [23, 24, 28],
             loc: [404.3, 53.25],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -368,7 +370,6 @@ const timelineData = {
             description: "Kalam rests from his travels but is pursed by the Red Blade Captain Lostara Yil.",
             char: [11],
             loc: [402.3, 53.59],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -379,7 +380,6 @@ const timelineData = {
             description: "Fiddlers group pretend to be newly weds in order to travel the 3 citys and the group work out that Dancer is now Cotillion.",
             char: [2, 12, 15],
             loc: [405.84, 56.65],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -390,7 +390,6 @@ const timelineData = {
             description: "Kalam hands the holy book over to Sha'ik and leaves with the Aptorian. Sha'ik is assisanated",
             char: [11],
             loc: [398.75, 53.58],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -401,7 +400,6 @@ const timelineData = {
             description: "The Whirlwind begins, which casues Duiker and Kulp to be split up from each other and Colatines warband.",
             char: [25, 27],
             loc: [423.54, 56.65],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -409,21 +407,30 @@ const timelineData = {
             book: 3,
             name: "The new card?",
             icon: eventIcons.card,
-            description: "Anamanda Rake meets with the aliance and a new card in the deck of dragons appears bearing Parans appereance.",
+            description:
+                "Anamanda Rake meets with the aliance and a new card in the deck of dragons appears bearing Parans appereance. Paran enters the Finnest House where he is told he is the master of the deck",
             char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
             loc: [523.54, 73.53],
-            moon: [179, 0, 70],
             area: 1,
         },
         {
             id: uuidv4(),
             book: 3,
-            name: "Vision Mountains?",
+            name: "To Capustan",
+            icon: eventIcons.tlanimass,
+            description: "The group is attacked by K'ell Hunters on the way to Capustan and then resecured by T'lan Imass and the mortal swords forces",
+            char: [30, 31, 32, 34, 35, 36],
+            loc: [543.39, 82.89],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Vision Mountains",
             icon: eventIcons.travelFly,
-            description: "Black Moranth transported Captain Paran and the Bridgeburners to the Vision Mountains",
+            description: "Black Moranth transport Captain Paran and the Bridgeburners to the Vision Mountains in order to meet up with the Barhgast tribes",
             char: [1],
             loc: [544.275, 87.49],
-            moon: [179, 0, 70],
             area: 1,
         },
 
@@ -435,7 +442,6 @@ const timelineData = {
             description: "Duiker returns to Hissar to see the chaos and pretends to be member of the Apocalypse with a deathwish of revenge, Coltaine is attemping to bring the refugses back to Aran",
             char: [25],
             loc: [424.42, 58.19],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -446,7 +452,6 @@ const timelineData = {
             description: "Fiddler's Crew enter the great Whirlwind to escape pursuit.",
             char: [2, 12, 15],
             loc: [400.53, 53.59],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -457,7 +462,6 @@ const timelineData = {
             description: "Kalam is attacked by D'ivers but the demon Apt protects him but sustains damage.",
             char: [11],
             loc: [398.76, 56.65],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -468,7 +472,6 @@ const timelineData = {
             description: "The group travels the desert and almost die but the Boar cult god Fener heals Herboric but is brought into the mortal world.",
             char: [19, 20, 21],
             loc: [431.5, 48.98],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -479,7 +482,6 @@ const timelineData = {
             description: "Mappo and Icarium save Fiddlers group.",
             char: [2, 12, 15, 23, 24],
             loc: [400.53, 53.59],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -490,9 +492,91 @@ const timelineData = {
             description: "Felisins group are on their last legs, and then Kulp appears asking for their help from an insane mage who brings them into an elder warren.",
             char: [19, 20, 21, 27],
             loc: [427.96, 48.98],
-            moon: [179, 0, 70],
             area: 2,
         },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Lamatath Plain",
+            icon: eventIcons.travelFoot,
+            description: "Tocs group travel towards Bastion, Toc meets Tools living sister who refused to become a bone T'lan, Toc comforts Tool and is given a new name by the Seguleh",
+            char: [7, 18, 33],
+            loc: [524.805, 121.265],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Callows",
+            icon: eventIcons.warren,
+            description:
+                "Lady Envy meets K'rul at Callows who says the main threat isnt the Pannion Domin but the one controlling them. The Chained God. She also learns about the origins of the Warrens, K'ruls body. And that the Crippled God is killing him.",
+            char: [33],
+            loc: [512.415, 115.125],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Fear",
+            icon: eventIcons.death,
+            description: "Toc runs away from Tool and Lady Envy after witnessing a battle realising if he stays, he will die. He then joins the Pannion Domin in order to live.",
+            char: [7, 18, 33],
+            loc: [531, 101.3],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Capustan surrounded",
+            icon: eventIcons.slave,
+            description: "Capustan has been surrounded by over 100,000 cultists",
+            char: [30, 31, 32, 34, 35, 36],
+            loc: [551.355, 87.49],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Barghast Camp",
+            icon: eventIcons.campfire,
+            description: "Quick Ben attempts to meet Captain Paran but is pulled into a Warren, Trotts becomes the new clan leader of the Bridgeburners ",
+            char: [1, 4],
+            loc: [544.275, 87.49],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Outlook",
+            icon: eventIcons.death,
+            description: "Toc meets the leader of the Pannion Domin the Pannion Seer who is a Jaghurt, Toc is captured by the Materon and is tortued while being constantly healed. ",
+            char: [7],
+            loc: [545.165, 104.38],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "The journey to Capustan",
+            icon: eventIcons.travelCart,
+            description:
+                "Whiskeyjacks forces make there way to Capustan although they believe they will not make it in time. Kallor is contacted by the Crippled god to sit to lead the House of Chains.",
+            char: [3, 5, 9, 13, 14, 16, 29, 37],
+            loc: [531, 76.75],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Battle of Capustan",
+            icon: eventIcons.battle,
+            description: "The Siege of Capustan begins, the Bridgeburners arrive.",
+            char: [1, 4, 30, 31, 32, 34, 35, 36],
+            loc: [551.355, 87.49],
+            area: 1,
+        },
+
         {
             id: uuidv4(),
             book: 2,
@@ -501,18 +585,16 @@ const timelineData = {
             description: "Fiddler recovers and Aspala leaves with her father and the group go after her.",
             char: [23, 24, 28, 2, 12, 15],
             loc: [404.3, 53.25],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
             id: uuidv4(),
             book: 2,
-            name: "Kalam, the Kalam?",
+            name: "Kalams renown",
             icon: eventIcons.assassin,
             description: "Kalam saves a group from bandits and join forces with them heading for Aren.",
             char: [11],
             loc: [398.76, 59.72],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -523,7 +605,6 @@ const timelineData = {
             description: "Duiker rejoins Coltaine army.",
             char: [25, 26],
             loc: [420.0, 59.72],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -534,7 +615,6 @@ const timelineData = {
             description: "Felisins group and Kulp escape the warren and end up on the mainland.",
             char: [19, 20, 21, 27],
             loc: [399.64, 52.05],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -545,7 +625,6 @@ const timelineData = {
             description: "Kalam's group go into the Imperial warren aiming for Aren.",
             char: [11],
             loc: [398.76, 59.72],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -556,7 +635,6 @@ const timelineData = {
             description: "Duiker joins a skirmish on the enemy camp.",
             char: [25, 26],
             loc: [406.72, 64.33],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -567,7 +645,6 @@ const timelineData = {
             description: "Felisins group find remnants of the first empire. Felisins group leave the city but are attacked by the Rat D'ivers, Kulp and Baudin die.",
             char: [19, 20, 21, 27],
             loc: [399.64, 52.05],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -578,7 +655,6 @@ const timelineData = {
             description: "Fiddler groups trys to find Apsalar and her father.",
             char: [23, 24, 28, 2, 12, 15],
             loc: [400.53, 53.59],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -589,7 +665,6 @@ const timelineData = {
             description: "Duiker joins a skirmish on the enemy camp.",
             char: [25, 26],
             loc: [406.72, 64.33],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -600,7 +675,6 @@ const timelineData = {
             description: "Battle of Gelor Ridge.",
             char: [25, 26],
             loc: [403.18, 64.33],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -611,7 +685,6 @@ const timelineData = {
             description: "Kalam group exit the Imperial Warren at Aren.",
             char: [11],
             loc: [390.79, 85.82],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -622,7 +695,6 @@ const timelineData = {
             description: "Kalam is on the boat on board to Unta.",
             char: [11],
             loc: [404.95, 90.15],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -633,7 +705,6 @@ const timelineData = {
             description: "Onwards to Aren",
             char: [25, 26],
             loc: [396.98, 62.79],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -644,7 +715,6 @@ const timelineData = {
             description: "Felisin is enticed into becoming Sha'ik Reborn.",
             char: [19, 20],
             loc: [398.76, 53.59],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -655,7 +725,6 @@ const timelineData = {
             description: "The group enters Tremalore.",
             char: [23, 24, 28, 2, 12, 15],
             loc: [396.1, 52.05],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -666,7 +735,7 @@ const timelineData = {
             description: "The Silanda returns",
             char: [25, 26],
             loc: [396.99, 65.86],
-            moon: [179, 0, 70],
+            area: 2,
         },
         {
             id: uuidv4(),
@@ -676,7 +745,6 @@ const timelineData = {
             description: "The Sapper Captain is demoted",
             char: [25, 26],
             loc: [392.56, 67.4],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -687,7 +755,6 @@ const timelineData = {
             description: "They are semi-trapped inside a Warren and are blown of course to Malaz City.",
             char: [11],
             loc: [418.93, 106.75],
-            moon: [179, 0, 70],
             area: 3,
         },
         {
@@ -698,9 +765,73 @@ const timelineData = {
             description: "The merchants arrive bringing needed supplies",
             char: [25, 26],
             loc: [385.48, 73.53],
-            moon: [179, 0, 70],
             area: 2,
         },
+
+        // after capustan
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Over the water",
+            icon: eventIcons.travelBoat,
+            description: "Lady Envys group is going to Coral to save Toc and defeat the Seer",
+            char: [18, 33],
+            loc: [546.045, 96.705],
+            area: 1,
+        },
+
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Lest",
+            icon: eventIcons.travelCart,
+            description: "Caladin broods army heads towards Lest",
+            char: [9, 14, 29, 37, 36, 30],
+            loc: [548.7, 89.03],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Setta",
+            icon: eventIcons.travelCart,
+            description: "Whiskeyjacks group heards toward Setta",
+            char: [3, 5, 13, 16, 34],
+            loc: [548.7, 89.03],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Coral bay",
+            icon: eventIcons.bridgeBurners,
+            description: "The BridgeBurners make there way to the outskirts of Coral bay",
+            char: [1, 4],
+            loc: [546.045, 93.63],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Maurik",
+            icon: eventIcons.city,
+            description: "The BridgeBurners make there way to the outskirts of Coral bay",
+            char: [3, 5, 13, 16, 34, 9, 14, 29, 37, 36, 30],
+            loc: [548.7, 92.1],
+            area: 1,
+        },
+
+        {
+            id: uuidv4(),
+            book: 3,
+            name: "Attack on Coral city",
+            icon: eventIcons.battle,
+            description: "The final fight fir Coral city",
+            char: [1, 4, 3, 5, 13, 16, 34, 9, 14, 29, 37, 36, 30, 18, 33],
+            loc: [546.045, 93.63],
+            area: 1,
+        },
+
         {
             id: uuidv4(),
             book: 2,
@@ -709,7 +840,6 @@ const timelineData = {
             description: "Duiker is orderd to go to Aren with the refugees",
             char: [25],
             loc: [385.48, 79.67],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -720,7 +850,6 @@ const timelineData = {
             description: "Kalam arrives in Malaz City but is hunted by the Claw but Kalam does Kalam stuff.",
             char: [11],
             loc: [420.0, 185.6],
-            moon: [179, 0, 70],
             area: 3,
         },
         {
@@ -732,7 +861,6 @@ const timelineData = {
                 "Duiker and the refugees enter Aren, High Fist Pormqual refuses to help and the rest of Coltaines army is killed. Duiker is betrayed and crucified outside Aren with the rest of the army.",
             char: [25, 26],
             loc: [390.79, 85.82],
-            moon: [179, 0, 70],
             area: 2,
         },
         {
@@ -743,7 +871,6 @@ const timelineData = {
             description: "Fiddlers group end up in Malaz City by usign the Deadhouse gates. Kalam speaks to empress Lassen.",
             char: [2, 12, 15, 10, 11],
             loc: [420.0, 185.59],
-            moon: [179, 0, 70],
             area: 3,
         },
         {
@@ -755,7 +882,6 @@ const timelineData = {
                 "Felisin uses the whirlwind to teleport to Aren gathers her rebellion army and returns to Raraku. Mappo and Icarium end up outside Aren and meet the Silandra crew who are seraching for Duikers body which they can't find.",
             char: [19, 20, 23, 24],
             loc: [389.91, 84.29],
-            moon: [179, 0, 70],
             area: 2,
         },
     ],
