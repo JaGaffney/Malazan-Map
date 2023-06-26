@@ -48,9 +48,9 @@ export default function Description() {
                                             column = "second"
                                         }
                                         let active = ""
-                                        // if (activeCharacter.includes(parseInt(i))) {
-                                        //     active = "panel__item-container-info-active"
-                                        // }
+                                        if (activeCharacter.includes(parseInt(i))) {
+                                            active = "panel__item-container-info-active"
+                                        }
                                         return (
                                             <div key={k} className={`panel__item-container-info ${active} panel__item-container-table-${column}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
                                                 <span>{characters[i].name}</span>
