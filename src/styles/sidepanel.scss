@@ -110,11 +110,8 @@
         }
         &-table {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 0rem 2rem;
-            &-second {
-                grid-column: 2;
-            }
         }
         &-info {
             display: flex;

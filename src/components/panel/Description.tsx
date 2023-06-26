@@ -43,16 +43,12 @@ export default function Description() {
                                 <h4>Characters</h4>
                                 <div className="panel__item-container-table">
                                     {activeData.char.map((i, k) => {
-                                        let column = ""
-                                        if (k % 2 !== 0) {
-                                            column = "second"
-                                        }
                                         let active = ""
                                         if (activeCharacter.includes(parseInt(i))) {
                                             active = "panel__item-container-info-active"
                                         }
                                         return (
-                                            <div key={k} className={`panel__item-container-info ${active} panel__item-container-table-${column}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
+                                            <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
                                                 <span>{characters[i].name}</span>
                                                 {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
                                             </div>

@@ -159,6 +159,15 @@
             width: 100%;
         }
     }
+
+    .panel__item {
+        &-container {
+            &-table {
+                grid-template-columns: 1fr;
+                gap: 0rem;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
