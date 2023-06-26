@@ -12,7 +12,7 @@ export default function Sea() {
     seaTexture.wrapT = RepeatWrapping;
 
     return (
-        <mesh position={[0, -4, 50]} rotation-x={-Math.PI * 0.5}>
+        <mesh position={[0, -3, 50]} rotation-x={-Math.PI * 0.5}>
             <planeGeometry args={[1000, 500]} />
             <meshPhysicalMaterial
                 envMap={envMap}

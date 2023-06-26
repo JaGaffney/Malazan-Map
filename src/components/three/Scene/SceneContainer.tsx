@@ -1,25 +1,26 @@
 import React, { Suspense, useEffect } from "react";
-import { Environment, Stars, MapControls, PerspectiveCamera, Hud } from "@react-three/drei";
+import { Environment, Stars, MapControls, PerspectiveCamera, } from "@react-three/drei";
 import { Color } from "three";
 
-import Sea from "./World/Sea";
-import Border from "./World/Border";
-import Floor from "./World/Floor";
-import FloatingGrid from "./World/FloatingGrid";
-import Map from "./Map/Map"
+import Sea from "../World/Sea";
+import Border from "../World/Border";
+import Floor from "../World/Floor";
+import FloatingGrid from "../World/FloatingGrid";
+import Map from "../Map/Map"
 
-import Hex from "./Hex/Hex";
-import Highlight from "./Overlay/Highlight";
-import Words from "./Overlay/Words"
-import Moonspawn from "./Overlay/Moonspawn";
-import Building from "./Building/Building";
+import Hex from "../Hex/Hex";
+import Highlight from "../Overlay/Highlight";
+import Words from "../Overlay/Words"
+import Moonspawn from "../Overlay/Moonspawn";
+import Building from "../Building/Building";
 import Cam from "./Cam"
 
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
-import { store } from "../../state/store"
-import Flags from "./Overlay/Flags";
+import { store } from "../../../state/store"
+import Flags from "../Overlay/Flags";
 import { useFrame } from "@react-three/fiber";
+import GhostMap from "../World/GhostMap";
 
 export function SceneContainer(props) {
     useEffect(() => {
@@ -45,7 +46,7 @@ export function SceneContainer(props) {
             <group position={[-400, 0, -100]}>
                 <Hex />
                 <Highlight />
-                <Moonspawn />
+                {/* <Moonspawn /> */}
                 <Flags />
                 <Building />
             </group>
@@ -54,9 +55,11 @@ export function SceneContainer(props) {
 
             {/* makes it better but lags */}
             <Stars radius={10} depth={500} count={5000} factor={4} saturation={0} fade speed={1} />
+            {/* <GhostMap /> */}
             <Sea />
             <Floor />
             <FloatingGrid />
+
             {/* <Border /> */}
 
         </Provider>

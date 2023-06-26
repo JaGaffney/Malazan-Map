@@ -5,11 +5,11 @@ import { updateActiveAreas } from "../../state/features/settings"
 import AREAS from "../../data/areas"
 
 const MapImage = (props) => {
-    const activeData = useSelector((state: any) => state.filter.activeData)
+    const activeDataArea = useSelector((state: any) => state.filter.activeData.area)
     const areaData = useSelector((state: any) => state.settings.areas)
 
     return (
-        <img className={`worldmap-map ${activeData === props.areaNumber ? "worldmap-hightlight" : ""} ${!areaData.includes(props.areaNumber) ? "worldmap-dark" : ""} ${props.highlight === props.areaNumber ? "worldmap-hover" : ""}`} src={props.url} alt={props.name} />
+        <img className={`worldmap-map ${activeDataArea === props.areaNumber ? "worldmap-hightlight" : ""} ${!areaData.includes(props.areaNumber) ? "worldmap-dark" : ""} ${props.highlight === props.areaNumber ? "worldmap-hover" : ""}`} src={props.url} alt={props.name} />
     )
 }
 
