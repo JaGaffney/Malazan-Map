@@ -1,16 +1,32 @@
 import React from 'react'
-import { HiMap, HiCog } from 'react-icons/hi'
+import { HiMap, HiCog, HiFlag, HiBookOpen, HiUsers } from 'react-icons/hi'
 import { HiOutlineAdjustmentsHorizontal, HiOutlineMapPin } from "react-icons/hi2";
 
 const Buttons = (props) => {
     return (
         <div className="buttons__container">
-            <button className={`buttons__item ${props.panel ? "buttons__item-active" : ""}`} onClick={() => {
-                props.onPanelHandler(!props.panel)
+            <button className={`buttons__item ${props.books ? "buttons__item-active" : ""}`} onClick={() => {
+                props.onBooksHandler(!props.books)
                 props.onSettingsHandler(false)
             }}>
-                <HiOutlineAdjustmentsHorizontal />
-                <span>Filters</span>
+                <HiBookOpen />
+                <span>Books</span>
+            </button>
+
+            <button className={`buttons__item ${props.places ? "buttons__item-active" : ""}`} onClick={() => {
+                props.onPlacesHandler(!props.places)
+                props.onSettingsHandler(false)
+            }}>
+                <HiFlag />
+                <span>Places</span>
+            </button>
+
+            <button className={`buttons__item ${props.characters ? "buttons__item-active" : ""}`} onClick={() => {
+                props.onCharactersHandler(!props.characters)
+                props.onSettingsHandler(false)
+            }}>
+                <HiUsers />
+                <span>Characters</span>
             </button>
 
             <button className={`buttons__item ${props.timeline ? "buttons__item-active" : ""}`} onClick={() => props.onTimelineHandler(!props.timeline)}>
@@ -25,9 +41,11 @@ const Buttons = (props) => {
 
             <button className={`buttons__item ${props.settings ? "buttons__item-active" : ""}`} onClick={() => {
                 props.onSettingsHandler(!props.settings)
-                props.onPanelHandler(false);
+                props.onBooksHandler(false);
+                props.onPlacesHandler(false);
+                props.onCharactersHandler(false);
             }}>
-                <HiCog />
+                <HiOutlineAdjustmentsHorizontal />
                 <span>Settings</span>
             </button>
 
