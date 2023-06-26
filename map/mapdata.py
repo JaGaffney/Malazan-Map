@@ -6,7 +6,7 @@ import json
 
 image_name = "genostel"
 
-img = Image.open(f"{image_name}.png")
+img = Image.open(f"data/{image_name}.png")
 pixels = img.load() 
 
 width, height = img.size
@@ -131,5 +131,5 @@ for i in map:
     sorted_data[terrain][height].append(temp_data)
     
 
-with open(f"{image_name}.json", "w") as outfile:
+with open(f"data/{image_name}.json", "w") as outfile:
     json.dump(sorted_data, outfile)
