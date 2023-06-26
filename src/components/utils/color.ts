@@ -6,6 +6,8 @@ export const bookColor = (bookNumber: number): string => {
             return "var(--amber800)";
         case 3:
             return "var(--red700)";
+        case 4:
+            return "var(--blue800)";
         default:
             return "";
     }
@@ -60,6 +62,7 @@ export const calculateColorOwner = (owner: string): IColorCtyType => {
             color.classname = "cityOwnerRed";
             return color;
         case "Anomander Rake":
+        case "Caladan Brood":
             color.hex = "#6d28d9";
             color.classname = "cityOwnerPurple";
             return color;

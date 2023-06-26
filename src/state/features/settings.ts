@@ -18,17 +18,22 @@ const initialState: IRootState = {
     forest: true,
     moutains: true,
     ice: true,
-    areas: [1, 2, 3],
+    areas: [1, 2, 3, 4, 5, 6, 7, 8],
 };
 
 export const settingsSlice = createSlice({
     name: "settings",
     initialState,
     reducers: {
+        setNone: (state) => {
+            state.flattern = true;
+            state.shadows = false;
+            // state.areas = [];
+        },
         setBasic: (state) => {
             state.flattern = true;
             state.shadows = false;
-            state.areas = [1];
+            state.areas = [1, 2, 3];
         },
         reset: (state) => {
             state = initialState;
@@ -66,6 +71,7 @@ export const settingsSlice = createSlice({
     },
 });
 
-export const { setBasic, reset, flattern, raise, addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests, updateActiveAreas, resetActiveAreas } = settingsSlice.actions;
+export const { setBasic, setNone, reset, flattern, raise, addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests, updateActiveAreas, resetActiveAreas } =
+    settingsSlice.actions;
 
 export default settingsSlice.reducer;

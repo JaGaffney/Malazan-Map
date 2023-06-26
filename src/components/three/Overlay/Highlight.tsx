@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 export default function Highlight() {
     const activeCord = useSelector((state: any) => state.filter.activeCord)
-    const activeID = useSelector((state: any) => state.filter.activeID)
+    const activeID = useSelector((state: any) => state.filter.activeData.id)
 
     return (
         activeID !== 0 && activeCord !== null ? (

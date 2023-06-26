@@ -2,21 +2,19 @@ import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import ReactTooltip from 'react-tooltip';
 
-import { update, updateActiveData, updateActiveID, updateMoon } from "../../state/features/engine"
+import { update, updateActiveData } from "../../state/features/engine"
 import { bookColor } from '../utils/color';
 
 
 
 export const TimeEvent = (props) => {
-    const activeID = useSelector((state: any) => state.filter.activeID)
+    const activeID = useSelector((state: any) => state.filter.activeData.id)
     const dispatch = useDispatch()
 
     return (
         <div className="timeline__event-item" onClick={() => {
             if (props.filter === "") {
-                dispatch(updateActiveID(props.data.id))
-                dispatch(updateActiveData(props.data.area))
-                dispatch(updateMoon(props.data.moon))
+                dispatch(updateActiveData(props.data))
                 if (props.data.loc !== null) {
                     dispatch(update({ x: props.data.loc[0], y: props.data.loc[1] }));
                 } else {

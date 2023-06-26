@@ -19,6 +19,14 @@ const Landing = (props) => {
                     </div>
 
                     <div className="landing__mode">
+                        <button className="landing__mode-button" onClick={() => props.onModeHandler(2)}>
+                            <div className="landing__mode-button-title">
+                                <HiDeviceMobile />
+                                <span>Basic</span>
+                            </div>
+                            <span className="landing__mode-button-description">no animations</span>
+                        </button>
+
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(1)}>
                             <div className="landing__mode-button-title">
                                 <HiDeviceMobile />

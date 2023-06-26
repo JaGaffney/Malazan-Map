@@ -11,7 +11,7 @@ export default function Textures() {
     const dispatch = useDispatch()
 
     return (
-        <div className="panel__item panel__item-last">
+        <div className="panel__item">
             <div className="panel__item-container">
                 <h5>Textures</h5>
 

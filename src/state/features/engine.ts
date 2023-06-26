@@ -6,24 +6,40 @@ interface Cord {
     y: number;
 }
 
+interface ActiveData {
+    id: string;
+    book: number;
+    name: string;
+    icon: any;
+    description: string;
+    char: Array<number | null>;
+    loc: Array<number | null>;
+    area: number;
+}
+
 export interface IRootState {
     activeCord: Cord;
-    activeID: number;
-    activeData: number;
+    activeData: ActiveData;
     activeBooks: Array<number>;
     activeCharacter: Array<number>;
     activeCity: Array<number>;
-    moon: Array<number>;
     search: string;
 }
 
 const initialState: IRootState = {
     activeCord: { x: 0, y: 0 },
-    activeID: 0,
-    activeData: 0,
-    activeBooks: [1, 2, 3],
+    activeData: {
+        id: "",
+        book: 0,
+        name: "",
+        icon: "",
+        description: "",
+        char: [],
+        loc: [],
+        area: 0,
+    },
+    activeBooks: [1, 2, 3, 4],
     activeCharacter: [],
-    moon: [47, -5, 70],
     activeCity: [0],
     search: "",
 };
@@ -38,14 +54,8 @@ export const filterSlice = createSlice({
         reset: (state) => {
             state.activeCord = { x: 0, y: 0 };
         },
-        updateActiveID: (state, action) => {
-            state.activeID = action.payload;
-        },
         updateActiveData: (state, action) => {
             state.activeData = action.payload;
-        },
-        updateMoon: (state, action) => {
-            state.moon = action.payload;
         },
         updateActiveCity: (state, action) => {
             state.activeCity = filterArray(state.activeCity, action.payload);
@@ -71,19 +81,7 @@ export const filterSlice = createSlice({
     },
 });
 
-export const {
-    update,
-    reset,
-    updateActiveID,
-    updateActiveData,
-    updateMoon,
-    updateActiveCity,
-    resetActiveCity,
-    updateActiveCharacter,
-    resetActiveCharacter,
-    updateActiveBooks,
-    resetActiveBooks,
-    updateSearch,
-} = filterSlice.actions;
+export const { update, reset, updateActiveData, updateActiveCity, resetActiveCity, updateActiveCharacter, resetActiveCharacter, updateActiveBooks, resetActiveBooks, updateSearch } =
+    filterSlice.actions;
 
 export default filterSlice.reducer;

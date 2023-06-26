@@ -70,6 +70,27 @@
         width: 80%;
         height: 100%;
     }
+    .panel__draggable {
+        border-radius: 0;
+        padding-top: 0;
+        height: 100%;
+        max-height: 100%;
+    }
+
+    .panel__books {
+        right: initial;
+        top: calc(var(--header-size) + 5%);
+        left: 0;
+    }
+    .panel__place {
+        top: calc(var(--header-size) + 5%);
+        left: 0;
+    }
+    .panel__characters {
+        top: calc(var(--header-size) + 5%);
+        left: 0;
+        max-height: 100%;
+    }
 
     .timeline__container {
         height: 6rem;

@@ -1,8 +1,8 @@
 import React, { useState, Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import { SceneContainer } from "./components/three/SceneContainer";
-import { SceneContainerBasic } from "./components/three/SceneContainerBasic";
+import { SceneContainer } from "./components/three/Scene/SceneContainer";
+import { SceneContainerBasic } from "./components/three/Scene/SceneContainerBasic";
 import { BakeShadows, Stats } from "@react-three/drei";
 
 import Header from "./components/header/Header";
@@ -11,8 +11,9 @@ import Landing from "./components/landing/Landing";
 import CustomLoader from "./components/three/CustomLoader/CustomLoader"
 
 import { useDispatch } from "react-redux";
-import { setBasic, resetActiveAreas } from "./state/features/settings"
+import { setBasic, resetActiveAreas, setNone } from "./state/features/settings"
 import { updateActiveCity } from "./state/features/engine";
+import { SceneContainerFast } from "./components/three/Scene/SceneContainerFast";
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
             dispatch(updateActiveCity(3))
         }
         if (data === 2) {
-            dispatch(resetActiveAreas())
+            dispatch(setNone())
         }
         setLanding(false)
         setMode(data)
@@ -51,6 +52,14 @@ function App() {
                         </Canvas>
                     )}
                     {mode === 1 && (
+                        <Canvas frameloop={"demand"} >
+                            <Suspense fallback={null} >
+                                <SceneContainerFast />
+                            </Suspense>
+                        </Canvas>
+                    )}
+
+                    {mode === 2 && (
                         <Canvas frameloop={"demand"} >
                             <Suspense fallback={null} >
                                 <SceneContainerBasic />
