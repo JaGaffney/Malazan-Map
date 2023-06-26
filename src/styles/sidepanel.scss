@@ -61,10 +61,17 @@
     grid-template-rows: 1fr;
     padding: 1rem;
     margin: 1rem;
-    h5 {
+    h5,
+    h4 {
+        text-align: center;
         margin: 0 0 1rem 0;
         font-size: 1.1rem;
         color: var(--gray200);
+    }
+    h4 {
+        margin: 0;
+        padding: 0.3rem 0.5rem;
+        border-top: dotted 1px var(--gray700);
     }
     &-button {
         grid-column: 2;
@@ -101,6 +108,14 @@
                 }
             }
         }
+        &-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0rem 2rem;
+            &-second {
+                grid-column: 2;
+            }
+        }
         &-info {
             display: flex;
             flex-wrap: nowrap;
@@ -125,6 +140,10 @@
             }
             &-small {
                 font-size: 0.7rem;
+            }
+            &-description {
+                max-width: 500px;
+                word-wrap: break-word;
             }
         }
     }

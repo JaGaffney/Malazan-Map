@@ -6,11 +6,12 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import { bookColor } from '../utils/color';
 import characters from "../../data/characters"
 import AREAS from "../../data/areas"
-import { resetActiveData } from "../../state/features/engine"
+import { resetActiveData, updateActiveCharacter } from "../../state/features/engine"
 import Title from './Title';
 
 export default function Description() {
     const activeData = useSelector((state: any) => state.filter.activeData)
+    const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const dispatch = useDispatch()
 
     const onCloseHandler = (value) => {
@@ -26,24 +27,38 @@ export default function Description() {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
                             <>
-                                <Title name={activeData.name} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
+                                <Title name={`(${activeData.book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
 
                                 <div className="panel__item-container-info">
-                                    <span>Location: {AREAS[activeData.area - 1].name}</span>
-                                    <span>Book: {activeData.book}</span>
+                                    <span>Area: {AREAS[activeData.area - 1].name}</span>
+
                                 </div>
 
+                                <h4>Overview</h4>
                                 <div className="panel__item-container-info">
-                                    <span>{activeData.description}</span>
+                                    <p className="panel__item-container-info-description">{activeData.description}</p>
                                 </div>
 
-                                {activeData.char.map((i, k) => {
-                                    return (
-                                        <div className="panel__item-container-info" key={k}>
-                                            <span>{characters[i].name}</span>
-                                        </div>
-                                    )
-                                })}
+
+                                <h4>Characters</h4>
+                                <div className="panel__item-container-table">
+                                    {activeData.char.map((i, k) => {
+                                        let column = ""
+                                        if (k % 2 !== 0) {
+                                            column = "second"
+                                        }
+                                        let active = ""
+                                        // if (activeCharacter.includes(parseInt(i))) {
+                                        //     active = "panel__item-container-info-active"
+                                        // }
+                                        return (
+                                            <div key={k} className={`panel__item-container-info ${active} panel__item-container-table-${column}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
+                                                <span>{characters[i].name}</span>
+                                                {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
 
                             </>
                         </div>
