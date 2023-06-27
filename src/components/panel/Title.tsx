@@ -2,7 +2,6 @@ import React from 'react'
 
 import { HiX } from "react-icons/hi";
 
-
 export default function Title(props) {
 
     const onCloseHandler = () => {

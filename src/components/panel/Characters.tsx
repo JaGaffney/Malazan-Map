@@ -58,25 +58,47 @@ export default function Characters(props) {
                             <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCharacter())}>
                                 <span>Show all</span>
                             </div>
-                            {Object.keys(characters).map((i, k) => {
-                                let active = ""
-                                if (activeCharacter.includes(parseInt(i))) {
-                                    active = "panel__item-container-info-active"
-                                }
-                                if (validFilterQuery(characters[i].name, search)) {
-                                    return (
-                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
-                                            <span>{characters[i].name}</span>
-                                            {/* <span>{activeCharacter.includes(parseInt(i)) ? <HiUser /> : <HiOutlineUser />}</span> */}
-                                            <ReactSVG src={findRaceByName(characters[i].race)} className={active} />
-                                        </div>
-                                    )
-                                }
-                                else {
-                                    return null
-                                }
 
-                            })}
+                            <table className="panel__item-table">
+                                <thead>
+                                    <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                        <th>Race</th>
+                                        <th>Name</th>
+                                        <th>Alliance</th>
+                                        <th>Introduction</th>
+                                        <th>Role</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    {Object.keys(characters).map((i, k) => {
+                                        let active = ""
+                                        if (activeCharacter.includes(parseInt(i))) {
+                                            active = "panel__item-container-info-active"
+                                        }
+                                        if (validFilterQuery(characters[i].name, search)) {
+                                            return (
+                                                <tr key={k} className={`panel__item-container-info ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
+                                                    <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
+                                                    <td>{characters[i].name}</td>
+                                                    <td>{characters[i].alliance}</td>
+                                                    <td>{characters[i].intro}</td>
+                                                    <td>{characters[i].role}</td>
+
+
+                                                </tr>
+                                            )
+                                        }
+                                        else {
+                                            return null
+                                        }
+                                    })}
+                                </tbody>
+
+                            </table>
+
                         </div>
                     </div>
 
