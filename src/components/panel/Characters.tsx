@@ -64,9 +64,9 @@ export default function Characters(props) {
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
                                         <th>Race</th>
                                         <th>Name</th>
-                                        <th>Alliance</th>
-                                        <th>Introduction</th>
-                                        <th>Role</th>
+                                        {/* <th>Alliance</th> */}
+                                        <th>Book Intro</th>
+                                        {/* <th>Role</th> */}
                                     </tr>
                                 </thead>
 
@@ -83,9 +83,9 @@ export default function Characters(props) {
                                                 <tr key={k} className={`panel__item-container-info ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
                                                     <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
                                                     <td>{characters[i].name}</td>
-                                                    <td>{characters[i].alliance}</td>
+                                                    {/* <td>{characters[i].alliance}</td> */}
                                                     <td>{characters[i].intro}</td>
-                                                    <td>{characters[i].role}</td>
+                                                    {/* <td>{characters[i].role}</td> */}
 
 
                                                 </tr>

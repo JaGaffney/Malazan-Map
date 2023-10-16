@@ -31,7 +31,7 @@ export default function Description() {
                                 <Title name={`(${activeData.book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
 
                                 <div className="panel__item-container-info">
-                                    <span>Area: {AREAS[activeData.area - 1].name}</span>
+                                    <span>{AREAS[activeData.area - 1].name}</span>
 
                                 </div>
 

@@ -40,9 +40,9 @@ export default function Locations(props) {
 
                                 if (validFilterQuery(i.name, search)) {
                                     return (
-                                        <div key={k} className={`panel__item-container-info ${defaultColorOwner} ${active}`} onClick={() => dispatch(updateActiveCity(k))}>
+                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCity(k))}>
                                             <span>{i.name}</span>
-                                            <span className={defaultColorType}>
+                                            <span >
                                                 {i.type === 1 && <HiOutlineMenu />}
                                                 {i.type === 2 && <HiOutlineMenuAlt4 />}
                                                 {i.type === 3 && <HiOutlineMinus />}
