@@ -3,11 +3,23 @@ export const bookColor = (bookNumber: number): string => {
         case 1:
             return "var(--teal700)";
         case 2:
-            return "var(--amber800)";
+            return "var(--amber600)";
         case 3:
             return "var(--red700)";
         case 4:
             return "var(--blue800)";
+        case 5:
+            return "var(--red400)";
+        case 6:
+            return "var(--gray500)";
+        case 7:
+            return "var(--amber800)";
+        case 8:
+            return "var(--green600)";
+        case 9:
+            return "var(--violet700)";
+        case 9:
+            return "var(--pink700)";
         default:
             return "";
     }

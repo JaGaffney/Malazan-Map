@@ -78,7 +78,7 @@ export const filterSlice = createSlice({
             state.activeBooks = filterArray(state.activeBooks, action.payload);
         },
         resetActiveBooks: (state) => {
-            state.activeBooks = [1, 2, 3];
+            state.activeBooks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         },
         updateSearch: (state, action) => {
             state.search = action.payload;

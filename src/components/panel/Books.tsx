@@ -41,12 +41,12 @@ export default function Books(props) {
                             <Book book={2} name={"Deadhouse Gates"} />
                             <Book book={3} name={"Memories of Ice"} />
                             <Book book={4} name={"House of Chains"} />
-                            <Book book={5} name={"TBA"} />
-                            <Book book={6} name={"TBA"} />
-                            <Book book={7} name={"TBA"} />
-                            <Book book={8} name={"TBA"} />
-                            <Book book={9} name={"TBA"} />
-                            <Book book={10} name={"TBA"} />
+                            <Book book={5} name={"Midnight Tides"} />
+                            <Book book={6} name={"The Bonehunters"} />
+                            <Book book={7} name={"Reaper's Gale"} />
+                            <Book book={8} name={"Toll the Houdns"} />
+                            <Book book={9} name={"Dust of Dreams"} />
+                            <Book book={10} name={"The Crippled God"} />
                         </div>
                     </div>
                 </ScrollContainer>
