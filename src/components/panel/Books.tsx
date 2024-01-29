@@ -44,7 +44,7 @@ export default function Books(props) {
                             <Book book={5} name={"Midnight Tides"} />
                             <Book book={6} name={"The Bonehunters"} />
                             <Book book={7} name={"Reaper's Gale"} />
-                            <Book book={8} name={"Toll the Houdns"} />
+                            <Book book={8} name={"Toll the Hounds"} />
                             <Book book={9} name={"Dust of Dreams"} />
                             <Book book={10} name={"The Crippled God"} />
                         </div>
