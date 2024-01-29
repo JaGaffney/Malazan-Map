@@ -32,6 +32,7 @@ export default function Characters(props) {
             case ("tisti"):
                 return eventIcons.tisti
             case ("T'lan Imass"):
+            case ("undead"):
                 return eventIcons.tlanimass
             case ("trell"):
             case ("Barghast"):

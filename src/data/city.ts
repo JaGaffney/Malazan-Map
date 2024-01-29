@@ -65,6 +65,24 @@ const cityData = [
         introduction: 3,
         type: 4,
     },
+    {
+        name: "Black Coral",
+        loc: [310.0, 15, 62.0],
+        introduction: 3,
+        type: 2,
+    },
+    {
+        name: "Y'Ghatan",
+        loc: [208.0, 15, 36.0],
+        introduction: 6,
+        type: 2,
+    },
+    {
+        name: "Letheras",
+        loc: [17.0, 15, 155.0],
+        introduction: 5,
+        type: 1,
+    },
 ];
 
 const poi = [];

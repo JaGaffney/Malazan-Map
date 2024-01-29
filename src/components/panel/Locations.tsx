@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { HiOutlineMenu, HiOutlineMenuAlt4, HiOutlineMinus } from "react-icons/hi";
 
 import { updateActiveCity, resetActiveCity } from "../../state/features/engine"
 import { cityData } from "../../data/city"
