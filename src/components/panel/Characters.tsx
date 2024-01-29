@@ -6,8 +6,11 @@ import { ReactSVG } from 'react-svg'
 import { updateActiveCharacter, resetActiveCharacter } from "../../state/features/engine"
 import characters from "../../data/characters"
 import { validFilterQuery } from '../utils/helpers';
+import { bookColor } from '../utils/color'
+
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Draggable from 'react-draggable';
+
 
 import { eventIcons } from "../../data/icons";
 import Title from './Title';
@@ -25,6 +28,7 @@ export default function Characters(props) {
             case ("soultaken"):
                 return eventIcons.soultaken
             case ("Tiste Andii"):
+            case ("Tiste Edur"):
             case ("tisti"):
                 return eventIcons.tisti
             case ("T'lan Imass"):
@@ -62,11 +66,9 @@ export default function Characters(props) {
                             <table className="panel__item-table">
                                 <thead>
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                        <th>Race</th>
                                         <th>Name</th>
-                                        {/* <th>Alliance</th> */}
-                                        <th>Book Intro</th>
-                                        {/* <th>Role</th> */}
+                                        <th>Race</th>
+                                        <th>Book</th>
                                     </tr>
                                 </thead>
 
@@ -81,13 +83,9 @@ export default function Characters(props) {
                                         if (validFilterQuery(characters[i].name, search)) {
                                             return (
                                                 <tr key={k} className={`panel__item-container-info ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
-                                                    <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
                                                     <td>{characters[i].name}</td>
-                                                    {/* <td>{characters[i].alliance}</td> */}
-                                                    <td>{characters[i].intro}</td>
-                                                    {/* <td>{characters[i].role}</td> */}
-
-
+                                                    <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
+                                                    <td style={{ color: bookColor(parseInt(characters[i].intro)), textAlign: "center" }}>{characters[i].intro}</td>
                                                 </tr>
                                             )
                                         }

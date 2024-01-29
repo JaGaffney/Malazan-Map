@@ -4,7 +4,8 @@ import { HiStar, HiOutlineStar } from "react-icons/hi";
 import Draggable, { DraggableCore } from "react-draggable"
 
 import { resetActiveBooks, updateActiveBooks } from "../../state/features/engine"
-import { bookColor } from '../utils/color'
+import { bookColor, seriesColor } from '../utils/color'
+import books from "../../data/books"
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Title from './Title';
 
@@ -13,10 +14,13 @@ const Book = (props) => {
     const dispatch = useDispatch()
 
     return (
-        <div className="panel__item-container-info" style={{ color: bookColor(props.book) }} onClick={() => dispatch(updateActiveBooks(props.book))}>
-            <span>Book {props.book} - {activeBooks.includes(props.book) ? props.name : "???"}</span>
-            <span>{activeBooks.includes(props.book) ? <HiStar /> : <HiOutlineStar />}</span>
-        </div>
+        <tr className="panel__item-container-info" style={{ color: bookColor(props.id), display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(props.id))}>
+            <span>{activeBooks.includes(props.id) ? <HiStar /> : <HiOutlineStar />}</span>
+            <td>{props.year}</td>
+            <td>{props.name}</td>
+            <td style={{ color: seriesColor(props.author) }}>{props.series}</td>
+            <td style={{ textAlign: "center" }}>{props.book}</td>
+        </tr>
     )
 }
 
@@ -37,17 +41,40 @@ export default function Books(props) {
                                 <span>Show all</span>
                             </div>
 
-                            <Book book={1} name={"Gardens of the Moon"} />
-                            <Book book={2} name={"Deadhouse Gates"} />
-                            <Book book={3} name={"Memories of Ice"} />
-                            <Book book={4} name={"House of Chains"} />
-                            <Book book={5} name={"Midnight Tides"} />
-                            <Book book={6} name={"The Bonehunters"} />
-                            <Book book={7} name={"Reaper's Gale"} />
-                            <Book book={8} name={"Toll the Hounds"} />
-                            <Book book={9} name={"Dust of Dreams"} />
-                            <Book book={10} name={"The Crippled God"} />
+                            <table className="panel__item-table">
+                                <thead>
+                                    <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                        <th></th>
+                                        <th>Year</th>
+                                        <th>Name</th>
+                                        <th>Series</th>
+                                        <th>Book</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    {Object.keys(books).map((i, k) => {
+                                        return (
+                                            <Book key={k}
+                                                id={books[i].id}
+                                                book={books[i].book}
+                                                name={books[i].name}
+                                                year={books[i].year}
+                                                series={books[i].series}
+                                                author={books[i].author}
+                                            />
+                                        )
+
+                                    })}
+
+                                </tbody>
+
+                            </table>
                         </div>
+
+
                     </div>
                 </ScrollContainer>
 

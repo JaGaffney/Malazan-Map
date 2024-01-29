@@ -7,7 +7,7 @@ export const bookColor = (bookNumber: number): string => {
         case 3:
             return "var(--red700)";
         case 4:
-            return "var(--blue800)";
+            return "var(--blue600)";
         case 5:
             return "var(--red400)";
         case 6:
@@ -18,8 +18,18 @@ export const bookColor = (bookNumber: number): string => {
             return "var(--green600)";
         case 9:
             return "var(--violet700)";
-        case 9:
-            return "var(--pink700)";
+        case 10:
+            return "var(--pink600)";
+        default:
+            return "";
+    }
+};
+export const seriesColor = (seriesName: string): string => {
+    switch (seriesName) {
+        case "Steven Erikson":
+            return "var(--amber500)";
+        case "Ian C. Esslemont":
+            return "var(--gray500)";
         default:
             return "";
     }
@@ -56,36 +66,6 @@ export const calculateColorCityType = (cityType: number): IColorCtyType => {
             color.hex = "#115e59";
             color.hexOverlay = "#105752";
             color.classname = "cityFour";
-            return color;
-        default:
-            return color;
-    }
-};
-
-export const calculateColorOwner = (owner: string): IColorCtyType => {
-    const color = {
-        hex: "#f0fdf4",
-        hexOverlay: "#0f172a",
-        classname: "cityOwnerDefault",
-    };
-    switch (owner) {
-        case "malazan":
-            color.hex = "#b91c1c";
-            color.classname = "cityOwnerRed";
-            return color;
-        case "Anomander Rake":
-        case "Caladan Brood":
-            color.hex = "#6d28d9";
-            color.classname = "cityOwnerPurple";
-            return color;
-        case "Army of the Apocalpse":
-            color.hex = "#d97706";
-            color.classname = "cityOwnerOrange";
-            return color;
-        case "Pannion Domin":
-        case "House of Chains":
-            color.hex = "#718096";
-            color.classname = "cityOwnerGray";
             return color;
         default:
             return color;

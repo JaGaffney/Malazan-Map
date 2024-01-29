@@ -4,7 +4,7 @@ import { HiOutlineMenu, HiOutlineMenuAlt4, HiOutlineMinus } from "react-icons/hi
 
 import { updateActiveCity, resetActiveCity } from "../../state/features/engine"
 import { cityData } from "../../data/city"
-import { calculateColorCityType, calculateColorOwner } from '../utils/color';
+import { bookColor } from '../utils/color';
 import { validFilterQuery } from '../utils/helpers';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Draggable from 'react-draggable';
@@ -30,30 +30,47 @@ export default function Locations(props) {
                                 <span>Reset</span>
                             </div>
 
-                            {cityData.map((i, k) => {
-                                const defaultColorType = calculateColorCityType(i.type).classname
-                                const defaultColorOwner = calculateColorOwner(i.owner).classname
-                                let active = ""
-                                if (activeCity.includes(k)) {
-                                    active = "panel__item-container-info-active"
-                                }
+                            <table className="panel__item-table">
+                                <thead>
+                                    <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Intro</th>
+                                    </tr>
+                                </thead>
 
-                                if (validFilterQuery(i.name, search)) {
-                                    return (
-                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCity(k))}>
-                                            <span>{i.name}</span>
-                                            <span >
-                                                {i.type === 1 && <HiOutlineMenu />}
-                                                {i.type === 2 && <HiOutlineMenuAlt4 />}
-                                                {i.type === 3 && <HiOutlineMinus />}
-                                            </span>
+                                <tbody>
+                                    {cityData.map((i, k) => {
+                                        let active = ""
+                                        if (activeCity.includes(k)) {
+                                            active = "panel__item-container-info-active"
+                                        }
 
-                                        </div>
-                                    )
-                                } else {
-                                    return null
-                                }
-                            })}
+                                        if (validFilterQuery(i.name, search)) {
+                                            return (
+                                                <tr key={k}
+                                                    className={`panel__item-container-info ${active}`}
+                                                    style={{ display: "table-row", textAlign: "left" }}
+                                                    onClick={() => dispatch(updateActiveCity(k))
+                                                    }
+                                                >
+                                                    <td>{i.name}</td>
+                                                    <td>
+                                                        {i.type === 1 && "City"}
+                                                        {i.type === 2 && "City"}
+                                                        {i.type === 3 && "Settlement"}
+                                                        {i.type === 4 && "Other"}
+                                                    </td>
+                                                    <td style={{ color: bookColor(i.introduction), textAlign: "center" }}>{i.introduction}</td>
+                                                </tr>
+                                            )
+                                        } else {
+                                            return null
+                                        }
+                                    })}
+                                </tbody>
+
+                            </table>
 
                         </div>
 

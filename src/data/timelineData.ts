@@ -181,9 +181,9 @@ const timelineData = {
         {
             id: uuidv4(),
             book: 1,
-            name: "Tattersail opens her warren",
+            name: "Tattersail dies",
             icon: eventIcons.warren,
-            description: "Tattersail opens her warren but due to being near tool it explodes killing her. Paran and Toc finder her reamins the next day",
+            description: "Tattersail opens her warren but due to being near Tool it explodes killing her. Paran and Toc finder her reamins the next day",
             char: [3, 17, 18, 1, 7],
             loc: [530.62, 79.67],
             area: 1,
@@ -883,6 +883,18 @@ const timelineData = {
             char: [19, 20, 23, 24],
             loc: [389.91, 84.29],
             area: 2,
+        },
+    ],
+    1169: [
+        {
+            id: uuidv4(),
+            book: 7,
+            name: "Toll the Hounds - Harllo is 5",
+            icon: eventIcons.city,
+            description: "",
+            char: [15, 16, 14],
+            loc: [522.65, 84.28],
+            area: 1,
         },
     ],
 };

@@ -3,7 +3,7 @@ import { Billboard, Text } from "@react-three/drei";
 import { useDispatch } from 'react-redux';
 import { updateActiveCity } from '../../../state/features/engine';
 import { tileToPosition } from '../../utils/helpers';
-import { calculateColorCityType, calculateColorOwner } from '../../utils/color';
+import { calculateColorCityType } from '../../utils/color';
 
 import { MeshBasicMaterial } from "three";
 
@@ -26,7 +26,6 @@ function Words(props) {
 
     const defaultLength = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
-    const defaultColorOwner = calculateColorOwner(city.owner).hex
 
     const convertedPosition = tileToPosition(city.loc[0], city.loc[2])
     const newPos = [convertedPosition[0], city.loc[1], convertedPosition[1]]
@@ -122,7 +121,7 @@ function Words(props) {
 
 
 
-                    <Text color={defaultColorOwner} position={[defaultLength / 2, 1.5, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
+                    <Text color={"#f0fdf4"} position={[defaultLength / 2, 1.5, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={5}>{city.name}</Text>
                 </Billboard>
             </group>
         </>
