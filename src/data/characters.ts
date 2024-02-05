@@ -2,248 +2,213 @@ const characters = {
     1: {
         name: "Ganoes Paran",
         race: "human",
-
         intro: "1",
         role: "soldier",
     },
     2: {
         name: "Sorry/Apsala",
         race: "ascended",
-
         intro: "1",
         role: "assassin",
     },
     3: {
         name: "Tattersail",
         race: "ascended",
-
         intro: "1",
         role: "mage",
     },
     4: {
         name: "Quick Ben",
         race: "human",
-
         intro: "1",
         role: "mage",
     },
     5: {
         name: "Whiskeyjack",
         race: "human",
-
         intro: "1",
         role: "soldier",
     },
     6: {
         name: "Hairlock",
         race: "soultaken",
-
         intro: "1",
         role: "mage",
     },
     7: {
         name: "Toc the Younger",
         race: "human",
-
         intro: "1",
         role: "assassin",
     },
     8: {
         name: "Anomander Rake",
         race: "soultaken",
-
         intro: "1",
         role: "mage",
     },
     9: {
         name: "Caladan Brood",
         race: "ascended",
-
         intro: "1",
         role: "mage",
     },
     10: {
         name: "Empress Laseen",
         race: "human",
-
         intro: "1",
         role: "empress",
     },
     11: {
         name: "Kalam",
         race: "human",
-
         intro: "1",
         role: "assassin",
     },
     12: {
         name: "Fiddler",
         race: "human",
-
         intro: "1",
         role: "sapper",
     },
     13: {
         name: "Dujek Onearm",
         race: "human",
-
         intro: "1",
         role: "soldier",
     },
     14: {
         name: "Crone",
         race: "soultaken",
-
         intro: "1",
         role: "mage",
     },
     15: {
         name: "Crokus Younghand",
         race: "human",
-
         intro: "1",
         role: "thief",
     },
     16: {
         name: "Kruppe",
         race: "ascended",
-
         intro: "1",
         role: "mage",
     },
     17: {
         name: "Adjunct Lorn",
         race: "human",
-
         intro: "1",
         role: "adjunct",
     },
     18: {
         name: "Tool",
         race: "T'lan Imass",
-
         intro: "1",
         role: "soldier",
     },
     19: {
         name: "Felisin Paran",
         race: "human",
-
         intro: "1",
         role: "empress",
     },
     20: {
         name: "Heboric",
         race: "human",
-
         intro: "2",
         role: "priest",
     },
-    21: {
-        name: "Baudin",
-        race: "human",
-
-        intro: "2",
-        role: "assassin",
-    },
+    // 21: {
+    //     name: "Baudin",
+    //     race: "human",
+    //     intro: "2",
+    //     role: "assassin",
+    // },
     22: {
         name: "Adjunct Tavore Paran",
         race: "human",
-
         intro: "1",
         role: "adjunct",
     },
     23: {
         name: "Mappo Runt",
         race: "trell",
-
         intro: "2",
         role: "bodyguard",
     },
     24: {
         name: "Icarium",
         race: "jaghurt",
-
         intro: "2",
         role: "mage",
     },
     25: {
         name: "Duiker",
         race: "human",
-
         intro: "2",
         role: "historian",
     },
     26: {
         name: "Coltaine",
         race: "human",
-
         intro: "2",
         role: "soldier",
     },
-    27: {
-        name: "Kulp",
-        race: "human",
-
-        intro: "2",
-        role: "mage",
-    },
+    // 27: {
+    //     name: "Kulp",
+    //     race: "human",
+    //     intro: "2",
+    //     role: "mage",
+    // },
     28: {
         name: "Iskaral Pust",
         race: "soultaken",
-
         intro: "2",
         role: "priest",
     },
     29: {
         name: "Kallor",
         race: "human",
-
         intro: "3",
         role: "king",
     },
     30: {
         name: "Gruntle",
         race: "human",
-
         intro: "3",
         role: "soldier",
     },
     31: {
         name: "Keruli",
         race: "ascended",
-
         intro: "3",
         role: "god",
     },
     32: {
         name: "Bauchelain",
         race: "soultaken",
-
+        intro: "3",
+        role: "mage",
+    },
+    35: {
+        name: "Korbal Broach",
+        race: "soultaken",
         intro: "3",
         role: "mage",
     },
     33: {
         name: "Lady Envy",
         race: "ascended",
-
         intro: "3",
         role: "god",
     },
-    34: {
-        name: "Hetan",
-        race: "Barghast",
-
-        intro: "3",
-        role: "soldier",
-    },
-    35: {
-        name: "Korbal Broach",
-        race: "soultaken",
-
-        intro: "3",
-        role: "mage",
-    },
+    // 34: {
+    //     name: "Hetan",
+    //     race: "Barghast",
+    //     intro: "3",
+    //     role: "soldier",
+    // },
     36: {
         name: "Itkovian",
         race: "human",
@@ -254,21 +219,18 @@ const characters = {
     37: {
         name: "Korlat",
         race: "soultaken",
-
         intro: "3",
         role: "",
     },
     38: {
         name: "Trull Sengar",
         race: "tisti",
-
         intro: "3",
         role: "warrior",
     },
     39: {
         name: "Karsa Orlong",
         race: "Teblor",
-
         intro: "2",
         role: "warrior",
     },

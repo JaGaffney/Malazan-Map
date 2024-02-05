@@ -6,6 +6,12 @@ const cityData = [
         type: 1,
     },
     {
+        name: "Darujhistan",
+        loc: [295.0, 15, 55.0],
+        introduction: 1,
+        type: 2,
+    },
+    {
         name: "Unta",
         loc: [235.0, 15, 108.0],
         introduction: 1,
@@ -17,12 +23,7 @@ const cityData = [
         introduction: 1,
         type: 2,
     },
-    {
-        name: "Darujhistan",
-        loc: [295.0, 15, 55.0],
-        introduction: 1,
-        type: 2,
-    },
+
     {
         name: "Raraku",
         loc: [225.0, 15, 34.0],
@@ -41,12 +42,12 @@ const cityData = [
         introduction: 1,
         type: 2,
     },
-    {
-        name: "Skullcup",
-        loc: [245.0, 15, 34.0],
-        introduction: 2,
-        type: 3,
-    },
+    // {
+    //     name: "Skullcup",
+    //     loc: [245.0, 15, 34.0],
+    //     introduction: 2,
+    //     type: 3,
+    // },
     {
         name: "Capustan",
         loc: [311.0, 15, 57.0],
