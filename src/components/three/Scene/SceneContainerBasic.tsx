@@ -26,7 +26,7 @@ export function SceneContainerBasic() {
 
             <MapControls enableRotate={navigator.userAgent.search("Firefox") === 67 ? true : false} maxDistance={600} dampingFactor={0.1} enableDamping={true} />
             {/* <Controls /> */}
-            <pointLight position={[165, 100, 93]} color={lightColor} intensity={5} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
+            {/* <pointLight position={[165, 100, 93]} color={lightColor} intensity={5} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} /> */}
             <ambientLight />
 
             <group position={[-400, 0, -100]}>
@@ -35,7 +35,7 @@ export function SceneContainerBasic() {
                 <Highlight />
             </group>
 
-            <Sea />
+            {/* <Sea /> */}
             <StaticMap />
 
         </Provider>

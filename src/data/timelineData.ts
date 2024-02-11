@@ -872,6 +872,16 @@ const timelineData = {
         {
             id: uuidv4(),
             book: 7,
+            name: "Toll the Hounds - Karsa group ",
+            icon: eventIcons.travelHorse,
+            description: "Samar Dev meets Traveller and then is reunited with Karsa. They start heading towards Darujhistan.",
+            char: [73, 55, 39],
+            loc: [530.65, 135.28],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            book: 7,
             name: "Toll the Hounds - Darujhistan",
             icon: eventIcons.city,
             description: "Everything that happens in Darujhistan for the whole book.",

@@ -28,7 +28,7 @@ const cityData = [
         name: "Raraku",
         loc: [225.0, 15, 34.0],
         introduction: 2,
-        type: 1,
+        type: 4,
     },
     {
         name: "Aran",

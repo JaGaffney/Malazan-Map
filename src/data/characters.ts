@@ -212,7 +212,6 @@ const characters = {
     36: {
         name: "Itkovian",
         race: "human",
-
         intro: "3",
         role: "soldier",
     },
@@ -430,6 +429,12 @@ const characters = {
         name: "Kilava Onass",
         race: "T'lan Imass",
         intro: "3",
+        role: "",
+    },
+    73: {
+        name: "Samar Dev",
+        race: "human",
+        intro: "6",
         role: "",
     },
 };
