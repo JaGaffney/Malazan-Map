@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { HiDeviceMobile, HiDesktopComputer } from "react-icons/hi";
+import { HiLocationMarker, HiDeviceMobile, HiDesktopComputer, HiMap } from "react-icons/hi";
+
 
 const Landing = (props) => {
 
@@ -15,13 +16,13 @@ const Landing = (props) => {
                     </div>
                     <div className="landing__hero-description">
                         <p>Interactive 3D map which features a detailed timeline of main character movements, key plot points and relevant Points of Interest throughout the series. </p>
-                        <p>You have the control on how spoiler filled you want your experience to be, with the option to filter out by Book or Area (By default only Book 1 relevant data is shown).</p>
+                        <p>Made using three.js.</p>
                     </div>
 
                     <div className="landing__mode">
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(2)}>
                             <div className="landing__mode-button-title">
-                                <HiDeviceMobile />
+                                <HiMap />
                                 <span>Basic</span>
                             </div>
                             <span className="landing__mode-button-description">no animations</span>
@@ -30,7 +31,7 @@ const Landing = (props) => {
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(1)}>
                             <div className="landing__mode-button-title">
                                 <HiDeviceMobile />
-                                <span>Fast</span>
+                                <span>Standard</span>
                             </div>
                             <span className="landing__mode-button-description">mobile, tablets or slower devices</span>
                         </button>
@@ -38,9 +39,9 @@ const Landing = (props) => {
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(0)}>
                             <div className="landing__mode-button-title">
                                 <HiDesktopComputer />
-                                <span>Standard</span>
+                                <span>Full 3D</span>
                             </div>
-                            <span className="landing__mode-button-description">desktop and tablets</span>
+                            <span className="landing__mode-button-description">desktop (may lag)</span>
                         </button>
                     </div>
                 </div>

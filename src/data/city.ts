@@ -67,6 +67,12 @@ const cityData = [
         type: 4,
     },
     {
+        name: "Tesem Temple",
+        loc: [231.0, 15, 34.0],
+        introduction: 2,
+        type: 4,
+    },
+    {
         name: "Black Coral",
         loc: [310.0, 15, 62.0],
         introduction: 3,

@@ -25,6 +25,10 @@ export default function Locations(props) {
 
                             <Title name={"Points of interest"} onCloseHandler={props.onCloseHandler} />
 
+                            <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCity())}>
+                                <span>Show all</span>
+                            </div>
+
                             <div className={`panel__item-container-info`} onClick={() => dispatch(resetActiveCity())}>
                                 <span>Reset</span>
                             </div>

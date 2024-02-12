@@ -325,7 +325,7 @@ const characters = {
     },
     55: {
         name: "Traveller",
-        race: "ascended",
+        race: "human",
         intro: "4",
         role: "",
     },
@@ -378,7 +378,7 @@ const characters = {
         role: "",
     },
     64: {
-        name: "Mael",
+        name: "Bugg",
         race: "ascended",
         intro: "5",
         role: "",
@@ -435,6 +435,18 @@ const characters = {
         name: "Samar Dev",
         race: "human",
         intro: "6",
+        role: "",
+    },
+    74: {
+        name: "Shadowthrone",
+        race: "ascended",
+        intro: "1",
+        role: "",
+    },
+    75: {
+        name: "Cotillion",
+        race: "ascended",
+        intro: "1",
         role: "",
     },
 };
