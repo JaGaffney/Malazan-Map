@@ -23,11 +23,11 @@ export default function StaticMap() {
         <mesh position={[-1, 4, 68]} rotation-x={-Math.PI * 0.5}>
             <planeGeometry args={[800, 350, 1024, 1024]} />
             <meshStandardMaterial
-                metalness={0.5}
+                // metalness={0.1}
                 map={staticMap.map}
-            // normalMap={staticMap.normal}
-            // displacementMap={staticMap.displacement}
-            // displacementScale={8}
+                normalMap={staticMap.normal}
+                displacementMap={staticMap.displacement}
+                displacementScale={3}
             />
         </mesh>
     );

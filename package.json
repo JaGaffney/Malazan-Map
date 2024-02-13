@@ -1,6 +1,6 @@
 {
-    "name": "map",
-    "version": "0.1.0",
+    "name": "malazan",
+    "version": "0.2.0",
     "private": true,
     "homepage": ".",
     "dependencies": {
