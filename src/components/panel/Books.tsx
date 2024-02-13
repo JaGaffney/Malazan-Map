@@ -13,8 +13,10 @@ const Book = (props) => {
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 
+    const activeBookColor = activeBooks.includes(props.id) ? bookColor(props.id) : ""
+
     return (
-        <tr className="panel__item-container-info" style={{ color: bookColor(props.id), display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(props.id))}>
+        <tr className="panel__item-container-info" style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(props.id))}>
             <span>{activeBooks.includes(props.id) ? <HiStar /> : <HiOutlineStar />}</span>
             <td>{props.year}</td>
             <td>{props.name}</td>
