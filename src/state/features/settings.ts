@@ -33,7 +33,7 @@ export const settingsSlice = createSlice({
         setBasic: (state) => {
             state.flattern = true;
             state.shadows = false;
-            state.areas = [1, 2, 3];
+            state.areas = [1, 2, 3, 6];
         },
         reset: (state) => {
             state = initialState;

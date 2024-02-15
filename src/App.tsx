@@ -26,9 +26,6 @@ function App() {
     const onModeHandler = (data) => {
         if (data === 1) {
             dispatch(setBasic())
-            dispatch(updateActiveCity(0))
-            dispatch(updateActiveCity(2))
-            dispatch(updateActiveCity(3))
         }
         if (data === 2) {
             dispatch(setNone())

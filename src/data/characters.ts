@@ -449,6 +449,30 @@ const characters = {
         intro: "1",
         role: "",
     },
+    76: {
+        name: "Hellian",
+        race: "human",
+        intro: "6",
+        role: "",
+    },
+    77: {
+        name: "Barathol Mekhar",
+        race: "human",
+        intro: "6",
+        role: "",
+    },
+    78: {
+        name: "Spite",
+        race: "ascended",
+        intro: "6",
+        role: "",
+    },
+    79: {
+        name: "Telorast & Curdle",
+        race: "ascended",
+        intro: "6",
+        role: "",
+    },
 };
 
 export default characters;
