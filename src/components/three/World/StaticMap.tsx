@@ -20,7 +20,7 @@ export default function StaticMap() {
     }, [])
 
     return (
-        <mesh position={[-1, 4, 68]} rotation-x={-Math.PI * 0.5}>
+        <mesh position={[-1, 0, 68]} rotation-x={-Math.PI * 0.5}>
             <planeGeometry args={[800, 350, 1024, 1024]} />
             <meshStandardMaterial
                 // metalness={0.1}
