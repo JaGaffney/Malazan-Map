@@ -33,7 +33,7 @@ export default function Books(props) {
         <Draggable handle="h5" >
             <div className="panel panel__books panel__draggable">
 
-                <ScrollContainer className="panel-scroll" draggingClassName={"timeline__container-drag"}>
+                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
 

@@ -27,6 +27,10 @@
     grid-column: 1;
     color: var(--gray100);
     font-size: 1.5rem;
+    &-suffix {
+        font-size: 1rem;
+        color: var(--gray500);
+    }
 }
 
 .timeline__event {
@@ -60,9 +64,31 @@
                 background: var(--gray800) !important;
                 clip-path: circle(62.9% at 50% 50%);
             }
+            &-sm {
+                width: 2rem;
+                height: 2rem;
+                z-index: 1;
+            }
         }
         &-filter {
             background: var(--gray900) !important;
+        }
+    }
+
+    &-history {
+        display: flex;
+        margin: 0.8rem 0;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        &:hover {
+            background: var(--gray800);
+        }
+        &-active {
+            color: var(--teal500) !important;
+            path {
+                fill: var(--teal500) !important;
+            }
         }
     }
 }

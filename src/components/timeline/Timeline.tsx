@@ -33,7 +33,7 @@ const Timeline = (props) => {
 
                 return (
                     <div className="timeline" key={k}>
-                        <span className="timeline__date">{i}</span>
+                        <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
                         <div className="timeline__event-container">
                             {timelineData[i].map((ii, kk) => {
                                 let filter = ""

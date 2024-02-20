@@ -6,12 +6,13 @@ import WorldMap from '../map/WorldMap'
 import Books from '../panel/Books'
 import Characters from '../panel/Characters'
 import Locations from '../panel/Locations'
+import History from '../panel/History'
 import Settings from '../settings/Settings'
-import Timeline from '../timeline/Timeline'
 import Buttons from './Buttons'
 
 import { updateSearch } from "../../state/features/engine"
 import Description from '../panel/Description';
+import Timeline from '../timeline/Timeline';
 
 
 export default function Header() {
@@ -21,6 +22,7 @@ export default function Header() {
     const [worldMap, setWorldMap] = useState<boolean>(true)
     const [settings, setSettings] = useState<boolean>(false)
     const [timeline, setTimeline] = useState<boolean>(true)
+    const [history, setHistory] = useState<boolean>(false)
 
     const search = useSelector((state: any) => state.filter.search)
 
@@ -47,7 +49,7 @@ export default function Header() {
                     characters={characters} onCharactersHandler={setCharacters}
                     worldMap={worldMap} onWorldMapHandler={setWorldMap}
                     settings={settings} onSettingsHandler={setSettings}
-                    timeline={timeline} onTimelineHandler={setTimeline}
+                    history={history} onHistoryHandler={setHistory}
                 />
             </div>
 
@@ -59,6 +61,8 @@ export default function Header() {
 
             {worldMap && <WorldMap />}
             {settings && <Settings />}
+            {history && <History timeline={timeline} onTimelineHandler={setTimeline} onCloseHandler={setHistory} />}
+
             {timeline && <Timeline />}
 
             {activeID !== "" && <Description />}
