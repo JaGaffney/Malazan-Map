@@ -14,18 +14,24 @@ export default function Locations(props) {
     const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()
 
+    const showAllLocation = () => {
+        cityData.map((i, k) => {
+            dispatch(updateActiveCity(k))
+        })
+    }
+
     return (
         <Draggable handle="h5" >
             <div className="panel panel__place panel__draggable">
 
-                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"} horizontal={false}>
+                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
 
                         <div className="panel__item-container  panel__header-draggable">
 
                             <Title name={"Points of interest"} onCloseHandler={props.onCloseHandler} />
 
-                            <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCity())}>
+                            <div className="panel__item-container-info" onClick={() => showAllLocation()}>
                                 <span>Show all</span>
                             </div>
 

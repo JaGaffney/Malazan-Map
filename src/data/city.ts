@@ -90,6 +90,18 @@ const cityData = [
         introduction: 5,
         type: 1,
     },
+    {
+        name: "Crystal City",
+        loc: [85.0, 15, 160.0],
+        introduction: 9,
+        type: 4,
+    },
+    {
+        name: "Kolanse",
+        loc: [117.0, 15, 169.0],
+        introduction: 9,
+        type: 1,
+    },
 ];
 
 const poi = [];
