@@ -180,7 +180,7 @@ const characters = {
         role: "soldier",
     },
     31: {
-        name: "Keruli",
+        name: "K'rull",
         race: "ascended",
         intro: "3",
         role: "god",

@@ -23,12 +23,35 @@
 }
 
 .timeline__date {
+    &-header {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            height: 2rem;
+            width: 2rem;
+            background: inherit;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            :hover,
+            :focus {
+                color: var(--teal700);
+            }
+            svg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
     grid-row: 1;
     grid-column: 1;
+
     color: var(--gray100);
     font-size: 1.5rem;
     &-suffix {
-        font-size: 1rem;
+        font-size: 0.7rem;
         color: var(--gray500);
     }
 }

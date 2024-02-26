@@ -1,9 +1,8 @@
 export function filterArray(array, value) {
-    let returnValue = array;
     if (array.includes(value)) {
-        returnValue = array.filter((i) => i !== value);
+        array = array.filter((i) => i !== value);
     } else {
-        returnValue.push(value);
+        array.push(value);
     }
-    return returnValue;
+    return array;
 }

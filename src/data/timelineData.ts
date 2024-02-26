@@ -21,12 +21,12 @@ const timelineData = {
         {
             id: uuidv4(),
             book: 9,
-            name: "the Fall of the Crippled God",
+            name: "the heart of the Crippled God after the Fall",
             icon: eventIcons.warren,
             description: "the Fall of the Crippled God.",
-            char: [14, 29],
-            loc: [315.06, 251.73],
-            area: 4,
+            char: [],
+            loc: [207.9, 259.4],
+            area: 6,
         },
     ],
     [-119736]: [
@@ -36,7 +36,7 @@ const timelineData = {
             name: "3 years after the Fall of the Crippled God",
             icon: eventIcons.warren,
             description: "3 years after the Fall of the Crippled God",
-            char: [14, 29],
+            char: [14, 29, 31],
             loc: [315.06, 251.73],
             area: 4,
         },
@@ -942,7 +942,7 @@ const timelineData = {
             description:
                 "The Throne of Shadow is attacked by the Tiste Edur, Traveller and Cotilion protect it with the help of Apsalar. Traveller remains to stand guard as Crokus and Apsalar leave to Seven Cities. ",
             char: [2, 15, 74, 75, 55],
-            loc: [340.425, 170.385],
+            loc: [353.0, 200.0],
             area: 3,
         },
         {

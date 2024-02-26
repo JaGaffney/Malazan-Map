@@ -1,34 +1,16 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { HiStar, HiOutlineStar } from "react-icons/hi";
-import Draggable, { DraggableCore } from "react-draggable"
+import { HiEye, HiEyeOff } from "react-icons/hi";
+import Draggable from "react-draggable"
 
-import { resetActiveBooks, update, updateActiveBooks, updateActiveData } from "../../state/features/engine"
-import { bookColor, seriesColor } from '../utils/color'
-import books from "../../data/books"
+import { update, updateActiveData } from "../../state/features/engine"
+import { bookColor } from '../utils/color'
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Title from './Title';
 import timelineData from '../../data/timelineData';
 import { validFilterQueryArray } from '../utils/helpers';
 import characters from '../../data/characters';
-import Timeline from '../timeline/Timeline';
-
-const Event = (props) => {
-    const activeBooks = useSelector((state: any) => state.filter.activeBooks)
-    const dispatch = useDispatch()
-
-    const activeBookColor = activeBooks.includes(props.id) ? bookColor(props.id) : ""
-
-    return (
-        <tr className="panel__item-container-info" style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(props.id))}>
-            <span>{activeBooks.includes(props.id) ? <HiStar /> : <HiOutlineStar />}</span>
-            <td>{props.year}</td>
-            <td>{props.name}</td>
-            <td style={{ color: seriesColor(props.author) }}>{props.series}</td>
-            <td style={{ textAlign: "center" }}>{props.book}</td>
-        </tr>
-    )
-}
+import { filterArray } from '../utils/filter';
 
 let getNumberWithSuffix = (item) => {
     const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
@@ -42,6 +24,8 @@ let getNumberWithSuffix = (item) => {
 }
 
 export default function History(props) {
+    const [inactiveDates, setInactiveDates] = useState([])
+
     const activeID = useSelector((state: any) => state.filter.activeData.id)
     const dispatch = useDispatch()
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
@@ -59,6 +43,11 @@ export default function History(props) {
         return charsName.toLocaleString()
     }
 
+    const onDateHandler = (date: number) => {
+        const newInactiveData = filterArray([...inactiveDates], date)
+        setInactiveDates(newInactiveData)
+    }
+
     return (
         <>
             <Draggable handle="h5">
@@ -72,59 +61,64 @@ export default function History(props) {
                                 <Title name={"Events"} onCloseHandler={props.onCloseHandler} />
 
                                 <div className="panel__item-container-info" onClick={() => props.onTimelineHandler(!props.timeline)}>
-                                    <span>Timeline</span>
+                                    <span className={props.timeline ? "panel__item-container-info-active" : ""}>Timeline</span>
                                 </div>
 
                                 {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {
                                     return (
                                         <div className="panel__item-table" key={k}>
 
-                                            <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                                <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {parseInt(i) <= 0 ? "before" : "of"} Burn's Sleep</span>
-                                            </span>
+                                            <div className="timeline__date-header">
+                                                <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                                    <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {parseInt(i) <= 0 ? "before" : "of"} Burn's Sleep</span>
+                                                </span>
+                                                <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(parseInt(i)) ? <HiEyeOff /> : <HiEye />}</button>
+                                            </div>
 
-                                            <div className="">
-                                                {timelineData[i].map((ii, kk) => {
-                                                    let filter = ""
-                                                    if (activeCharacter.length !== 0) {
-                                                        if (!activeCharacter.some((item: number) => ii.char.includes(item))) {
+                                            {inactiveDates.includes(parseInt(i)) ? null : (
+                                                <div className="">
+                                                    {timelineData[i].map((ii, kk) => {
+                                                        let filter = ""
+                                                        if (activeCharacter.length !== 0) {
+                                                            if (!activeCharacter.some((item: number) => ii.char.includes(item))) {
+                                                                filter = "timeline__event-item-filter"
+                                                            }
+                                                        }
+                                                        if (!activeBooks.includes(ii.book)) {
                                                             filter = "timeline__event-item-filter"
                                                         }
-                                                    }
-                                                    if (!activeBooks.includes(ii.book)) {
-                                                        filter = "timeline__event-item-filter"
-                                                    }
-                                                    if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char)], search)) {
-                                                        filter = "timeline__event-item-filter"
-                                                    }
+                                                        if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char)], search)) {
+                                                            filter = "timeline__event-item-filter"
+                                                        }
 
-                                                    return (
-                                                        <div className={`timeline__event-history ${activeID === ii.id ? "timeline__event-history-active" : ""}`} key={kk}
-                                                            onClick={() => {
-                                                                if (filter === "") {
-                                                                    dispatch(updateActiveData(ii))
-                                                                    if (ii.loc !== null) {
-                                                                        dispatch(update({ x: ii.loc[0], y: ii.loc[1] }));
-                                                                    } else {
-                                                                        dispatch(update(ii.loc));
+                                                        return (
+                                                            <div className={`timeline__event-history ${activeID === ii.id ? "timeline__event-history-active" : ""}`} key={kk}
+                                                                onClick={() => {
+                                                                    if (filter === "") {
+                                                                        dispatch(updateActiveData(ii))
+                                                                        if (ii.loc !== null) {
+                                                                            dispatch(update({ x: ii.loc[0], y: ii.loc[1] }));
+                                                                        } else {
+                                                                            dispatch(update(ii.loc));
+                                                                        }
+
                                                                     }
+                                                                }}>
 
-                                                                }
-                                                            }}>
+                                                                <div className={`timeline__event-item-icon timeline__event-item-icon-sm ${filter}`}
+                                                                    style={{ backgroundColor: bookColor(ii.book) }}
+                                                                >
+                                                                    <img src={filter === "" && ii.icon} alt={ii.name} />
+                                                                </div>
 
-                                                            <div className={`timeline__event-item-icon timeline__event-item-icon-sm ${filter}`}
-                                                                style={{ backgroundColor: bookColor(ii.book) }}
-                                                            >
-                                                                <img src={filter === "" && ii.icon} />
+                                                                <span>{ii.name}</span>
                                                             </div>
 
-                                                            <span>{ii.name}</span>
-                                                        </div>
-
-                                                    )
-                                                })
-                                                }
-                                            </div>
+                                                        )
+                                                    })
+                                                    }
+                                                </div>
+                                            )}
                                         </div>
                                     )
                                 })}

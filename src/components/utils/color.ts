@@ -25,13 +25,10 @@ export const bookColor = (bookNumber: number): string => {
     }
 };
 export const seriesColor = (seriesName: string): string => {
-    switch (seriesName) {
-        case "Steven Erikson":
-            return "var(--amber500)";
-        case "Ian C. Esslemont":
-            return "var(--gray500)";
-        default:
-            return "";
+    if (seriesName === "Steven Erikson") {
+        return "var(--amber500)";
+    } else {
+        return "var(--gray500)";
     }
 };
 

@@ -33,7 +33,7 @@ const cityData = [
     {
         name: "Aran",
         loc: [221.0, 15, 56.0],
-        introduction: 1,
+        introduction: 2,
         type: 2,
     },
     {
@@ -51,7 +51,7 @@ const cityData = [
     {
         name: "Capustan",
         loc: [311.0, 15, 57.0],
-        introduction: 1,
+        introduction: 3,
         type: 2,
     },
     {

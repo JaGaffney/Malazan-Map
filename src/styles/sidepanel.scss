@@ -92,7 +92,7 @@
     &-table {
         border-collapse: separate;
         border-spacing: 0 1px;
-
+        border-top: dotted 1px var(--gray800);
         td,
         th {
             padding: 0.2rem 0.5rem;
@@ -128,7 +128,7 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0 3px;
-
+            padding: 0.2rem 0.5rem;
             td,
             th {
                 padding: 0, 0.5rem;

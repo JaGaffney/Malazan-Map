@@ -10,6 +10,7 @@ import Draggable from 'react-draggable';
 import Title from './Title';
 
 export default function Locations(props) {
+
     const activeCity = useSelector((state: any) => state.filter.activeCity)
     const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()
@@ -17,6 +18,10 @@ export default function Locations(props) {
     const showAllLocation = () => {
         cityData.map((i, k) => {
             dispatch(updateActiveCity(k))
+            return (
+                null
+            )
+
         })
     }
 
@@ -33,6 +38,7 @@ export default function Locations(props) {
 
                             <div className="panel__item-container-info" onClick={() => showAllLocation()}>
                                 <span>Show all</span>
+                                {/* <span><HiCheckCircle /></span> */}
                             </div>
 
                             <div className={`panel__item-container-info`} onClick={() => dispatch(resetActiveCity())}>
