@@ -6,7 +6,7 @@ const characters = {
         role: "soldier",
     },
     2: {
-        name: "Sorry/Apsala",
+        name: "Apsala",
         race: "ascended",
         intro: "1",
         role: "assassin",
@@ -462,7 +462,7 @@ const characters = {
         role: "",
     },
     78: {
-        name: "Spite",
+        name: "Lady Spite",
         race: "ascended",
         intro: "6",
         role: "",
