@@ -5,12 +5,16 @@ const CustomLoader = (props) => {
     const { active, progress, errors, item, loaded, total } = useProgress()
 
     const quotes = [
-        `"The stains of rust seemed to map blood seas on the black, pocked
-        surface of Mock's Vane. A century old, it squatted on the point of an
-        old pike that had been bolted to the outer top of the Hold's wall.
-        Monstrous and misshapen, it had been cold-hammered into the form of
-        a winged demon, teeth bared in a leering grin, and was tugged and
-        buffeted in squealing protest with every gust of wind"`
+        `"Now these ashes have grown cold, we open the old book.
+        These oil-stained pages recount the tales of the Fallen,
+        a frayed empire, words without warmth. The hearth
+        has ebbed, its gleam and life's sparks are but memories
+        against dimming eyes – what cast my mind, what hue my
+        thoughts as I open the Book of the Fallen
+        and breathe deep the scent of history?
+        Listen, then, to these words carried on that breath.
+        These tales are the tales of us all, again yet again.
+        We are history relived and that is aft, without end that is all."`
     ]
 
     //console.log("Loading: ", { active, progress, errors, item, loaded, total })
@@ -19,12 +23,12 @@ const CustomLoader = (props) => {
         <Html fullscreen>
             <div className="tempLoading">
                 <div className="tempLoading-title">
-                    <h1>Malazan Book of the fallen</h1>
+                    <h1>Malazan Book of the Fallen</h1>
                     <h2>Interactive 3D world map</h2>
                 </div>
                 <div className="tempLoading-quote">
                     <p>{quotes[0]}</p>
-                    <span><i>Gardens of the moon - Epilogoue</i></span>
+                    <span><i>Gardens of the Moon - Epigraph</i></span>
                 </div>
 
                 <div className="tempLoading-loading">
