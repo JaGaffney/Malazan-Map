@@ -402,9 +402,9 @@ const characters = {
         role: "",
     },
     68: {
-        name: "Scabandari Bloodeye",
+        name: "Nimander",
         race: "soletaken",
-        intro: "5",
+        intro: "6",
         role: "",
     },
     69: {
@@ -471,6 +471,24 @@ const characters = {
         name: "Telorast & Curdle",
         race: "ascended",
         intro: "6",
+        role: "",
+    },
+    80: {
+        name: "Draconis",
+        race: "ascended",
+        intro: "1",
+        role: "",
+    },
+    81: {
+        name: "Hood",
+        race: "ascended",
+        intro: "3",
+        role: "",
+    },
+    82: {
+        name: "Torrent",
+        race: "human",
+        intro: "7",
         role: "",
     },
 };

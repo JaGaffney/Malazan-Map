@@ -8,10 +8,12 @@ const timelineData = {
     [-298655]: [
         {
             id: uuidv4(),
+            timeline: false,
             book: 3,
             name: "Start of book 3 - 33rd Jaghut War",
             icon: eventIcons.old,
-            description: "",
+            description:
+                "The Ritual of Tellann was performed at the First Gathering 298,665 years before Burn's Sleep by the Imass Bonecaster, Olar Ethil, transforming most of the Imass people into the T'lan Imass. It was the binding of the Tellann Warren to each and every Imass.",
             char: [72],
             loc: [522.65, 136.47],
             area: 1,
@@ -20,11 +22,13 @@ const timelineData = {
     [-119739]: [
         {
             id: uuidv4(),
+            timeline: false,
             book: 9,
-            name: "the heart of the Crippled God after the Fall",
+            name: "The Fall of the Crippled God",
             icon: eventIcons.warren,
-            description: "the Fall of the Crippled God.",
-            char: [],
+            description:
+                "The Crippled God is brought into the Malazan world by mages in order to stop High king Kallor. The Crippled Gods heart is chained in Kalanse. The Great Ravens are born from his flesh.",
+            char: [14],
             loc: [207.9, 259.4],
             area: 6,
         },
@@ -32,18 +36,47 @@ const timelineData = {
     [-119736]: [
         {
             id: uuidv4(),
+            timeline: false,
             book: 3,
             name: "3 years after the Fall of the Crippled God",
             icon: eventIcons.warren,
-            description: "3 years after the Fall of the Crippled God",
-            char: [14, 29, 31],
+            description:
+                "High King Kallor destroys the entire continent of Jacuruku, K'rul, Draconus and Sister of Cold Nights curse Kallor to immortality, he in turn curses each of them. K'rul creates the Imperial Warren by sweeping the devastation from the land into the new Warren so that the land might heal.",
+            char: [29, 31],
             loc: [315.06, 251.73],
             area: 4,
+        },
+    ],
+    [-835]: [
+        {
+            id: uuidv4(),
+            timeline: true,
+            book: 1,
+            name: "Darujhistan is founded",
+            icon: eventIcons.city,
+            description: "The city of Darujhistan is founded",
+            char: [],
+            loc: [522.65, 84.28],
+            area: 1,
+        },
+    ],
+    [1058]: [
+        {
+            id: uuidv4(),
+            timeline: true,
+            book: 1,
+            name: "Malazan Empire is founded",
+            icon: eventIcons.city,
+            description: "Malazan Empire is founded",
+            char: [],
+            loc: [420.0, 185.59],
+            area: 3,
         },
     ],
     1154: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Start of book 1 - Laseen becomes empress",
             icon: eventIcons.city,
@@ -56,6 +89,7 @@ const timelineData = {
     1159: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Start of book 4 - Teblor",
             icon: eventIcons.tribal,
@@ -66,6 +100,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 5,
             name: "Tiste Edur",
             icon: eventIcons.tribal,
@@ -76,6 +111,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 5,
             name: "Lether",
             icon: eventIcons.city,
@@ -89,6 +125,7 @@ const timelineData = {
     1160: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Siege of Pale",
             icon: eventIcons.battle,
@@ -101,6 +138,7 @@ const timelineData = {
     1161: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Sorry is born",
             icon: eventIcons.assassin,
@@ -111,8 +149,9 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
-            name: "Paran travels the Imperial warren",
+            name: "Paran meets the Empress",
             icon: eventIcons.warren,
             description: "Topper brings Paran through the Imperail Warren to Unta infront of Empress Lassen and then returns home to see his sister Tavore",
             char: [1, 10, 17],
@@ -123,6 +162,7 @@ const timelineData = {
     1163: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Conquest of Pale",
             icon: eventIcons.battle,
@@ -134,6 +174,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Karsa trapped",
             icon: eventIcons.tribal,
@@ -144,6 +185,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "New Captain of the Bridgeburners",
             icon: eventIcons.death,
@@ -154,6 +196,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Darujhistan",
             icon: eventIcons.city,
@@ -162,18 +205,20 @@ const timelineData = {
             loc: [522.65, 84.28],
             area: 1,
         },
-        // {
-        //     id: uuidv4(),
-        //     book: 1,
-        //     name: "Bridgeburners arrive north of Darujhistan",
-        //     icon: eventIcons.travelBoat,
-        //     description: "the Bridgeburners find a boat to sail accross to Darujhistan where Sorry reveals she knows how to sail.",
-        //     char: [2, 4, 5, 11, 12],
-        //     loc: [522.65, 81],
-        //     area: 1,
-        // },
         {
             id: uuidv4(),
+            timeline: false,
+            book: 1,
+            name: "Bridgeburners arrive north of Darujhistan",
+            icon: eventIcons.travelBoat,
+            description: "the Bridgeburners find a boat to sail accross to Darujhistan where Sorry reveals she knows how to sail.",
+            char: [2, 4, 5, 11, 12],
+            loc: [522.65, 81],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Escape to the mainland",
             icon: eventIcons.slave,
@@ -187,6 +232,7 @@ const timelineData = {
         //
         {
             id: uuidv4(),
+            timeline: false,
             book: 1,
             name: "Adjunct Lorn arrives at Pale",
             icon: eventIcons.city,
@@ -197,6 +243,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Crone meets Caladin brood",
             icon: eventIcons.travelFly,
@@ -207,6 +254,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Conflagration",
             icon: eventIcons.warren,
@@ -216,49 +264,32 @@ const timelineData = {
             loc: [530.62, 79.67],
             area: 1,
         },
-        // {
-        //     id: uuidv4(),
-        //     book: 1,
-        //     name: "Crone is attacked",
-        //     icon: eventIcons.travelFly,
-        //     description: "Hairlock attacks Crone and other crows.",
-        //     char: [6, 14],
-        //     loc: [528.85, 76.61],
-        //     area: 1,
-        // },
         {
             id: uuidv4(),
+            timeline: false,
             book: 1,
-            name: "Gadrobi Hills - Quest",
-            icon: eventIcons.sleeping,
-            description: "Lorn and Tool find the barrow for the Jaghut Tyrant",
+            name: "Crone is attacked",
+            icon: eventIcons.travelFly,
+            description: "Hairlock attacks Crone and other crows.",
+            char: [6, 14],
+            loc: [528.85, 76.61],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            timeline: true,
+            book: 1,
+            name: "Gadrobi Hills",
+            icon: eventIcons.jaghurt,
+            description:
+                "Lorn attacks Kruppes group and then awakens the Jaghurt Tyrant. The Jaghut Tyrant's Raest awakens and fights 4 black dragons and the red dragon Silanah. Raest enters Kruppes dream and meets K'rul, Tool destorys his body but he escapes into a new body ",
             char: [17, 18, 2, 15, 16, 1, 6, 7, 8, 14, 3],
             loc: [529.73, 84.28],
             area: 1,
         },
-        // {
-        //     id: uuidv4(),
-        //     book: 1,
-        //     name: "Return to Darujhistan",
-        //     icon: eventIcons.city,
-        //     description: "Everyone makes their way back to Darujhistan and arrive at various times.",
-        //     char: [1, 2, 4, 5, 8, 11, 12, 14, 15, 16],
-        //     loc: [522.65, 84.28],
-        //     area: 1,
-        // },
         {
             id: uuidv4(),
-            book: 1,
-            name: "Gadrobi Hills - Jaghut Tyrant",
-            icon: eventIcons.jaghurt,
-            description:
-                "The Jaghut Tyrant's Raest awakens and fights 4 black dragons and the red dragon Silanah. Raest enters Kruppes dream and meets K'rul, Tool destorys his body but he escapes into a new body ",
-            char: [],
-            loc: [529.73, 84.28],
-            area: 1,
-        },
-        {
-            id: uuidv4(),
+            timeline: true,
             book: 1,
             name: "Battle over Darujhistan",
             icon: eventIcons.seed,
@@ -267,30 +298,22 @@ const timelineData = {
             loc: [522.65, 84.28],
             area: 1,
         },
-        // {
-        //     id: uuidv4(),
-        //     book: 1,
-        //     name: "Return home",
-        //     icon: eventIcons.travelBoat,
-        //     description: "Apsalar wishes to return home.",
-        //     char: [2, 11, 12, 15],
-        //     loc: [517.34, 81.14],
-        //     area: 1,
-        // },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Thelomen Toblakai",
             icon: eventIcons.tribal,
-            description: "Karsa and Leomen Leoman of the Flails are rescued by Tovald Nom and the 2 of them make there way to Raraku to meet Sha'ik.",
+            description: "Karsa and Leomen of the Flails are rescued by Tovald Nom and the 2 of them make there way to Raraku to meet Sha'ik.",
             char: [39, 50],
             loc: [398.25, 52.19],
             area: 2,
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
-            name: "Start of book 2 - The Cull",
+            name: "Start of Book 2 - The Cull",
             icon: eventIcons.death,
             description: "The Nobles of Unta are culled and Felisin is enslaved by her sister.",
             char: [19, 20, 22],
@@ -301,6 +324,7 @@ const timelineData = {
     1164: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Crater",
             icon: eventIcons.travelCart,
@@ -309,18 +333,9 @@ const timelineData = {
             loc: [529.73, 84.28],
             area: 1,
         },
-        // {
-        //     id: uuidv4(),
-        //     book: 2,
-        //     name: "Convergence?",
-        //     icon: eventIcons.ruins,
-        //     description: "Soultaken are searching for something in the desert",
-        //     char: [23, 24],
-        //     loc: [406.72, 58.19],
-        //     area: 2,
-        // },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "The tower",
             icon: eventIcons.warren,
@@ -331,6 +346,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Coltain arrives",
             icon: eventIcons.travelHorse,
@@ -339,18 +355,9 @@ const timelineData = {
             loc: [424.42, 58.19],
             area: 2,
         },
-        // {
-        //     id: uuidv4(),
-        //     book: 2,
-        //     name: "Soletaken at sea",
-        //     icon: eventIcons.diverOcean,
-        //     description: "Fiddler explodes a Soletaken while at sea",
-        //     char: [2, 11, 12, 15],
-        //     loc: [423.54, 40.17],
-        //     area: 2,
-        // },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "The Holy book",
             icon: eventIcons.prayer,
@@ -361,17 +368,18 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Panpot'sun Odhan",
             icon: eventIcons.ruins,
-            description: "Mappo and Icarium meet Iskaral Pust and serverant.",
+            description: "Mappo and Icarium meet Iskaral Pust and Servant.",
             char: [23, 24, 28],
             loc: [406.95, 52.05],
             area: 2,
         },
-
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Slave",
             icon: eventIcons.slave,
@@ -382,16 +390,18 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Rivals",
             icon: eventIcons.rally,
-            description: "Everyone meets together to discuss the attack on the Pannion Domin",
+            description: "Everyone meets together outside Pale to discuss the attack on the Pannion Domin.",
             char: [1, 3, 4, 5, 8, 9, 13, 14, 16, 29],
             loc: [523.54, 73.53],
             area: 1,
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Tesem Temple",
             icon: eventIcons.ruins,
@@ -402,6 +412,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Solo",
             icon: eventIcons.assassin,
@@ -412,6 +423,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "The poor disguise",
             icon: eventIcons.fete,
@@ -422,6 +434,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Sha'ik",
             icon: eventIcons.prayer,
@@ -432,6 +445,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "The Whirlwind begins",
             icon: eventIcons.whirlwind,
@@ -442,6 +456,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "The new card?",
             icon: eventIcons.card,
@@ -453,6 +468,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "To Capustan",
             icon: eventIcons.tlanimass,
@@ -463,6 +479,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Vision Mountains",
             icon: eventIcons.travelFly,
@@ -474,6 +491,7 @@ const timelineData = {
 
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Army of the Apocalypse",
             icon: eventIcons.rally,
@@ -484,6 +502,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Into the Whirlwind",
             icon: eventIcons.whirlwind,
@@ -494,6 +513,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Unexpected saviour",
             icon: eventIcons.assassin,
@@ -504,6 +524,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Freedom?",
             icon: eventIcons.travelFoot,
@@ -514,6 +535,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Happenstance",
             icon: eventIcons.diverLand,
@@ -524,6 +546,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Saftey or death?",
             icon: eventIcons.warren,
@@ -534,6 +557,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Lamatath Plain",
             icon: eventIcons.travelFoot,
@@ -544,6 +568,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Callows",
             icon: eventIcons.warren,
@@ -555,6 +580,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Fear",
             icon: eventIcons.death,
@@ -565,6 +591,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Capustan surrounded",
             icon: eventIcons.slave,
@@ -575,6 +602,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Barghast Camp",
             icon: eventIcons.campfire,
@@ -585,6 +613,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Outlook",
             icon: eventIcons.death,
@@ -595,6 +624,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "The journey to Capustan",
             icon: eventIcons.travelCart,
@@ -606,6 +636,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Battle of Capustan",
             icon: eventIcons.battle,
@@ -617,6 +648,7 @@ const timelineData = {
 
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Tesem Temple",
             icon: eventIcons.ruins,
@@ -627,6 +659,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Kalams renown",
             icon: eventIcons.assassin,
@@ -637,6 +670,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - I",
             icon: eventIcons.dog,
@@ -647,6 +681,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Back to the desert?",
             icon: eventIcons.warren,
@@ -657,6 +692,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Imperial Warren",
             icon: eventIcons.warren,
@@ -667,6 +703,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - II",
             icon: eventIcons.dog,
@@ -677,6 +714,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "The First Empire",
             icon: eventIcons.ruins,
@@ -687,6 +725,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Tracking",
             icon: eventIcons.whirlwind,
@@ -697,6 +736,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - III",
             icon: eventIcons.dog,
@@ -707,6 +747,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - IV",
             icon: eventIcons.dog,
@@ -717,6 +758,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Exit",
             icon: eventIcons.city,
@@ -727,6 +769,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Set sail",
             icon: eventIcons.travelBoat,
@@ -737,6 +780,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - V",
             icon: eventIcons.dog,
@@ -747,6 +791,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Sha'ik Reborn",
             icon: eventIcons.prayer,
@@ -757,6 +802,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Tremorlor",
             icon: eventIcons.ruins,
@@ -767,6 +813,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - VI",
             icon: eventIcons.dog,
@@ -777,6 +824,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - VII",
             icon: eventIcons.dog,
@@ -787,6 +835,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Storm",
             icon: eventIcons.travelBoat,
@@ -797,6 +846,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - VIII",
             icon: eventIcons.dog,
@@ -809,6 +859,7 @@ const timelineData = {
         // after capustan
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Over the water",
             icon: eventIcons.travelBoat,
@@ -819,7 +870,7 @@ const timelineData = {
         },
 
         // {
-        //     id: uuidv4(),
+        //     id: uuidv4(), timeline: true,
         //     book: 3,
         //     name: "Lest",
         //     icon: eventIcons.travelCart,
@@ -829,7 +880,7 @@ const timelineData = {
         //     area: 1,
         // },
         // {
-        //     id: uuidv4(),
+        //     id: uuidv4(), timeline: true,
         //     book: 3,
         //     name: "Setta",
         //     icon: eventIcons.travelCart,
@@ -841,6 +892,7 @@ const timelineData = {
 
         {
             id: uuidv4(),
+            timeline: true,
             book: 3,
             name: "Attack on Coral city",
             icon: eventIcons.battle,
@@ -853,6 +905,7 @@ const timelineData = {
 
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - IX",
             icon: eventIcons.dog,
@@ -863,6 +916,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Return to the city",
             icon: eventIcons.city,
@@ -873,6 +927,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Chain of Dogs - X",
             icon: eventIcons.dog,
@@ -884,6 +939,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Deadhouse",
             icon: eventIcons.warren,
@@ -894,6 +950,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 2,
             name: "Sha'ik Reborn",
             icon: eventIcons.whirlwind,
@@ -905,6 +962,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Bones",
             icon: eventIcons.city,
@@ -915,6 +973,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Cutter",
             icon: eventIcons.assassin,
@@ -925,6 +984,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "New Mount",
             icon: eventIcons.travelHorse,
@@ -936,6 +996,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "The Throne of Shadow",
             icon: eventIcons.warren,
@@ -947,6 +1008,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 4,
             name: "Rivers in a Desert",
             icon: eventIcons.battle,
@@ -957,6 +1019,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Prologue book 6 - Hellian",
             icon: eventIcons.ascended,
@@ -967,6 +1030,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Prologue book 6 - Barathol",
             icon: eventIcons.tlanimass,
@@ -977,6 +1041,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Karsa saves Samar Dev",
             icon: eventIcons.travelCart,
@@ -987,6 +1052,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Telorast & Curdle",
             icon: eventIcons.travelHorse,
@@ -997,6 +1063,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Y'Ghatan",
             icon: eventIcons.bridgeBurners,
@@ -1007,6 +1074,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "new High Fist",
             icon: eventIcons.rally,
@@ -1017,6 +1085,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "The Bonehunters",
             icon: eventIcons.bridgeBurners,
@@ -1027,6 +1096,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Challenger",
             icon: eventIcons.battle,
@@ -1037,6 +1107,7 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Ghosthands",
             icon: eventIcons.travelBoat,
@@ -1049,6 +1120,7 @@ const timelineData = {
     1165: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 6,
             name: "Return to Malaz City",
             icon: eventIcons.city,
@@ -1064,6 +1136,7 @@ const timelineData = {
     1169: [
         {
             id: uuidv4(),
+            timeline: true,
             book: 8,
             name: "Toll the Hounds - Karsa group ",
             icon: eventIcons.travelHorse,
@@ -1074,11 +1147,23 @@ const timelineData = {
         },
         {
             id: uuidv4(),
+            timeline: true,
+            book: 8,
+            name: "Toll the Hounds - Nimanders group",
+            icon: eventIcons.travelCart,
+            description: "Nimanders group travels to Bastion where they meet the False God and then make there way to Coral.",
+            char: [68],
+            loc: [531, 101.3],
+            area: 1,
+        },
+        {
+            id: uuidv4(),
+            timeline: true,
             book: 8,
             name: "Toll the Hounds - Darujhistan",
             icon: eventIcons.city,
             description: "Everything that happens in Darujhistan for the whole book.",
-            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 48, 52],
+            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 48, 52, 80, 81],
             loc: [522.65, 84.28],
             area: 1,
         },
