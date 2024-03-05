@@ -17,7 +17,7 @@ const Book = (props) => {
 
     return (
         <tr className="panel__item-container-info" style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(props.id))}>
-            <span>{activeBooks.includes(props.id) ? <HiStar /> : <HiOutlineStar />}</span>
+            <td className="panel__item-container-info-icon">{activeBooks.includes(props.id) ? <HiStar /> : <HiOutlineStar />}</td>
             <td>{props.year}</td>
             <td>{props.name}</td>
             <td style={{ color: seriesColor(props.author) }}>{props.series}</td>

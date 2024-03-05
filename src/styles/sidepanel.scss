@@ -144,9 +144,13 @@
             border-radius: 4px;
             cursor: pointer;
             svg {
-                height: 1.3rem !important;
-                width: 100% !important;
+                max-height: 1.5rem !important;
+                max-width: 1.5rem !important;
                 padding-top: 0.3rem;
+            }
+            &-icon {
+                height: 100%;
+                width: 1.5rem;
             }
             &:hover {
                 background: var(--gray800);

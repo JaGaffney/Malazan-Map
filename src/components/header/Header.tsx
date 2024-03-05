@@ -60,7 +60,7 @@ export default function Header() {
             {characters && <Characters onCloseHandler={setCharacters} />}
 
             {worldMap && <WorldMap />}
-            {settings && <Settings />}
+            {settings && <Settings onCloseHandler={setSettings} />}
             {history && <History timeline={timeline} onTimelineHandler={setTimeline} onCloseHandler={setHistory} />}
 
             {timeline && <Timeline />}
