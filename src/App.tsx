@@ -12,8 +12,8 @@ import CustomLoader from "./components/three/CustomLoader/CustomLoader"
 
 import { useDispatch } from "react-redux";
 import { setBasic, resetActiveAreas, setNone } from "./state/features/settings"
-import { updateActiveCity } from "./state/features/engine";
-import { SceneContainerFast } from "./components/three/Scene/SceneContainerFast";
+
+import { SceneContainerStandard } from "./components/three/Scene/SceneContainerStandard";
 
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
                     {mode === 1 && (
                         <Canvas frameloop={"demand"} >
                             <Suspense fallback={null} >
-                                <SceneContainerFast />
+                                <SceneContainerStandard />
                             </Suspense>
                         </Canvas>
                     )}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import { useSelector } from "react-redux";
 
 import { CylinderBufferGeometry, MeshStandardMaterial } from "three";
@@ -6,28 +6,14 @@ import { useEnvironment, useTexture } from "@react-three/drei";
 
 import WORLDDATA from "../../../data/sorted copy.json"
 
-import InstanceTestInner from "./InstanceTestInner";
+import InstanceHex from "./InstanceHex";
 
-export default function InstancesTest() {
+export default function InstanceHexContainer() {
   const flatternData = useSelector((state: any) => state.settings.flattern)
   const desertsData = useSelector((state: any) => state.settings.deserts)
   const forestData = useSelector((state: any) => state.settings.forest)
 
   const world = WORLDDATA
-
-  const instancedMeshRef1 = useRef()
-  const instancedMeshRef2 = useRef()
-  const instancedMeshRef3 = useRef()
-  const instancedMeshRef4 = useRef()
-  const instancedMeshRef5 = useRef()
-  const instancedMeshRef51 = useRef()
-  const instancedMeshRef52 = useRef()
-  const instancedMeshRef6 = useRef()
-  const instancedMeshRef7 = useRef()
-  const instancedMeshRef8 = useRef()
-  const instancedMeshRef9 = useRef()
-  const instancedMeshRef10 = useRef()
-
 
   const hexTextures = useTexture({
     dirt: process.env.PUBLIC_URL + "/textures/dirt.png",
@@ -81,6 +67,8 @@ export default function InstancesTest() {
       case (4):
         return mesh.stone2;
       case (5):
+      case (51):
+      case (52):
         return mesh.grass;
       case (6):
         if (!forestData) {
@@ -138,69 +126,10 @@ export default function InstancesTest() {
     <>
       {Object.keys(world).map((i, k) => {
         const adjust = parseInt(i)
-        switch (adjust) {
-          case (1):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef1} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(2)} />
-            )
-          case (2):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef2} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(11)} />
-            )
-          case (3):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef3} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(2)} />
-            )
-          case (4):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef4} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(3)} />
-            )
-          case (5):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef5} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(1)} />
-            )
-          case (51):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef51} meshType={adjust} meshMaterial={calculateMesh(5)} meshGeometry={calculateGeometry(11)} />
-            )
-          case (52):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef52} meshType={adjust} meshMaterial={calculateMesh(5)} meshGeometry={calculateGeometry(12)} />
-            )
-          case (6):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef6} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(2)} />
-            )
-          case (7):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef7} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(4)} />
-            )
-          case (8):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef8} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(2)} />
-            )
-          case (9):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef9} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(2)} />
-            )
-          case (10):
-            return (
-              <InstanceTestInner instancedMeshRef={instancedMeshRef10} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(2)} />
-            )
-          default:
-            return (
-
-              null
-            )
-
-
-        }
-
-
-
-
-
-
+        const height = Object.keys(world[i])
+        return (
+          <InstanceHex key={k} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(height)} />
+        )
       })}
     </>
   )
