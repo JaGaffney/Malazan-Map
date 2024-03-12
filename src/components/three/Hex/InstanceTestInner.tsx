@@ -1,0 +1,35 @@
+import React, { useEffect } from "react"
+import { Matrix4, Object3D } from "three";
+
+import WORLDDATA from "../../../data/sorted copy.json"
+import { tileToPosition } from "../../utils/helpers";
+
+
+export default function InstancesTestInner(props) {
+    const temp = new Object3D()
+    const world = WORLDDATA
+
+    useEffect(() => {
+        for (let i = 0; i < Object.keys(world).length - 1; i++) {
+            Object.keys(world[props.meshType]).map((ii, kk) => {
+                for (let iii = 0; iii < world[props.meshType][ii].length - 1; iii++) {
+                    const newPos = tileToPosition(world[props.meshType][ii][iii].x, world[props.meshType][ii][iii].y)
+                    temp.position.set(newPos[0], 1, newPos[1])
+                    temp.updateMatrix()
+                    props.instancedMeshRef.current.setMatrixAt(iii, temp.matrix)
+                }
+            }
+            )
+        }
+
+        // Update the instance
+        props.instancedMeshRef.current.instanceMatrix.needsUpdate = true
+    }, [])
+
+    return (
+        <>
+            <instancedMesh receiveShadow={false} castShadow={false} ref={props.instancedMeshRef} args={[null, null, 30000]} material={props.meshMaterial} geometry={props.meshGeometry}>
+            </instancedMesh>
+        </>
+    )
+}

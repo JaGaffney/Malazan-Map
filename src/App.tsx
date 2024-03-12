@@ -24,9 +24,9 @@ function App() {
 
 
     const onModeHandler = (data) => {
-        if (data === 1) {
-            dispatch(setBasic())
-        }
+        // if (data === 1) {
+        //     dispatch(setBasic())
+        // }
         if (data === 2) {
             dispatch(setNone())
         }
@@ -61,6 +61,8 @@ function App() {
                             <Suspense fallback={null} >
                                 <SceneContainerBasic />
                             </Suspense>
+
+
                         </Canvas>
                     )}
 

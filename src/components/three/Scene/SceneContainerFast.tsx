@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { MapControls } from "@react-three/drei";
+import { MapControls, Stars } from "@react-three/drei";
 import { Color } from "three";
 
 
@@ -13,8 +13,8 @@ import Cam from "./Cam"
 import { Provider } from 'react-redux'
 import { store } from "../../../state/store"
 import Flags from "../Overlay/Flags";
-import Controls from "./Controls";
-import GhostMap from "../World/GhostMap";
+import InstancesTest from "../Hex/InstancesTest";
+import FloatingGrid from "../World/FloatingGrid";
 
 
 export function SceneContainerFast() {
@@ -25,19 +25,22 @@ export function SceneContainerFast() {
             <Cam />
             {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
 
-            <MapControls enableRotate={navigator.userAgent.search("Firefox") === 67 ? true : false} maxDistance={600} dampingFactor={0.1} enableDamping={true} />
+            <MapControls enableRotate={true} maxDistance={600} dampingFactor={0.1} enableDamping={true} />
             {/* <Controls /> */}
-            <pointLight position={[160, 200, 93]} color={lightColor} intensity={1} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
+            <pointLight position={[160, 200, 93]} castShadow color={lightColor} intensity={1} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
+            {/* <ambientLight /> */}
+
 
             <group position={[-400, 0, -100]}>
-                <Hex />
+                {/* <Hex /> */}
+                <InstancesTest />
                 <Flags />
                 <Highlight />
             </group>
 
             <Sea />
-            {/* <GhostMap /> */}
             <Floor />
+            <FloatingGrid />
 
         </Provider>
     );
