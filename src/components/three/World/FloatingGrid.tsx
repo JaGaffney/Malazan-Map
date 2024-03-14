@@ -15,7 +15,7 @@ export default function FloatingGrid() {
 
     return (
         <mesh rotation-x={-Math.PI * 0.5} position={[0, 1.6, 60]}>
-            <planeGeometry args={[980, 450]} />
+            <planeGeometry args={[1700, 1250]} />
             <meshBasicMaterial
                 color={[1, 10, 1]}
                 opacity={1}

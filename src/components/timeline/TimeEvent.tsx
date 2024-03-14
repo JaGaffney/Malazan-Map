@@ -10,9 +10,8 @@ import { bookColor } from '../utils/color';
 export const TimeEvent = (props) => {
     const activeID = useSelector((state: any) => state.filter.activeData.id)
     const dispatch = useDispatch()
-
     return (
-        <div className="timeline__event-item" onClick={() => {
+        <div className="timeline__event-item" key={props.data.id} onClick={() => {
             if (props.filter === "") {
                 dispatch(updateActiveData(props.data))
                 if (props.data.loc !== null) {

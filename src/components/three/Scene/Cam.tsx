@@ -36,7 +36,7 @@ function Cam(props) {
 
 
     return (<>
-        <PerspectiveCamera makeDefault fov={45} position={[0, 200, 85]} />
+        <PerspectiveCamera makeDefault fov={45} position={[0, 200, 85]} {...props} />
 
 
         {/* <group position={pos}>

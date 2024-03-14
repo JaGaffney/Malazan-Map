@@ -10,7 +10,7 @@ export default function Floor() {
     // 473825
     return (
         <mesh position={[0, -5, 60]} rotation-x={-Math.PI * 0.5}>
-            <planeGeometry args={[1000, 500]} />
+            <planeGeometry args={[1800, 1250]} />
             <meshStandardMaterial
                 envMap={envMap}
                 //map={dirt2} 

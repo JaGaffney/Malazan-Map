@@ -27,43 +27,45 @@ const Timeline = (props) => {
     }
 
     return (
-        <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
-            {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {
-                // early outs some of the dates as there is too much information in the timeline which makes it too confusing
-                if (parseInt(i) === -298655 || parseInt(i) === -119739 || parseInt(i) === -119736) {
-                    return (<></>)
-                }
-                return (
-                    <div className="timeline" key={k}>
-                        <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-                        <div className="timeline__event-container">
-                            {timelineData[i].map((ii, kk) => {
-                                // early outs some of the dates as there is too much information in the timeline which makes it too confusing
-                                if (ii.timeline === false) {
-                                    return <></>
-                                }
-                                let filter = ""
-                                if (activeCharacter.length !== 0) {
-                                    if (!activeCharacter.some((item: number) => ii.char.includes(item))) {
+        <>
+            <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
+                {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {
+                    // early outs some of the dates as there is too much information in the timeline which makes it too confusing
+                    if (parseInt(i) === -298655 || parseInt(i) === -119739 || parseInt(i) === -119736) {
+                        return (null)
+                    }
+                    return (
+                        <div className="timeline" key={k}>
+                            <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                            <div className="timeline__event-container">
+                                {timelineData[i].map((ii, kk) => {
+                                    // early outs some of the dates as there is too much information in the timeline which makes it too confusing
+                                    if (ii.timeline === false) {
+                                        return null
+                                    }
+                                    let filter = ""
+                                    if (activeCharacter.length !== 0) {
+                                        if (!activeCharacter.some((item: number) => ii.char.includes(item))) {
+                                            filter = "timeline__event-item-filter"
+                                        }
+                                    }
+                                    if (!activeBooks.includes(ii.book)) {
                                         filter = "timeline__event-item-filter"
                                     }
-                                }
-                                if (!activeBooks.includes(ii.book)) {
-                                    filter = "timeline__event-item-filter"
-                                }
-                                if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char)], search)) {
-                                    filter = "timeline__event-item-filter"
-                                }
-                                return (
-                                    <TimeEvent year={i} data={ii} key={kk} filter={filter} />
-                                )
+                                    if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char)], search)) {
+                                        filter = "timeline__event-item-filter"
+                                    }
+                                    return (
+                                        <TimeEvent year={i} data={ii} key={kk} filter={filter} />
+                                    )
 
-                            })
-                            }</div>
-                    </div>
-                )
-            })}
-        </ScrollContainer>
+                                })
+                                }</div>
+                        </div>
+                    )
+                })}
+            </ScrollContainer>
+        </>
     )
 }
 
