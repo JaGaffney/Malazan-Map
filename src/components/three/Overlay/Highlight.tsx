@@ -10,7 +10,7 @@ export default function Highlight() {
     const activeID = useSelector((state: any) => state.filter.activeData.id)
 
     return (
-        activeID !== "" && activeCord !== null ? (
+        activeID !== "" && activeCord.x !== 0 ? (
             <group>
                 <mesh position={[activeCord.x, 151.5, activeCord.y]}>
                     <cylinderBufferGeometry args={[1.5, 1.5, 300, 6]} />

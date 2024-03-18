@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HiLocationMarker, HiDeviceMobile, HiDesktopComputer, HiMap } from "react-icons/hi";
+import { HiDeviceMobile, HiDesktopComputer, HiMap } from "react-icons/hi";
 
 
 const Landing = (props) => {
@@ -15,8 +15,8 @@ const Landing = (props) => {
                         <h1><span><i>map of </i> </span> Malazan Book of the Fallen</h1>
                     </div>
                     <div className="landing__hero-description">
-                        <p>Interactive 3D map which features a detailed timeline of main character movements, key plot points and relevant Points of Interest throughout the series. </p>
-                        <p>Made using three.js.</p>
+                        <p>Trace the tales of the Fallen and unravel the saga with the Interactive 3D Map and detailed timeline. </p>
+                        <p>Created using three.js.</p>
                     </div>
 
                     <div className="landing__mode">
@@ -25,7 +25,7 @@ const Landing = (props) => {
                                 <HiMap />
                                 <span>Basic</span>
                             </div>
-                            <span className="landing__mode-button-description">no animations</span>
+                            <span className="landing__mode-button-description">few animations</span>
                         </button>
 
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(1)}>
@@ -33,7 +33,7 @@ const Landing = (props) => {
                                 <HiDeviceMobile />
                                 <span>Standard</span>
                             </div>
-                            <span className="landing__mode-button-description">mobile, tablets or slower devices</span>
+                            <span className="landing__mode-button-description">recommended</span>
                         </button>
 
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(0)}>

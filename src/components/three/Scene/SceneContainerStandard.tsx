@@ -41,21 +41,26 @@ export function SceneContainerStandard(props) {
             <PerspectiveCamera makeDefault fov={45} position={[0, 300, 85]} {...props} />
             {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
 
-            <MapControls enableRotate={true} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
+            <MapControls enableRotate={false} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
             {/* <Controls /> */}
-            <pointLight position={[160, 200, 93]} castShadow color={lightColor} intensity={1} shadowMapHeight={512} shadowMapWidth={512} shadowCameraNear={0.1} shadowCameraFar={500} />
+            <pointLight position={[160, 200, 93]} castShadow color={lightColor} intensity={1} />
             {/* <ambientLight /> */}
 
             <group position={[-400, 0, -100]}>
                 <InstanceHexContainer />
                 <Flags />
                 <Highlight />
+
                 {/* <Compass /> */}
+
             </group>
 
             <Sea />
             <Floor />
             <FloatingGrid />
+
+
+
 
 
         </Provider>
