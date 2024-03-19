@@ -126,7 +126,7 @@ const characters = {
     //     role: "assassin",
     // },
     22: {
-        name: "Adjunct Tavore Paran",
+        name: "Tavore Paran",
         race: "human",
         intro: "1",
         role: "adjunct",

@@ -62,10 +62,12 @@ export default function Header() {
             {worldMap && <WorldMap />}
             {settings && <Settings onCloseHandler={setSettings} />}
             {history && <History timeline={timeline} onTimelineHandler={setTimeline} onCloseHandler={setHistory} />}
+            {activeID !== "" && <Description />}
+
 
             {timeline && <Timeline />}
 
-            {activeID !== "" && <Description />}
+
         </>
     )
 }

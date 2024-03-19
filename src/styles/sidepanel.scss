@@ -38,7 +38,7 @@
 .panel__characters {
     top: calc(var(--header-size) + 1%);
     left: 1%;
-    max-height: 80%;
+    max-height: 70%;
 }
 .panel__header-draggable {
     h5 {
@@ -178,4 +178,17 @@
 .disclaimer {
     font-size: 0.8rem;
     color: var(--gray600);
+}
+
+.description-large {
+    flex-wrap: wrap;
+    max-width: 500px;
+    cursor: default;
+    &:hover {
+        background: inherit;
+    }
+    p {
+        width: 100%;
+        max-width: 100%;
+    }
 }

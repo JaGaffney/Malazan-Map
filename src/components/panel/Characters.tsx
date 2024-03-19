@@ -53,7 +53,6 @@ export default function Characters(props) {
             <div className="panel panel__characters panel__draggable">
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
-
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable">
 

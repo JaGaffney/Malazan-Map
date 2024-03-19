@@ -24,40 +24,39 @@ export default function Description() {
         <Draggable handle="h5" >
             <div className="panel panel__books panel__draggable">
 
-                <ScrollContainer horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
+                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
-                            <>
-                                <Title name={`(${activeData.book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
 
-                                <div className="panel__item-container-info">
-                                    <span>{AREAS[activeData.area - 1].name}</span>
+                            <Title name={`(${activeData.book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
 
-                                </div>
+                            <h4>{AREAS[activeData.area - 1].name}</h4>
+                            <div className="panel__item-container-info description-large">
+                                {activeData.description.map((i, k) => {
+                                    return (
+                                        <p className="panel__item-container-info-description " key={k}>{i}</p>
+                                    )
+                                })}
+                            </div>
 
-                                <h4>Overview</h4>
-                                <div className="panel__item-container-info">
-                                    <p className="panel__item-container-info-description">{activeData.description}</p>
-                                </div>
+
+                            <h4>Characters</h4>
+                            <div className="panel__item-container-table">
+                                {activeData.char.map((i, k) => {
+                                    let active = ""
+                                    if (activeCharacter.includes(parseInt(i))) {
+                                        active = "panel__item-container-info-active"
+                                    }
+                                    return (
+                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
+                                            <span>{characters[i].name}</span>
+                                            {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
+                                        </div>
+                                    )
+                                })}
+                            </div>
 
 
-                                <h4>Characters</h4>
-                                <div className="panel__item-container-table">
-                                    {activeData.char.map((i, k) => {
-                                        let active = ""
-                                        if (activeCharacter.includes(parseInt(i))) {
-                                            active = "panel__item-container-info-active"
-                                        }
-                                        return (
-                                            <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
-                                                <span>{characters[i].name}</span>
-                                                {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-
-                            </>
                         </div>
                     </div>
                 </ScrollContainer>

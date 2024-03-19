@@ -78,16 +78,15 @@
     }
 
     .panel__books {
-        right: initial;
-        top: calc(var(--header-size) + 5%);
+        top: calc(var(--header-size) + 2%);
         left: 0;
     }
     .panel__place {
-        top: calc(var(--header-size) + 5%);
+        top: calc(var(--header-size) + 2%);
         left: 0;
     }
     .panel__characters {
-        top: calc(var(--header-size) + 5%);
+        top: calc(var(--header-size) + 2%);
         left: 0;
         max-height: 100%;
     }
@@ -171,10 +170,22 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .panel {
+        max-height: 70vh;
+    }
     .panel__item {
         &-table {
             width: 100%;
         }
+    }
+    .panel__place {
+        width: 100%;
+    }
+    .description-large {
+        max-width: 100%;
+    }
+    .panel__draggable {
+        width: 100%;
     }
 }
 
@@ -187,5 +198,6 @@
     }
     .panel__draggable {
         transform: translate(0px, 0px) !important;
+        width: 100%;
     }
 }
