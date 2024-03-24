@@ -33,6 +33,7 @@ export function SceneContainerStandard(props) {
     //     }
     // };
 
+    //Don't tilt the camera have camera top down default and have everything else titled that way you can use bounds without it being g weird
 
     return (
         <Provider store={store}>

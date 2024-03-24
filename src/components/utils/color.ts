@@ -1,24 +1,32 @@
 export const bookColor = (bookNumber: number): string => {
     switch (bookNumber) {
-        case 1:
+        case 1: // "Gardens of the Moon"
+        case 27: // "Blood and Bone"
             return "var(--teal700)";
-        case 2:
+        case 2: // "Deadhouse Gates"
+        case 25: // "Stonewielder"
+        case 30: // "Deadhouse Landing"
             return "var(--amber600)";
-        case 3:
+        case 3: // "Memories of Ice"
+        case 24: // "Return of the Crimson Guard"
             return "var(--red700)";
-        case 4:
+        case 4: // "House of Chains"
+        case 29: // "Dancer's Lament"
             return "var(--blue600)";
-        case 5:
+        case 5: // "Midnight Tides"
             return "var(--red400)";
-        case 6:
+        case 6: // "The Bonehunters"
+        case 28: // "Assail"
             return "var(--gray500)";
-        case 7:
+        case 7: // "Reaper's Gale"
             return "var(--amber800)";
-        case 8:
+        case 8: // "Toll the Hounds"
+        case 23: // "Night of Knives"
             return "var(--green600)";
-        case 9:
+        case 9: //  "Dust of Dreams"
+        case 26: // "Orb Sceptre Throne"
             return "var(--violet700)";
-        case 10:
+        case 10: // "The Crippled God"
             return "var(--pink600)";
         default:
             return "";

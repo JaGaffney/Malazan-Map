@@ -62,7 +62,7 @@ const Compass = (props) => {
             //     </mesh>
             // </Hud>
 
-            <Bounds fit clip observe margin={1.2} maxDuration={0} interpolateFunc={interpolateFunc1}>
+            <Bounds fit clip observe margin={1.2} maxDuration={1} interpolateFunc={interpolateFunc1}>
                 {/* 
                 <mesh ref={ref} position={[activeCord.x, 2, activeCord.y]}>
                     <boxGeometry args={[10, 50, 10]} />
@@ -94,7 +94,7 @@ function Foo(props) {
         //     // bounds.refresh(new THREE.Box3()).clip().fit()
 
         //     // Or, move the camera to a specific position, and change its orientation
-        //     //bounds.moveTo([props.activeCord.x, 2, props.activeCord.y]).lookAt({ target: [5, 5, 0], up: [0, -1, 0] })
+        // bounds.moveTo([props.activeCord.x, 2, props.activeCord.y]).lookAt({ target: [5, 5, 0], up: [0, -1, 0] })
 
         //     // For orthographic cameras, reset has to be used to center the view (fit would only change its zoom to match the bounding box)
         //     //bounds.refresh().reset().clip().fit()

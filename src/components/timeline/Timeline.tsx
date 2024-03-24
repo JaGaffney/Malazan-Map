@@ -36,7 +36,8 @@ const Timeline = (props) => {
                     }
                     return (
                         <div className="timeline" key={k}>
-                            <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+
+                            {i !== "1000" ? <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> : <span className="timeline__date">???</span>}
                             <div className="timeline__event-container">
                                 {timelineData[i].map((ii, kk) => {
                                     // early outs some of the dates as there is too much information in the timeline which makes it too confusing

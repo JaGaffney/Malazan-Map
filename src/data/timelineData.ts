@@ -65,7 +65,24 @@ const timelineData = {
             area: 1,
         },
     ],
-    [1058]: [
+    1000: [
+        {
+            id: uuidv4(),
+            timeline: true,
+            book: 29,
+            name: "Book 1 - Dancer's Lament",
+            icon: eventIcons.assassin,
+            description: [
+                "Timeline unknown",
+                "A Young Dancer (Dorin) meets Kellanved (Wu), and a young Daseem Ultor in Li-Heng",
+                "Majority of the events in this book happen inside the city or just outside the city.",
+            ],
+            char: [74, 75],
+            loc: [384.0, 172.0],
+            area: 3,
+        },
+    ],
+    1058: [
         {
             id: uuidv4(),
             timeline: true,
@@ -79,6 +96,17 @@ const timelineData = {
         },
     ],
     1154: [
+        {
+            id: uuidv4(),
+            timeline: true,
+            book: 23,
+            name: "Book 1 - Night of Knives",
+            icon: eventIcons.travelBoat,
+            description: ["The start of Book one for Novels of the Malazan Empire.", "Everything that happens during the book happens on Malaz Isle or in the Sea just south of the city."],
+            char: [74, 75, 10],
+            loc: [420.0, 185.59],
+            area: 3,
+        },
         {
             id: uuidv4(),
             timeline: true,

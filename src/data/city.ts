@@ -102,6 +102,12 @@ const cityData = [
         introduction: 9,
         type: 1,
     },
+    {
+        name: "Li Heng",
+        loc: [217.0, 15, 112.0],
+        introduction: 29,
+        type: 2,
+    },
 ];
 
 const poi = [];

@@ -69,9 +69,14 @@ export default function History(props) {
                                         <div className="panel__item-table" key={k}>
 
                                             <div className="timeline__date-header">
-                                                <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                                    <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {parseInt(i) <= 0 ? "before" : "of"} Burn's Sleep</span>
-                                                </span>
+
+                                                {i === "1000" ? (<span className="timeline__date">???</span>) : (
+
+                                                    <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                                        <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {parseInt(i) <= 0 ? "before" : "of"} Burn's Sleep</span>
+                                                    </span>
+                                                )}
+
                                                 <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(parseInt(i)) ? <HiEyeOff /> : <HiEye />}</button>
                                             </div>
 

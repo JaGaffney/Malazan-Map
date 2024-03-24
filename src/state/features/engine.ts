@@ -40,7 +40,7 @@ const defaultActiveData = {
 const initialState: IRootState = {
     activeCord: { x: 0, y: 0 },
     activeData: defaultActiveData,
-    activeBooks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    activeBooks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28, 29],
     activeCharacter: [],
     activeCity: [0, 1],
     search: "",
