@@ -170,6 +170,16 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .header {
+        --header-size: 2rem;
+    }
+    .worldmap {
+        top: 6rem;
+    }
+    .header-title,
+    .header-search {
+        display: none;
+    }
     .panel {
         max-height: 70vh;
     }
