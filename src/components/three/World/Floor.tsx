@@ -1,7 +1,7 @@
 import { useEnvironment } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import React from "react";
-import { TextureLoader } from "three";
+import { TextureLoader, DoubleSide } from "three";
 
 export default function Floor() {
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });

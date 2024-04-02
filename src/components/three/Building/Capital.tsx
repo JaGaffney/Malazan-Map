@@ -8,7 +8,7 @@ const Capital = (props) => {
             </mesh>
 
             <group rotation-y={-Math.PI * 0.5}>
-                <mesh material={props.matBrick} position={[0, 0, 0.4]} castShadow recieveShadow geometry={props.geo}></mesh>
+                <mesh material={props.matBrick} position={[0, 0, 0.4]} castShadow geometry={props.geo}></mesh>
             </group>
 
             <group rotation-y={-Math.PI / 0.5}>

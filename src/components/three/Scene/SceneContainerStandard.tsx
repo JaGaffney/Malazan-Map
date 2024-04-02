@@ -12,7 +12,6 @@ import Highlight from "../Overlay/Highlight";
 import Flags from "../Overlay/Flags";
 import InstanceHexContainer from "../Hex/InstanceHexContainer";
 import FloatingGrid from "../World/FloatingGrid";
-import Compass from "../Overlay/Compass";
 
 export function SceneContainerStandard(props) {
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
@@ -57,6 +56,7 @@ export function SceneContainerStandard(props) {
             </group>
 
             <Sea />
+
             <Floor />
             <FloatingGrid />
 

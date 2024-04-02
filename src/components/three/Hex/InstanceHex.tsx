@@ -3,9 +3,12 @@ import { Matrix4, Object3D } from "three";
 
 import WORLDDATA from "../../../data/sorted copy.json"
 import { tileToPosition } from "../../utils/helpers";
+import { useSelector } from "react-redux";
 
 
 export default function InstanceHex(props) {
+    const shadowData = useSelector((state: any) => state.settings.shadows)
+
     const temp = new Object3D()
     const world = WORLDDATA
 
@@ -29,7 +32,7 @@ export default function InstanceHex(props) {
 
     return (
         <>
-            <instancedMesh receiveShadow={false} castShadow={false} ref={instancedMeshRef} args={[null, null, 14000]} material={props.meshMaterial} geometry={props.meshGeometry}>
+            <instancedMesh receiveShadow={shadowData} castShadow={shadowData} ref={instancedMeshRef} args={[null, null, 14000]} material={props.meshMaterial} geometry={props.meshGeometry}>
             </instancedMesh>
         </>
     )

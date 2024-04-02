@@ -12,15 +12,7 @@ export default function Panel(props) {
         <ScrollContainer className="panel panel-scroll" draggingClassName={"timeline__container-drag"} horizontal={false}>
             <Title name={""} onCloseHandler={props.onCloseHandler} />
 
-            <div className="panel__item">
-                <div className="panel__item-container">
-                    <i className="disclaimer">These settings map help reduce lag*</i>
-                </div>
-            </div>
-
             <Shape />
-            <Areas />
-            <Textures />
 
             <div className="panel__item  panel__item-last">
                 <Acknowledgements />

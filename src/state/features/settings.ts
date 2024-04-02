@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { filterArray } from "../../components/utils/filter";
 
 export interface IRootState {
+    dayNight: boolean;
+    night: boolean;
     flattern: boolean;
     shadows: boolean;
     deserts: boolean;
@@ -12,6 +14,8 @@ export interface IRootState {
 }
 
 const initialState: IRootState = {
+    dayNight: true,
+    night: false,
     flattern: false,
     shadows: true,
     deserts: true,
@@ -26,17 +30,33 @@ export const settingsSlice = createSlice({
     initialState,
     reducers: {
         setNone: (state) => {
+            state.dayNight = false;
             state.flattern = true;
             state.shadows = false;
             // state.areas = [];
         },
         setBasic: (state) => {
+            state.dayNight = false;
             state.flattern = true;
             state.shadows = false;
             state.areas = [1, 2, 3, 6];
         },
         reset: (state) => {
             state = initialState;
+        },
+        dayNightOn: (state) => {
+            state.dayNight = true;
+            state.night = false;
+        },
+        dayNightOff: (state) => {
+            state.dayNight = false;
+        },
+        nightOn: (state) => {
+            state.night = true;
+            state.dayNight = false;
+        },
+        nightOff: (state) => {
+            state.night = false;
         },
         flattern: (state) => {
             state.flattern = true;
@@ -71,7 +91,24 @@ export const settingsSlice = createSlice({
     },
 });
 
-export const { setBasic, setNone, reset, flattern, raise, addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests, updateActiveAreas, resetActiveAreas } =
-    settingsSlice.actions;
+export const {
+    setBasic,
+    setNone,
+    reset,
+    dayNightOn,
+    dayNightOff,
+    nightOn,
+    nightOff,
+    flattern,
+    raise,
+    addShadows,
+    removeShadows,
+    addDeserts,
+    removeDeserts,
+    addForests,
+    removeForests,
+    updateActiveAreas,
+    resetActiveAreas,
+} = settingsSlice.actions;
 
 export default settingsSlice.reducer;

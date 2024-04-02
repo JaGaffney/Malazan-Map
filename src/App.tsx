@@ -39,12 +39,12 @@ function App() {
             {!landing ? (
                 <>
                     {mode === 0 && (
-                        <Canvas shadows frameloop={"demand"} >
+                        <Canvas shadows >
                             <Suspense fallback={<CustomLoader />} >
                                 <SceneContainer />
                             </Suspense>
 
-                            <BakeShadows />
+                            {/* <BakeShadows /> */}
                             {/* <Stats /> */}
                         </Canvas>
                     )}
