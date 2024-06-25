@@ -108,10 +108,16 @@
             justify-content: center;
             font-size: 1.7rem;
             width: 100%;
+            position: relative;
             svg {
-                font-size: 2.5rem;
-                opacity: 0.5;
-                margin-right: 0.1rem;
+                position: absolute;
+
+                top: -2.3rem;
+
+                font-size: 1.5rem;
+                border-radius: 50%;
+                padding: 0.3rem;
+                background-color: var(--blue900);
             }
             margin-bottom: 0.3rem;
         }

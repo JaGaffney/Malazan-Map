@@ -10,8 +10,8 @@ This project was brought to life utilizing a robust stack of web technologies, i
 
 # Goals
 
--   Add the rest for Book of the Fallen (books 7, 9, 10) and Novels (2-6)
--   Add Infomation of Path to Ascendancy (2-?? (only 4 released))
+-   Add the rest for Novels of the Malazan Empire (2-6)
+-   Add Infomation of Path to Ascendancy (2-??)
 -   Add Information for The Kharkanas Trilogy (not sure if possible)
 -   Add Information for The Witness Trilogy
 -   Add Information for The Tales of Bauchelain and Korbal Broach

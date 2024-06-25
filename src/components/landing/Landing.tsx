@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HiDeviceMobile, HiDesktopComputer, HiMap } from "react-icons/hi";
+import { HiBeaker, HiAcademicCap, HiMap } from "react-icons/hi";
 
 
 const Landing = (props) => {
@@ -16,7 +16,7 @@ const Landing = (props) => {
                     </div>
                     <div className="landing__hero-description">
                         <p>Trace the tales of the Fallen and unravel the saga with the Interactive 3D Map and detailed timeline. </p>
-                        <p>Created using three.js.</p>
+
                     </div>
 
                     <div className="landing__mode">
@@ -30,7 +30,7 @@ const Landing = (props) => {
 
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(1)}>
                             <div className="landing__mode-button-title">
-                                <HiDeviceMobile />
+                                <HiAcademicCap />
                                 <span>Standard</span>
                             </div>
                             <span className="landing__mode-button-description">recommended</span>
@@ -38,10 +38,10 @@ const Landing = (props) => {
 
                         <button className="landing__mode-button" onClick={() => props.onModeHandler(0)}>
                             <div className="landing__mode-button-title">
-                                <HiDesktopComputer />
-                                <span>Full 3D</span>
+                                <HiBeaker />
+                                <span>Experimental</span>
                             </div>
-                            <span className="landing__mode-button-description">desktop (may lag)</span>
+                            <span className="landing__mode-button-description">may lag with flashing lights</span>
                         </button>
                     </div>
                 </div>
