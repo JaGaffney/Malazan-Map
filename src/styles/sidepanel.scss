@@ -160,12 +160,25 @@
                     fill: var(--teal500) !important;
                 }
             }
+            &-activeButton {
+                color: var(--teal500) !important;
+                background-color: var(--teal900) !important;
+            }
             &-small {
                 font-size: 0.7rem;
             }
             &-description {
                 max-width: 500px;
                 word-wrap: break-word;
+            }
+            button {
+                width: 100%;
+                border: none;
+                background-color: var(--blue900);
+                color: var(--blue100);
+                font-size: 1.2rem;
+                padding: 0.2rem;
+                cursor: pointer;
             }
         }
     }

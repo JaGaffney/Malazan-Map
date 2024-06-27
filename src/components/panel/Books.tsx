@@ -28,6 +28,21 @@ const Book = (props) => {
 
 export default function Books(props) {
     const dispatch = useDispatch()
+    console.log(books)
+
+    const showAllBooks = () => {
+        console.log(books)
+        // bug where active citys are being turned off when all are clicked.
+        dispatch(resetActiveBooks())
+        books.map((i, k) => {
+            dispatch(updateActiveBooks(k))
+            return (
+                null
+            )
+        })
+
+    }
+
 
     return (
         <Draggable handle="h5" >
@@ -39,8 +54,13 @@ export default function Books(props) {
 
                             <Title name={"Books"} onCloseHandler={props.onCloseHandler} />
 
-                            <div className="panel__item-container-info" onClick={() => dispatch(resetActiveBooks())}>
-                                <span>Show all</span>
+                            <div className="panel__item-container-info" onClick={() => showAllBooks()}>
+                                <button>Show all</button>
+                            </div>
+
+
+                            <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveBooks())}>
+                                <button>Hide all</button>
                             </div>
 
                             <table className="panel__item-table">

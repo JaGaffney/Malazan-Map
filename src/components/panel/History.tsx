@@ -61,7 +61,7 @@ export default function History(props) {
                                 <Title name={"Events"} onCloseHandler={props.onCloseHandler} />
 
                                 <div className="panel__item-container-info" onClick={() => props.onTimelineHandler(!props.timeline)}>
-                                    <span className={props.timeline ? "panel__item-container-info-active" : ""}>Timeline</span>
+                                    <button className={props.timeline ? "panel__item-container-info-active panel__item-container-info-activeButton" : ""}>Timeline</button>
                                 </div>
 
                                 {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {

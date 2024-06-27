@@ -16,12 +16,12 @@ export default function Locations(props) {
     const dispatch = useDispatch()
 
     const showAllLocation = () => {
+        dispatch(resetActiveCity())
         cityData.map((i, k) => {
             dispatch(updateActiveCity(k))
             return (
                 null
             )
-
         })
     }
 
@@ -37,12 +37,11 @@ export default function Locations(props) {
                             <Title name={"Points of interest"} onCloseHandler={props.onCloseHandler} />
 
                             <div className="panel__item-container-info" onClick={() => showAllLocation()}>
-                                <span>Show all</span>
-                                {/* <span><HiCheckCircle /></span> */}
+                                <button>Show all</button>
                             </div>
 
-                            <div className={`panel__item-container-info`} onClick={() => dispatch(resetActiveCity())}>
-                                <span>Reset</span>
+                            <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveCity())}>
+                                <button>Hide all</button>
                             </div>
 
                             <table className="panel__item-table">

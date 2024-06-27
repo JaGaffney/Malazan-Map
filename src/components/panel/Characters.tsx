@@ -60,7 +60,7 @@ export default function Characters(props) {
 
 
                             <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCharacter())}>
-                                <span>Show all</span>
+                                <button>Show all</button>
                             </div>
 
                             <table className="panel__item-table">
