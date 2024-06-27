@@ -30,8 +30,6 @@ const Acknowledgements = () => {
 
             <br />
             <div className="panel__item-container-info panel__item-container-info-small" style={{ maxWidth: "15rem" }}>
-                <span>I was finding it hard to visualize where certain characters are in Book 2, so I decided to make a map.
-                </span>
             </div>
             <a href="https://github.com/JaGaffney" className="panel__item-container-info  panel__item-container-info-small">
                 <span>github@jagaffney</span>

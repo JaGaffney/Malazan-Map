@@ -27,10 +27,10 @@ const AREAS = [
         id: "bael",
         name: "Bael",
     },
-    {
-        id: "genostel",
-        name: "Genostel",
-    },
+    // {
+    //     id: "genostel",
+    //     name: "Genostel",
+    // },
 ];
 
 export default AREAS;

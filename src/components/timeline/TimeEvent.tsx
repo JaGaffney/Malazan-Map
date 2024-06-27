@@ -31,7 +31,7 @@ export const TimeEvent = (props) => {
             >
                 <img src={props.filter === "" && props.data.icon} />
             </div>
-            <ReactTooltip effect="solid" />
+            <ReactTooltip effect="solid" border={true} borderColor='white' />
         </div>
     )
 }

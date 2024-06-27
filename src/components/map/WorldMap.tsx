@@ -18,6 +18,7 @@ export default function WorldMap() {
     const dispatch = useDispatch()
 
     const areas = AREAS
+
     return (
         <div className="worldmap" >
             <img src={process.env.PUBLIC_URL + "/images/map.jpg"} alt="full map" />
@@ -32,19 +33,19 @@ export default function WorldMap() {
                 )
             })}
 
-            <div className="worldmap-container">
+            {/* <div className="worldmap-container">
                 {areas.map((i, k) => {
                     return (
                         <div key={k}
                             className={`worldmap-container-${k + 1} worldmap-container-item`}
-                            onClick={() => dispatch(updateActiveAreas(k + 1))}
-                            onMouseEnter={() => setHighlight(k + 1)}
-                            onMouseLeave={() => setHighlight(0)}
+                        onClick={() => dispatch(updateActiveAreas(k + 1))}
+                        onMouseEnter={() => setHighlight(k + 1)}
+                        onMouseLeave={() => setHighlight(0)}
                         >
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
         </div>
     )
 }
