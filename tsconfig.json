@@ -1,24 +1,21 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "sourceMap": true
+        "target": "ESNext",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "jsx": "react-jsx",
+        "types": ["vite/client", "vite-plugin-svgr/client"]
     },
-    "files": [
-        "core.ts",
-        "sys.ts",
-        "types.ts",
-        "scanner.ts",
-        "parser.ts",
-        "utilities.ts",
-        "binder.ts",
-        "checker.ts",
-        "emitter.ts",
-        "program.ts",
-        "commandLineParser.ts",
-        "tsc.ts",
-        "diagnosticInformationMap.generated.ts"
-    ]
+    "include": ["src"]
 }

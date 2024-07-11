@@ -16,20 +16,20 @@ export default function InstanceHexContainer() {
   const world = WORLDDATA
 
   const hexTextures = useTexture({
-    dirt: process.env.PUBLIC_URL + "/textures/hex/dirt.jpg",
-    grass: process.env.PUBLIC_URL + "/textures/hex/grass.jpg",
-    sand: process.env.PUBLIC_URL + "/textures/hex/sand.jpg",
-    sand2: process.env.PUBLIC_URL + "/textures/hex/sand2.jpg",
-    stone: process.env.PUBLIC_URL + "/textures/hex/moutain.png",
-    stone2: process.env.PUBLIC_URL + "/textures/hex/moutain2.png",
-    forest: process.env.PUBLIC_URL + "/textures/hex/forest.jpg",
-    town: process.env.PUBLIC_URL + "/textures/hex/town.jpg",
-    city: process.env.PUBLIC_URL + "/textures/hex/city.jpg",
-    cap: process.env.PUBLIC_URL + "/textures/hex/cap.jpg",
-    ice: process.env.PUBLIC_URL + "/textures/hex/snow.jpg"
+    dirt: "/textures/hex/dirt.jpg",
+    grass: "/textures/hex/grass.jpg",
+    sand: "/textures/hex/sand.jpg",
+    sand2: "/textures/hex/sand2.jpg",
+    stone: "/textures/hex/moutain.png",
+    stone2: "/textures/hex/moutain2.png",
+    forest: "/textures/hex/forest.jpg",
+    town: "/textures/hex/town.jpg",
+    city: "/textures/hex/city.jpg",
+    cap: "/textures/hex/cap.jpg",
+    ice: "/textures/hex/snow.jpg"
   })
 
-  const envMaps = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
+  const envMaps = useEnvironment({ files: "/textures/envmap2.hdr" });
 
   const mesh = {
     dirt: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.dirt }),

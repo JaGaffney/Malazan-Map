@@ -4,8 +4,8 @@ import React from "react";
 import { TextureLoader } from "three";
 
 export default function Floor() {
-    const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
-    const dirt2 = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/hex/dirt2.jpg");
+    const envMap = useEnvironment({ files: "/textures/envmap2.hdr" });
+    const dirt2 = useLoader(TextureLoader, "/textures/hex/dirt2.jpg");
 
     // 473825
     return (

@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 
 export default function StaticMap() {
     const staticMap = useTexture({
-        map: process.env.PUBLIC_URL + "/map-crop.png",
-        normal: process.env.PUBLIC_URL + "/NormalMap.png",
-        displacement: process.env.PUBLIC_URL + "/displacement.png",
+        map: "/map-crop.png",
+        normal: "/NormalMap.png",
+        displacement: "/displacement.png",
     })
 
     useEffect(() => {

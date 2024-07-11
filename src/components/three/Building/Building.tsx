@@ -15,8 +15,8 @@ const Building = () => {
     const world = worldData
 
     const wallTextures = useTexture({
-        brickMap: process.env.PUBLIC_URL + "/textures/brick/diff.jpg",
-        brickNormalMap: process.env.PUBLIC_URL + "/textures/brick/normal.jpg",
+        brickMap: "/textures/brick/diff.jpg",
+        brickNormalMap: "/textures/brick/normal.jpg",
     })
 
     const matBrick = new MeshStandardMaterial({

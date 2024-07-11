@@ -9,9 +9,9 @@ export default function Sea() {
     const nightData = useSelector((state: any) => state.settings.night)
 
 
-    const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
+    const envMap = useEnvironment({ files: "/textures/envmap2.hdr" });
 
-    let seaTexture = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/water.jpg");
+    let seaTexture = useLoader(TextureLoader, "/textures/water.jpg");
     seaTexture.repeat = new Vector2(1, 1);
     seaTexture.wrapS = RepeatWrapping;
     seaTexture.wrapT = RepeatWrapping;

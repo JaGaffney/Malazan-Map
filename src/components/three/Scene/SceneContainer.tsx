@@ -30,8 +30,8 @@ export function SceneContainer(props) {
     return (
         <Provider store={store}>
 
-            <Environment background={"only"} files={process.env.PUBLIC_URL + "/textures/bg.hdr"} />
-            <Environment background={false} files={process.env.PUBLIC_URL + "/textures/envmap2.hdr"} />
+            <Environment background={"only"} files={"/textures/bg.hdr"} />
+            <Environment background={false} files={"/textures/envmap2.hdr"} />
 
             <Cam />
             {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
