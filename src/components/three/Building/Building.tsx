@@ -26,8 +26,8 @@ const Building = () => {
         normalMap: wallTextures.brickNormalMap,
     })
 
-    const geoCapWall = new BoxGeometry(1, 0.7, 0.2)
-    const geoTower = new CylinderGeometry(0.2, 0.2, 1.2, 6, 1, false)
+    const geoCapWall: BoxGeometry = new BoxGeometry(1, 0.7, 0.2)
+    const geoTower: CylinderGeometry = new CylinderGeometry(0.2, 0.2, 1.2, 6, 1, false)
     const geoTowerRoof = new CylinderGeometry(0, 0.25, 0.5, 6, 1, false)
 
     const geoCityBuilding1 = new BoxGeometry(0.3, 0.8, 0.3)
@@ -44,7 +44,7 @@ const Building = () => {
                 if (areaData.includes(i.a)) {
                     const pos = tileToPosition(i.x, i.y)
                     return (
-                        <Capital key={k} pos={pos} matBrick={matBrick} geo={geoCapWall} geoTower={geoTower} geoTowerRoof={geoTowerRoof} k={k} />
+                        <Capital key={k} pos={pos} matBrick={matBrick} geo={geoCapWall} geoTower={geoTower} geoTowerRoof={geoTowerRoof} />
                     )
                 } else {
                     return null
@@ -54,7 +54,7 @@ const Building = () => {
                 if (areaData.includes(i.a)) {
                     const pos = tileToPosition(i.x, i.y)
                     return (
-                        <City key={k} pos={pos} matBrick={matBrick} geoCityGround={geoCityGround} geoCityWall={geoCityWall} geoCityBuilding1={geoCityBuilding1} geoCityBuilding2={geoCityBuilding2} k={k} />
+                        <City key={k} pos={pos} matBrick={matBrick} geoCityGround={geoCityGround} geoCityWall={geoCityWall} geoCityBuilding1={geoCityBuilding1} geoCityBuilding2={geoCityBuilding2} />
                     )
                 } else {
                     return null

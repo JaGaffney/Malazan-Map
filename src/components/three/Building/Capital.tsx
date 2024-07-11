@@ -1,8 +1,16 @@
-import React from 'react'
+import { BoxGeometry, CylinderGeometry, MeshStandardMaterial } from "three";
 
-const Capital = (props) => {
+interface ICapital {
+    pos: Array<number>;
+    matBrick: MeshStandardMaterial;
+    geo: BoxGeometry;
+    geoTower: CylinderGeometry;
+    geoTowerRoof: CylinderGeometry;
+
+}
+const Capital = (props: ICapital) => {
     return (
-        <group position={[props.pos[0] - 0.05, 2, props.pos[1]]} key={props.k}>
+        <group position={[props.pos[0] - 0.05, 2, props.pos[1]]}>
             <mesh position={[0, 0.01, 0]} rotation-x={-Math.PI * 0.5} material={props.matBrick}>
                 <planeGeometry args={[1, 1]} />
             </mesh>

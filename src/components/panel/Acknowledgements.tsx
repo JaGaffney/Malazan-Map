@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Acknowledgements = () => {
     return (
         <div className="panel__item-container">
@@ -35,7 +33,6 @@ const Acknowledgements = () => {
                 <span>github@jagaffney</span>
                 <span>Website creator</span>
             </a>
-
 
         </div>
     )

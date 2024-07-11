@@ -11,6 +11,7 @@ export default function Sea() {
 
     const envMap = useEnvironment({ files: "/textures/envmap2.hdr" });
 
+    // @ts-expect-error
     let seaTexture = useLoader(TextureLoader, "/textures/water.jpg");
     seaTexture.repeat = new Vector2(1, 1);
     seaTexture.wrapS = RepeatWrapping;

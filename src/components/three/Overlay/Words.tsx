@@ -5,9 +5,14 @@ import { updateActiveCity } from '../../../state/features/engine';
 import { tileToPosition } from '../../utils/helpers';
 import { calculateColorCityType } from '../../utils/color';
 
-import { MeshBasicMaterial } from "three";
+import { MeshBasicMaterial, Vector3 } from "three";
+import { ICityData } from '../../../data/city';
 
-function Words(props) {
+interface IWords {
+    data: ICityData;
+    cityKey: number;
+}
+function Words(props: IWords) {
     const dispatch = useDispatch()
 
     const [hovered, setHovered] = useState(false)
@@ -21,50 +26,48 @@ function Words(props) {
     }, [hovered])
 
 
-    const city = props.data
+    const city: ICityData = props.data
 
-    const defaultLength = 30 + (city.name.length / 2)
+    const defaultLength: number = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
 
-    const convertedPosition = tileToPosition(city.loc[0], city.loc[2])
-    const newPos = [convertedPosition[0], city.loc[1], convertedPosition[1]]
+    const convertedPosition: Array<number> = tileToPosition(city.loc[0], city.loc[2])
+    const newPos: Vector3 = new Vector3(convertedPosition[0], city.loc[1], convertedPosition[1])
 
-    const flagStandardMaterial = new MeshBasicMaterial({ color: defaultColorType.hex })
+    const flagStandardMaterial: MeshBasicMaterial = new MeshBasicMaterial({ color: defaultColorType.hex })
 
     return (
-        <>
-            <group position={newPos}
-                onClick={() => dispatch(updateActiveCity(props.cityKey))}
-                onPointerOver={() => setHovered(true)}
-                onPointerOut={() => setHovered(false)}
+        <group position={newPos}
+            onClick={() => dispatch(updateActiveCity(props.cityKey))}
+            onPointerOver={() => setHovered(true)}
+            onPointerOut={() => setHovered(false)}
+        >
+            <mesh position={[0, -9, 0]}>
+                <cylinderBufferGeometry args={[1, 1, 10, 10]} />
+                <meshBasicMaterial
+                    color={"white"}
+                />
+            </mesh>
+
+            <Billboard
+                follow={true}
+                lockX={false}
+                lockY={false}
+                lockZ={false} // Lock the rotation on the z axis (default=false)
             >
-                <mesh position={[0, -9, 0]}>
-                    <cylinderBufferGeometry args={[1, 1, 10, 10]} />
-                    <meshBasicMaterial
-                        color={"white"}
-                    />
+                <mesh position={[0, 1, 0]} material={flagStandardMaterial} renderOrder={1}>
+                    <planeBufferGeometry args={[defaultLength - 4, 9]} />
                 </mesh>
 
-                <Billboard
-                    follow={true}
-                    lockX={false}
-                    lockY={false}
-                    lockZ={false} // Lock the rotation on the z axis (default=false)
-                >
-                    <mesh position={[0, 1, 0]} material={flagStandardMaterial} renderOrder={1}>
-                        <planeBufferGeometry args={[defaultLength - 4, 9]} />
-                    </mesh>
+                <mesh position={[0, 1, 0]} >
+                    <meshBasicMaterial color={"white"} />
+                    <planeGeometry args={[defaultLength - 3, 10]} />
+                </mesh>
 
-                    <mesh position={[0, 1, 0]} >
-                        <meshBasicMaterial color={"white"} />
-                        <planeBufferGeometry args={[defaultLength - 3, 10]} />
-                    </mesh>
+                <Text color={"#f0fdf4"} position={[0, 1.2, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={4}>{city.name}</Text>
+            </Billboard>
 
-                    <Text color={"#f0fdf4"} position={[0, 1.2, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={4}>{city.name}</Text>
-                </Billboard>
-
-            </group>
-        </>
+        </group>
     )
 }
 

@@ -1,21 +1,20 @@
-import React from 'react'
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { useSelector } from 'react-redux';
 
-import timelineData from "../../data/timelineData"
+import timelineData, { ITimelinePoint } from "../../data/timelineData"
 import { validFilterQueryArray } from '../utils/helpers';
 import { TimeEvent } from './TimeEvent'
 
 import characters from "../../data/characters"
 
-const Timeline = (props) => {
+const Timeline = () => {
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const search = useSelector((state: any) => state.filter.search)
 
 
     const createCharacterArray = (charID: Array<number>) => {
-        const charsName = []
+        const charsName: Array<string | null> = []
 
         if (charID.length > 0) {
             charID.forEach(id => {
@@ -29,9 +28,10 @@ const Timeline = (props) => {
     return (
         <>
             <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
-                {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {
+                {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i: string, k: number) => {
+                    const year: number = parseInt(i)
                     // early outs some of the dates as there is too much information in the timeline which makes it too confusing
-                    if (parseInt(i) === -298655 || parseInt(i) === -119739 || parseInt(i) === -119736) {
+                    if (year === -298655 || year === -119739 || year === -119736) {
                         return (null)
                     }
                     return (
@@ -39,7 +39,7 @@ const Timeline = (props) => {
 
                             {i !== "1000" ? <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> : <span className="timeline__date">???</span>}
                             <div className="timeline__event-container">
-                                {timelineData[i].map((ii, kk) => {
+                                {timelineData[year].map((ii: ITimelinePoint, kk: number) => {
                                     // early outs some of the dates as there is too much information in the timeline which makes it too confusing
                                     if (ii.timeline === false) {
                                         return null
@@ -57,7 +57,7 @@ const Timeline = (props) => {
                                         filter = "timeline__event-item-filter"
                                     }
                                     return (
-                                        <TimeEvent year={i} data={ii} key={kk} filter={filter} />
+                                        <TimeEvent data={ii} key={kk} filter={filter} />
                                     )
 
                                 })

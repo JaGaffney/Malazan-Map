@@ -1,4 +1,3 @@
-import React from "react";
 import { MapControls, PerspectiveCamera } from "@react-three/drei";
 import { Color } from "three";
 
@@ -13,57 +12,26 @@ import Flags from "../Overlay/Flags";
 import InstanceHexContainer from "../Hex/InstanceHexContainer";
 import FloatingGrid from "../World/FloatingGrid";
 
-export function SceneContainerStandard(props) {
+export function SceneContainerStandard(props: any) {
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
-
-    // has issues when spinning camera
-    // const ref = useRef<any>();
-    // const { camera } = useThree();
-
-    // const handleChange = () => {
-    //     const { x } = camera.position;
-    //     if (x > 300) {
-    //         camera.position.x = 300;
-    //         ref.current.target.x = 300;
-    //     }
-    //     if (x < -300) {
-    //         camera.position.x = -300;
-    //         ref.current.target.x = -300;
-    //     }
-    // };
-
-    //Don't tilt the camera have camera top down default and have everything else titled that way you can use bounds without it being g weird
 
     return (
         <Provider store={store}>
 
-            {/* <Cam /> */}
             <PerspectiveCamera makeDefault fov={45} position={[0, 300, 85]} {...props} />
-            {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
-
             <MapControls enableRotate={false} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
-            {/* <Controls /> */}
             <pointLight position={[160, 200, 93]} castShadow color={lightColor} intensity={1} />
-            {/* <ambientLight /> */}
+
 
             <group position={[-400, 0, -100]}>
                 <InstanceHexContainer />
                 <Flags />
                 <Highlight />
-
-                {/* <Compass /> */}
-
             </group>
 
             <Sea />
-
             <Floor />
             <FloatingGrid />
-
-
-
-
-
         </Provider>
     );
 }

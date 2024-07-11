@@ -14,7 +14,7 @@ export default function Description() {
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const dispatch = useDispatch()
 
-    const onCloseHandler = (value) => {
+    const onCloseHandler = () => {
         dispatch(resetActiveData())
     }
 
@@ -32,7 +32,7 @@ export default function Description() {
 
                             <h4>{AREAS[activeData.area - 1].name}</h4>
                             <div className="panel__item-container-info description-large">
-                                {activeData.description.map((i, k) => {
+                                {activeData.description.map((i: string, k: number) => {
                                     return (
                                         <p className="panel__item-container-info-description " key={k}>{i}</p>
                                     )
@@ -42,13 +42,13 @@ export default function Description() {
 
                             <h4>Characters</h4>
                             <div className="panel__item-container-table">
-                                {activeData.char.map((i, k) => {
+                                {activeData.char.map((i: number, k: number) => {
                                     let active = ""
-                                    if (activeCharacter.includes(parseInt(i))) {
+                                    if (activeCharacter.includes(i)) {
                                         active = "panel__item-container-info-active"
                                     }
                                     return (
-                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
+                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(i))}>
                                             <span>{characters[i].name}</span>
                                             {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
                                         </div>

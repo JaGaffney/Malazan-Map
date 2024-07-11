@@ -1,20 +1,41 @@
-import React from 'react'
 import { HiMap, HiFlag, HiBookOpen, HiUsers } from 'react-icons/hi'
 import { HiOutlineAdjustmentsHorizontal, HiOutlineMapPin } from "react-icons/hi2";
 
-const Button = (props) => {
+interface IButton {
+    name: boolean;
+    displayName: string;
+    icon: any;
+    onPressHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onSettingsHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Button = ({ name, displayName, icon, onPressHandler, onSettingsHandler }: IButton) => {
     return (
-        <button className={`buttons__item ${props.name ? "buttons__item-active" : ""}`} onClick={() => {
-            props.onPressHandler(!props.name)
-            props.onSettingsHandler(false)
+        <button className={`buttons__item ${name ? "buttons__item-active" : ""}`} onClick={() => {
+            onPressHandler(!name)
+            onSettingsHandler(false)
         }}>
-            {props.icon}
-            <span>{props.displayName}</span>
+            {icon}
+            <span>{displayName}</span>
         </button>
     )
 }
 
-const Buttons = (props) => {
+interface IButtons {
+    books: boolean;
+    places: boolean;
+    characters: boolean;
+    history: boolean;
+    worldMap: boolean;
+    settings: boolean;
+    onBooksHandler: React.Dispatch<React.SetStateAction<boolean>>
+    onPlacesHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onCharactersHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onHistoryHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onWorldMapHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onSettingsHandler: React.Dispatch<React.SetStateAction<boolean>>;
+
+}
+const Buttons = (props: IButtons) => {
     return (
         <div className="buttons__container">
             <Button name={props.books} displayName={"Books"} icon={<HiBookOpen />} onPressHandler={props.onBooksHandler} onSettingsHandler={props.onSettingsHandler} />

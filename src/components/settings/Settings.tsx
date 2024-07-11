@@ -1,16 +1,16 @@
-import React from 'react'
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 import Shape from './Shape';
-import Textures from './Textures';
-import Areas from './Areas';
 import Acknowledgements from '../panel/Acknowledgements';
 import Title from '../panel/Title';
 
-export default function Panel(props) {
+interface IPanel {
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Panel({ onCloseHandler }: IPanel) {
     return (
         <ScrollContainer className="panel panel-scroll" draggingClassName={"timeline__container-drag"} horizontal={false}>
-            <Title name={""} onCloseHandler={props.onCloseHandler} />
+            <Title name={""} onCloseHandler={onCloseHandler} />
 
             <Shape />
 

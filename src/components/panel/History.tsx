@@ -7,12 +7,12 @@ import { update, updateActiveData } from "../../state/features/engine"
 import { bookColor } from '../utils/color'
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Title from './Title';
-import timelineData from '../../data/timelineData';
+import timelineData, { ITimelinePoint } from '../../data/timelineData';
 import { validFilterQueryArray } from '../utils/helpers';
 import characters from '../../data/characters';
 import { filterArray } from '../utils/filter';
 
-let getNumberWithSuffix = (item) => {
+let getNumberWithSuffix = (item: string): any => {
     const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
     let suffixMap = {
         "one": "st",
@@ -20,20 +20,27 @@ let getNumberWithSuffix = (item) => {
         "few": "rd",
         "other": "th"
     }
+    // @ts-expect-error
     return suffixMap[plurals.select(item)]
 }
 
-export default function History(props) {
-    const [inactiveDates, setInactiveDates] = useState([])
+interface IHistory {
+    timeline: boolean
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onTimelineHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function History({ timeline, onCloseHandler, onTimelineHandler }: IHistory) {
+    const dispatch = useDispatch()
+
+    const [inactiveDates, setInactiveDates] = useState<Array<any>>([])
 
     const activeID = useSelector((state: any) => state.filter.activeData.id)
-    const dispatch = useDispatch()
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const search = useSelector((state: any) => state.filter.search)
 
     const createCharacterArray = (charID: Array<number>) => {
-        const charsName = []
+        const charsName: Array<string | null> = []
 
         if (charID.length > 0) {
             charID.forEach(id => {
@@ -58,31 +65,31 @@ export default function History(props) {
                         <div className="panel__item">
                             <div className="panel__item-container panel__header-draggable">
 
-                                <Title name={"Events"} onCloseHandler={props.onCloseHandler} />
-
-                                <div className="panel__item-container-info" onClick={() => props.onTimelineHandler(!props.timeline)}>
-                                    <button className={props.timeline ? "panel__item-container-info-active panel__item-container-info-activeButton" : ""}>Timeline</button>
+                                <Title name={"Events"} onCloseHandler={onCloseHandler} />
+                                <div className="panel__item-container-info" onClick={() => onTimelineHandler(!timeline)}>
+                                    <button className={timeline ? "panel__item-container-info-active panel__item-container-info-activeButton" : ""}>Timeline</button>
                                 </div>
 
-                                {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i, k) => {
+                                {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i: string, k: number) => {
+                                    const year: number = parseInt(i)
                                     return (
                                         <div className="panel__item-table" key={k}>
 
                                             <div className="timeline__date-header">
 
-                                                {i === "1000" ? (<span className="timeline__date">???</span>) : (
+                                                {year === 1000 ? (<span className="timeline__date">???</span>) : (
 
                                                     <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                                        <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {parseInt(i) <= 0 ? "before" : "of"} Burn's Sleep</span>
+                                                        <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {year <= 0 ? "before" : "of"} Burn's Sleep</span>
                                                     </span>
                                                 )}
 
-                                                <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(parseInt(i)) ? <HiEyeOff /> : <HiEye />}</button>
+                                                <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(year) ? <HiEyeOff /> : <HiEye />}</button>
                                             </div>
 
-                                            {inactiveDates.includes(parseInt(i)) ? null : (
+                                            {inactiveDates.includes(year) ? null : (
                                                 <div className="">
-                                                    {timelineData[i].map((ii, kk) => {
+                                                    {timelineData[year].map((ii: ITimelinePoint, kk: number) => {
                                                         let filter = ""
                                                         if (activeCharacter.length !== 0) {
                                                             if (!activeCharacter.some((item: number) => ii.char.includes(item))) {

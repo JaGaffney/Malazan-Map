@@ -1,7 +1,6 @@
-import React from "react";
 import { useProgress, Html } from "@react-three/drei"
 
-const CustomLoader = (props) => {
+const CustomLoader = () => {
     const { active, progress, errors, item, loaded, total } = useProgress()
 
     const quotes = [

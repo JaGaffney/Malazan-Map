@@ -5,13 +5,17 @@ import HexGeometry from './HexGeometry';
 import { useSelector } from 'react-redux';
 import { tileToPosition } from '../../utils/helpers';
 
-export default function HexGeometryContainer(props) {
+interface IHexGeometryContainer {
+    data: any;
+    material: any;
+    geometry: any;
+}
+export default function HexGeometryContainer(props: IHexGeometryContainer) {
     const flatternData = useSelector((state: any) => state.settings.flattern)
     const shadowData = useSelector((state: any) => state.settings.shadows)
     const areaData = useSelector((state: any) => state.settings.areas)
 
     return (
-        // @ts-expect-error
         <Instances
             limit={props.data.length - 1}
             castShadow={flatternData || !shadowData ? false : true}
@@ -19,7 +23,7 @@ export default function HexGeometryContainer(props) {
             material={props.material}
             geometry={props.geometry}
         >
-            {props.data.map((i, k: number) => {
+            {props.data.map((i: any, k: number) => {
                 if (areaData.includes(i.a)) {
                     return (
                         <HexGeometry

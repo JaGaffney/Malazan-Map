@@ -1,4 +1,14 @@
-const characters = {
+interface ICharacter {
+    name: string;
+    race: string;
+    intro: string;
+    role: string;
+}
+
+interface ICharacters {
+    [key: number]: ICharacter;
+}
+const characters: ICharacters = {
     1: {
         name: "Ganoes Paran",
         race: "human",

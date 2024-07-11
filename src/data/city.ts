@@ -1,4 +1,11 @@
-const cityData = [
+export interface ICityData {
+    name: string;
+    loc: Array<number>;
+    introduction: number;
+    type: number;
+}
+
+const cityData: ICityData[] = [
     {
         name: "Malaz City",
         loc: [237.0, 15.0, 121.0],
@@ -110,6 +117,4 @@ const cityData = [
     },
 ];
 
-const poi = [];
-
-export { cityData, poi };
+export { cityData };

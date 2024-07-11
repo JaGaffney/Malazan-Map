@@ -1,11 +1,20 @@
-const book = [
+interface IBook {
+    id: number;
+    book: number;
+    name: string;
+    author: string;
+    series: string;
+    year: string;
+}
+
+const book: IBook[] = [
     {
         id: 1,
         book: 1,
         name: "Gardens of the Moon",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 1999,
+        year: "1999",
     },
     {
         id: 2,
@@ -13,7 +22,7 @@ const book = [
         name: "Deadhouse Gates",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2000,
+        year: "2000",
     },
     {
         id: 3,
@@ -21,7 +30,7 @@ const book = [
         name: "Memories of Ice",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2001,
+        year: "2001",
     },
     {
         id: 4,
@@ -29,7 +38,7 @@ const book = [
         name: "House of Chains",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2002,
+        year: "2002",
     },
     {
         id: 5,
@@ -37,7 +46,7 @@ const book = [
         name: "Midnight Tides",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2004,
+        year: "2004",
     },
     {
         id: 6,
@@ -45,7 +54,7 @@ const book = [
         name: "The Bonehunters",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2006,
+        year: "2006",
     },
     {
         id: 7,
@@ -53,7 +62,7 @@ const book = [
         name: "Reaper's Gale",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2007,
+        year: "2007",
     },
     {
         id: 8,
@@ -61,7 +70,7 @@ const book = [
         name: "Toll the Hounds",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2008,
+        year: "2008",
     },
     {
         id: 9,
@@ -69,7 +78,7 @@ const book = [
         name: "Dust of Dreams",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2009,
+        year: "2009",
     },
     {
         id: 10,
@@ -77,7 +86,7 @@ const book = [
         name: "The Crippled God",
         author: "Steven Erikson",
         series: "Fallen",
-        year: 2011,
+        year: "2011",
     },
 
     {
@@ -135,7 +144,7 @@ const book = [
         name: "Forge of Darkness",
         author: "Steven Erikson",
         series: "Kharkanas",
-        year: 2012,
+        year: "2012",
     },
     {
         id: 19,
@@ -143,7 +152,7 @@ const book = [
         name: "Fall of Light",
         author: "Steven Erikson",
         series: "Kharkanas",
-        year: 2016,
+        year: "2016",
     },
     {
         id: 20,
@@ -209,7 +218,7 @@ const book = [
         name: "Blood Follows",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2002,
+        year: "2002",
     },
     {
         id: 12,
@@ -217,7 +226,7 @@ const book = [
         name: "The Healthy Dead",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2004,
+        year: "2004",
     },
     {
         id: 13,
@@ -225,7 +234,7 @@ const book = [
         name: "The Lees of Laughter's End",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2007,
+        year: "2007",
     },
     {
         id: 14,
@@ -233,7 +242,7 @@ const book = [
         name: "Crack'd Pot Trail",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2009,
+        year: "2009",
     },
     {
         id: 15,
@@ -241,7 +250,7 @@ const book = [
         name: "The Wurms of Blearmouth",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2012,
+        year: "2012",
     },
     {
         id: 16,
@@ -249,7 +258,7 @@ const book = [
         name: "The Fiends of Nightmaria",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2016,
+        year: "2016",
     },
     {
         id: 17,
@@ -257,7 +266,7 @@ const book = [
         name: "Upon a Dark of Evil Overlords",
         author: "Steven Erikson",
         series: "Tales",
-        year: 2021,
+        year: "2021",
     },
 ];
 

@@ -1,18 +1,11 @@
 import React, { useEffect } from "react";
-import { Environment, MapControls, } from "@react-three/drei";
-
+import { Environment, MapControls, PerspectiveCamera, } from "@react-three/drei";
 
 import Sea from "../World/Sea";
-
 import Floor from "../World/Floor";
 import FloatingGrid from "../World/FloatingGrid";
-
-
-import Hex from "../Hex/Hex";
 import Highlight from "../Overlay/Highlight";
-
 import Building from "../Building/Building";
-import Cam from "./Cam"
 
 // have to do this to get the three js canvas elements to also access the redux state
 import { Provider } from 'react-redux'
@@ -21,11 +14,13 @@ import Flags from "../Overlay/Flags";
 import InstanceHexContainer from "../Hex/InstanceHexContainer";
 import DayNight from "../World/DayNight";
 
-export function SceneContainer(props) {
+interface ISceneContainer {
+
+}
+export function SceneContainer(props: ISceneContainer) {
     useEffect(() => {
         document.body.style.cursor = 'all-scroll'
     }, [])
-
 
     return (
         <Provider store={store}>
@@ -33,8 +28,7 @@ export function SceneContainer(props) {
             <Environment background={"only"} files={"/textures/bg.hdr"} />
             <Environment background={false} files={"/textures/envmap2.hdr"} />
 
-            <Cam />
-            {/* <OrbitControls target={[5, 5, 5]} maxPolarAngle={Math.PI * 0.5} /> */}
+            <PerspectiveCamera makeDefault fov={45} position={[0, 200, 85]} {...props} />
 
             <MapControls enableRotate={true} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
             <DayNight />
@@ -46,9 +40,6 @@ export function SceneContainer(props) {
                 <Flags />
                 <Building />
             </group>
-
-
-            {/* makes it better but lags */}
 
             <Sea />
             <Floor />

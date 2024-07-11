@@ -1,9 +1,9 @@
-import React from 'react'
-
 import { HiBeaker, HiAcademicCap, HiMap } from "react-icons/hi";
 
-
-const Landing = (props) => {
+interface ILanding {
+    onModeHandler: (data: number) => void
+}
+const Landing = ({ onModeHandler }: ILanding) => {
 
     return (
         <div className="landing">
@@ -20,7 +20,7 @@ const Landing = (props) => {
                     </div>
 
                     <div className="landing__mode">
-                        <button className="landing__mode-button" onClick={() => props.onModeHandler(2)}>
+                        <button className="landing__mode-button" onClick={() => onModeHandler(2)}>
                             <div className="landing__mode-button-title">
                                 <HiMap />
                                 <span>Basic</span>
@@ -28,7 +28,7 @@ const Landing = (props) => {
                             <span className="landing__mode-button-description">few animations</span>
                         </button>
 
-                        <button className="landing__mode-button" onClick={() => props.onModeHandler(1)}>
+                        <button className="landing__mode-button" onClick={() => onModeHandler(1)}>
                             <div className="landing__mode-button-title">
                                 <HiAcademicCap />
                                 <span>Standard</span>
@@ -36,7 +36,7 @@ const Landing = (props) => {
                             <span className="landing__mode-button-description">recommended</span>
                         </button>
 
-                        <button className="landing__mode-button" onClick={() => props.onModeHandler(0)}>
+                        <button className="landing__mode-button" onClick={() => onModeHandler(0)}>
                             <div className="landing__mode-button-title">
                                 <HiBeaker />
                                 <span>Experimental</span>

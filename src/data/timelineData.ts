@@ -3,8 +3,24 @@ import { v4 as uuidv4 } from "uuid";
 import { eventIcons } from "../data/icons";
 
 // x: 343, y: 6
-
-const timelineData = {
+export interface ITimelinePoint {
+    id: string;
+    timeline: boolean;
+    book: number;
+    name: string;
+    icon: any;
+    description: Array<string>;
+    char: Array<number>;
+    loc: Array<number>;
+    area: number;
+}
+interface ITimePeroid {
+    [key: number]: ITimelinePoint;
+}
+interface ITimelineData {
+    [key: number]: ITimePeroid | any;
+}
+const timelineData: ITimelineData = {
     [-298655]: [
         {
             id: uuidv4(),

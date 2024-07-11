@@ -1,4 +1,8 @@
-const AREAS = [
+export interface IAreas {
+    id: string;
+    name: string;
+}
+const AREAS: IAreas[] = [
     {
         id: "genabackis",
         name: "Genabackis",

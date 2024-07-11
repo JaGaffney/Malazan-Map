@@ -1,7 +1,13 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react'
 import { Instance } from "@react-three/drei";
 
-const HexGeometry = (props) => {
+
+interface IHexGeometry {
+    position: Array<number>;
+    realPosition: Array<number>;
+}
+const HexGeometry = (props: IHexGeometry) => {
     const [hovered, setHovered] = useState(false)
 
     useEffect(() => {

@@ -1,10 +1,9 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { Color } from "three";
 import DayNightCycle from './DayNightCycle';
 
-function DayNight(props) {
+function DayNight() {
     const dayNightData = useSelector((state: any) => state.settings.dayNight)
     const nightData = useSelector((state: any) => state.settings.night)
 

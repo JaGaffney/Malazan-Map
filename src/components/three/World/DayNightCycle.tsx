@@ -1,18 +1,16 @@
 
+// @ts-ignore
 import { useFrame, useThree } from '@react-three/fiber';
 import React, { useEffect, useRef } from 'react'
 import { Vector3 } from "three";
 
-function DayNightCycle(props) {
-    const light = useRef()
-    const lightGroup = useRef();
-
-
-
-    //useHelper(light, DirectionalLightHelper, 1, "red");
+function DayNightCycle(props: any) {
+    const light: any = useRef()
+    const lightGroup: any = useRef();
 
     const { gl } = useThree();
     useEffect(() => {
+        // @ts-expect-error
         gl.state.lightPos = new Vector3();
     }, [gl]);
 
@@ -21,16 +19,17 @@ function DayNightCycle(props) {
         if (lightGroup?.current && light.current) {
             lightGroup.current.rotation.z += dt * props.speed;
         }
+        // @ts-expect-error
         if (gl.state.lightPos) {
+            // @ts-expect-error
             light.current.getWorldPosition(gl.state.lightPos)
         }
-        console.log(gl.state)
     });
-
 
 
     return (
         <>
+
             <group ref={lightGroup}>
                 <pointLight
                     ref={light}

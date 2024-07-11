@@ -9,40 +9,43 @@ import books from "../../data/books"
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Title from './Title';
 
-const Book = (props) => {
+interface IBook {
+    id: number;
+    book: number;
+    name: string;
+    author: string;
+    series: string;
+    year: string;
+}
+const Book = ({ id, year, name, author, series, book }: IBook) => {
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 
-    const activeBookColor = activeBooks.includes(props.id) ? bookColor(props.id) : ""
+    const activeBookColor = activeBooks.includes(id) ? bookColor(id) : ""
 
     return (
-        <tr className="panel__item-container-info" style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(props.id))}>
-            <td className="panel__item-container-info-icon">{activeBooks.includes(props.id) ? <HiStar /> : <HiOutlineStar />}</td>
-            <td>{props.year}</td>
-            <td>{props.name}</td>
-            <td style={{ color: seriesColor(props.author) }}>{props.series}</td>
-            <td style={{ textAlign: "center" }}>{props.book}</td>
+        <tr className="panel__item-container-info" style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(id))}>
+            <td className="panel__item-container-info-icon">{activeBooks.includes(id) ? <HiStar /> : <HiOutlineStar />}</td>
+            <td>{year}</td>
+            <td>{name}</td>
+            <td style={{ color: seriesColor(author) }}>{series}</td>
+            <td style={{ textAlign: "center" }}>{book}</td>
         </tr>
     )
 }
 
-export default function Books(props) {
+interface IBooks {
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Books({ onCloseHandler }: IBooks) {
     const dispatch = useDispatch()
-    console.log(books)
 
     const showAllBooks = () => {
-        console.log(books)
-        // bug where active citys are being turned off when all are clicked.
         dispatch(resetActiveBooks())
-        books.map((i, k) => {
+        books.forEach((i, k) => {
             dispatch(updateActiveBooks(k))
-            return (
-                null
-            )
         })
-
     }
-
 
     return (
         <Draggable handle="h5" >
@@ -52,7 +55,7 @@ export default function Books(props) {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
 
-                            <Title name={"Books"} onCloseHandler={props.onCloseHandler} />
+                            <Title name={"Books"} onCloseHandler={onCloseHandler} />
 
                             <div className="panel__item-container-info" onClick={() => showAllBooks()}>
                                 <button>Show all</button>
@@ -75,27 +78,24 @@ export default function Books(props) {
                                 </thead>
 
                                 <tbody>
-
-
-                                    {Object.keys(books).map((i, k) => {
+                                    {Object.keys(books).map((i: string, k: number) => {
+                                        const book = parseInt(i)
                                         return (
                                             <Book key={k}
-                                                id={books[i].id}
-                                                book={books[i].book}
-                                                name={books[i].name}
-                                                year={books[i].year}
-                                                series={books[i].series}
-                                                author={books[i].author}
+                                                id={books[book].id}
+                                                book={books[book].book}
+                                                name={books[book].name}
+                                                year={books[book].year}
+                                                series={books[book].series}
+                                                author={books[book].author}
                                             />
                                         )
 
                                     })}
-
                                 </tbody>
 
                             </table>
                         </div>
-
 
                     </div>
                 </ScrollContainer>

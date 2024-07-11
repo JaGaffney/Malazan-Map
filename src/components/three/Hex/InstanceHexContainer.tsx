@@ -1,4 +1,3 @@
-import React from "react"
 import { useSelector } from "react-redux";
 
 import { CylinderGeometry, MeshStandardMaterial } from "three";
@@ -7,13 +6,14 @@ import { useEnvironment, useTexture } from "@react-three/drei";
 import WORLDDATA from "../../../data/sorted copy.json"
 
 import InstanceHex from "./InstanceHex";
+import { IWorld } from "./hex.interface";
 
 export default function InstanceHexContainer() {
   const flatternData = useSelector((state: any) => state.settings.flattern)
   const desertsData = useSelector((state: any) => state.settings.deserts)
   const forestData = useSelector((state: any) => state.settings.forest)
 
-  const world = WORLDDATA
+  const world: IWorld = WORLDDATA
 
   const hexTextures = useTexture({
     dirt: "/textures/hex/dirt.jpg",
@@ -46,7 +46,7 @@ export default function InstanceHexContainer() {
   };
 
 
-  const calculateMesh = (terrain) => {
+  const calculateMesh = (terrain: number) => {
     switch (terrain) {
       case (1):
         return mesh.ice;
@@ -93,11 +93,11 @@ export default function InstanceHexContainer() {
     hexGeo4: new CylinderGeometry(1, 1, 4, 6, 1, false),
   }
 
-  const calculateGeometry = (height) => {
+  const calculateGeometry = (height: number) => {
     if (flatternData) {
       return hexGeos.hexGeo1
     }
-    switch (parseInt(height)) {
+    switch (height) {
       case (1):
         return hexGeos.hexGeo1;
       case (11):
@@ -120,9 +120,9 @@ export default function InstanceHexContainer() {
 
   return (
     <>
-      {Object.keys(world).map((i, k) => {
-        const adjust = parseInt(i)
-        const height = Object.keys(world[i])
+      {Object.keys(world).map((i, k: number) => {
+        const adjust: number = parseInt(i)
+        const height: number = parseInt(Object.keys(world[i])[0])
         return (
           <InstanceHex key={k} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(height)} />
         )

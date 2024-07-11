@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import { RepeatWrapping, TextureLoader } from "three";
 
 export default function FloatingGrid() {
-    const diffuse = useLoader(TextureLoader, "/textures/grid-texture.png");
+    // @ts-expect-error
+    const diffuse: any = useLoader(TextureLoader, "/textures/grid-texture.png");
 
     useEffect(() => {
         diffuse.wrapS = RepeatWrapping;

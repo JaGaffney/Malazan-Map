@@ -11,10 +11,9 @@ import Landing from "./components/landing/Landing";
 import CustomLoader from "./components/three/CustomLoader/CustomLoader"
 
 import { useDispatch } from "react-redux";
-import { setBasic, resetActiveAreas, setNone } from "./state/features/settings"
+import { setNone } from "./state/features/settings"
 
 import { SceneContainerStandard } from "./components/three/Scene/SceneContainerStandard";
-
 
 function App() {
     const [landing, setLanding] = useState<boolean>(true)
@@ -22,11 +21,7 @@ function App() {
 
     const dispatch = useDispatch()
 
-
-    const onModeHandler = (data) => {
-        // if (data === 1) {
-        //     dispatch(setBasic())
-        // }
+    const onModeHandler = (data: number): void => {
         if (data === 2) {
             dispatch(setNone())
         }

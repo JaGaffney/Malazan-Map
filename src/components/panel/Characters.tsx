@@ -1,22 +1,21 @@
-import React from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
-import { HiUser, HiOutlineUser } from "react-icons/hi2";
 import { ReactSVG } from 'react-svg'
+import ScrollContainer from 'react-indiana-drag-scroll';
+import Draggable from 'react-draggable';
 
 import { updateActiveCharacter, resetActiveCharacter } from "../../state/features/engine"
 import characters from "../../data/characters"
 import { validFilterQuery } from '../utils/helpers';
 import { bookColor } from '../utils/color'
 
-import ScrollContainer from 'react-indiana-drag-scroll';
-import Draggable from 'react-draggable';
-
-
 import { eventIcons } from "../../data/icons";
 import Title from './Title';
 
-
-export default function Characters(props) {
+interface ICharacters {
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Characters({ onCloseHandler }: ICharacters) {
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()
@@ -56,7 +55,7 @@ export default function Characters(props) {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable">
 
-                            <Title name={"Characters"} onCloseHandler={props.onCloseHandler} />
+                            <Title name={"Characters"} onCloseHandler={onCloseHandler} />
 
 
                             <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCharacter())}>
@@ -73,9 +72,7 @@ export default function Characters(props) {
                                 </thead>
 
                                 <tbody>
-
-
-                                    {Object.keys(characters).map((i, k) => {
+                                    {Object.keys(characters).map((i: any, k: number) => {
                                         let active = ""
                                         if (activeCharacter.includes(parseInt(i))) {
                                             active = "panel__item-container-info-active"

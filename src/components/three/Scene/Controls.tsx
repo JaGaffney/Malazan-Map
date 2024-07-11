@@ -15,7 +15,7 @@ const Controls = () => {
             maxDistance={600}
             // dampingFactor={0.1}
             // enableDamping={true}
-            onChange={(e) => {
+            onChange={(e: any) => {
                 const maxX = 270
                 const minX = -270
                 const maxY = 100

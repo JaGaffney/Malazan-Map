@@ -9,7 +9,10 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import Draggable from 'react-draggable';
 import Title from './Title';
 
-export default function Locations(props) {
+interface ILocations {
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Locations({ onCloseHandler }: ILocations) {
 
     const activeCity = useSelector((state: any) => state.filter.activeCity)
     const search = useSelector((state: any) => state.filter.search)
@@ -34,7 +37,7 @@ export default function Locations(props) {
 
                         <div className="panel__item-container  panel__header-draggable">
 
-                            <Title name={"Points of interest"} onCloseHandler={props.onCloseHandler} />
+                            <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
 
                             <div className="panel__item-container-info" onClick={() => showAllLocation()}>
                                 <button>Show all</button>

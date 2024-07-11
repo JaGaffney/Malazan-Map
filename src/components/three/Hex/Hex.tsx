@@ -1,18 +1,17 @@
-import React from "react";
 import { useEnvironment, useTexture } from "@react-three/drei";
 import { CylinderGeometry, MeshStandardMaterial } from "three";
+import { useSelector } from "react-redux";
 
 import WORLDDATA from "../../../data/sorted.json"
-
 import HexGeometryContainer from "./HexGeometryContainer"
-import { useSelector } from "react-redux";
+import { IWorld } from "./hex.interface";
 
 export default function Hex() {
     const flatternData = useSelector((state: any) => state.settings.flattern)
     const desertsData = useSelector((state: any) => state.settings.deserts)
     const forestData = useSelector((state: any) => state.settings.forest)
 
-    const world = WORLDDATA
+    const world: IWorld = WORLDDATA
 
     const hexTextures = useTexture({
         dirt: "/textures/hex/dirt.jpg",
@@ -53,7 +52,7 @@ export default function Hex() {
         hexGeo4: new CylinderGeometry(1, 1, 4, 6, 1, false),
     }
 
-    const calculateGeometry = (height) => {
+    const calculateGeometry = (height: string) => {
         if (flatternData) {
             return hexGeos.hexGeo1
         }
@@ -78,7 +77,7 @@ export default function Hex() {
         }
     }
 
-    const calculateMesh = (terrain) => {
+    const calculateMesh = (terrain: number) => {
         switch (terrain) {
             case (1):
                 return mesh.ice;
@@ -116,12 +115,12 @@ export default function Hex() {
 
     return (
         <>
-            {Object.keys(world).map((i, k) => {
-                const adjust = parseInt(i)
-                const height = Object.keys(world[i])
+            {Object.keys(world).map((i, k: number) => {
+                const adjust: number = parseInt(i)
+                const height: any = Object.keys(world[i])
                 if (height.length > 1) {
                     return (
-                        height.map((ii, kk) => {
+                        height.map((ii: any, kk: number) => {
                             return (
                                 <HexGeometryContainer
                                     data={world[adjust][ii]}

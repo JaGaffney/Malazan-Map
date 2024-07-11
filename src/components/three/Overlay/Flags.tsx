@@ -1,18 +1,18 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { cityData } from "../../../data/city"
 import Words from './Words'
 
-const Flags = (props) => {
+const Flags = () => {
     const activeCity = useSelector((state: any) => state.filter.activeCity)
 
     const data = cityData
+
     return (
         <>
-            {activeCity.map((i, k) => {
+            {activeCity.map((i: number, k: number) => {
                 return (
-                    <Words data={data[i]} key={k} cityKey={i} />
+                    <Words key={k} data={data[i]} cityKey={i} />
                 )
             })}
         </>

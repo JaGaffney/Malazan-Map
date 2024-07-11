@@ -63,5 +63,9 @@
     "resolutions": {
         "@types/react": "17.0.43",
         "@types/react-dom": "17.0.43"
+    },
+    "devDependencies": {
+        "@types/three": "^0.166.0",
+        "@types/uuid": "^10.0.0"
     }
 }

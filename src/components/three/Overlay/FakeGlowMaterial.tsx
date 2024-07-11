@@ -2,9 +2,8 @@ import React, { useMemo } from "react";
 import { shaderMaterial } from "@react-three/drei";
 import type { Object3DNode } from "@react-three/fiber";
 import { extend } from "@react-three/fiber";
-import type { Material, Side } from "three";
+import type { Material, Side, ColorRepresentation } from "three";
 import { AdditiveBlending, Color, FrontSide } from "three";
-import type { ColorRepresentation } from "three";
 
 /**
  * @typedef {Object} FakeGlowMaterialProps
@@ -95,6 +94,7 @@ export const FakeGlowMaterial = ({
     extend({ FakeGlowMaterial });
 
     return (
+        // @ts-expect-error
         <fakeGlowMaterial
             key={FakeGlowMaterial.key}
             side={side}

@@ -2,16 +2,16 @@ import React from 'react'
 
 import { HiX } from "react-icons/hi";
 
-export default function Title(props) {
-
-    const onCloseHandler = () => {
-        props.onCloseHandler(false)
-    }
-
+interface ITitle {
+    nameColor?: string;
+    name: string;
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Title({ nameColor, name, onCloseHandler }: ITitle) {
     return (
         <div className="panel__item-container-header">
-            <h5 style={{ color: props.nameColor ? props.nameColor : "inherit" }}>{props.name}</h5>
-            <button onClick={onCloseHandler}><HiX /></button>
+            <h5 style={{ color: nameColor ? nameColor : "inherit" }}>{name}</h5>
+            <button onClick={() => onCloseHandler(false)}><HiX /></button>
         </div>
     )
 }

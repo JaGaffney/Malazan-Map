@@ -14,7 +14,6 @@ import { updateSearch } from "../../state/features/engine"
 import Description from '../panel/Description';
 import Timeline from '../timeline/Timeline';
 
-
 export default function Header() {
     const [books, setBooks] = useState<boolean>(false)
     const [places, setPlaces] = useState<boolean>(false)
@@ -29,7 +28,6 @@ export default function Header() {
     const activeID = useSelector((state: any) => state.filter.activeData.id)
 
     const dispatch = useDispatch()
-
 
     return (
         <>
@@ -53,8 +51,6 @@ export default function Header() {
                 />
             </div>
 
-
-
             {books && <Books onCloseHandler={setBooks} />}
             {places && <Locations onCloseHandler={setPlaces} />}
             {characters && <Characters onCloseHandler={setCharacters} />}
@@ -64,12 +60,7 @@ export default function Header() {
             {history && <History timeline={timeline} onTimelineHandler={setTimeline} onCloseHandler={setHistory} />}
             {activeID !== "" && <Description />}
 
-
             {timeline && <Timeline />}
-
-
         </>
     )
 }
-
-

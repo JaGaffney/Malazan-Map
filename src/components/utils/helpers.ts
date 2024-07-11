@@ -13,7 +13,7 @@ export const validFilterQuery = (item: string, searchParam: string): boolean => 
     return retValue;
 };
 
-export const validFilterQueryArray = (item: Array<string>, searchParam: string): boolean => {
+export const validFilterQueryArray = (item: Array<string | any>, searchParam: string): boolean => {
     let retValue: boolean = false;
     if (searchParam.trim() === "") {
         return true;
