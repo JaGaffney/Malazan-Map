@@ -1,11 +1,11 @@
 import { useEnvironment } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import React from "react";
-import { TextureLoader, DoubleSide } from "three";
+import { TextureLoader } from "three";
 
 export default function Floor() {
     const envMap = useEnvironment({ files: process.env.PUBLIC_URL + "/textures/envmap2.hdr" });
-    const dirt2 = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/dirt2.jpg");
+    const dirt2 = useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/hex/dirt2.jpg");
 
     // 473825
     return (

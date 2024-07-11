@@ -109,7 +109,7 @@ for x in range(0, width, incriement):
                                  
                              
 
-im = img.save("test.png", "PNG")                   
+# im = img.save("test.png", "PNG")                   
 # print(Counter(coloursUsed))
 # print(len(Counter(coloursUsed)))
 

@@ -46,7 +46,7 @@ const Landing = (props) => {
                     </div>
                 </div>
 
-                <img className={`landing__hero-image `} src={process.env.PUBLIC_URL + "/images/test3.jpg"} alt="" />
+                <img className={`landing__hero-image `} src={process.env.PUBLIC_URL + "/images/compassImage.jpg"} alt="" />
             </div>
 
             <img className="landing__background-image" src={process.env.PUBLIC_URL + "/images/map-base-small.png"} alt="" />
