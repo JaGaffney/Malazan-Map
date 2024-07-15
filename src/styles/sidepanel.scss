@@ -155,9 +155,15 @@
                 background: var(--gray800);
             }
             &-active {
-                color: var(--teal500) !important;
+                color: white !important;
                 path {
-                    fill: var(--teal500) !important;
+                    fill: white !important;
+                }
+            }
+            &-inactive {
+                color: var(--gray700);
+                path {
+                    fill: var(--gray700);
                 }
             }
             &-activeButton {

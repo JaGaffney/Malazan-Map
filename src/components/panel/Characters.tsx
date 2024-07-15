@@ -73,13 +73,14 @@ export default function Characters({ onCloseHandler }: ICharacters) {
 
                                 <tbody>
                                     {Object.keys(characters).map((i: any, k: number) => {
+                                        console.log(activeCharacter)
                                         let active = ""
-                                        if (activeCharacter.includes(parseInt(i))) {
+                                        if (activeCharacter.includes(parseInt(i)) || activeCharacter.length === 0) {
                                             active = "panel__item-container-info-active"
                                         }
                                         if (validFilterQuery(characters[i].name, search)) {
                                             return (
-                                                <tr key={k} className={`panel__item-container-info ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
+                                                <tr key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
                                                     <td>{characters[i].name}</td>
                                                     <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
                                                     <td style={{ color: bookColor(parseInt(characters[i].intro)), textAlign: "center" }}>{characters[i].intro}</td>
