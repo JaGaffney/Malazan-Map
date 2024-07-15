@@ -38,7 +38,7 @@ export function SceneContainer(props: ISceneContainer) {
                 <InstanceHexContainer />
                 <Highlight />
                 <Flags />
-                <Building />
+                {/* <Building /> */}
             </group>
 
             <Sea />

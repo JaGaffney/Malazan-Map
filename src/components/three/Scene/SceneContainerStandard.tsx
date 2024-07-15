@@ -19,7 +19,7 @@ export function SceneContainerStandard(props: any) {
         <Provider store={store}>
 
             <PerspectiveCamera makeDefault fov={45} position={[0, 300, 85]} {...props} />
-            <MapControls enableRotate={false} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
+            <MapControls enableRotate={true} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
             <pointLight position={[160, 200, 93]} castShadow color={lightColor} intensity={1} />
 
 

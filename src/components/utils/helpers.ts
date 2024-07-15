@@ -18,9 +18,18 @@ export const validFilterQueryArray = (item: Array<string | any>, searchParam: st
     if (searchParam.trim() === "") {
         return true;
     }
+
     item.forEach((element) => {
-        if (element.toLocaleLowerCase().includes(searchParam.toLocaleLowerCase())) {
-            retValue = true;
+        if (typeof element == "object") {
+            element.forEach((inner: string) => {
+                if (inner.toLocaleLowerCase().includes(searchParam.toLocaleLowerCase())) {
+                    retValue = true;
+                }
+            });
+        } else {
+            if (element.toLocaleLowerCase().includes(searchParam.toLocaleLowerCase())) {
+                retValue = true;
+            }
         }
     });
 
