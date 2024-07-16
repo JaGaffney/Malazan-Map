@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { filterArray } from "../../components/utils/filter";
+import { localStorageSave, onLoadDataFromLocalStorage } from "../../components/utils/save";
 
 interface Cord {
     x: number;
@@ -26,6 +27,14 @@ export interface IRootState {
     search: string;
 }
 
+const onBookLoad = () => {
+    let data = onLoadDataFromLocalStorage();
+    if (data !== null) {
+        return data;
+    }
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28, 29];
+};
+
 const defaultActiveData = {
     id: "",
     book: 0,
@@ -40,7 +49,7 @@ const defaultActiveData = {
 const initialState: IRootState = {
     activeCord: { x: 0, y: 0 },
     activeData: defaultActiveData,
-    activeBooks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28, 29],
+    activeBooks: onBookLoad(),
     activeCharacter: [],
     activeCity: [0, 1],
     search: "",
@@ -75,7 +84,9 @@ export const filterSlice = createSlice({
             state.activeCharacter = [];
         },
         updateActiveBooks: (state, action) => {
-            state.activeBooks = filterArray(state.activeBooks, action.payload);
+            const newBooks = filterArray(state.activeBooks, action.payload);
+            state.activeBooks = newBooks;
+            localStorageSave(newBooks);
         },
         resetActiveBooks: (state) => {
             state.activeBooks = [];

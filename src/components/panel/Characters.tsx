@@ -67,7 +67,7 @@ export default function Characters({ onCloseHandler }: ICharacters) {
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
                                         <th>Name</th>
                                         <th>Race</th>
-                                        <th>Book</th>
+                                        <th>Intro</th>
                                     </tr>
                                 </thead>
 
