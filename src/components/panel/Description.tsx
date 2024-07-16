@@ -44,11 +44,11 @@ export default function Description() {
                             <div className="panel__item-container-table">
                                 {activeData.char.map((i: number, k: number) => {
                                     let active = ""
-                                    if (activeCharacter.includes(i)) {
+                                    if (activeCharacter.includes(i) || activeCharacter.length === 0) {
                                         active = "panel__item-container-info-active"
                                     }
                                     return (
-                                        <div key={k} className={`panel__item-container-info ${active}`} onClick={() => dispatch(updateActiveCharacter(i))}>
+                                        <div key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} onClick={() => dispatch(updateActiveCharacter(i))}>
                                             <span>{characters[i].name}</span>
                                             {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
                                         </div>

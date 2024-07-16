@@ -29,7 +29,7 @@ export const bookColor = (bookNumber: number): string => {
         case 10: // "The Crippled God"
             return "var(--pink600)";
         default:
-            return "";
+            return "white";
     }
 };
 export const seriesColor = (seriesName: string): string => {

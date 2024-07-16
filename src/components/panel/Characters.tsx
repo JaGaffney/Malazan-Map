@@ -73,7 +73,6 @@ export default function Characters({ onCloseHandler }: ICharacters) {
 
                                 <tbody>
                                     {Object.keys(characters).map((i: any, k: number) => {
-                                        console.log(activeCharacter)
                                         let active = ""
                                         if (activeCharacter.includes(parseInt(i)) || activeCharacter.length === 0) {
                                             active = "panel__item-container-info-active"

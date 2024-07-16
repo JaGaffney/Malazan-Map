@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { HiStar, HiOutlineStar } from "react-icons/hi";
 import Draggable, { DraggableCore } from "react-draggable"
 
+
 import { resetActiveBooks, updateActiveBooks } from "../../state/features/engine"
 import { bookColor, seriesColor } from '../utils/color'
 import books from "../../data/books"
@@ -24,8 +25,7 @@ const Book = ({ id, year, name, author, series, book }: IBook) => {
     const activeBookColor = activeBooks.includes(id) ? bookColor(id) : ""
 
     return (
-        <tr className="panel__item-container-info" style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(id))}>
-            <td className="panel__item-container-info-icon">{activeBooks.includes(id) ? <HiStar /> : <HiOutlineStar />}</td>
+        <tr className="panel__item-container-info  panel__item-container-info-inactive " style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(id))}>
             <td>{year}</td>
             <td>{name}</td>
             <td style={{ color: seriesColor(author) }}>{series}</td>
@@ -69,7 +69,6 @@ export default function Books({ onCloseHandler }: IBooks) {
                             <table className="panel__item-table">
                                 <thead>
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                        <th></th>
                                         <th>Year</th>
                                         <th>Name</th>
                                         <th>Series</th>

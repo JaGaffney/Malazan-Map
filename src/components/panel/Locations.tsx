@@ -66,7 +66,7 @@ export default function Locations({ onCloseHandler }: ILocations) {
                                         if (validFilterQuery(i.name, search)) {
                                             return (
                                                 <tr key={k}
-                                                    className={`panel__item-container-info ${active}`}
+                                                    className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
                                                     style={{ display: "table-row", textAlign: "left" }}
                                                     onClick={() => dispatch(updateActiveCity(k))
                                                     }

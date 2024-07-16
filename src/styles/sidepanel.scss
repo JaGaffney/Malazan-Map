@@ -173,6 +173,19 @@
             &-small {
                 font-size: 0.7rem;
             }
+            &-link {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                svg {
+                    max-height: 2rem !important;
+                    max-width: 2rem !important;
+                    font-size: 2rem;
+                }
+                &:hover {
+                    color: white;
+                }
+            }
             &-description {
                 max-width: 500px;
                 word-wrap: break-word;
