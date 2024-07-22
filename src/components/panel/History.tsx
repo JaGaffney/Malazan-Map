@@ -25,11 +25,9 @@ let getNumberWithSuffix = (item: string): any => {
 }
 
 interface IHistory {
-    timeline: boolean
     onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
-    onTimelineHandler: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export default function History({ timeline, onCloseHandler, onTimelineHandler }: IHistory) {
+export default function History({ onCloseHandler }: IHistory) {
     const dispatch = useDispatch()
 
     const [inactiveDates, setInactiveDates] = useState<Array<any>>([])
@@ -66,9 +64,6 @@ export default function History({ timeline, onCloseHandler, onTimelineHandler }:
                             <div className="panel__item-container panel__header-draggable">
 
                                 <Title name={"Events"} onCloseHandler={onCloseHandler} />
-                                <div className="panel__item-container-info" onClick={() => onTimelineHandler(!timeline)}>
-                                    <button className={timeline ? "panel__item-container-info-active panel__item-container-info-activeButton" : ""}>Timeline</button>
-                                </div>
 
                                 {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i: string, k: number) => {
                                     const year: number = parseInt(i)
@@ -79,9 +74,7 @@ export default function History({ timeline, onCloseHandler, onTimelineHandler }:
 
                                                 {year === 1000 ? (<span className="timeline__date">???</span>) : (
 
-                                                    <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                                        <span className="timeline__date-suffix">{getNumberWithSuffix(i)} Year {year <= 0 ? "before" : "of"} Burn's Sleep</span>
-                                                    </span>
+                                                    <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
                                                 )}
 
                                                 <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(year) ? <HiEyeOff /> : <HiEye />}</button>

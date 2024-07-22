@@ -48,12 +48,8 @@
     grid-row: 1;
     grid-column: 1;
 
-    color: var(--gray100);
-    font-size: 1.5rem;
-    &-suffix {
-        font-size: 0.7rem;
-        color: var(--gray500);
-    }
+    color: var(--gray500);
+    font-size: 1rem;
 }
 
 .timeline__event {

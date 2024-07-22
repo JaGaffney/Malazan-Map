@@ -31,11 +31,8 @@ const Acknowledgements = () => {
             <br />
 
             <h5>Links</h5>
-            <div className="panel__item-container-info" style={{ maxWidth: "15rem" }}>
-            </div>
             <a href="https://github.com/JaGaffney" className="panel__item-container-info">
                 <span className="panel__item-container-info-link"><FaGithub /> github@jagaffney</span>
-
             </a>
             <a href="https://discord.gg/xmwVBjQ6" className="panel__item-container-info">
                 <span className="panel__item-container-info-link"><FaDiscord /> Discord</span>

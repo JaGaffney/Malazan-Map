@@ -38,6 +38,7 @@ interface IBooks {
     onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function Books({ onCloseHandler }: IBooks) {
+    const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 
     const showAllBooks = () => {
@@ -57,14 +58,17 @@ export default function Books({ onCloseHandler }: IBooks) {
 
                             <Title name={"Books"} onCloseHandler={onCloseHandler} />
 
-                            <div className="panel__item-container-info" onClick={() => showAllBooks()}>
-                                <button>Show all</button>
-                            </div>
 
-
-                            <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveBooks())}>
-                                <button>Hide all</button>
-                            </div>
+                            {Object.keys(books).length === activeBooks.length ? (
+                                <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveBooks())}>
+                                    <button>Reset</button>
+                                </div>
+                            ) : (
+                                <div className="panel__item-container-info" onClick={() => showAllBooks()}>
+                                    <button>Display all</button>
+                                </div>
+                            )
+                            }
 
                             <table className="panel__item-table">
                                 <thead>

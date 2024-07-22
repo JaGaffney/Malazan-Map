@@ -5,23 +5,30 @@ import {
     dayNightOn,
     dayNightOff,
     nightOn,
-    nightOff, flattern, raise, addShadows, removeShadows, addDeserts, removeDeserts, addForests, removeForests
+    nightOff, flattern, raise, addShadows, removeShadows, addTerrain, removeTerrain
 } from "../../state/features/settings"
 
-
-export default function Shape() {
+interface IShape {
+    timeline: boolean
+    onTimelineHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Shape({ timeline, onTimelineHandler }: IShape) {
     const dayNightData = useSelector((state: any) => state.settings.dayNight)
     const nightData = useSelector((state: any) => state.settings.night)
     const flatternData = useSelector((state: any) => state.settings.flattern)
     const shadowsData = useSelector((state: any) => state.settings.shadows)
-    const desertData = useSelector((state: any) => state.settings.deserts)
-    const forestData = useSelector((state: any) => state.settings.forest)
+    const terrainData = useSelector((state: any) => state.settings.terrain)
     const dispatch = useDispatch()
 
     return (
         <div className="panel__item">
             <div className="panel__item-container">
-                <h5>Filters</h5>
+                <h5>Options</h5>
+
+                <div className="panel__item-container-info" onClick={() => onTimelineHandler(!timeline)}>
+                    <span>Timeline</span>
+                    <span>{!timeline ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+                </div>
 
                 <div className="panel__item-container-info" onClick={() => dispatch(dayNightData ? dayNightOff() : dayNightOn())}>
                     <span>Day/Night Cycle</span>
@@ -43,15 +50,10 @@ export default function Shape() {
                     <span>{!shadowsData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                 </div>
 
-                <div className="panel__item-container-info" onClick={() => dispatch(desertData ? removeDeserts() : addDeserts())}>
-                    <span>Deserts</span>
-                    <span>{!desertData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+                <div className="panel__item-container-info" onClick={() => dispatch(terrainData ? removeTerrain() : addTerrain())}>
+                    <span>Terrain</span>
+                    <span>{!terrainData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                 </div>
-                <div className="panel__item-container-info" onClick={() => dispatch(forestData ? removeForests() : addForests())}>
-                    <span>Forests</span>
-                    <span>{!forestData ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-                </div>
-
             </div>
         </div>
     )

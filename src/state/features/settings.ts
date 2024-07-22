@@ -6,10 +6,7 @@ export interface IRootState {
     night: boolean;
     flattern: boolean;
     shadows: boolean;
-    deserts: boolean;
-    moutains: boolean;
-    ice: boolean;
-    forest: boolean;
+    terrain: boolean;
     areas: Array<number>;
 }
 
@@ -18,10 +15,7 @@ const initialState: IRootState = {
     night: false,
     flattern: false,
     shadows: true,
-    deserts: true,
-    forest: true,
-    moutains: true,
-    ice: true,
+    terrain: true,
     areas: [1, 2, 3, 4, 5, 6, 7, 8],
 };
 
@@ -70,17 +64,11 @@ export const settingsSlice = createSlice({
         removeShadows: (state) => {
             state.shadows = false;
         },
-        addDeserts: (state) => {
-            state.deserts = true;
+        addTerrain: (state) => {
+            state.terrain = true;
         },
-        removeDeserts: (state) => {
-            state.deserts = false;
-        },
-        addForests: (state) => {
-            state.forest = true;
-        },
-        removeForests: (state) => {
-            state.forest = false;
+        removeTerrain: (state) => {
+            state.terrain = false;
         },
         updateActiveAreas: (state, action) => {
             state.areas = filterArray(state.areas, action.payload);
@@ -91,24 +79,7 @@ export const settingsSlice = createSlice({
     },
 });
 
-export const {
-    setBasic,
-    setNone,
-    reset,
-    dayNightOn,
-    dayNightOff,
-    nightOn,
-    nightOff,
-    flattern,
-    raise,
-    addShadows,
-    removeShadows,
-    addDeserts,
-    removeDeserts,
-    addForests,
-    removeForests,
-    updateActiveAreas,
-    resetActiveAreas,
-} = settingsSlice.actions;
+export const { setBasic, setNone, reset, dayNightOn, dayNightOff, nightOn, nightOff, flattern, raise, addShadows, removeShadows, addTerrain, removeTerrain, updateActiveAreas, resetActiveAreas } =
+    settingsSlice.actions;
 
 export default settingsSlice.reducer;

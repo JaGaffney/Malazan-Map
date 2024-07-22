@@ -10,8 +10,7 @@ import { IWorld } from "./hex.interface";
 
 export default function InstanceHexContainer() {
   const flatternData = useSelector((state: any) => state.settings.flattern)
-  const desertsData = useSelector((state: any) => state.settings.deserts)
-  const forestData = useSelector((state: any) => state.settings.forest)
+  const terrainData = useSelector((state: any) => state.settings.terrain)
 
   const world: IWorld = WORLDDATA
 
@@ -49,29 +48,38 @@ export default function InstanceHexContainer() {
   const calculateMesh = (terrain: number) => {
     switch (terrain) {
       case (1):
+        if (!terrainData) {
+          return mesh.grass
+        }
         return mesh.ice;
       case (2):
-        if (!desertsData) {
+        if (!terrainData) {
           return mesh.grass
         }
         return mesh.sand;
       case (3):
-        if (!desertsData) {
+        if (!terrainData) {
           return mesh.grass
         }
         return mesh.sand2;
       case (4):
+        if (!terrainData) {
+          return mesh.grass
+        }
         return mesh.stone2;
       case (5):
       case (51):
       case (52):
         return mesh.grass;
       case (6):
-        if (!forestData) {
+        if (!terrainData) {
           return mesh.grass
         }
         return mesh.forest;
       case (7):
+        if (!terrainData) {
+          return mesh.grass
+        }
         return mesh.stone;
       case (8):
         return mesh.town;
@@ -80,7 +88,7 @@ export default function InstanceHexContainer() {
       case (10):
         return mesh.cap;
       default:
-        return mesh.ice
+        return mesh.grass
     }
   }
 
@@ -105,7 +113,7 @@ export default function InstanceHexContainer() {
       case (12):
         return hexGeos.hexGeo12;
       case (2):
-        if (!desertsData || !forestData) {
+        if (!terrainData) {
           return hexGeos.hexGeo1
         }
         return hexGeos.hexGeo2;

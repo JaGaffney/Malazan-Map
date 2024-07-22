@@ -1,5 +1,5 @@
-import { HiMap, HiFlag, HiBookOpen, HiUsers } from 'react-icons/hi'
-import { HiOutlineAdjustmentsHorizontal, HiOutlineMapPin } from "react-icons/hi2";
+import { HiMap, HiFlag, HiBookOpen, HiUsers, HiCog } from 'react-icons/hi'
+import { HiOutlineMapPin } from "react-icons/hi2";
 
 interface IButton {
     name: boolean;
@@ -50,8 +50,8 @@ const Buttons = (props: IButtons) => {
                 props.onPlacesHandler(false);
                 props.onCharactersHandler(false);
             }}>
-                <HiOutlineAdjustmentsHorizontal />
-                <span>Filters</span>
+                <HiCog />
+                <span>Settings</span>
             </button>
 
         </div>

@@ -59,7 +59,7 @@ export default function Characters({ onCloseHandler }: ICharacters) {
 
 
                             <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCharacter())}>
-                                <button>Show all</button>
+                                <button>Display all</button>
                             </div>
 
                             <table className="panel__item-table">
