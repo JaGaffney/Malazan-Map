@@ -13,6 +13,7 @@ import { store } from "../../../state/store"
 import Flags from "../Overlay/Flags";
 import InstanceHexContainer from "../Hex/InstanceHexContainer";
 import DayNight from "../World/DayNight";
+import Areas from "../Overlay/Areas";
 
 interface ISceneContainer {
 
@@ -38,6 +39,7 @@ export function SceneContainer(props: ISceneContainer) {
                 <InstanceHexContainer />
                 <Highlight />
                 <Flags />
+                {/* <Areas textColor={"white"} /> */}
                 {/* <Building /> */}
             </group>
 

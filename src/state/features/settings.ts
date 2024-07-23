@@ -1,13 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { filterArray } from "../../components/utils/filter";
-
 export interface IRootState {
     dayNight: boolean;
     night: boolean;
     flattern: boolean;
     shadows: boolean;
     terrain: boolean;
-    areas: Array<number>;
 }
 
 const initialState: IRootState = {
@@ -16,7 +13,6 @@ const initialState: IRootState = {
     flattern: false,
     shadows: true,
     terrain: true,
-    areas: [1, 2, 3, 4, 5, 6, 7, 8],
 };
 
 export const settingsSlice = createSlice({
@@ -27,13 +23,11 @@ export const settingsSlice = createSlice({
             state.dayNight = false;
             state.flattern = true;
             state.shadows = false;
-            // state.areas = [];
         },
         setBasic: (state) => {
             state.dayNight = false;
             state.flattern = true;
             state.shadows = false;
-            state.areas = [1, 2, 3, 6];
         },
         reset: (state) => {
             state = initialState;
@@ -70,16 +64,9 @@ export const settingsSlice = createSlice({
         removeTerrain: (state) => {
             state.terrain = false;
         },
-        updateActiveAreas: (state, action) => {
-            state.areas = filterArray(state.areas, action.payload);
-        },
-        resetActiveAreas: (state) => {
-            state.areas = [1, 2, 3, 4, 5, 6, 7, 8];
-        },
     },
 });
 
-export const { setBasic, setNone, reset, dayNightOn, dayNightOff, nightOn, nightOff, flattern, raise, addShadows, removeShadows, addTerrain, removeTerrain, updateActiveAreas, resetActiveAreas } =
-    settingsSlice.actions;
+export const { setBasic, setNone, reset, dayNightOn, dayNightOff, nightOn, nightOff, flattern, raise, addShadows, removeShadows, addTerrain, removeTerrain } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

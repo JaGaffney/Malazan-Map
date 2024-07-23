@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { store } from "../../../state/store"
 import Flags from "../Overlay/Flags";
 import StaticMap from "../World/StaticMap";
+import Areas from "../Overlay/Areas";
 
 export function SceneContainerBasic(props: any) {
     return (
@@ -20,6 +21,7 @@ export function SceneContainerBasic(props: any) {
             <group position={[-400, 0, -100]}>
                 <Flags />
                 <Highlight />
+                {/* <Areas textColor={"black"} /> */}
             </group>
 
             <StaticMap />

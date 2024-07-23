@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { updateActiveCity, resetActiveCity } from "../../state/features/engine"
+import { updateActiveCity, resetActiveCity, toggleArea } from "../../state/features/engine"
 import { cityData } from "../../data/city"
 import { bookColor } from '../utils/color';
 import { validFilterQuery } from '../utils/helpers';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 import Draggable from 'react-draggable';
 import Title from './Title';
 
@@ -15,6 +16,7 @@ interface ILocations {
 export default function Locations({ onCloseHandler }: ILocations) {
 
     const activeCity = useSelector((state: any) => state.filter.activeCity)
+    const areas = useSelector((state: any) => state.filter.areas)
     const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()
 
@@ -39,6 +41,12 @@ export default function Locations({ onCloseHandler }: ILocations) {
 
                             <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
 
+
+                            {/* <div className="panel__item-container-info" onClick={() => dispatch(toggleArea())}>
+                                <span>Areas</span>
+                                <span>{!areas ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+                            </div> */}
+
                             {Object.keys(cityData).length === activeCity.length ? (
                                 <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveCity())}>
                                     <button>Reset</button>
@@ -47,11 +55,10 @@ export default function Locations({ onCloseHandler }: ILocations) {
                                 <div className="panel__item-container-info" onClick={() => showAllLocation()}>
                                     <button>Display all</button>
                                 </div>
-                            )
-                            }
-
-
+                            )}
                             <table className="panel__item-table">
+
+
                                 <thead>
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
                                         <th>Name</th>

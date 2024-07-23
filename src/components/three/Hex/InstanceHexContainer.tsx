@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { CylinderGeometry, MeshStandardMaterial } from "three";
 import { useEnvironment, useTexture } from "@react-three/drei";
 
-import WORLDDATA from "../../../data/sorted copy.json"
+import WORLDDATA from "../../../data/worldData.json"
 
 import InstanceHex from "./InstanceHex";
 import { IWorld } from "./hex.interface";

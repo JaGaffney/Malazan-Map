@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { Object3D } from "three";
 
-import WORLDDATA from "../../../data/sorted copy.json"
+import WORLDDATA from "../../../data/worldData.json"
 import { tileToPosition } from "../../utils/helpers";
 import { useSelector } from "react-redux";
 import { IWorld } from "./hex.interface";

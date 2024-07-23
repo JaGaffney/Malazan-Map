@@ -11,6 +11,7 @@ import Highlight from "../Overlay/Highlight";
 import Flags from "../Overlay/Flags";
 import InstanceHexContainer from "../Hex/InstanceHexContainer";
 import FloatingGrid from "../World/FloatingGrid";
+import Areas from "../Overlay/Areas";
 
 export function SceneContainerStandard(props: any) {
     const lightColor = new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear();
@@ -27,6 +28,7 @@ export function SceneContainerStandard(props: any) {
                 <InstanceHexContainer />
                 <Flags />
                 <Highlight />
+                {/* <Areas textColor={"white"} /> */}
             </group>
 
             <Sea />

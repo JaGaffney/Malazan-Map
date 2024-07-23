@@ -1,5 +1,4 @@
 import ScrollContainer from 'react-indiana-drag-scroll';
-import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 
 import Shape from './Shape';
 import Acknowledgements from '../panel/Acknowledgements';

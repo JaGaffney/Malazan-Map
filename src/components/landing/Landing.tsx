@@ -17,9 +17,10 @@ const Landing = ({ onModeHandler }: ILanding) => {
                     </div>
                     <div className="landing__hero-description">
                         <p>Trace the tales of the Fallen and unravel the saga with the Interactive 3D Map and detailed timeline. </p>
-                        <a href="https://discord.gg/xmwVBjQ6">
-                            <span className="panel__item-container-info-link"><FaDiscord />Discord</span>
-                        </a>
+
+                        <div>
+                            <a className="landing__hero-socials" href="https://discord.gg/xmwVBjQ6"><FaDiscord /></a>
+                        </div>
                     </div>
 
                     <div className="landing__mode">
@@ -47,6 +48,8 @@ const Landing = ({ onModeHandler }: ILanding) => {
                             <span className="landing__mode-button-description">may lag & flashing lights</span>
                         </button>
                     </div>
+
+
                 </div>
 
                 <img className={`landing__hero-image `} src={"/images/compassImage.jpg"} alt="" />

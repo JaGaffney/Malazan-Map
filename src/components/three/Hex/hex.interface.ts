@@ -1,7 +1,6 @@
 export interface IPoint {
     x: number;
     y: number;
-    a: number;
     c?: number;
 }
 interface ITerrain {

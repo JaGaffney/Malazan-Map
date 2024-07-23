@@ -60,6 +60,14 @@
         font-size: 1.2rem;
         color: var(--gray500);
     }
+    &-socials {
+        color: var(--gray500);
+        font-size: 3rem;
+        &:hover,
+        &:focus {
+            color: white;
+        }
+    }
 
     &-image {
         width: 100%;
@@ -79,7 +87,7 @@
 }
 
 .landing__mode {
-    margin-top: 4rem;
+    margin-top: 2rem;
     width: 100%;
     justify-content: flex-start;
     display: flex;
