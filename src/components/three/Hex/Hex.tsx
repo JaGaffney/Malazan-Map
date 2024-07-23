@@ -2,7 +2,7 @@ import { useEnvironment, useTexture } from "@react-three/drei";
 import { CylinderGeometry, MeshStandardMaterial } from "three";
 import { useSelector } from "react-redux";
 
-import WORLDDATA from "../../../data/sorted.json"
+import WORLDDATA from "../../../data/worldData.json"
 import HexGeometryContainer from "./HexGeometryContainer"
 import { IWorld } from "./hex.interface";
 
