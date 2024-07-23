@@ -28,7 +28,7 @@ export function SceneContainerStandard(props: any) {
                 <InstanceHexContainer />
                 <Flags />
                 <Highlight />
-                {/* <Areas textColor={"white"} /> */}
+                <Areas textColor={"white"} />
             </group>
 
             <Sea />

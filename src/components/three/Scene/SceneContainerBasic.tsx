@@ -15,13 +15,13 @@ export function SceneContainerBasic(props: any) {
 
             <PerspectiveCamera makeDefault fov={45} position={[0, 200, 85]} {...props} />
 
-            <MapControls enableRotate={navigator.userAgent.search("Firefox") === 67 ? true : false} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
+            <MapControls enableRotate={navigator.userAgent.search("Firefox") === 67 ? true : true} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
             <ambientLight />
 
             <group position={[-400, 0, -100]}>
                 <Flags />
                 <Highlight />
-                {/* <Areas textColor={"black"} /> */}
+                <Areas textColor={"black"} />
             </group>
 
             <StaticMap />

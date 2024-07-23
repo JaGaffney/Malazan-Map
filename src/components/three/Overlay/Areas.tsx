@@ -12,16 +12,19 @@ interface IAreaWord {
 }
 function AreaWord({ loc, name, textColor }: IAreaWord) {
     const newPos: Vector3 = new Vector3(loc[0], loc[1], loc[2])
+    const defaultLength: number = 35 + (name.length * 8)
     return (
-        <group position={newPos}>
-            <Billboard
-                follow={true}
-                lockX={false}
-                lockY={false}
-                lockZ={false} // Lock the rotation on the z axis (default=false)
-            >
-                <Text color={textColor} position={[0, 3, 0]} characters="abcdefghijklmnopqrstuvwxyz" fontSize={20}>{name}</Text>
-            </Billboard>
+        <group position={newPos} rotation-x={-Math.PI * 0.5}>
+
+            <mesh position={[0, 4, -5]}>
+                <planeGeometry args={[defaultLength, 25, 1, 1]} />
+                <meshPhysicalMaterial
+                    color={"white"}
+                    transmission={0.9}
+                    roughness={0.3}
+                />
+            </mesh>
+            <Text color={textColor} position={[0, 5, 0]} characters="abcdefghijklmnopqrstuvwxyz" fontSize={20}>{name}</Text>
         </group>
     )
 }
@@ -29,7 +32,6 @@ function AreaWord({ loc, name, textColor }: IAreaWord) {
 function Areas(props: any) {
     const areas = useSelector((state: any) => state.filter.areas)
     const areaData = AREAS
-    console.log(areas)
     return (
         areas ? (
             <group>
