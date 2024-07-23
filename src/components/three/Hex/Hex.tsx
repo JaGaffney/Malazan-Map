@@ -27,7 +27,7 @@ export default function Hex() {
         ice: "/textures/hex/snow.jpg"
     })
 
-    const envMaps = useEnvironment({ files: "/textures/envmap2.hdr" });
+    const envMaps = useEnvironment({ files: "/textures/envmap5.hdr" });
 
     const mesh = {
         dirt: new MeshStandardMaterial({ envMap: envMaps, envMapIntensity: 0.25, flatShading: true, map: hexTextures.dirt }),

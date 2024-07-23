@@ -4,7 +4,7 @@ import React from "react";
 import { TextureLoader } from "three";
 
 export default function Floor() {
-    const envMap = useEnvironment({ files: "/textures/envmap2.hdr" });
+    const envMap = useEnvironment({ files: "/textures/envmap5.hdr" });
     // @ts-expect-error
     const dirt2 = useLoader(TextureLoader, "/textures/hex/dirt2.jpg");
 

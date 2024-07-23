@@ -2,7 +2,7 @@
 from PIL import Image
 from collections import Counter
 
-image_name = "DisplacementMap"
+image_name = "displacement"
 
 img = Image.open(f"data/{image_name}.png")
 pixels = img.load() 

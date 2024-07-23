@@ -9,7 +9,7 @@ export default function Sea() {
     const nightData = useSelector((state: any) => state.settings.night)
 
 
-    const envMap = useEnvironment({ files: "/textures/envmap2.hdr" });
+    const envMap = useEnvironment({ files: "/textures/envmap5.hdr" });
 
     // @ts-expect-error
     let seaTexture = useLoader(TextureLoader, "/textures/water.jpg");

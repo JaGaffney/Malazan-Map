@@ -27,7 +27,7 @@ export function SceneContainer(props: ISceneContainer) {
         <Provider store={store}>
 
             <Environment background={"only"} files={"/textures/bg.hdr"} />
-            <Environment background={false} files={"/textures/envmap2.hdr"} />
+            <Environment background={false} files={"/textures/envmap5.hdr"} />
 
             <PerspectiveCamera makeDefault fov={45} position={[0, 200, 85]} {...props} />
 
