@@ -41,11 +41,11 @@ export default function Locations({ onCloseHandler }: ILocations) {
 
                             <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
 
-
+                            {/* 
                             <div className="panel__item-container-info" onClick={() => dispatch(toggleArea())}>
                                 <span>Areas</span>
                                 <span>{!areas ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-                            </div>
+                            </div> */}
 
                             {Object.keys(cityData).length === activeCity.length ? (
                                 <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveCity())}>

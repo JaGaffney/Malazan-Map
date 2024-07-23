@@ -30,7 +30,6 @@ export default function Description() {
 
                             <Title name={`(${activeData.book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
 
-                            <h4>{AREAS[activeData.area - 1].name}</h4>
                             <div className="panel__item-container-info description-large">
                                 {activeData.description.map((i: string, k: number) => {
                                     return (

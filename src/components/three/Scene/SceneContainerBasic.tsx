@@ -21,7 +21,7 @@ export function SceneContainerBasic(props: any) {
             <group position={[-400, 0, -100]}>
                 <Flags />
                 <Highlight />
-                <Areas textColor={"black"} />
+                {/* <Areas textColor={"black"} /> */}
             </group>
 
             <StaticMap />
