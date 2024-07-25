@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { updateActiveCity, resetActiveCity, toggleArea } from "../../state/features/engine"
+import { updateActiveCity, resetActiveCity, setAreas, resetAreas } from "../../state/features/engine"
 import { cityData } from "../../data/city"
 import { bookColor } from '../utils/color';
 import { validFilterQuery } from '../utils/helpers';
@@ -41,11 +41,11 @@ export default function Locations({ onCloseHandler }: ILocations) {
 
                             <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
 
-                            {/* 
-                            <div className="panel__item-container-info" onClick={() => dispatch(toggleArea())}>
+
+                            <div className="panel__item-container-info" onClick={() => dispatch(areas ? resetAreas() : setAreas())}>
                                 <span>Areas</span>
                                 <span>{!areas ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-                            </div> */}
+                            </div>
 
                             {Object.keys(cityData).length === activeCity.length ? (
                                 <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveCity())}>

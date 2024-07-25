@@ -26,6 +26,7 @@ function Words(props: IWords) {
     }, [hovered])
 
 
+
     const city: ICityData = props.data
 
     const defaultLength: number = 30 + (city.name.length / 2)

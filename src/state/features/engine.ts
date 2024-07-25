@@ -94,8 +94,11 @@ export const filterSlice = createSlice({
         updateSearch: (state, action) => {
             state.search = action.payload;
         },
-        toggleArea: (state) => {
-            state.areas = !state.areas;
+        setAreas: (state) => {
+            state.areas = true;
+        },
+        resetAreas: (state) => {
+            state.areas = false;
         },
     },
 });
@@ -112,7 +115,8 @@ export const {
     updateActiveBooks,
     resetActiveBooks,
     updateSearch,
-    toggleArea,
+    setAreas,
+    resetAreas,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -39,7 +39,7 @@ export function SceneContainer(props: ISceneContainer) {
                 <InstanceHexContainer />
                 <Highlight />
                 <Flags />
-                {/* <Areas textColor={"black"} /> */}
+                <Areas />
                 {/* <Building /> */}
             </group>
 

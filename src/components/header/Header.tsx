@@ -37,7 +37,8 @@ export default function Header() {
                 </div>
 
                 <form className="header-search">
-                    <input type="text" value={search} placeholder="search for character, event, location, etc..." onChange={(e) => dispatch(updateSearch(e.target.value))} />
+                    <label className="visually-hidden" htmlFor="search">Search</label>
+                    <input id="search" type="text" value={search} placeholder="search for character, event, location, etc..." onChange={(e) => dispatch(updateSearch(e.target.value))} />
                     {search !== "" ? (<HiX className="header-search-button" onClick={() => dispatch(updateSearch(""))} />) : (<HiSearch />)}
 
                 </form>

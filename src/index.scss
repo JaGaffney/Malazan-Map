@@ -114,6 +114,22 @@ body {
     --header-size: 3rem;
 }
 
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+// body {
+//     display: grid;
+//     grid-template-columns: minmax(2rem, 1fr) min(100% - 4rem, 1500px) minmax(2rem, 1fr);
+//     align-items: center;
+// }
+
 body {
     background-color: var(--gray900);
     cursor: wait;

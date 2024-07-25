@@ -1,5 +1,4 @@
 export const localStorageSave = (data: any): void => {
-    console.log(data);
     if (typeof window !== "undefined") {
         localStorage.setItem("books", JSON.stringify(data));
     }
