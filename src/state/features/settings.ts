@@ -5,6 +5,7 @@ export interface IRootState {
     flattern: boolean;
     shadows: boolean;
     terrain: boolean;
+    lights: boolean;
 }
 
 const initialState: IRootState = {
@@ -13,6 +14,7 @@ const initialState: IRootState = {
     flattern: false,
     shadows: true,
     terrain: true,
+    lights: true,
 };
 
 export const settingsSlice = createSlice({
@@ -20,11 +22,6 @@ export const settingsSlice = createSlice({
     initialState,
     reducers: {
         setNone: (state) => {
-            state.dayNight = false;
-            state.flattern = true;
-            state.shadows = false;
-        },
-        setBasic: (state) => {
             state.dayNight = false;
             state.flattern = true;
             state.shadows = false;
@@ -39,34 +36,26 @@ export const settingsSlice = createSlice({
         dayNightOff: (state) => {
             state.dayNight = false;
         },
-        nightOn: (state) => {
-            state.night = true;
-            state.dayNight = false;
+
+        nightToggle: (state) => {
+            state.night = !state.night;
         },
-        nightOff: (state) => {
-            state.night = false;
+        topographyToggle: (state) => {
+            state.flattern = !state.flattern;
         },
-        flattern: (state) => {
-            state.flattern = true;
+        shadowToggle: (state) => {
+            state.shadows = !state.shadows;
         },
-        raise: (state) => {
-            state.flattern = false;
+        terrainToggle: (state) => {
+            state.terrain = !state.terrain;
         },
-        addShadows: (state) => {
-            state.shadows = true;
-        },
-        removeShadows: (state) => {
-            state.shadows = false;
-        },
-        addTerrain: (state) => {
-            state.terrain = true;
-        },
-        removeTerrain: (state) => {
-            state.terrain = false;
+
+        lightToggle: (state) => {
+            state.lights = !state.lights;
         },
     },
 });
 
-export const { setBasic, setNone, reset, dayNightOn, dayNightOff, nightOn, nightOff, flattern, raise, addShadows, removeShadows, addTerrain, removeTerrain } = settingsSlice.actions;
+export const { setNone, reset, dayNightOn, dayNightOff, nightToggle, topographyToggle, shadowToggle, terrainToggle, lightToggle } = settingsSlice.actions;
 
 export default settingsSlice.reducer;
