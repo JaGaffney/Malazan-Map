@@ -1,11 +1,12 @@
 import React from 'react'
 
 import { HiX } from "react-icons/hi";
+import { IPanel } from './panel.inteface';
 
-interface ITitle {
+interface ITitle extends IPanel {
     nameColor?: string;
     name: string;
-    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
+
 }
 export default function Title({ nameColor, name, onCloseHandler }: ITitle) {
     return (

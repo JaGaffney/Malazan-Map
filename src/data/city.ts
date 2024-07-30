@@ -73,14 +73,14 @@ const cityData: ICityData[] = [
         introduction: 3,
         type: 4,
     },
+    // {
+    //     name: "Tesem Temple",
+    //     loc: [231.0, 15, 34.0],
+    //     introduction: 2,
+    //     type: 4,
+    // },
     {
-        name: "Tesem Temple",
-        loc: [231.0, 15, 34.0],
-        introduction: 2,
-        type: 4,
-    },
-    {
-        name: "Black Coral",
+        name: "Coral",
         loc: [310.0, 15, 62.0],
         introduction: 3,
         type: 2,

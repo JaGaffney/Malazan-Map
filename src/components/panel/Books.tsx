@@ -9,6 +9,7 @@ import { bookColor, seriesColor } from '../utils/color'
 import books from "../../data/books"
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Title from './Title';
+import { IPanel } from './panel.inteface';
 
 interface IBook {
     id: number;
@@ -34,10 +35,7 @@ const Book = ({ id, year, name, author, series, book }: IBook) => {
     )
 }
 
-interface IBooks {
-    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
-}
-export default function Books({ onCloseHandler }: IBooks) {
+export default function Books({ onCloseHandler }: IPanel) {
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 

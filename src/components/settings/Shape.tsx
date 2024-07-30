@@ -8,11 +8,8 @@ import {
     nightOff, flattern, raise, addShadows, removeShadows, addTerrain, removeTerrain
 } from "../../state/features/settings"
 
-interface IShape {
-    timeline: boolean
-    onTimelineHandler: React.Dispatch<React.SetStateAction<boolean>>;
-}
-export default function Shape({ timeline, onTimelineHandler }: IShape) {
+
+export default function Shape() {
     const dayNightData = useSelector((state: any) => state.settings.dayNight)
     const nightData = useSelector((state: any) => state.settings.night)
     const flatternData = useSelector((state: any) => state.settings.flattern)
@@ -23,12 +20,7 @@ export default function Shape({ timeline, onTimelineHandler }: IShape) {
     return (
         <div className="panel__item">
             <div className="panel__item-container">
-                <h5>Options</h5>
-
-                <div className="panel__item-container-info" onClick={() => onTimelineHandler(!timeline)}>
-                    <span>Timeline</span>
-                    <span>{!timeline ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-                </div>
+                <h5>Map</h5>
 
                 <div className="panel__item-container-info" onClick={() => dispatch(dayNightData ? dayNightOff() : dayNightOn())}>
                     <span>Day/Night Cycle</span>

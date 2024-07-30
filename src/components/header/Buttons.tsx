@@ -1,4 +1,4 @@
-import { HiMap, HiFlag, HiBookOpen, HiUsers, HiCog } from 'react-icons/hi'
+import { HiFlag, HiBookOpen, HiUsers, HiCog, HiOutlineInformationCircle } from 'react-icons/hi'
 import { HiOutlineMapPin } from "react-icons/hi2";
 
 interface IButton {
@@ -25,14 +25,14 @@ interface IButtons {
     places: boolean;
     characters: boolean;
     history: boolean;
-    worldMap: boolean;
     settings: boolean;
+    info: boolean;
     onBooksHandler: React.Dispatch<React.SetStateAction<boolean>>
     onPlacesHandler: React.Dispatch<React.SetStateAction<boolean>>;
     onCharactersHandler: React.Dispatch<React.SetStateAction<boolean>>;
     onHistoryHandler: React.Dispatch<React.SetStateAction<boolean>>;
-    onWorldMapHandler: React.Dispatch<React.SetStateAction<boolean>>;
     onSettingsHandler: React.Dispatch<React.SetStateAction<boolean>>;
+    onInfoHandler: React.Dispatch<React.SetStateAction<boolean>>;
 
 }
 const Buttons = (props: IButtons) => {
@@ -42,7 +42,6 @@ const Buttons = (props: IButtons) => {
             <Button name={props.places} displayName={"Places"} icon={<HiFlag />} onPressHandler={props.onPlacesHandler} onSettingsHandler={props.onSettingsHandler} />
             <Button name={props.characters} displayName={"Characters"} icon={<HiUsers />} onPressHandler={props.onCharactersHandler} onSettingsHandler={props.onSettingsHandler} />
             <Button name={props.history} displayName={"Events"} icon={<HiOutlineMapPin />} onPressHandler={props.onHistoryHandler} onSettingsHandler={props.onSettingsHandler} />
-            <Button name={props.worldMap} displayName={"mini-Map"} icon={<HiMap />} onPressHandler={props.onWorldMapHandler} onSettingsHandler={props.onSettingsHandler} />
 
             <button className={`buttons__item ${props.settings ? "buttons__item-active" : ""}`} onClick={() => {
                 props.onSettingsHandler(!props.settings)
@@ -53,6 +52,9 @@ const Buttons = (props: IButtons) => {
                 <HiCog />
                 <span>Settings</span>
             </button>
+
+            <Button name={props.info} displayName={"Info"} icon={<HiOutlineInformationCircle />} onPressHandler={props.onInfoHandler} onSettingsHandler={props.onSettingsHandler} />
+
 
         </div>
     )

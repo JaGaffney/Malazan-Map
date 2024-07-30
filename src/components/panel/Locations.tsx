@@ -9,11 +9,9 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 import Draggable from 'react-draggable';
 import Title from './Title';
+import { IPanel } from './panel.inteface';
 
-interface ILocations {
-    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
-}
-export default function Locations({ onCloseHandler }: ILocations) {
+export default function Locations({ onCloseHandler }: IPanel) {
 
     const activeCity = useSelector((state: any) => state.filter.activeCity)
     const areas = useSelector((state: any) => state.filter.areas)

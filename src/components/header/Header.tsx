@@ -13,15 +13,17 @@ import Buttons from './Buttons'
 import { updateSearch } from "../../state/features/engine"
 import Description from '../panel/Description';
 import Timeline from '../timeline/Timeline';
+import Info from '../panel/Info';
 
 export default function Header() {
     const [books, setBooks] = useState<boolean>(false)
     const [places, setPlaces] = useState<boolean>(false)
     const [characters, setCharacters] = useState<boolean>(false)
-    const [worldMap, setWorldMap] = useState<boolean>(true)
+    const [worldMap, setWorldMap] = useState<boolean>(false)
     const [settings, setSettings] = useState<boolean>(false)
     const [timeline, setTimeline] = useState<boolean>(true)
     const [history, setHistory] = useState<boolean>(false)
+    const [info, setInfo] = useState<boolean>(false)
 
     const search = useSelector((state: any) => state.filter.search)
 
@@ -46,22 +48,27 @@ export default function Header() {
                 <Buttons books={books} onBooksHandler={setBooks}
                     places={places} onPlacesHandler={setPlaces}
                     characters={characters} onCharactersHandler={setCharacters}
-                    worldMap={worldMap} onWorldMapHandler={setWorldMap}
                     settings={settings} onSettingsHandler={setSettings}
                     history={history} onHistoryHandler={setHistory}
+                    info={info} onInfoHandler={setInfo}
                 />
             </div>
 
             {books && <Books onCloseHandler={setBooks} />}
             {places && <Locations onCloseHandler={setPlaces} />}
             {characters && <Characters onCloseHandler={setCharacters} />}
-
-            {worldMap && <WorldMap />}
-            {settings && <Settings onCloseHandler={setSettings} timeline={timeline} onTimelineHandler={setTimeline} />}
             {history && <History onCloseHandler={setHistory} />}
+            {info && <Info onCloseHandler={setInfo} />}
+
+
+            {settings && <Settings onCloseHandler={setSettings} timeline={timeline} onTimelineHandler={setTimeline} worldMap={worldMap} onMapHandler={setWorldMap} />}
+            {worldMap && <WorldMap />}
+            {timeline && <Timeline />}
+
+
             {activeID !== "" && <Description />}
 
-            {timeline && <Timeline />}
+
         </>
     )
 }

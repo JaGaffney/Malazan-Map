@@ -11,11 +11,10 @@ import { bookColor } from '../utils/color'
 
 import { eventIcons } from "../../data/icons";
 import Title from './Title';
+import { IPanel } from './panel.inteface';
 
-interface ICharacters {
-    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
-}
-export default function Characters({ onCloseHandler }: ICharacters) {
+
+export default function Characters({ onCloseHandler }: IPanel) {
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()

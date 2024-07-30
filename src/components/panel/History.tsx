@@ -11,6 +11,7 @@ import timelineData, { ITimelinePoint } from '../../data/timelineData';
 import { validFilterQueryArray } from '../utils/helpers';
 import characters from '../../data/characters';
 import { filterArray } from '../utils/filter';
+import { IPanel } from './panel.inteface';
 
 let getNumberWithSuffix = (item: string): any => {
     const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
@@ -24,10 +25,7 @@ let getNumberWithSuffix = (item: string): any => {
     return suffixMap[plurals.select(item)]
 }
 
-interface IHistory {
-    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
-}
-export default function History({ onCloseHandler }: IHistory) {
+export default function History({ onCloseHandler }: IPanel) {
     const dispatch = useDispatch()
 
     const [inactiveDates, setInactiveDates] = useState<Array<any>>([])
