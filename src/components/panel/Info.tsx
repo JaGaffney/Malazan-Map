@@ -57,7 +57,6 @@ export default function Info({ onCloseHandler }: IPanel) {
                                 <h6>Links</h6>
                                 <p>Feel free to get in touch with me. I am open to any feedback or help, especially for the timeline</p>
                                 <InfoItem name={"Map of the Fallen"} role={"Discord"} link={"https://discord.gg/xmwVBjQ6"} description={"Feel free to join the Discord server"} image={<FaDiscord />} />
-                                <InfoItem name={"github@jagaffney"} role={"github"} link={"https://github.com/JaGaffney"} description={""} image={<FaGithub />} />
 
                             </div>
                         </div>
