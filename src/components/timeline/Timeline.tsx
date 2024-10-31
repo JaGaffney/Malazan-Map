@@ -27,7 +27,7 @@ const Timeline = () => {
 
     return (
         <>
-            <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false}>
+            <ScrollContainer className="timeline__container" draggingClassName={"timeline__container-drag"} vertical={false} hideScrollbars={false}>
                 {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i: string, k: number) => {
                     const year: number = parseInt(i)
                     // early outs some of the dates as there is too much information in the timeline which makes it too confusing

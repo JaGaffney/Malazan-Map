@@ -132,7 +132,7 @@ export default function InstanceHexContainer() {
         const adjust: number = parseInt(i)
         const height: number = parseInt(Object.keys(world[i])[0])
         return (
-          <InstanceHex key={k} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(height)} />
+          <InstanceHex key={k} world={world} meshType={adjust} meshMaterial={calculateMesh(adjust)} meshGeometry={calculateGeometry(height)} />
         )
       })}
     </>

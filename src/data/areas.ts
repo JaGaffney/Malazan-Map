@@ -31,10 +31,10 @@ const AREAS: IAreas[] = [
         loc: [580.0, 15, 200.0],
         name: "Bael",
     },
-    // {
-    //     id: "genostel",
-    //     name: "Genostel",
-    // },
+    {
+        loc: [750.0, 15, 50.0],
+        name: "Genostel",
+    },
 ];
 
 export default AREAS;
