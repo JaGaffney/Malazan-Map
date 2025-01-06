@@ -1,33 +1,34 @@
 export const bookColor = (bookNumber: number): string => {
     switch (bookNumber) {
-        case 1: // "Gardens of the Moon"
-        case 27: // "Blood and Bone"
-            return "var(--teal700)";
-        case 2: // "Deadhouse Gates"
-        case 25: // "Stonewielder"
-        case 30: // "Deadhouse Landing"
-            return "var(--amber600)";
-        case 3: // "Memories of Ice"
-        case 24: // "Return of the Crimson Guard"
+        case 101: // "Gardens of the Moon"
+
+        case 102: // "Deadhouse Gates"
+
+        case 103: // "Memories of Ice"
+        case 104: // "House of Chains"
+
+        case 105: // "Midnight Tides"
+        case 106: // "The Bonehunters"
+        case 107: // "Reaper's Gale"
+        case 108: // "Toll the Hounds"
+        case 109: //  "Dust of Dreams"
+        case 110: // "The Crippled God"
+            return "var(--teal600)";
+
+        case 201: // "Night of Knives"
+        case 202: // "Return of the Crimson Guard"
+        case 203: // "Stonewielder"
+        case 204: // "Orb Sceptre Throne"
+        case 205: // "Blood and Bone"
+        case 206: // "Assail"
             return "var(--red700)";
-        case 4: // "House of Chains"
-        case 29: // "Dancer's Lament"
-            return "var(--blue600)";
-        case 5: // "Midnight Tides"
-            return "var(--red400)";
-        case 6: // "The Bonehunters"
-        case 28: // "Assail"
-            return "var(--gray500)";
-        case 7: // "Reaper's Gale"
-            return "var(--amber800)";
-        case 8: // "Toll the Hounds"
-        case 23: // "Night of Knives"
-            return "var(--green600)";
-        case 9: //  "Dust of Dreams"
-        case 26: // "Orb Sceptre Throne"
-            return "var(--violet700)";
-        case 10: // "The Crippled God"
-            return "var(--pink600)";
+
+        case 207: // "Dancer's Lament"
+        case 208: // "Kellanved's Reach"
+        case 209: // "Deadhouse Landing"
+        case 210: // "Forge of the High Mage"
+            return "var(--amber600)";
+
         default:
             return "white";
     }

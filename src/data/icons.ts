@@ -70,3 +70,52 @@ export const eventIcons = {
     tlanimass: TLANIMASS,
     old: OLD,
 };
+
+import MBOTF_01 from "../images/books/01-moon.svg";
+import MBOTF_02 from "../images/books/02-gate.svg";
+import MBOTF_03 from "../images/books/03-ice.svg";
+import MBOTF_04 from "../images/books/04-chain.svg";
+import MBOTF_05 from "../images/books/05-midnight.svg";
+import MBOTF_06 from "../images/books/06-bone.svg";
+import MBOTF_07 from "../images/books/07-reaper.svg";
+import MBOTF_08 from "../images/books/08-hound.svg";
+import MBOTF_09 from "../images/books/09-dust.svg";
+import MBOTF_10 from "../images/books/10-god.svg";
+
+import NOTME_01 from "../images/books/01-knight.svg";
+import NOTME_02 from "../images/books/02-return.svg";
+import NOTME_03 from "../images/books/03-stone.svg";
+import NOTME_04 from "../images/books/04-orb.svg";
+import NOTME_05 from "../images/books/05-blood.svg";
+import NOTME_06 from "../images/books/06-assail.svg";
+
+import PATH_01 from "../images/books/01-dancer.svg";
+import PATH_02 from "../images/books/02-deadhouse.svg";
+import PATH_03 from "../images/books/03-kellanved.svg";
+import PATH_04 from "../images/books/04-highmage.svg";
+
+export const bookIcons = {
+    defaultBookIcon: WARREN,
+    gardensOfTheMoon: MBOTF_01,
+    deadhouseGates: MBOTF_02,
+    memoriesOfIce: MBOTF_03,
+    houseOfChains: MBOTF_04,
+    midnightTides: MBOTF_05,
+    theBonehunters: MBOTF_06,
+    reapersGale: MBOTF_07,
+    tollTheHounds: MBOTF_08,
+    dustOfdreams: MBOTF_09,
+    theCrippledGod: MBOTF_10,
+
+    knightOfKnives: NOTME_01,
+    returnOfTheCrimsonGuard: NOTME_02,
+    stonewielder: NOTME_03,
+    orbSceptreThrone: NOTME_04,
+    bloodAndBone: NOTME_05,
+    assail: NOTME_06,
+
+    dancersLamnet: PATH_01,
+    deadhouseLanding: PATH_02,
+    kellanvedsReach: PATH_03,
+    forgeOfTheHighMage: PATH_04,
+};

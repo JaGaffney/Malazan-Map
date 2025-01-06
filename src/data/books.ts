@@ -1,273 +1,308 @@
+import { bookIcons } from "../data/icons";
+
+interface IBooks {
+    [key: number]: IBook;
+}
 interface IBook {
-    id: number;
     book: number;
+    icon: string;
     name: string;
     author: string;
     series: string;
     year: string;
 }
 
-const book: IBook[] = [
-    {
-        id: 1,
+const book: IBooks = {
+    101: {
         book: 1,
+        icon: bookIcons.gardensOfTheMoon,
         name: "Gardens of the Moon",
         author: "Steven Erikson",
         series: "Fallen",
         year: "1999",
     },
-    {
-        id: 2,
+    102: {
         book: 2,
+        icon: bookIcons.deadhouseGates,
         name: "Deadhouse Gates",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2000",
     },
-    {
-        id: 3,
+    103: {
         book: 3,
+        icon: bookIcons.memoriesOfIce,
         name: "Memories of Ice",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2001",
     },
-    {
-        id: 4,
+    104: {
         book: 4,
+        icon: bookIcons.houseOfChains,
         name: "House of Chains",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2002",
     },
-    {
-        id: 5,
+    105: {
         book: 5,
+        icon: bookIcons.midnightTides,
         name: "Midnight Tides",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2004",
     },
-    {
-        id: 6,
+    106: {
         book: 6,
+        icon: bookIcons.theBonehunters,
         name: "The Bonehunters",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2006",
     },
-    {
-        id: 7,
+    107: {
         book: 7,
+        icon: bookIcons.reapersGale,
         name: "Reaper's Gale",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2007",
     },
-    {
-        id: 8,
+    108: {
         book: 8,
+        icon: bookIcons.tollTheHounds,
         name: "Toll the Hounds",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2008",
     },
-    {
-        id: 9,
+    109: {
         book: 9,
+        icon: bookIcons.dustOfdreams,
         name: "Dust of Dreams",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2009",
     },
-    {
-        id: 10,
+    110: {
         book: 10,
+        icon: bookIcons.theCrippledGod,
         name: "The Crippled God",
         author: "Steven Erikson",
         series: "Fallen",
         year: "2011",
     },
-
-    {
-        id: 23,
+    201: {
         book: 1,
+        icon: bookIcons.knightOfKnives,
         name: "Night of Knives",
         author: "Ian C. Esslemont",
         series: "Novels",
         year: "2004",
     },
-    {
-        id: 24,
+    202: {
         book: 2,
+        icon: bookIcons.returnOfTheCrimsonGuard,
         name: "Return of the Crimson Guard",
         author: "Ian C. Esslemont",
         series: "Novels",
         year: "2008",
     },
-    {
-        id: 25,
+    203: {
         book: 3,
+        icon: bookIcons.stonewielder,
         name: "Stonewielder",
         author: "Ian C. Esslemont",
         series: "Novels",
         year: "2010",
     },
-    {
-        id: 26,
+    204: {
         book: 4,
+        icon: bookIcons.orbSceptreThrone,
         name: "Orb Sceptre Throne",
         author: "Ian C. Esslemont",
         series: "Novels",
         year: "2012",
     },
-    {
-        id: 27,
+    205: {
         book: 5,
+        icon: bookIcons.bloodAndBone,
         name: "Blood and Bone",
         author: "Ian C. Esslemont",
         series: "Novels",
         year: "2012",
     },
-    {
-        id: 28,
+    206: {
         book: 6,
+        icon: bookIcons.assail,
         name: "Assail",
         author: "Ian C. Esslemont",
         series: "Novels",
         year: "2014",
     },
 
-    {
-        id: 18,
+    111: {
         book: 1,
+        icon: bookIcons.defaultBookIcon,
         name: "Forge of Darkness",
         author: "Steven Erikson",
         series: "Kharkanas",
         year: "2012",
     },
-    {
-        id: 19,
+    112: {
         book: 2,
+        icon: bookIcons.defaultBookIcon,
         name: "Fall of Light",
         author: "Steven Erikson",
         series: "Kharkanas",
         year: "2016",
     },
-    {
-        id: 20,
+    113: {
         book: 3,
+        icon: bookIcons.defaultBookIcon,
         name: "Walk in Shadow",
         author: "Steven Erikson",
         series: "Kharkanas",
         year: "TBA",
     },
-    {
-        id: 21,
+    114: {
         book: 1,
+        icon: bookIcons.defaultBookIcon,
         name: "The God is Not Willing",
         author: "Steven Erikson",
         series: "Witness",
         year: "2021",
     },
-    {
-        id: 22,
+    115: {
         book: 2,
-        name: "Walk in Shadow",
+        icon: bookIcons.defaultBookIcon,
+        name: "Book 2",
         author: "Steven Erikson",
         series: "Witness",
         year: "TBA",
     },
-
-    {
-        id: 29,
+    116: {
+        book: 3,
+        icon: bookIcons.defaultBookIcon,
+        name: "Book 3",
+        author: "Steven Erikson",
+        series: "Witness",
+        year: "TBA",
+    },
+    117: {
+        book: 4,
+        icon: bookIcons.defaultBookIcon,
+        name: "Book 4",
+        author: "Steven Erikson",
+        series: "Witness",
+        year: "TBA",
+    },
+    207: {
         book: 1,
+        icon: bookIcons.dancersLamnet,
         name: "Dancer's Lament",
         author: "Ian C. Esslemont",
         series: "Path",
         year: "2016",
     },
-    {
-        id: 30,
+    208: {
         book: 2,
+        icon: bookIcons.deadhouseLanding,
         name: "Deadhouse Landing",
         author: "Ian C. Esslemont",
         series: "Path",
         year: "2017",
     },
-    {
-        id: 31,
+    209: {
         book: 3,
+        icon: bookIcons.kellanvedsReach,
         name: "Kellanved's Reach",
         author: "Ian C. Esslemont",
         series: "Path",
         year: "2019",
     },
-    {
-        id: 32,
+    210: {
         book: 4,
+        icon: bookIcons.forgeOfTheHighMage,
         name: "Forge of the High Mage",
         author: "Ian C. Esslemont",
         series: "Path",
         year: "2023",
     },
+    211: {
+        book: 5,
+        icon: bookIcons.defaultBookIcon,
+        name: "Book 5",
+        author: "Ian C. Esslemont",
+        series: "Path",
+        year: "2025",
+    },
+    212: {
+        book: 6,
+        icon: bookIcons.defaultBookIcon,
+        name: "Book 6",
+        author: "Ian C. Esslemont",
+        series: "Path",
+        year: "TBA",
+    },
 
-    {
-        id: 11,
+    118: {
         book: 1,
+        icon: bookIcons.defaultBookIcon,
         name: "Blood Follows",
         author: "Steven Erikson",
         series: "Tales",
         year: "2002",
     },
-    {
-        id: 12,
+    119: {
         book: 2,
+        icon: bookIcons.defaultBookIcon,
         name: "The Healthy Dead",
         author: "Steven Erikson",
         series: "Tales",
         year: "2004",
     },
-    {
-        id: 13,
+    120: {
         book: 3,
+        icon: bookIcons.defaultBookIcon,
         name: "The Lees of Laughter's End",
         author: "Steven Erikson",
         series: "Tales",
         year: "2007",
     },
-    {
-        id: 14,
+    121: {
         book: 4,
+        icon: bookIcons.defaultBookIcon,
         name: "Crack'd Pot Trail",
         author: "Steven Erikson",
         series: "Tales",
         year: "2009",
     },
-    {
-        id: 15,
+    122: {
         book: 5,
+        icon: bookIcons.defaultBookIcon,
         name: "The Wurms of Blearmouth",
         author: "Steven Erikson",
         series: "Tales",
         year: "2012",
     },
-    {
-        id: 16,
+    123: {
         book: 6,
+        icon: bookIcons.defaultBookIcon,
         name: "The Fiends of Nightmaria",
         author: "Steven Erikson",
         series: "Tales",
         year: "2016",
     },
-    {
-        id: 17,
+    124: {
         book: 7,
+        icon: bookIcons.defaultBookIcon,
         name: "Upon a Dark of Evil Overlords",
         author: "Steven Erikson",
         series: "Tales",
         year: "2021",
     },
-];
+};
 
 export default book;

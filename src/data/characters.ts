@@ -501,6 +501,12 @@ const characters: ICharacters = {
         intro: "7",
         role: "",
     },
+    83: {
+        name: "Tayschrenn",
+        race: "human",
+        intro: "1",
+        role: "High Mage",
+    },
 };
 
 export default characters;

@@ -41,8 +41,8 @@ export default function Books({ onCloseHandler }: IPanel) {
 
     const showAllBooks = () => {
         dispatch(resetActiveBooks())
-        books.forEach((i, k) => {
-            dispatch(updateActiveBooks(k))
+        Object.keys(books).forEach((i, k) => {
+            dispatch(updateActiveBooks(parseInt(i)))
         })
     }
 
@@ -80,15 +80,16 @@ export default function Books({ onCloseHandler }: IPanel) {
 
                                 <tbody>
                                     {Object.keys(books).map((i: string, k: number) => {
-                                        const book = parseInt(i)
+                                        const id = parseInt(i)
+
                                         return (
                                             <Book key={k}
-                                                id={books[book].id}
-                                                book={books[book].book}
-                                                name={books[book].name}
-                                                year={books[book].year}
-                                                series={books[book].series}
-                                                author={books[book].author}
+                                                id={id}
+                                                book={books[id].book}
+                                                name={books[id].name}
+                                                year={books[id].year}
+                                                series={books[id].series}
+                                                author={books[id].author}
                                             />
                                         )
 

@@ -5,6 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import { update, updateActiveData } from "../../state/features/engine"
 import { bookColor } from '../utils/color';
 import { ITimelinePoint } from '../../data/timelineData';
+import book from "../../data/books"
 
 
 interface ITimeEvent {
@@ -34,7 +35,7 @@ export const TimeEvent = ({ filter, data }: ITimeEvent) => {
                 ${activeID === data.id ? "timeline__event-item-icon-active" : ""} ${filter}`}
                 style={{ backgroundColor: bookColor(data.book) }}
             >
-                <img src={filter === "" && data.icon} />
+                <img src={filter === "" && book[data.book].icon} />
             </div>
             <ReactTooltip effect="solid" border={true} borderColor='white' />
         </div>

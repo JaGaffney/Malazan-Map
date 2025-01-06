@@ -5,7 +5,8 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { bookColor } from '../utils/color';
 import characters from "../../data/characters"
-import AREAS from "../../data/areas"
+import book from "../../data/books"
+
 import { resetActiveData, updateActiveCharacter } from "../../state/features/engine"
 import Title from './Title';
 
@@ -28,7 +29,7 @@ export default function Description() {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
 
-                            <Title name={`(${activeData.book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
+                            <Title name={`(${book[activeData.book].book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
 
                             <div className="panel__item-container-info description-large">
                                 {activeData.description.map((i: string, k: number) => {
