@@ -65,33 +65,7 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        cursor: pointer;
         margin: 0.2rem 1rem 0.5rem 0;
-        &-icon {
-            background: var(--gray900);
-            width: 3rem;
-            height: 3rem;
-            box-sizing: border-box;
-            -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-            -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-            clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-            &:hover {
-                transform: translateY(-2px);
-            }
-            &-active {
-                transform: translateY(-10px) !important;
-                background: var(--gray800) !important;
-                clip-path: circle(62.9% at 50% 50%);
-            }
-            &-sm {
-                width: 2rem;
-                height: 2rem;
-                z-index: 1;
-            }
-        }
-        &-filter {
-            background: var(--gray900) !important;
-        }
     }
 
     &-history {
@@ -141,4 +115,123 @@
 
 .indiana-dragging {
     cursor: grab;
+}
+
+.book {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 3.6rem;
+    cursor: pointer;
+    backface-visibility: visible;
+}
+
+.front,
+.back,
+.page1,
+.page2,
+.page3,
+.page4,
+.page5,
+.page6 {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 3rem;
+    height: 3.5rem;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transition: transform 0.5s ease-in-out, box-shadow 0.35s ease-in-out, margin 0.35s ease-in-out;
+}
+
+.front {
+    display: grid;
+    place-items: center;
+    color: white;
+}
+.front span {
+    font-size: 250%;
+    font-weight: 900;
+}
+
+.front,
+.back,
+.page1,
+.page3,
+.page5,
+.page2,
+.page4,
+.page6 {
+    border-bottom-right-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    outline: solid 1px black;
+}
+
+.front,
+.back {
+    outline: solid 2px black;
+}
+
+.page1,
+.page2 {
+    background: #ffffff;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+}
+.page2 {
+}
+
+.page3 {
+    background: #f3f3f3;
+}
+.page4 {
+    background: #f1f1f1;
+}
+
+.page5,
+.page6 {
+    background: #f6f6f6;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.book:hover .front {
+    transform: rotateY(-160deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+
+.book:hover .page1 {
+    margin: 0;
+    transform: rotateY(-150deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+
+.book:hover .page2 {
+    margin: 0;
+    transform: rotateY(-30deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+
+.book:hover .page3 {
+    transform: rotateY(-140deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+
+.book:hover .page4 {
+    transform: rotateY(-40deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+
+.book:hover .page5 {
+    transform: rotateY(-130deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+
+.book:hover .page6 {
+    transform: rotateY(-50deg) scale(1.1);
+    box-shadow: 0 3em 3em 0 rgba(0, 0, 0, 0.5);
+}
+
+.book:hover .back {
+    transform: rotateY(-20deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
 }

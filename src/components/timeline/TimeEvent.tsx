@@ -6,6 +6,7 @@ import { update, updateActiveData } from "../../state/features/engine"
 import { bookColor } from '../utils/color';
 import { ITimelinePoint } from '../../data/timelineData';
 import book from "../../data/books"
+import TimelineBook from './TimelineBook';
 
 
 interface ITimeEvent {
@@ -15,7 +16,6 @@ interface ITimeEvent {
 export const TimeEvent = ({ filter, data }: ITimeEvent) => {
     const activeID = useSelector((state: any) => state.filter.activeData.id)
     const dispatch = useDispatch()
-
     return (
         <div className="timeline__event-item" key={data.id} onClick={() => {
             if (filter === "") {
@@ -30,14 +30,22 @@ export const TimeEvent = ({ filter, data }: ITimeEvent) => {
         }}
             data-tip={filter === "" ? data.name : null}
         >
-            <div className={`
+            {filter === "" ? (
+                <>
+                    <div className={`
                 timeline__event-item-icon 
                 ${activeID === data.id ? "timeline__event-item-icon-active" : ""} ${filter}`}
-                style={{ backgroundColor: bookColor(data.book) }}
-            >
-                <img src={filter === "" && book[data.book].icon} />
-            </div>
-            <ReactTooltip effect="solid" border={true} borderColor='white' />
+                        style={{ backgroundColor: bookColor(data.book) }}
+                    >
+
+                        <TimelineBook bookData={data.book} eventData={data} />
+                    </div>
+                    <ReactTooltip effect="solid" border={true} borderColor='white' />
+                </>
+            ) : <div className="book">
+                <div className="back" style={{ backgroundColor: "var(--blue900)" }}></div>
+                <div className="front" style={{ backgroundColor: "var(--blue900)" }}></div>
+            </div>}
         </div>
     )
 }

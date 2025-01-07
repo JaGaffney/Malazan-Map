@@ -16,11 +16,12 @@ const Timeline = () => {
     const createCharacterArray = (charID: Array<number>) => {
         const charsName: Array<string | null> = []
 
-        if (charID.length > 0) {
-            charID.forEach(id => {
-                charsName.push(characters[id].name)
-            })
-        }
+        // if (charID.length > 0) {
+        //     charID.forEach(id => {
+        //         console.log(characters[id].name[0])
+        //         charsName.push(characters[id].name[0])
+        //     })
+        // }
 
         return charsName.toLocaleString()
     }
