@@ -1,5 +1,8 @@
 export const bookColor = (bookNumber: number): string => {
     switch (bookNumber) {
+        case 100:
+            return "var(--gray600)";
+
         case 101: // "Gardens of the Moon"
         case 102: // "Deadhouse Gates"
         case 103: // "Memories of Ice"

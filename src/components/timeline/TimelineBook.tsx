@@ -8,15 +8,15 @@ function TimelineBook({ bookData, eventData }: any) {
         <div className="book">
             <div className="back" style={{ backgroundColor: bookColor(bookData) }}></div>
 
-            <div className="page6" style={{ maskImage: `url(${eventData.icon})`, backgroundColor: "black" }}></div>
-            <div className="page5" style={{ maskImage: `url(${book[bookData].icon})`, backgroundColor: "black" }}></div>
+            <img className="page6" src={eventData.icon} alt="" />
+            <img className="page5" src={book[bookData].icon} alt="" />
 
             <div className="page4"></div>
             <div className="page3"></div>
             <div className="page2"></div>
             <div className="page1"></div>
 
-            <div className="front" style={{ backgroundColor: bookColor(bookData) }}><span>{book[bookData].book}</span></div>
+            <div className="front" style={{ backgroundColor: bookColor(bookData) }}><span>{book[bookData].book === 0 ? "H" : book[bookData].book}</span></div>
         </div>
     )
 }
