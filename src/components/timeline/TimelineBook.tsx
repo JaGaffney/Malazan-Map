@@ -1,6 +1,7 @@
 import React from 'react'
 import { bookColor } from '../utils/color'
 import book from "../../data/books"
+import { ReactSVG } from 'react-svg'
 
 
 function TimelineBook({ bookData, eventData }: any) {
@@ -8,8 +9,8 @@ function TimelineBook({ bookData, eventData }: any) {
         <div className="book">
             <div className="back" style={{ backgroundColor: bookColor(bookData) }}></div>
 
-            <img className="page6" src={eventData.icon} alt="" />
-            <img className="page5" src={book[bookData].icon} alt="" />
+            <ReactSVG className="page6" src={eventData.icon} />
+            <ReactSVG className="page5" src={book[bookData].icon} />
 
             <div className="page4"></div>
             <div className="page3"></div>

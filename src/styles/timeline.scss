@@ -187,7 +187,17 @@
 .page5,
 .page6 {
     background: #f6f6f6;
+    svg {
+        max-width: 3rem;
+        max-height: 3.5rem;
+        g {
+            path {
+                fill: black;
+            }
+        }
+    }
 }
+
 .book {
     transition: transform 0.5s ease-in-out;
     &:hover,
