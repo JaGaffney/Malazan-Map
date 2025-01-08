@@ -36,14 +36,14 @@ export default function History({ onCloseHandler }: IPanel) {
     const search = useSelector((state: any) => state.filter.search)
 
     const createCharacterArray = (charID: Array<number>) => {
-        const charsName: Array<string | null> = []
-
-        if (charID.length > 0) {
-            charID.forEach(id => {
-                charsName.push(characters[id].name)
-            })
-        }
-        return charsName.toLocaleString()
+        // const charsName: Array<string | null> = []
+        // console.log(characters)
+        // if (charID.length > 0) {
+        //     charID.forEach(id => {
+        //         charsName.push(characters[id].name[0])
+        //     })
+        // }
+        // return charsName.toLocaleString()
     }
 
     const onDateHandler = (date: number) => {
@@ -108,11 +108,6 @@ export default function History({ onCloseHandler }: IPanel) {
                                                                     }
                                                                 }}>
 
-                                                                <div className={`timeline__event-item-icon timeline__event-item-icon-sm ${filter}`}
-                                                                    style={{ backgroundColor: bookColor(ii.book) }}
-                                                                >
-                                                                    <img src={filter === "" && ii.icon} alt={ii.name} />
-                                                                </div>
 
                                                                 <span>{ii.name}</span>
                                                             </div>

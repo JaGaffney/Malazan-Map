@@ -1,12 +1,9 @@
 export const bookColor = (bookNumber: number): string => {
     switch (bookNumber) {
         case 101: // "Gardens of the Moon"
-
         case 102: // "Deadhouse Gates"
-
         case 103: // "Memories of Ice"
         case 104: // "House of Chains"
-
         case 105: // "Midnight Tides"
         case 106: // "The Bonehunters"
         case 107: // "Reaper's Gale"
@@ -21,13 +18,35 @@ export const bookColor = (bookNumber: number): string => {
         case 204: // "Orb Sceptre Throne"
         case 205: // "Blood and Bone"
         case 206: // "Assail"
-            return "var(--red700)";
+            return "var(--red600)";
 
         case 207: // "Dancer's Lament"
         case 208: // "Kellanved's Reach"
         case 209: // "Deadhouse Landing"
         case 210: // "Forge of the High Mage"
+        case 211: // "Book 5"
+        case 212: // "Book 6"
             return "var(--amber600)";
+
+        case 111: // "Forge of Darkness"
+        case 112: // "Fall of Light"
+        case 113: // "Walk in Shadow"
+            return "var(--violet500)";
+
+        case 114: // "The God is Not Willing"
+        case 115: // "Book 2"
+        case 116: // "Book 3"
+        case 117: // "Book 4"
+            return "var(--blue500)";
+
+        case 118: // "Blood Follows"
+        case 119: // "The Healthy Dead"
+        case 120: // "The Lees of Laughter's End"
+        case 121: // "Crack'd Pot Trail"
+        case 122: // "The Wurms of Blearmouth"
+        case 123: // "The Fiends of Nightmaria"
+        case 124: // "Upon a Dark of Evil Overlords"
+            return "var(--pink400)";
 
         default:
             return "white";

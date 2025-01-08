@@ -27,10 +27,10 @@ const Book = ({ id, year, name, author, series, book }: IBook) => {
 
     return (
         <tr className="panel__item-container-info  panel__item-container-info-inactive " style={{ color: activeBookColor, display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveBooks(id))}>
-            <td>{year}</td>
+            <td>{year.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
             <td>{name}</td>
             <td style={{ color: seriesColor(author) }}>{series}</td>
-            <td style={{ textAlign: "center" }}>{book}</td>
+            <td style={{ textAlign: "center" }}>{id != 100 && book}</td>
         </tr>
     )
 }
@@ -71,7 +71,7 @@ export default function Books({ onCloseHandler }: IPanel) {
                             <table className="panel__item-table">
                                 <thead>
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                        <th>Year</th>
+                                        <th>Year (bs)</th>
                                         <th>Name</th>
                                         <th>Series</th>
                                         <th>Book</th>

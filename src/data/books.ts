@@ -9,17 +9,28 @@ interface IBook {
     name: string;
     author: string;
     series: string;
+    publication: string;
     year: string;
 }
 
 const book: IBooks = {
+    100: {
+        book: 0,
+        icon: bookIcons.historyIcon,
+        name: "History",
+        author: "",
+        series: "",
+        publication: "",
+        year: "",
+    },
     101: {
         book: 1,
         icon: bookIcons.gardensOfTheMoon,
         name: "Gardens of the Moon",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "1999",
+        publication: "1999",
+        year: "1154",
     },
     102: {
         book: 2,
@@ -27,7 +38,8 @@ const book: IBooks = {
         name: "Deadhouse Gates",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2000",
+        publication: "2000",
+        year: "1163",
     },
     103: {
         book: 3,
@@ -35,7 +47,8 @@ const book: IBooks = {
         name: "Memories of Ice",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2001",
+        publication: "2001",
+        year: "1164",
     },
     104: {
         book: 4,
@@ -43,7 +56,8 @@ const book: IBooks = {
         name: "House of Chains",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2002",
+        publication: "2002",
+        year: "1154",
     },
     105: {
         book: 5,
@@ -51,7 +65,8 @@ const book: IBooks = {
         name: "Midnight Tides",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2004",
+        publication: "2004",
+        year: "1159",
     },
     106: {
         book: 6,
@@ -59,7 +74,8 @@ const book: IBooks = {
         name: "The Bonehunters",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2006",
+        publication: "2006",
+        year: "1164",
     },
     107: {
         book: 7,
@@ -67,7 +83,8 @@ const book: IBooks = {
         name: "Reaper's Gale",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2007",
+        publication: "2007",
+        year: "1166",
     },
     108: {
         book: 8,
@@ -75,7 +92,8 @@ const book: IBooks = {
         name: "Toll the Hounds",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2008",
+        publication: "2008",
+        year: "1168",
     },
     109: {
         book: 9,
@@ -83,7 +101,8 @@ const book: IBooks = {
         name: "Dust of Dreams",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2009",
+        publication: "2009",
+        year: "1167",
     },
     110: {
         book: 10,
@@ -91,7 +110,8 @@ const book: IBooks = {
         name: "The Crippled God",
         author: "Steven Erikson",
         series: "Fallen",
-        year: "2011",
+        publication: "2011",
+        year: "1168",
     },
     201: {
         book: 1,
@@ -99,7 +119,8 @@ const book: IBooks = {
         name: "Night of Knives",
         author: "Ian C. Esslemont",
         series: "Novels",
-        year: "2004",
+        publication: "2004",
+        year: "1154",
     },
     202: {
         book: 2,
@@ -107,7 +128,8 @@ const book: IBooks = {
         name: "Return of the Crimson Guard",
         author: "Ian C. Esslemont",
         series: "Novels",
-        year: "2008",
+        publication: "2008",
+        year: "1166",
     },
     203: {
         book: 3,
@@ -115,7 +137,8 @@ const book: IBooks = {
         name: "Stonewielder",
         author: "Ian C. Esslemont",
         series: "Novels",
-        year: "2010",
+        publication: "2010",
+        year: "",
     },
     204: {
         book: 4,
@@ -123,7 +146,8 @@ const book: IBooks = {
         name: "Orb Sceptre Throne",
         author: "Ian C. Esslemont",
         series: "Novels",
-        year: "2012",
+        publication: "2012",
+        year: "",
     },
     205: {
         book: 5,
@@ -131,7 +155,8 @@ const book: IBooks = {
         name: "Blood and Bone",
         author: "Ian C. Esslemont",
         series: "Novels",
-        year: "2012",
+        publication: "2012",
+        year: "",
     },
     206: {
         book: 6,
@@ -139,7 +164,8 @@ const book: IBooks = {
         name: "Assail",
         author: "Ian C. Esslemont",
         series: "Novels",
-        year: "2014",
+        publication: "2014",
+        year: "",
     },
 
     111: {
@@ -148,7 +174,8 @@ const book: IBooks = {
         name: "Forge of Darkness",
         author: "Steven Erikson",
         series: "Kharkanas",
-        year: "2012",
+        publication: "2012",
+        year: "-300000",
     },
     112: {
         book: 2,
@@ -156,7 +183,8 @@ const book: IBooks = {
         name: "Fall of Light",
         author: "Steven Erikson",
         series: "Kharkanas",
-        year: "2016",
+        publication: "2016",
+        year: "-300000",
     },
     113: {
         book: 3,
@@ -164,7 +192,8 @@ const book: IBooks = {
         name: "Walk in Shadow",
         author: "Steven Erikson",
         series: "Kharkanas",
-        year: "TBA",
+        publication: "TBA",
+        year: "-300000",
     },
     114: {
         book: 1,
@@ -172,7 +201,8 @@ const book: IBooks = {
         name: "The God is Not Willing",
         author: "Steven Erikson",
         series: "Witness",
-        year: "2021",
+        publication: "2021",
+        year: "1178",
     },
     115: {
         book: 2,
@@ -180,7 +210,8 @@ const book: IBooks = {
         name: "Book 2",
         author: "Steven Erikson",
         series: "Witness",
-        year: "TBA",
+        publication: "TBA",
+        year: "",
     },
     116: {
         book: 3,
@@ -188,7 +219,8 @@ const book: IBooks = {
         name: "Book 3",
         author: "Steven Erikson",
         series: "Witness",
-        year: "TBA",
+        publication: "TBA",
+        year: "",
     },
     117: {
         book: 4,
@@ -196,7 +228,8 @@ const book: IBooks = {
         name: "Book 4",
         author: "Steven Erikson",
         series: "Witness",
-        year: "TBA",
+        publication: "TBA",
+        year: "",
     },
     207: {
         book: 1,
@@ -204,7 +237,8 @@ const book: IBooks = {
         name: "Dancer's Lament",
         author: "Ian C. Esslemont",
         series: "Path",
-        year: "2016",
+        publication: "2016",
+        year: "1057",
     },
     208: {
         book: 2,
@@ -212,7 +246,8 @@ const book: IBooks = {
         name: "Deadhouse Landing",
         author: "Ian C. Esslemont",
         series: "Path",
-        year: "2017",
+        publication: "2017",
+        year: "1058",
     },
     209: {
         book: 3,
@@ -220,7 +255,8 @@ const book: IBooks = {
         name: "Kellanved's Reach",
         author: "Ian C. Esslemont",
         series: "Path",
-        year: "2019",
+        publication: "2019",
+        year: "1060",
     },
     210: {
         book: 4,
@@ -228,7 +264,8 @@ const book: IBooks = {
         name: "Forge of the High Mage",
         author: "Ian C. Esslemont",
         series: "Path",
-        year: "2023",
+        publication: "2023",
+        year: "1090",
     },
     211: {
         book: 5,
@@ -236,7 +273,8 @@ const book: IBooks = {
         name: "Book 5",
         author: "Ian C. Esslemont",
         series: "Path",
-        year: "2025",
+        publication: "2025",
+        year: "",
     },
     212: {
         book: 6,
@@ -244,7 +282,8 @@ const book: IBooks = {
         name: "Book 6",
         author: "Ian C. Esslemont",
         series: "Path",
-        year: "TBA",
+        publication: "TBA",
+        year: "",
     },
 
     118: {
@@ -253,7 +292,8 @@ const book: IBooks = {
         name: "Blood Follows",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2002",
+        publication: "2002",
+        year: "1163-",
     },
     119: {
         book: 2,
@@ -261,7 +301,8 @@ const book: IBooks = {
         name: "The Healthy Dead",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2004",
+        publication: "2004",
+        year: "1164+",
     },
     120: {
         book: 3,
@@ -269,7 +310,8 @@ const book: IBooks = {
         name: "The Lees of Laughter's End",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2007",
+        publication: "2007",
+        year: "1163-",
     },
     121: {
         book: 4,
@@ -277,7 +319,8 @@ const book: IBooks = {
         name: "Crack'd Pot Trail",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2009",
+        publication: "2009",
+        year: "1164+",
     },
     122: {
         book: 5,
@@ -285,7 +328,8 @@ const book: IBooks = {
         name: "The Wurms of Blearmouth",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2012",
+        publication: "2012",
+        year: "1164+",
     },
     123: {
         book: 6,
@@ -293,7 +337,8 @@ const book: IBooks = {
         name: "The Fiends of Nightmaria",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2016",
+        publication: "2016",
+        year: "1164+",
     },
     124: {
         book: 7,
@@ -301,7 +346,8 @@ const book: IBooks = {
         name: "Upon a Dark of Evil Overlords",
         author: "Steven Erikson",
         series: "Tales",
-        year: "2021",
+        publication: "2021",
+        year: "1164+",
     },
 };
 

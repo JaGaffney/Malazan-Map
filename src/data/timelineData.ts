@@ -67,7 +67,7 @@ const timelineData: ITimelineData = {
         {
             id: uuidv4(),
             timeline: true,
-            book: 101,
+            book: 100,
             name: "Darujhistan is founded",
             icon: eventIcons.city,
             description: [
@@ -101,17 +101,17 @@ const timelineData: ITimelineData = {
             name: "Book 2 - Path of Ascendancy",
             icon: eventIcons.city,
             description: ["Majority of the events in this book happen inside the city or just outside the city."],
-            char: [74, 75, 10, 3, 55],
+            char: [74, 75, 10, 3, 55, 83, 5, 6, 13],
             loc: [420.0, 185.59],
         },
         {
             id: uuidv4(),
             timeline: true,
-            book: 101,
+            book: 100,
             name: "Malazan Empire is founded",
             icon: eventIcons.city,
             description: ["Malazan Empire is founded"],
-            char: [74, 75, 10],
+            char: [74, 75, 10, 55, 83, 5, 6, 13],
             loc: [420.0, 185.59],
         },
     ],
@@ -257,7 +257,7 @@ const timelineData: ITimelineData = {
             name: "Karsa trapped",
             icon: eventIcons.tribal,
             description: ["Karsa is captured and meets Torvald Nom. They are being sent as slaves to the Otataral mines."],
-            char: [39, 48],
+            char: [39],
             loc: [519.495, 35.305],
         },
         {
@@ -300,7 +300,7 @@ const timelineData: ITimelineData = {
                 "Karsa and Torvald Nom escape the warren with Silgar, Damisk, and Borugg. They 2 groups go there seperate ways. Karsas group find a tower where a Napan man named Keeper is putting together a giant fossil. Karsa attempts to attack Keeper is knocked out with ease. Upon awakening Karsa is humbled and agrees to help out.",
                 "They make there way to Ehrlitan but are attacked by slavers and kidnapped.",
             ],
-            char: [39, 48],
+            char: [39],
             loc: [416.8, 50.6],
         },
 
@@ -1225,7 +1225,7 @@ const timelineData: ITimelineData = {
             name: "Toll the Hounds - Darujhistan",
             icon: eventIcons.city,
             description: ["Everything that happens in Darujhistan for the whole book."],
-            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 48, 52, 80, 81],
+            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 52, 80, 81],
             loc: [522.65, 84.28],
         },
         {

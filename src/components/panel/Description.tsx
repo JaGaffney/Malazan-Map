@@ -49,7 +49,7 @@ export default function Description() {
                                     }
                                     return (
                                         <div key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} onClick={() => dispatch(updateActiveCharacter(i))}>
-                                            <span>{characters[i].name}</span>
+                                            <span>{characters[i].name[0]}</span>
                                             {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
                                         </div>
                                     )

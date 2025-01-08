@@ -8,7 +8,6 @@ import Draggable from 'react-draggable';
 import { updateActiveCharacter, resetActiveCharacter } from "../../state/features/engine"
 import characters from "../../data/characters"
 import { validFilterQuery } from '../utils/helpers';
-import { bookColor } from '../utils/color'
 
 import { eventIcons } from "../../data/icons";
 import Title from './Title';
@@ -56,6 +55,19 @@ export default function Characters({ onCloseHandler }: IPanel) {
         setActiveSeries(filterArray(activeSeries, series))
     }
 
+    const weightedCharactersID: any = {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+    }
+    for (let key in characters) {
+        let charWeight = characters[key].weight
+        weightedCharactersID[charWeight].push(parseInt(key))
+    }
+
     return (
 
         <Draggable handle="h5" >
@@ -86,41 +98,52 @@ export default function Characters({ onCloseHandler }: IPanel) {
                                         <th>Name</th>
                                         <th>Race</th>
                                         <th>Aliases</th>
+                                        <th>Affiliations</th>
+                                        <th>Role</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    {Object.keys(characters).map((i: any, k: number) => {
-                                        const names = characters[i].name
-                                        const name = names[0]
-                                        const contains = activeSeries.some(element => {
-                                            return characters[i].series.includes(element);
-                                        });
-                                        if (contains === false) {
-                                            return null
-                                        }
+                                    {Object.keys(weightedCharactersID).map((id) => {
+                                        return (
+                                            weightedCharactersID[id].map((i: number, k: number) => {
+                                                const names = characters[i].name
+                                                const name = names[0]
+                                                const contains = activeSeries.some(element => {
+                                                    return characters[i].series.includes(element);
+                                                });
+                                                if (contains === false) {
+                                                    return null
+                                                }
 
-                                        let active = ""
-                                        if (activeCharacter.includes(parseInt(i)) || activeCharacter.length === 0) {
-                                            active = "panel__item-container-info-active"
-                                        }
-                                        if (validFilterQuery(names[0], search)) {
+                                                let active = ""
+                                                if (activeCharacter.includes(i) || activeCharacter.length === 0) {
+                                                    active = "panel__item-container-info-active"
+                                                }
+                                                if (validFilterQuery(names[0], search)) {
 
-                                            return (
-                                                <tr key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(parseInt(i)))}>
-                                                    <td>{name}</td>
-                                                    <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
+                                                    return (
+                                                        <tr key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(i))}>
+                                                            <td>{name}</td>
+                                                            <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
 
-                                                    <td>{names.length > 1 ? (
-                                                        names.filter(aliase => aliase != name).map((aliase, ii, row) => (
-                                                            <span>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
-                                                        ))) : ""}</td>
-                                                </tr>
-                                            )
-                                        }
-                                        else {
-                                            return null
-                                        }
+                                                            <td>{names.length > 1 ? (
+                                                                names.filter(aliase => aliase != name).map((aliase, ii, row) => (
+                                                                    <span>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
+                                                                ))) : ""}</td>
+
+                                                            <td>{characters[i].affiliation.map((aff, ii, row) => (
+                                                                <span>{aff}{ii + 1 === row.length ? "" : ", "}</span>
+                                                            ))}</td>
+
+                                                            <td>{characters[i].role}</td>
+                                                        </tr>
+                                                    )
+                                                }
+                                                else {
+                                                    return null
+                                                }
+                                            }))
                                     })}
                                 </tbody>
 

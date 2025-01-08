@@ -71,7 +71,9 @@ export const eventIcons = {
     old: OLD,
 };
 
+import HISTORY from "../images/books/00-quill.svg";
 import MBOTF_01 from "../images/books/01-moon.svg";
+
 import MBOTF_02 from "../images/books/02-gate.svg";
 import MBOTF_03 from "../images/books/03-ice.svg";
 import MBOTF_04 from "../images/books/04-chain.svg";
@@ -96,6 +98,7 @@ import PATH_04 from "../images/books/04-highmage.svg";
 
 export const bookIcons = {
     defaultBookIcon: WARREN,
+    historyIcon: HISTORY,
     gardensOfTheMoon: MBOTF_01,
     deadhouseGates: MBOTF_02,
     memoriesOfIce: MBOTF_03,

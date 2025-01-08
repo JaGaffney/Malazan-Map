@@ -5,7 +5,6 @@ import ReactTooltip from 'react-tooltip';
 import { update, updateActiveData } from "../../state/features/engine"
 import { bookColor } from '../utils/color';
 import { ITimelinePoint } from '../../data/timelineData';
-import book from "../../data/books"
 import TimelineBook from './TimelineBook';
 
 
