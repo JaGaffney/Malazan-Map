@@ -1,5 +1,17 @@
 import { bookIcons } from "../data/icons";
 
+interface IDefaultSeries {
+    [key: string]: boolean;
+}
+export const defaultSeries: IDefaultSeries = {
+    MBOTF: true,
+    NOME: true,
+    PATH: true,
+    WITNESS: true,
+    TALES: true,
+    KHAR: true,
+};
+
 interface IBooks {
     [key: number]: IBook;
 }

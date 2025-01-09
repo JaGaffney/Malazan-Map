@@ -207,6 +207,10 @@
         }
     }
 }
+.tablerow-minwidth {
+    min-width: 22ch;
+}
+
 .panel__item-last {
     padding-bottom: 15rem;
 }
@@ -281,5 +285,37 @@
         width: 100%;
         font-size: 0.9rem;
         color: var(--gray400);
+    }
+}
+
+.toggle__button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-block: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    &-reset {
+        padding: 0.5rem 1rem;
+        border-radius: 16px;
+        border: solid 2px var(--blue900);
+        background-color: var(--blue100);
+        color: var(--blue800);
+        cursor: pointer;
+        width: 8rem;
+    }
+    &-item {
+        border-radius: 16px;
+        padding: 0.3rem 1rem;
+        background-color: var(--gray800);
+        color: var(--gray600);
+        border: none;
+        cursor: pointer;
+        border: solid 1px transparent;
+    }
+    &-active {
+        background-color: var(--gray800);
+        color: var(--teal400);
+        border: solid 1px var(--teal400);
     }
 }

@@ -12,14 +12,12 @@ import { validFilterQuery } from '../utils/helpers';
 import { eventIcons } from "../../data/icons";
 import Title from './Title';
 import { IPanel } from './panel.inteface';
-import { filterArray } from '../utils/filter';
+import { defaultSeries } from '../../data/books';
 
 
 export default function Characters({ onCloseHandler }: IPanel) {
 
-    const [activeSeries, setActiveSeries] = useState(
-        ["MBOTF", "NOME", "PATH", "WITNESS", "TALES", "KHAR"]
-    )
+    const [activeSeries, setActiveSeries] = useState(defaultSeries)
 
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const search = useSelector((state: any) => state.filter.search)
@@ -52,7 +50,8 @@ export default function Characters({ onCloseHandler }: IPanel) {
     }
 
     const updateActiveSeries = (series: string) => {
-        setActiveSeries(filterArray(activeSeries, series))
+        let toggle: boolean = activeSeries[series]
+        setActiveSeries(prevValue => ({ ...prevValue, [series]: !toggle }))
     }
 
     const weightedCharactersID: any = {
@@ -68,6 +67,11 @@ export default function Characters({ onCloseHandler }: IPanel) {
         weightedCharactersID[charWeight].push(parseInt(key))
     }
 
+    const resetCharacters = () => {
+        setActiveSeries(defaultSeries)
+        dispatch(resetActiveCharacter())
+    }
+
     return (
 
         <Draggable handle="h5" >
@@ -80,16 +84,16 @@ export default function Characters({ onCloseHandler }: IPanel) {
                             <Title name={"Characters"} onCloseHandler={onCloseHandler} />
 
 
-                            <div className="panel__item-container-info" onClick={() => dispatch(resetActiveCharacter())}>
-                                <button>Display all</button>
-                            </div>
 
-                            <div>
-                                <button onClick={() => updateActiveSeries("MBOTF")}>MBOTF</button>
-                                <button onClick={() => updateActiveSeries("NOME")}>NOME</button>
-                                <button onClick={() => updateActiveSeries("PATH")}>PATH</button>
-                                <button onClick={() => updateActiveSeries("TALES")}>TALES</button>
-                                <button onClick={() => updateActiveSeries("KHAR")}>KHAR</button>
+
+                            <div className="toggle__button">
+                                <button className="toggle__button-reset" onClick={() => resetCharacters()}>Reset</button>
+                                {Object.keys(defaultSeries).map((i: string, k: number) => {
+                                    return (
+                                        <button className={`toggle__button-item ${activeSeries[i] ? "toggle__button-active" : ""}`} key={k} onClick={() => updateActiveSeries(i)}>{i}</button>
+                                    )
+                                })}
+
                             </div>
 
                             <table className="panel__item-table">
@@ -109,8 +113,11 @@ export default function Characters({ onCloseHandler }: IPanel) {
                                             weightedCharactersID[id].map((i: number, k: number) => {
                                                 const names = characters[i].name
                                                 const name = names[0]
-                                                const contains = activeSeries.some(element => {
-                                                    return characters[i].series.includes(element);
+                                                const contains = Object.keys(activeSeries).some(element => {
+                                                    if (activeSeries[element]) {
+                                                        return characters[i].series.includes(element);
+                                                    }
+
                                                 });
                                                 if (contains === false) {
                                                     return null
@@ -124,7 +131,7 @@ export default function Characters({ onCloseHandler }: IPanel) {
 
                                                     return (
                                                         <tr key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(i))}>
-                                                            <td>{name}</td>
+                                                            <td className="tablerow-minwidth">{name}</td>
                                                             <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
 
                                                             <td>{names.length > 1 ? (
@@ -132,7 +139,7 @@ export default function Characters({ onCloseHandler }: IPanel) {
                                                                     <span>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
                                                                 ))) : ""}</td>
 
-                                                            <td>{characters[i].affiliation.map((aff, ii, row) => (
+                                                            <td className="tablerow-minwidth">{characters[i].affiliation.map((aff, ii, row) => (
                                                                 <span>{aff}{ii + 1 === row.length ? "" : ", "}</span>
                                                             ))}</td>
 
