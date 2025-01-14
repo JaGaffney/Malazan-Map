@@ -1,3 +1,5 @@
+import { pointUV } from "three/examples/jsm/nodes/Nodes";
+
 interface ICharacter {
     name: Array<string>;
     race: string;
@@ -7,6 +9,14 @@ interface ICharacter {
     affiliation: Array<string>;
     weight: number;
 }
+
+// 1 - priority
+// 2 - top 10 pov
+// 3 - top 20 pov
+// 4 - top 50 pov
+// 5 - key characters not many lines
+// 6 - characters
+// 7 - names but dont need to be in the list
 
 interface ICharacters {
     [key: number]: ICharacter;
@@ -19,7 +29,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 3,
+        weight: 2,
     },
     2: {
         name: ["Apsala", "Sorry"],
@@ -28,7 +38,7 @@ const characters: ICharacters = {
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
-        weight: 3,
+        weight: 4,
     },
     3: {
         name: ["Tattersail", "Silverfox"],
@@ -37,7 +47,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "Imass"],
-        weight: 5,
+        weight: 4,
     },
     4: {
         name: ["Quick Ben"],
@@ -46,7 +56,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 3,
+        weight: 4,
     },
     5: {
         name: ["Whiskeyjack", "Jack", "Iskar Jarak"],
@@ -55,11 +65,11 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
-        weight: 4,
+        weight: 3,
     },
     6: {
         name: ["Hairlock"],
-        race: "soultaken",
+        race: "human",
         intro: "1",
         role: "Mage",
         series: ["MBOTF", "PATH"],
@@ -73,7 +83,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
-        weight: 4,
+        weight: 3,
     },
     8: {
         name: ["Anomander Rake", "Anomandaris Purake"],
@@ -82,7 +92,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Dark"],
-        weight: 4,
+        weight: 5,
     },
     9: {
         name: ["Caladan Brood"],
@@ -109,7 +119,7 @@ const characters: ICharacters = {
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 3,
+        weight: 2,
     },
     12: {
         name: ["Fiddler", "Strings"],
@@ -118,7 +128,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 3,
+        weight: 2,
     },
     13: {
         name: ["Dujek Onearm"],
@@ -136,7 +146,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 6,
+        weight: 7,
     },
     15: {
         name: ["Crokus Younghand", "Cutter"],
@@ -145,7 +155,7 @@ const characters: ICharacters = {
         role: "Thief",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 3,
+        weight: 2,
     },
     16: {
         name: ["Kruppe"],
@@ -154,7 +164,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 4,
     },
     17: {
         name: ["Lorn"],
@@ -163,7 +173,7 @@ const characters: ICharacters = {
         role: "Adjunt",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
-        weight: 6,
+        weight: 5,
     },
     18: {
         name: ["Onos T'oolan", "Tool"],
@@ -172,7 +182,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire", "Logros T'lan Imass"],
-        weight: 3,
+        weight: 4,
     },
     19: {
         name: ["Felisin Paran", "Sha'ik"],
@@ -181,7 +191,7 @@ const characters: ICharacters = {
         role: "Nobel",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Army of the Whirlwind"],
-        weight: 4,
+        weight: 3,
     },
     20: {
         name: ["Heboric"],
@@ -199,7 +209,7 @@ const characters: ICharacters = {
         role: "Assassin",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
-        weight: 6,
+        weight: 7,
     },
     22: {
         name: ["Tavore Paran"],
@@ -217,7 +227,7 @@ const characters: ICharacters = {
         role: "Guard",
         series: ["MBOTF"],
         affiliation: ["Nameless Ones"],
-        weight: 4,
+        weight: 3,
     },
     24: {
         name: ["Icarium"],
@@ -226,7 +236,7 @@ const characters: ICharacters = {
         role: "Wanderer",
         series: ["MBOTF", "KHAR"],
         affiliation: [],
-        weight: 4,
+        weight: 5,
     },
     25: {
         name: ["Duiker"],
@@ -235,15 +245,15 @@ const characters: ICharacters = {
         role: "Historian",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
-        weight: 3,
+        weight: 2,
     },
     26: {
         name: ["Coltaine"],
         race: "human",
         intro: "2",
         role: "Soldier",
-        series: ["MBOTF", "NOME"],
-        affiliation: ["Malazan Empire", "wikans"],
+        series: ["MBOTF", "NOME", "WITNESS"],
+        affiliation: ["Malazan Empire", "Wikans"],
         weight: 5,
     },
     28: {
@@ -271,7 +281,7 @@ const characters: ICharacters = {
         role: "Guard",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 4,
+        weight: 3,
     },
     31: {
         name: ["K'rull"],
@@ -280,7 +290,7 @@ const characters: ICharacters = {
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: [],
-        weight: 6,
+        weight: 5,
     },
     32: {
         name: ["Bauchelain"],
@@ -289,7 +299,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF", "TALES"],
         affiliation: [],
-        weight: 4,
+        weight: 3,
     },
     35: {
         name: ["Korbal Broach"],
@@ -298,7 +308,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF", "TALES"],
         affiliation: [],
-        weight: 4,
+        weight: 3,
     },
     33: {
         name: ["Lady Envy"],
@@ -325,7 +335,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 3,
     },
     37: {
         name: ["Korlat"],
@@ -343,7 +353,7 @@ const characters: ICharacters = {
         role: "Warrior",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 3,
+        weight: 2,
     },
     39: {
         name: ["Karsa Orlong"],
@@ -352,7 +362,7 @@ const characters: ICharacters = {
         role: "Warrior",
         series: ["MBOTF", "WITNESS"],
         affiliation: [],
-        weight: 3,
+        weight: 2,
     },
     40: {
         name: ["Admiral Nok"],
@@ -361,7 +371,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire"],
-        weight: 5,
+        weight: 6,
     },
     41: {
         name: ["Pearl"],
@@ -370,7 +380,7 @@ const characters: ICharacters = {
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
-        weight: 5,
+        weight: 6,
     },
     42: {
         name: ["Lostara Yil"],
@@ -379,7 +389,7 @@ const characters: ICharacters = {
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 4,
+        weight: 3,
     },
     43: {
         name: ["Gesler and Stormy"],
@@ -397,7 +407,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 5,
+        weight: 2,
     },
     45: {
         name: ["Smiles"],
@@ -406,7 +416,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 5,
+        weight: 6,
     },
     46: {
         name: ["Sinn"],
@@ -415,14 +425,14 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
-        weight: 5,
+        weight: 7,
     },
     47: {
         name: ["Braven Tooth"],
         race: "human",
         intro: "4",
         role: "Solider",
-        series: ["MBOTF", "PATH"],
+        series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire"],
         weight: 5,
     },
@@ -433,7 +443,7 @@ const characters: ICharacters = {
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
-        weight: 5,
+        weight: 6,
     },
     50: {
         name: ["Leoman of the Flails"],
@@ -442,7 +452,7 @@ const characters: ICharacters = {
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
-        weight: 5,
+        weight: 6,
     },
     51: {
         name: ["L'oric"],
@@ -460,7 +470,7 @@ const characters: ICharacters = {
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
-        weight: 5,
+        weight: 4,
     },
     53: {
         name: ["Corabb Bhilan Thenu'alas"],
@@ -487,7 +497,7 @@ const characters: ICharacters = {
         role: "Solider",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire", "Dassem's First Sword"],
-        weight: 4,
+        weight: 5,
     },
     56: {
         name: ["Fear Sengar"],
@@ -496,7 +506,7 @@ const characters: ICharacters = {
         role: "Warrior",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 6,
     },
     57: {
         name: ["Rhulad Sengar"],
@@ -514,7 +524,7 @@ const characters: ICharacters = {
         role: "Slave",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 4,
+        weight: 3,
     },
     59: {
         name: ["Feather Witch"],
@@ -523,7 +533,7 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 7,
     },
     60: {
         name: ["Tehol Beddict"],
@@ -532,7 +542,7 @@ const characters: ICharacters = {
         role: "King",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
-        weight: 4,
+        weight: 3,
     },
     61: {
         name: ["Brys Beddict"],
@@ -541,7 +551,7 @@ const characters: ICharacters = {
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
-        weight: 4,
+        weight: 2,
     },
     62: {
         name: ["Seren Pedac"],
@@ -550,7 +560,7 @@ const characters: ICharacters = {
         role: "Diplomat",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
-        weight: 5,
+        weight: 3,
     },
     63: {
         name: ["Yan Tovis", "Twilight"],
@@ -622,7 +632,7 @@ const characters: ICharacters = {
         role: "",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 6,
     },
     71: {
         name: ["Iron Bars", "Bars"],
@@ -638,8 +648,8 @@ const characters: ICharacters = {
         race: "T'lan Imass",
         intro: "3",
         role: "Mage",
-        series: ["MBOTF"],
-        affiliation: [],
+        series: ["MBOTF", "NOME"],
+        affiliation: ["Logros T'lan Imass"],
         weight: 5,
     },
     73: {
@@ -649,7 +659,7 @@ const characters: ICharacters = {
         role: "Inventor",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 4,
+        weight: 3,
     },
     74: {
         name: ["Kellanved", "Wu", "Shadowthrone", "Ammanas"],
@@ -658,7 +668,7 @@ const characters: ICharacters = {
         role: "Emperor",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "High House Shadow"],
-        weight: 2,
+        weight: 1,
     },
     75: {
         name: ["Dancer", "Cotillion", "Dorin Rav", "The Rope"],
@@ -667,7 +677,7 @@ const characters: ICharacters = {
         role: "Assassin",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "High House Shadow"],
-        weight: 2,
+        weight: 1,
     },
     76: {
         name: ["Hellian"],
@@ -685,7 +695,7 @@ const characters: ICharacters = {
         role: "Blacksmith",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 4,
     },
     78: {
         name: ["Lady Spite"],
@@ -730,7 +740,7 @@ const characters: ICharacters = {
         role: "Solider",
         series: ["MBOTF"],
         affiliation: [],
-        weight: 5,
+        weight: 4,
     },
     83: {
         name: ["Tayschrenn"],
@@ -739,7 +749,79 @@ const characters: ICharacters = {
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
+        weight: 2,
+    },
+    84: {
+        name: ["Mallick Rel"],
+        race: "human",
+        intro: "2",
+        role: "Advisor",
+        series: ["MBOTF", "NOME", "PATH"],
+        affiliation: ["Malazan Empire"],
+        weight: 2,
+    },
+    85: {
+        name: ["Greymane", "Orjin Samarr"],
+        race: "human",
+        intro: "3",
+        role: "Soldier",
+        series: ["MBOTF", "NOME", "PATH", "WITNESS"],
+        affiliation: ["Malazan Empire", "Crimson Guard"],
         weight: 3,
+    },
+    86: {
+        name: ["Silk"],
+        race: "human",
+        intro: "",
+        role: "Mage",
+        series: ["NOME", "PATH"],
+        affiliation: ["Malazan Empire", "Li Heng"],
+        weight: 3,
+    },
+    87: {
+        name: ["Ho"],
+        race: "soultaken",
+        intro: "",
+        role: "Mage",
+        series: ["NOME", "PATH"],
+        affiliation: ["Li Heng"],
+        weight: 3,
+    },
+    88: {
+        name: ["Ullara", "Bird Mother"],
+        race: "human",
+        intro: "",
+        role: "Mage",
+        series: ["NOME", "PATH"],
+        affiliation: ["Li Heng"],
+        weight: 4,
+    },
+    89: {
+        name: ["Shimmer", "Iko"],
+        race: "human",
+        intro: "",
+        role: "Mercenary",
+        series: ["MBOTF", "NOME", "PATH"],
+        affiliation: ["Crimson Guard"],
+        weight: 3,
+    },
+    90: {
+        name: ["Blues", "Gregar Bluenth"],
+        race: "human",
+        intro: "",
+        role: "Mage",
+        series: ["MBOTF", "NOME", "PATH"],
+        affiliation: ["Crimson Guard"],
+        weight: 3,
+    },
+    91: {
+        name: ["Hessa"],
+        race: "human",
+        intro: "",
+        role: "Pirate",
+        series: ["PATH"],
+        affiliation: ["Malazan Empire"],
+        weight: 4,
     },
 };
 

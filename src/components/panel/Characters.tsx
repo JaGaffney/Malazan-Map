@@ -64,7 +64,9 @@ export default function Characters({ onCloseHandler }: IPanel) {
     }
     for (let key in characters) {
         let charWeight = characters[key].weight
-        weightedCharactersID[charWeight].push(parseInt(key))
+        if (charWeight < 7) {
+            weightedCharactersID[charWeight].push(parseInt(key))
+        }
     }
 
     const resetCharacters = () => {
@@ -81,7 +83,7 @@ export default function Characters({ onCloseHandler }: IPanel) {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable">
 
-                            <Title name={"Characters"} onCloseHandler={onCloseHandler} />
+                            <Title name={"Main/POV Characters"} onCloseHandler={onCloseHandler} />
 
 
 
