@@ -4,6 +4,7 @@ import ASSASSIN from "../images/assassin.svg";
 import BATTLE from "../images/battle.svg";
 import CITY from "../images/city.svg";
 import DEATH from "../images/death.svg";
+import HANG from "../images/hang.svg";
 import RALLY from "../images/rally.svg";
 import TRAVELHORSE from "../images/travelHorse.svg";
 import TRAVELBOAT from "../images/travelBoat.svg";
@@ -96,6 +97,9 @@ import PATH_02 from "../images/books/02-deadhouse.svg";
 import PATH_03 from "../images/books/03-kellanved.svg";
 import PATH_04 from "../images/books/04-highmage.svg";
 
+import BKB_01 from "../images/books/01-blood.svg";
+import BKB_03 from "../images/books/03-laugh.svg";
+
 export const bookIcons = {
     defaultBookIcon: WARREN,
     historyIcon: HISTORY,
@@ -121,4 +125,7 @@ export const bookIcons = {
     deadhouseLanding: PATH_02,
     kellanvedsReach: PATH_03,
     forgeOfTheHighMage: PATH_04,
+
+    bloodFollow: BKB_01,
+    laughEnd: BKB_03,
 };

@@ -823,6 +823,15 @@ const characters: ICharacters = {
         affiliation: ["Malazan Empire"],
         weight: 4,
     },
+    92: {
+        name: ["Kiska", "Kiskatia"],
+        race: "human",
+        intro: "",
+        role: "mage",
+        series: ["NOME"],
+        affiliation: ["Malazan Empire"],
+        weight: 4,
+    },
 };
 
 export default characters;

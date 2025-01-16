@@ -300,12 +300,12 @@ const book: IBooks = {
 
     118: {
         book: 1,
-        icon: bookIcons.defaultBookIcon,
+        icon: bookIcons.bloodFollow,
         name: "Blood Follows",
         author: "Steven Erikson",
         series: "Tales",
         publication: "2002",
-        year: "1163-",
+        year: "1154-",
     },
     119: {
         book: 2,
@@ -314,16 +314,16 @@ const book: IBooks = {
         author: "Steven Erikson",
         series: "Tales",
         publication: "2004",
-        year: "1164+",
+        year: "1158+",
     },
     120: {
         book: 3,
-        icon: bookIcons.defaultBookIcon,
+        icon: bookIcons.laughEnd,
         name: "The Lees of Laughter's End",
         author: "Steven Erikson",
         series: "Tales",
         publication: "2007",
-        year: "1163-",
+        year: "1154-",
     },
     121: {
         book: 4,
