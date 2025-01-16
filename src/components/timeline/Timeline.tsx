@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import { filterArray } from '../utils/filter';
 
 const Timeline = () => {
-    const ref = useRef(null);
+    const ref = useRef<HTMLInputElement>(null);
     const [yearToggle, setYearToggle] = useState<number[]>([])
 
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
@@ -36,7 +36,10 @@ const Timeline = () => {
 
     useEffect(() => {
         if (ref.current) {
-            ref.current.scrollTo(1300, 0);
+            if (typeof window !== "undefined") {
+                ref.current.scrollTo(1300, 0);
+            }
+
         }
     }, []);
 
