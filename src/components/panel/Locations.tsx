@@ -20,13 +20,10 @@ export default function Locations({ onCloseHandler }: IPanel) {
 
     const showAllLocation = () => {
         dispatch(resetActiveCity())
-        cityData.map((i, k) => {
-            dispatch(updateActiveCity(k))
-            return (
-                null
-            )
-        })
+        Object.keys(cityData).map((i, k) => dispatch(updateActiveCity(parseInt(i))))
     }
+
+    //const cityDataSorted: any = cityData.slice().sort((a, b) => a.name.localeCompare(b.name))
 
     return (
         <Draggable handle="h5" >
@@ -54,40 +51,38 @@ export default function Locations({ onCloseHandler }: IPanel) {
                                     <button>Display all</button>
                                 </div>
                             )}
+
                             <table className="panel__item-table">
-
-
                                 <thead>
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
                                         <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Intro</th>
+                                        <th>Area</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    {cityData.map((i, k) => {
+                                    {Object.keys(cityData).map((i: any, k: number) => {
                                         let active = ""
-                                        if (activeCity.includes(k)) {
+                                        if (activeCity.includes(parseInt(i))) {
                                             active = "panel__item-container-info-active"
                                         }
 
-                                        if (validFilterQuery(i.name, search)) {
+                                        if (validFilterQuery(cityData[i].name, search)) {
                                             return (
                                                 <tr key={k}
                                                     className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
                                                     style={{ display: "table-row", textAlign: "left" }}
-                                                    onClick={() => dispatch(updateActiveCity(k))
+                                                    onClick={() => dispatch(updateActiveCity(parseInt(i)))
                                                     }
                                                 >
-                                                    <td>{i.name}</td>
-                                                    <td>
+                                                    <td>{cityData[i].name}</td>
+                                                    {/* <td>
                                                         {i.type === 1 && "City"}
                                                         {i.type === 2 && "City"}
                                                         {i.type === 3 && "Settlement"}
                                                         {i.type === 4 && "Other"}
-                                                    </td>
-                                                    <td style={{ color: bookColor(i.introduction), textAlign: "center" }}>{i.introduction}</td>
+                                                    </td> */}
+                                                    <td>{cityData[i].area}</td>
                                                 </tr>
                                             )
                                         } else {

@@ -6,10 +6,10 @@ import { tileToPosition } from '../../utils/helpers';
 import { calculateColorCityType } from '../../utils/color';
 
 import { MeshBasicMaterial, Vector3 } from "three";
-import { ICityData } from '../../../data/city';
+import { ICities } from '../../../data/city';
 
 interface IWords {
-    data: ICityData;
+    data: ICities;
     cityKey: number;
 }
 function Words(props: IWords) {
@@ -27,7 +27,7 @@ function Words(props: IWords) {
 
 
 
-    const city: ICityData = props.data
+    const city: ICities = props.data
 
     const defaultLength: number = 30 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)

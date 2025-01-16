@@ -2,38 +2,50 @@ export interface IAreas {
     loc: Array<number>;
     name: string;
 }
+
+export const enum EAreas {
+    Genabackis = "Genabackis",
+    SevenCities = "Seven Cities",
+    QuonTali = "Quon Tali",
+    Jacuruku = "Jacuruku",
+    StratemKorelri = "Stratem and Korelri",
+    Lether = "Lether",
+    Bael = "Bael",
+    Genostel = "Genostel",
+}
+
 const AREAS: IAreas[] = [
     {
         loc: [530.0, 15, 70.0],
-        name: "Genabackis",
+        name: EAreas.Genabackis,
     },
     {
         loc: [370.0, 15, 65.0],
-        name: "Seven Cities",
+        name: EAreas.SevenCities,
     },
     {
         loc: [390.0, 15, 150.0],
-        name: "Quon Tali",
+        name: EAreas.QuonTali,
     },
     {
         loc: [310.0, 15, 240.0],
-        name: "Jacuruku",
+        name: EAreas.Jacuruku,
     },
     {
         loc: [470.0, 15, 250.0],
-        name: "Stratem and Korelri",
+        name: EAreas.StratemKorelri,
     },
     {
         loc: [40.0, 15, 240.0],
-        name: "Lether",
+        name: EAreas.Lether,
     },
     {
         loc: [580.0, 15, 200.0],
-        name: "Bael",
+        name: EAreas.Bael,
     },
     {
         loc: [750.0, 15, 50.0],
-        name: "Genostel",
+        name: EAreas.Genostel,
     },
 ];
 

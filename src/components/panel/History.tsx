@@ -36,15 +36,15 @@ export default function History({ onCloseHandler }: IPanel) {
     const search = useSelector((state: any) => state.filter.search)
 
     const createCharacterArray = (charID: Array<number>) => {
-        // const charsName: Array<string | null> = []
-        // console.log(characters)
-        // if (charID.length > 0) {
-        //     charID.forEach(id => {
-        //         charsName.push(characters[id].name[0])
-        //     })
-        // }
-        // return charsName.toLocaleString()
+        const charsName: Array<string | null> = []
+        if (charID.length > 0) {
+            charID.forEach(id => {
+                charsName.push(characters[id].name[0])
+            })
+        }
+        return charsName.toLocaleString()
     }
+
 
     const onDateHandler = (date: number) => {
         const newInactiveData = filterArray([...inactiveDates], date)
@@ -95,22 +95,25 @@ export default function History({ onCloseHandler }: IPanel) {
                                                         }
 
                                                         return (
-                                                            <div className={`timeline__event-history ${activeID === ii.id ? "timeline__event-history-active" : ""}`} key={kk}
-                                                                onClick={() => {
-                                                                    if (filter === "") {
-                                                                        dispatch(updateActiveData(ii))
-                                                                        if (ii.loc !== null) {
-                                                                            dispatch(update({ x: ii.loc[0], y: ii.loc[1] }));
-                                                                        } else {
-                                                                            dispatch(update(ii.loc));
-                                                                        }
+                                                            filter === "" ? (
+                                                                <>
+                                                                    <div className={`timeline__event-history ${activeID === ii.id ? "timeline__event-history-active" : ""}`} key={kk}
+                                                                        onClick={() => {
+                                                                            if (filter === "") {
+                                                                                dispatch(updateActiveData(ii))
+                                                                                if (ii.loc !== null) {
+                                                                                    dispatch(update({ x: ii.loc[0], y: ii.loc[1] }));
+                                                                                } else {
+                                                                                    dispatch(update(ii.loc));
+                                                                                }
 
-                                                                    }
-                                                                }}>
+                                                                            }
+                                                                        }}>
 
 
-                                                                <span>{ii.name}</span>
-                                                            </div>
+                                                                        <span>{ii.name}</span>
+                                                                    </div>
+                                                                </>) : (null)
 
                                                         )
                                                     })

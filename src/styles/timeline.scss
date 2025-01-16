@@ -35,8 +35,8 @@
             border: none;
             color: inherit;
             cursor: pointer;
-            :hover,
-            :focus {
+            &:hover,
+            &:focus {
                 color: var(--teal700);
             }
             svg {
@@ -50,6 +50,17 @@
 
     color: var(--gray500);
     font-size: 1rem;
+
+    &-title {
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            color: var(--teal700);
+        }
+    }
+    &-active {
+        color: var(--red800);
+    }
 }
 
 .timeline__event {
