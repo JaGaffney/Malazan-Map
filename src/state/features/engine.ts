@@ -32,7 +32,7 @@ const onBookLoad = () => {
     if (data !== null) {
         return data;
     }
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 23, 24, 25, 26, 27, 28, 29];
+    return [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202];
 };
 
 const defaultActiveData = {

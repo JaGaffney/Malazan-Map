@@ -78,12 +78,12 @@ const cityData: ICityData = {
         area: EAreas.Genabackis,
         type: 4,
     },
-    12: {
-        name: "Tesem Temple",
-        loc: [231.0, 15, 34.0],
-        area: EAreas.SevenCities,
-        type: 4,
-    },
+    // 12: {
+    //     name: "Tesem Temple",
+    //     loc: [231.0, 15, 34.0],
+    //     area: EAreas.SevenCities,
+    //     type: 4,
+    // },
     13: {
         name: "Coral",
         loc: [310.0, 15, 62.0],
