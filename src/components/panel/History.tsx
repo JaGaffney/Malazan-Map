@@ -12,6 +12,7 @@ import { validFilterQueryArray } from '../utils/helpers';
 import characters from '../../data/characters';
 import { filterArray } from '../utils/filter';
 import { IPanel } from './panel.inteface';
+import book from "../../data/books"
 
 let getNumberWithSuffix = (item: string): any => {
     const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
@@ -111,7 +112,7 @@ export default function History({ onCloseHandler }: IPanel) {
                                                                         }}>
 
 
-                                                                        <span>{ii.name}</span>
+                                                                        <span style={{ width: "100%", display: "flex", justifyContent: "space-between" }}>{ii.name} <strong>{book[ii.book].book === 0 ? "H" : book[ii.book].book}</strong></span>
                                                                     </div>
                                                                 </>) : (null)
 

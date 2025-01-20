@@ -215,7 +215,7 @@ const characters: ICharacters = {
         name: ["Tavore Paran"],
         race: "human",
         intro: "1",
-        role: "Adjunt",
+        role: "Adjunct",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
         weight: 3,

@@ -118,13 +118,19 @@ const cityData: ICityData = {
         name: "Li Heng",
         loc: [217.0, 15, 112.0],
         area: EAreas.QuonTali,
-        type: 1,
+        type: 2,
     },
     19: {
         name: "Cabil",
         loc: [215.0, 15, 82.5],
         area: EAreas.QuonTali,
-        type: 1,
+        type: 2,
+    },
+    20: {
+        name: "Quon & Tali",
+        loc: [206.3, 15, 106.5],
+        area: EAreas.QuonTali,
+        type: 2,
     },
 };
 
