@@ -31,9 +31,13 @@ export default function Header() {
 
     const dispatch = useDispatch()
 
+    const afterSubmission = (event: any) => {
+        event.preventDefault()
+    }
+
     return (
         <>
-            <div className="header">
+            <div className="header" onSubmit={(e) => afterSubmission(e)}>
                 <div className="header-title">
                     <h1><span><i>map of </i> </span> Malazan Book of the Fallen</h1>
                 </div>
@@ -42,7 +46,6 @@ export default function Header() {
                     <label className="visually-hidden" htmlFor="search">Search</label>
                     <input id="search" type="text" value={search} placeholder="search for character, event, location, etc..." onChange={(e) => dispatch(updateSearch(e.target.value))} />
                     {search !== "" ? (<HiX className="header-search-button" onClick={() => dispatch(updateSearch(""))} />) : (<HiSearch />)}
-
                 </form>
 
                 <Buttons books={books} onBooksHandler={setBooks}

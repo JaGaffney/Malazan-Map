@@ -8,11 +8,7 @@ import { ITimelinePoint } from '../../data/timelineData';
 import TimelineBook from './TimelineBook';
 
 
-interface ITimeEvent {
-    data: ITimelinePoint;
-    filter: string;
-}
-export const TimeEvent = ({ filter, data }: ITimeEvent) => {
+export const TimeEvent = ({ filter, data }: { filter: string, data: ITimelinePoint }) => {
     const activeID = useSelector((state: any) => state.filter.activeData.id)
     const dispatch = useDispatch()
     return (
