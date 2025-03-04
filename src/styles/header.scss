@@ -52,7 +52,6 @@
             }
         }
         svg {
-            color: var(--gray700);
             position: absolute;
             top: 0.1rem;
             right: 0.5rem;
@@ -60,6 +59,18 @@
             width: 1.5rem;
         }
         &-button {
+            cursor: pointer;
+            transition: all 200ms;
+            color: var(--gray300);
+            &:hover {
+                color: var(--teal700);
+                transform: translateY(-1px);
+                transform: scale(1.3);
+            }
+        }
+        &-leftButton {
+            color: var(--gray700);
+            margin-right: 2rem;
             cursor: pointer;
             transition: all 200ms;
             &:hover {
