@@ -101,6 +101,12 @@
         th {
             padding: 0.2rem 0.5rem;
         }
+        &-header {
+            cursor: pointer;
+            &:hover {
+                color: var(--teal700);
+            }
+        }
     }
     &-container {
         grid-column: 1 / 3;

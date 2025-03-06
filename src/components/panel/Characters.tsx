@@ -1,72 +1,42 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Draggable from 'react-draggable';
 
 import { updateActiveCharacter, resetActiveCharacter } from "../../state/features/engine"
-import characters from "../../data/characters"
-import { validFilterQuery } from '../utils/helpers';
+import characters, { ICharacter } from "../../data/characters"
+import { findRaceByName, getCharacterIDByName, validFilterQuery } from '../utils/helpers';
 
 import { eventIcons } from "../../data/icons";
 import Title from './Title';
 import { IPanel } from './panel.inteface';
 import { defaultSeries } from '../../data/books';
 
+import { createColumnHelper, flexRender, getCoreRowModel, getSortedRowModel, SortingState, useReactTable } from "@tanstack/react-table"
 
 export default function Characters({ onCloseHandler }: IPanel) {
+    // table settings
+    const [data, setData] = useState<ICharacter[]>(Object.values(characters))
+    const [sorting, setSorting] = useState<SortingState>([
+        {
+            id: "name",
+            desc: true,
+        },
+    ])
+
 
     const [activeSeries, setActiveSeries] = useState(defaultSeries)
 
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
     const search = useSelector((state: any) => state.filter.search)
-    const dispatch = useDispatch()
 
-    const findRaceByName = (name: string): string => {
-        switch (name) {
-            case ("human"):
-                return eventIcons.human
-            case ("soultaken"):
-                return eventIcons.soultaken
-            case ("Tiste Andii"):
-            case ("Tiste Edur"):
-            case ("tisti"):
-                return eventIcons.tisti
-            case ("T'lan Imass"):
-            case ("undead"):
-                return eventIcons.tlanimass
-            case ("trell"):
-            case ("Barghast"):
-            case ("Teblor"):
-                return eventIcons.tribal
-            case ("jaghurt"):
-                return eventIcons.jaghurt
-            case ("ascended"):
-                return eventIcons.ascended
-            default:
-                return eventIcons.warren
-        }
-    }
+    const dispatch = useDispatch()
 
     const updateActiveSeries = (series: string) => {
         let toggle: boolean = activeSeries[series]
         setActiveSeries(prevValue => ({ ...prevValue, [series]: !toggle }))
-    }
-
-    const weightedCharactersID: any = {
-        1: [],
-        2: [],
-        3: [],
-        4: [],
-        5: [],
-        6: [],
-    }
-    for (let key in characters) {
-        let charWeight = characters[key].weight
-        if (charWeight < 7) {
-            weightedCharactersID[charWeight].push(parseInt(key))
-        }
     }
 
     const resetCharacters = () => {
@@ -74,8 +44,68 @@ export default function Characters({ onCloseHandler }: IPanel) {
         dispatch(resetActiveCharacter())
     }
 
-    return (
 
+    const columns = [
+        {
+            header: 'Name',
+            id: "name",
+            accessorKey: 'name',
+            sortingFn: 'myCustomSorting',
+            cell: (props: any) => <td>{props.getValue()[0]}</td>
+        },
+        {
+            header: 'Race',
+            accessorKey: 'race',
+            sortingFn: 'alphanumeric', // use custom global sorting function
+            cell: (props: any) => <td>{<ReactSVG src={findRaceByName(props.getValue())} />}</td>
+        },
+        {
+            header: 'Aliases',
+            cell: (props: any) => <td>{props.row.original.name.length > 1 ? (
+                props.row.original.name.filter((aliase: string) => aliase != props.row.original.name[0]).map((aliase: string, ii: number, row: string[]) => (
+                    <span>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
+                ))) : ""}</td>,
+        },
+        {
+            header: 'Affiliation',
+            accessorKey: 'affiliation',
+            sortingFn: 'myCustomSorting',
+            cell: (props: any) => <td className="tablerow-minwidth">{props.getValue().map((aff: string, ii: number, row: string[]) => (
+                <span>{aff}{ii + 1 === row.length ? "" : ", "}</span>
+            ))}</td>
+        },
+        {
+            header: 'Role',
+            accessorKey: 'role',
+            sortingFn: 'alphanumeric',
+            cell: (props: any) => <td>{props.getValue()}</td>
+        },
+    ]
+
+    function myCustomSorting(rowA: any, rowB: any, columnId: any): number {
+        return rowA.getValue(columnId)[0] < rowB.getValue(columnId)[0] ? 1 : -1
+    }
+
+    const table = useReactTable({
+        data,
+        columns,
+        state: {
+            sorting
+        },
+        onSortingChange: setSorting,
+        getCoreRowModel: getCoreRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        sortingFns: {
+            myCustomSorting: myCustomSorting
+        },
+
+        enableSorting: true,
+    })
+
+
+
+
+    return (
         <Draggable handle="h5" >
             <div className="panel panel__characters panel__draggable">
 
@@ -84,9 +114,6 @@ export default function Characters({ onCloseHandler }: IPanel) {
                         <div className="panel__item-container panel__header-draggable">
 
                             <Title name={"Main/POV Characters"} onCloseHandler={onCloseHandler} />
-
-
-
 
                             <div className="toggle__button">
                                 <button className="toggle__button-reset" onClick={() => resetCharacters()}>Reset</button>
@@ -100,59 +127,60 @@ export default function Characters({ onCloseHandler }: IPanel) {
 
                             <table className="panel__item-table">
                                 <thead>
-                                    <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                        <th>Name</th>
-                                        <th>Race</th>
-                                        <th>Aliases</th>
-                                        <th>Affiliations</th>
-                                        <th>Role</th>
-                                    </tr>
+
+                                    {table.getHeaderGroups().map(headerGroup => {
+                                        return (
+                                            <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                                {headerGroup.headers.map((header) => {
+                                                    return (
+                                                        <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                                            {flexRender(header.column.columnDef.header, header.getContext())}
+                                                        </th>
+                                                    )
+                                                })}
+                                            </tr>)
+                                    })}
+
                                 </thead>
 
                                 <tbody>
-                                    {Object.keys(weightedCharactersID).map((id) => {
-                                        return (
-                                            weightedCharactersID[id].map((i: number, k: number) => {
-                                                const names = characters[i].name
-                                                const name = names[0]
-                                                const contains = Object.keys(activeSeries).some(element => {
-                                                    if (activeSeries[element]) {
-                                                        return characters[i].series.includes(element);
-                                                    }
+                                    {table.getRowModel().rows.map(row => {
+                                        const characterID = getCharacterIDByName(row.original.name)
 
-                                                });
-                                                if (contains === false) {
-                                                    return null
-                                                }
+                                        const contains = Object.keys(activeSeries).some(element => {
+                                            if (activeSeries[element]) {
+                                                return row.original.series.includes(element);
+                                            }
 
-                                                let active = ""
-                                                if (activeCharacter.includes(i) || activeCharacter.length === 0) {
-                                                    active = "panel__item-container-info-active"
-                                                }
-                                                if (validFilterQuery(names[0], search)) {
+                                        });
+                                        if (contains === false) {
+                                            return null
+                                        }
 
-                                                    return (
-                                                        <tr key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} style={{ display: "table-row", textAlign: "left" }} onClick={() => dispatch(updateActiveCharacter(i))}>
-                                                            <td className="tablerow-minwidth">{name}</td>
-                                                            <td><ReactSVG src={findRaceByName(characters[i].race)} className={active} /></td>
+                                        let active = ""
+                                        if (activeCharacter.includes(characterID) || activeCharacter.length === 0) {
+                                            active = "panel__item-container-info-active"
+                                        }
 
-                                                            <td>{names.length > 1 ? (
-                                                                names.filter(aliase => aliase != name).map((aliase, ii, row) => (
-                                                                    <span>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
-                                                                ))) : ""}</td>
+                                        if (validFilterQuery(row.original.name[0], search)) {
 
-                                                            <td className="tablerow-minwidth">{characters[i].affiliation.map((aff, ii, row) => (
-                                                                <span>{aff}{ii + 1 === row.length ? "" : ", "}</span>
-                                                            ))}</td>
-
-                                                            <td>{characters[i].role}</td>
-                                                        </tr>
-                                                    )
-                                                }
-                                                else {
-                                                    return null
-                                                }
-                                            }))
+                                            return (
+                                                <tr key={row.id}
+                                                    className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
+                                                    style={{ display: "table-row", textAlign: "left" }}
+                                                    onClick={() => dispatch(updateActiveCharacter(characterID))}
+                                                >
+                                                    {row.getVisibleCells().map(cell => {
+                                                        return (
+                                                            flexRender(
+                                                                cell.column.columnDef.cell,
+                                                                cell.getContext()
+                                                            )
+                                                        )
+                                                    })}
+                                                </tr>
+                                            )
+                                        }
                                     })}
                                 </tbody>
 
@@ -168,3 +196,4 @@ export default function Characters({ onCloseHandler }: IPanel) {
         </Draggable >
     )
 }
+
