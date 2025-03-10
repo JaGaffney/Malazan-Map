@@ -59,10 +59,7 @@ const Timeline = () => {
                             {!yearToggle.includes(year) ? (
                                 <div className="timeline__event-container">
                                     {timelineData[year].map((ii: ITimelinePoint, kk: number) => {
-                                        // early outs some of the dates as there is too much information in the timeline which makes it too confusing
-                                        // if (ii.timeline === false) {
-                                        //     return null
-                                        // }
+
                                         let filter = ""
                                         if (activeCharacter.length !== 0) {
                                             if (!activeCharacter.some((item: number) => ii.char.includes(item))) {
@@ -75,10 +72,11 @@ const Timeline = () => {
                                         if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char)], search)) {
                                             filter = "timeline__event-item-filter"
                                         }
-                                        return (
-                                            <TimeEvent data={ii} key={kk} filter={filter} />
-                                        )
-
+                                        if (filter === "") {
+                                            return (
+                                                <TimeEvent data={ii} key={kk} />
+                                            )
+                                        } else return null
                                     })
                                     }
                                 </div>
@@ -90,6 +88,5 @@ const Timeline = () => {
         </>
     )
 }
-
 
 export default Timeline

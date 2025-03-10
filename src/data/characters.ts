@@ -727,9 +727,17 @@ const characters: ICharacters = {
         name: ["Kiska", "Kiskatia"],
         race: "human",
         intro: "",
-        role: "mage",
+        role: "Mage",
         series: ["NOME"],
         affiliation: ["Malazan Empire"],
+    },
+    93: {
+        name: ["Redmask"],
+        race: "human",
+        intro: "7",
+        role: "War Leader",
+        series: ["MBOTF"],
+        affiliation: ["Awl"],
     },
 };
 
