@@ -18,7 +18,7 @@ export const TimeEvent = ({ data }: { data: ITimelinePoint }) => {
                 dispatch(update(data.loc));
             }
         }}
-            data-tip={data.name}
+            data-tip={data.citation !== "" ? data.citation : data.name}
         >
             <div className={`
                     timeline__event-item-icon 

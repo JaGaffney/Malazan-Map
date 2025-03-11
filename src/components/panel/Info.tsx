@@ -49,7 +49,7 @@ export default function Info({ onCloseHandler }: IPanel) {
                                 <br />
                                 <p>I would also like to thank the people below for providing the groundwork that allowed me to create this website, without them it never would have been possible.</p>
                                 <InfoItem name={"Werthead"} role={"Map creator"} link={"https://atlasoficeandfireblog.wordpress.com/2020/03/04/a-new-almost-definitive-malazan-world-map/"} description={"Creator of the map in which this website timeline is based on, the level of detail provided is amazing."} image={<FaPaintBrush />} />
-                                <InfoItem name={"@SonAnomander"} role={"Companion guide creator"} link={"https://docs.google.com/presentation/d/1GLRmiaFcxe_cGc93ckE5UItRq5rYsfeU0BhvqcaNq9E/edit#slide=id.g489175a0dd_14_10"} description={"Information used from this guide to help create timeline events."} image={<FaGoogleDrive />} />
+                                <InfoItem name={"@SonAnomander"} role={"Companion guide creator"} link={"https://www.reddit.com/r/Malazan/comments/1f4e4hy/malazan_guides_and_pdfs/?share_id=Z9cvq5ASwfFBS8ECqLayn&utm_name=ioscss"} description={"Information used from this guide to help create timeline events. (Original link seems to be removed from google)"} image={<FaGoogleDrive />} />
                                 <InfoItem name={"/u/SageOfTheWise"} role={"Orignal timeline creator"} link={"https://www.reddit.com/r/Malazan/comments/8nskuc/timeline_of_events/"} description={"Information used to help create the blueprint for the timeline events."} image={<FaRedditAlien />} />
                             </div>
 

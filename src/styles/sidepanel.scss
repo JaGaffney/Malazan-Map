@@ -200,6 +200,13 @@
             &-description {
                 max-width: 500px;
                 word-wrap: break-word;
+                display: flex;
+                i {
+                    padding-top: 1rem;
+                    color: var(--amber500);
+                    text-align: right;
+                    width: 100%;
+                }
             }
             button {
                 width: 100%;

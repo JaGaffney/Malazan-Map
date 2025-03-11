@@ -29,8 +29,7 @@ export default function Description() {
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
 
-                            <Title name={`(${book[activeData.book].book}) ${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
-
+                            <Title name={`${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
                             <div className="panel__item-container-info description-large">
                                 {activeData.description.map((i: string, k: number) => {
                                     return (
@@ -56,7 +55,7 @@ export default function Description() {
                                 })}
                             </div>
 
-
+                            <p className="panel__item-container-info-description"><i>{book[activeData.book].name}{activeData.citation !== "" && `: ${activeData.citation}`}</i></p>
                         </div>
                     </div>
                 </ScrollContainer>
