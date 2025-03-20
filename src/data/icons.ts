@@ -27,6 +27,9 @@ import DOG from "../images/dog.svg";
 import CARD from "../images/card.svg";
 import BRIDGEBURNERS from "../images/bridgeburners.svg";
 import OLD from "../images/old.svg";
+import FLAME from "../images/flame.svg";
+import MASK from "../images/mask.svg";
+import TAVERN from "../images/tavern.svg";
 
 import HUMAN from "../images/human.svg";
 import TISTI from "../images/tisti.svg";
@@ -70,6 +73,9 @@ export const eventIcons = {
     ascended: ASCENDED,
     tlanimass: TLANIMASS,
     old: OLD,
+    flame: FLAME,
+    mask: MASK,
+    tavern: TAVERN,
 };
 
 import HISTORY from "../images/books/00-quill.svg";

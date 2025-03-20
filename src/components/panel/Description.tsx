@@ -27,7 +27,7 @@ export default function Description() {
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
-                        <div className="panel__item-container panel__header-draggable" >
+                        <div className="panel__item-container panel__header-draggable panel__item-maxWidth" >
 
                             <Title name={`${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
                             <div className="panel__item-container-info description-large">

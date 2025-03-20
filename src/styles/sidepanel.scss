@@ -108,9 +108,13 @@
             }
         }
     }
+    &-maxWidth {
+        width: 500px;
+    }
     &-container {
         grid-column: 1 / 3;
         grid-row: 1;
+
         &-header {
             h5 {
                 z-index: 2;
