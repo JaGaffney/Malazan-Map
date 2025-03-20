@@ -69,6 +69,6 @@ export const getCharacterIDByName = (names: string[]): number => {
     // only works for first name ATM
     const name = names[0];
 
-    const currentHeadingKey = Object.keys(characters).find((id: any) => [characters[id]].some((n) => n.name[0] === name));
+    const currentHeadingKey: any = Object.keys(characters).find((id: any) => [characters[id]].some((n) => n.name[0] === name));
     return parseInt(currentHeadingKey);
 };
