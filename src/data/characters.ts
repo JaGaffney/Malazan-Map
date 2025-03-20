@@ -677,7 +677,7 @@ const characters: ICharacters = {
     86: {
         name: ["Silk"],
         race: "human",
-        intro: "",
+
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Malazan Empire", "Li Heng"],
@@ -685,7 +685,7 @@ const characters: ICharacters = {
     87: {
         name: ["Ho"],
         race: "soultaken",
-        intro: "",
+
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Li Heng"],
@@ -693,7 +693,7 @@ const characters: ICharacters = {
     88: {
         name: ["Ullara", "Bird Mother"],
         race: "human",
-        intro: "",
+
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Li Heng"],
@@ -701,7 +701,7 @@ const characters: ICharacters = {
     89: {
         name: ["Shimmer", "Iko"],
         race: "human",
-        intro: "",
+
         role: "Mercenary",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Crimson Guard"],
@@ -709,7 +709,7 @@ const characters: ICharacters = {
     90: {
         name: ["Blues", "Gregar Bluenth"],
         race: "human",
-        intro: "",
+
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Crimson Guard"],
@@ -717,7 +717,7 @@ const characters: ICharacters = {
     91: {
         name: ["Hessa"],
         race: "human",
-        intro: "",
+
         role: "Pirate",
         series: ["PATH"],
         affiliation: ["Malazan Empire"],
@@ -725,7 +725,7 @@ const characters: ICharacters = {
     92: {
         name: ["Kiska", "Kiskatia"],
         race: "human",
-        intro: "",
+
         role: "Mage",
         series: ["NOME"],
         affiliation: ["Malazan Empire"],
