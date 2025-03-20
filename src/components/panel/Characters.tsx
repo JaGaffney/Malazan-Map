@@ -45,7 +45,7 @@ export default function Characters({ onCloseHandler }: IPanel) {
     }
 
 
-    const columns = [
+    const columns: any = [
         {
             header: 'Name',
             id: "name",
