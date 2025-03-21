@@ -162,25 +162,23 @@ export default function Characters({ onCloseHandler }: IPanel) {
                                             active = "panel__item-container-info-active"
                                         }
 
-                                        if (validFilterQuery(row.original.name[0], search)) {
-
-                                            return (
-                                                <tr key={row.id}
-                                                    className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
-                                                    style={{ display: "table-row", textAlign: "left" }}
-                                                    onClick={() => dispatch(updateActiveCharacter(characterID))}
-                                                >
-                                                    {row.getVisibleCells().map(cell => {
-                                                        return (
-                                                            flexRender(
-                                                                cell.column.columnDef.cell,
-                                                                cell.getContext()
-                                                            )
+                                        return (
+                                            <tr key={row.id}
+                                                className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
+                                                style={{ display: "table-row", textAlign: "left" }}
+                                                onClick={() => dispatch(updateActiveCharacter(characterID))}
+                                            >
+                                                {row.getVisibleCells().map(cell => {
+                                                    return (
+                                                        flexRender(
+                                                            cell.column.columnDef.cell,
+                                                            cell.getContext()
                                                         )
-                                                    })}
-                                                </tr>
-                                            )
-                                        }
+                                                    )
+                                                })}
+                                            </tr>
+                                        )
+
                                     })}
                                 </tbody>
 

@@ -1,9 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { FaWikipediaW } from "react-icons/fa";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { updateActiveCity, resetActiveCity, setAreas, resetAreas } from "../../state/features/engine"
 import { cityData } from "../../data/city"
-import { bookColor } from '../utils/color';
+
 import { validFilterQuery } from '../utils/helpers';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
@@ -34,11 +37,11 @@ export default function Locations({ onCloseHandler }: IPanel) {
 
                         <div className="panel__item-container  panel__header-draggable">
 
-                            <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
+                            <Title name={"Labels for Points of interest"} onCloseHandler={onCloseHandler} />
 
 
                             <div className="panel__item-container-info" onClick={() => dispatch(areas ? resetAreas() : setAreas())}>
-                                <span>Areas</span>
+                                <span>Show Area Names</span>
                                 <span>{!areas ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                             </div>
 
@@ -57,6 +60,8 @@ export default function Locations({ onCloseHandler }: IPanel) {
                                     <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
                                         <th>Name</th>
                                         <th>Area</th>
+                                        <th>Wiki</th>
+                                        <th>Show</th>
                                     </tr>
                                 </thead>
 
@@ -67,27 +72,19 @@ export default function Locations({ onCloseHandler }: IPanel) {
                                             active = "panel__item-container-info-active"
                                         }
 
-                                        if (validFilterQuery(cityData[i].name, search)) {
-                                            return (
-                                                <tr key={k}
-                                                    className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
-                                                    style={{ display: "table-row", textAlign: "left" }}
-                                                    onClick={() => dispatch(updateActiveCity(parseInt(i)))
-                                                    }
-                                                >
-                                                    <td>{cityData[i].name}</td>
-                                                    {/* <td>
-                                                        {i.type === 1 && "City"}
-                                                        {i.type === 2 && "City"}
-                                                        {i.type === 3 && "Settlement"}
-                                                        {i.type === 4 && "Other"}
-                                                    </td> */}
-                                                    <td>{cityData[i].area}</td>
-                                                </tr>
-                                            )
-                                        } else {
-                                            return null
-                                        }
+                                        return (
+                                            <tr key={k}
+                                                className={`panel__item-container-info panel__item-container-info-inactive ${active} panel__nohover`}
+                                                style={{ display: "table-row", textAlign: "left" }}
+                                            >
+                                                <td>{cityData[i].name}</td>
+                                                <td>{cityData[i].area}</td>
+                                                <td className="panel__nohover-hover"><a href={cityData[i].wiki} target="_blank"><FaExternalLinkAlt /></a></td>
+                                                <td className="panel__nohover-hover" onClick={() => dispatch(updateActiveCity(parseInt(i)))}>
+                                                    {active ? <HiCheckCircle /> : <HiOutlineCheckCircle />}</td>
+                                            </tr>
+                                        )
+
                                     })}
                                 </tbody>
 

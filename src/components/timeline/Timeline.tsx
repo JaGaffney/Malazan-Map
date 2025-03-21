@@ -69,7 +69,7 @@ const Timeline = () => {
                                         if (!activeBooks.includes(ii.book)) {
                                             filter = "timeline__event-item-filter"
                                         }
-                                        if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char)], search)) {
+                                        if (!validFilterQueryArray([ii.name, ii.description, createCharacterArray(ii.char), ii.citation], search)) {
                                             filter = "timeline__event-item-filter"
                                         }
                                         if (filter === "") {

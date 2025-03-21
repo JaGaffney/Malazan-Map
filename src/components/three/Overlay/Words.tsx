@@ -39,9 +39,6 @@ function Words(props: IWords) {
 
     return (
         <group position={newPos}
-            onClick={() => dispatch(updateActiveCity(props.cityKey))}
-            onPointerOver={() => setHovered(true)}
-            onPointerOut={() => setHovered(false)}
         >
             <mesh position={[0, -9, 0]}>
                 <cylinderBufferGeometry args={[1, 1, 10, 10]} />
@@ -65,7 +62,26 @@ function Words(props: IWords) {
                     <planeGeometry args={[defaultLength - 3, 10]} />
                 </mesh>
 
-                <Text color={"#f0fdf4"} position={[0, 1.2, 2]} characters="abcdefghijklmnopqrstuvwxyz0123456789!" fontSize={4}>{city.name}</Text>
+                <Text
+                    color={"#f0fdf4"}
+                    position={[-1, 1, 2]}
+                    characters="abcdefghijklmnopqrstuvwxyz0123456789!"
+                    fontSize={4}
+
+                >
+                    {city.name}
+                </Text>
+                <Text
+                    color={"#f0fdf4"}
+                    position={[defaultLength / 3, 1.5, 1]}
+                    characters="x"
+                    fontSize={6}
+                    onClick={() => dispatch(updateActiveCity(props.cityKey))}
+                    onPointerOver={() => setHovered(true)}
+                    onPointerOut={() => setHovered(false)}
+                >
+                    x
+                </Text>
             </Billboard>
 
         </group>

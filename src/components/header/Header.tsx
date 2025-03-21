@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { HiSearch, HiX } from "react-icons/hi";
 import { useDispatch, useSelector } from 'react-redux'
+import { GrPowerReset } from "react-icons/gr";
 
 import WorldMap from '../map/WorldMap'
 import Books from '../panel/Books'
@@ -10,7 +11,7 @@ import History from '../panel/History'
 import Settings from '../settings/Settings'
 import Buttons from './Buttons'
 
-import { updateSearch } from "../../state/features/engine"
+import { reset, resetActiveCharacter, resetActiveCity, resetActiveData, updateSearch } from "../../state/features/engine"
 import Description from '../panel/Description';
 import Timeline from '../timeline/Timeline';
 import Info from '../panel/Info';
@@ -43,6 +44,18 @@ export default function Header() {
         dispatch(updateSearch(""))
     }
 
+    const onHardReset = (e: any) => {
+        e.preventDefault()
+        setSearching("")
+
+        dispatch(updateSearch(""))
+        dispatch(reset())
+        dispatch(resetActiveData())
+        dispatch(resetActiveCity())
+        dispatch(resetActiveCharacter())
+
+    }
+
     return (
         <>
             <div className="header">
@@ -56,6 +69,8 @@ export default function Header() {
                     {searching !== "" && (<HiX className="header-search-leftButton" onClick={(e) => onSearchReset(e)} />)}
                     <HiSearch className="header-search-button" onClick={(e) => onSearchSubmit(e)} />
                 </form>
+
+                <button className="resetButton" onClick={(e) => onHardReset(e)}><GrPowerReset /> Reset</button>
 
                 <Buttons books={books} onBooksHandler={setBooks}
                     places={places} onPlacesHandler={setPlaces}

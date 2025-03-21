@@ -169,18 +169,21 @@
             &:hover {
                 background: var(--gray800);
             }
-            &-active {
-                color: white !important;
-                path {
-                    fill: white !important;
-                }
-            }
+
             &-inactive {
                 color: var(--gray700);
                 path {
                     fill: var(--gray700);
                 }
             }
+
+            &-active {
+                color: white;
+                path {
+                    fill: white;
+                }
+            }
+
             &-activeButton {
                 color: var(--teal500) !important;
                 background-color: var(--teal900) !important;
@@ -334,5 +337,28 @@
         background-color: var(--gray800);
         color: var(--teal400);
         border: solid 1px var(--teal400);
+    }
+}
+
+.panel__nohover {
+    cursor: default;
+    svg {
+        font-size: 1.3rem;
+    }
+    &:hover {
+        background-color: inherit;
+    }
+    &-hover {
+        cursor: pointer;
+
+        &:hover {
+            color: var(--teal600);
+            transform: translateY(-2px);
+            svg {
+                path {
+                    fill: var(--teal500);
+                }
+            }
+        }
     }
 }

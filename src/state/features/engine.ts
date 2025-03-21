@@ -51,7 +51,7 @@ const initialState: IRootState = {
     activeBooks: onBookLoad(),
     activeCharacter: [],
     activeCity: [1, 2],
-    areas: false,
+    areas: true,
     search: "",
 };
 

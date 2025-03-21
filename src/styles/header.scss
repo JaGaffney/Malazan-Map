@@ -119,6 +119,33 @@
     }
 }
 
-.test {
+.resetButton {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    border: solid 2px var(--blue900);
+    background-color: var(--blue100);
+    color: var(--blue800);
+    cursor: pointer;
+    width: 8rem;
+    svg {
+        height: 1rem;
+        width: 1rem;
+        path {
+            stroke: var(--gray900);
+        }
+    }
+    &:hover {
+        color: var(--teal100);
+        background-color: var(--teal600);
+        svg {
+            path {
+                stroke: var(--teal100);
+            }
+        }
+    }
 }

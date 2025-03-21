@@ -12,12 +12,12 @@ interface IAreaWord {
 }
 function AreaWord({ loc, name }: IAreaWord) {
     const newPos: Vector3 = new Vector3(loc[0], loc[1], loc[2])
-    const defaultLength: number = 35 + (name.length * 8)
+    const defaultLength: number = 10 + (name.length * 6)
     return (
         <group position={newPos} rotation-x={-Math.PI * 0.5}>
 
             <mesh position={[0, 4, -1]}>
-                <planeGeometry args={[defaultLength, 25, 1, 1]} />
+                <planeGeometry args={[defaultLength, 16, 1, 1]} />
                 <meshPhysicalMaterial
                     color={"black"}
                     transparent={true}
@@ -28,7 +28,7 @@ function AreaWord({ loc, name }: IAreaWord) {
                     reflectivity={1}
                 />
             </mesh>
-            <Text color={"white"} position={[0, 5, 0]} characters="abcdefghijklmnopqrstuvwxyz" fontSize={20}>{name}</Text>
+            <Text color={"white"} position={[0, 5, 0]} characters="abcdefghijklmnopqrstuvwxyz" fontSize={10}>{name}</Text>
         </group>
     )
 }
