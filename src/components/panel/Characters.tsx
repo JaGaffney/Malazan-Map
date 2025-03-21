@@ -15,6 +15,7 @@ import { IPanel } from './panel.inteface';
 import { defaultSeries } from '../../data/books';
 
 import { createColumnHelper, flexRender, getCoreRowModel, getSortedRowModel, SortingState, useReactTable } from "@tanstack/react-table"
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Characters({ onCloseHandler }: IPanel) {
     // table settings
@@ -79,6 +80,12 @@ export default function Characters({ onCloseHandler }: IPanel) {
             accessorKey: 'role',
             sortingFn: 'alphanumeric',
             cell: (props: any) => <td>{props.getValue()}</td>
+        },
+        {
+            header: 'Wiki',
+            accessorKey: 'wiki',
+            enableSorting: false,
+            cell: (props: any) => <td className="panel__nohover-hover"><a href={props.getValue()} target="_blank"><FaExternalLinkAlt /></a></td>
         },
     ]
 

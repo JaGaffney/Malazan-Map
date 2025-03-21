@@ -30,6 +30,7 @@ export default function Description() {
                         <div className="panel__item-container panel__header-draggable panel__item-maxWidth" >
 
                             <Title name={`${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
+                            <h4>Summary</h4>
                             <div className="panel__item-container-info description-large">
                                 {activeData.description.map((i: string, k: number) => {
                                     return (
@@ -39,7 +40,7 @@ export default function Description() {
                             </div>
 
 
-                            <h4>Characters</h4>
+                            <h4>Characters in chapter</h4>
                             <div className="panel__item-container-table">
                                 {activeData.char.map((i: number, k: number) => {
                                     let active = ""

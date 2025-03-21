@@ -4,6 +4,7 @@ export interface ICharacter {
     role: string;
     series: Array<string>; //MBOTF, NOME, PATH, WITNESS, TALES, KHAR
     affiliation: Array<string>;
+    wiki: string;
 }
 
 interface ICharacters {
@@ -13,730 +14,730 @@ const characters: ICharacters = {
     1: {
         name: ["Ganoes Paran"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Ganoes_Stabro_Paran",
     },
     2: {
         name: ["Apsala", "Sorry"],
-        race: "ascended",
-
+        race: "human",
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Apsalar",
     },
     3: {
         name: ["Tattersail", "Silverfox"],
         race: "ascended",
-
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "Imass"],
+        wiki: "https://malazan.fandom.com/wiki/Tattersail",
     },
     4: {
         name: ["Quick Ben"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Ben_Adaephon_Delat",
     },
     5: {
         name: ["Whiskeyjack", "Jack", "Iskar Jarak"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Whiskeyjack",
     },
     6: {
         name: ["Hairlock"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Hairlock",
     },
     7: {
         name: ["Toc the Younger", "Toc Anaster"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Toc_the_Younger",
     },
     8: {
         name: ["Anomander Rake", "Anomandaris Purake"],
         race: "Tiste Andii",
-
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Anomander_Rake",
     },
     9: {
         name: ["Caladan Brood"],
         race: "ascended",
-
         role: "Warlord",
         series: ["MBOTF", "NOME", "KHAR"],
         affiliation: [""],
+        wiki: "https://malazan.fandom.com/wiki/Caladan_Brood",
     },
     10: {
         name: ["Laseen", "Surly"],
         race: "human",
-
         role: "Empress",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Laseen",
     },
     11: {
         name: ["Kalam Mekhar"],
         race: "human",
-
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Kalam_Mekhar",
     },
     12: {
         name: ["Fiddler", "Strings"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Fiddler",
     },
     13: {
         name: ["Dujek Onearm"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Dujek_Onearm",
     },
     14: {
         name: ["Crone"],
         race: "soultaken",
-
         role: "Mage",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Crone",
     },
     15: {
         name: ["Crokus Younghand", "Cutter"],
         race: "human",
-
         role: "Thief",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Crokus_Younghand",
     },
     16: {
         name: ["Kruppe"],
         race: "ascended",
-
         role: "Mage",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Kruppe",
     },
     17: {
         name: ["Lorn"],
         race: "human",
-
         role: "Adjunct",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Lorn",
     },
     18: {
         name: ["Onos T'oolan", "Tool"],
         race: "T'lan Imass",
-
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire", "Logros T'lan Imass"],
+        wiki: "https://malazan.fandom.com/wiki/Onos_T%27oolan",
     },
     19: {
         name: ["Felisin Paran", "Sha'ik"],
         race: "human",
-
         role: "Nobel",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Army of the Whirlwind"],
+        wiki: "https://malazan.fandom.com/wiki/Felisin_Paran",
     },
     20: {
         name: ["Heboric"],
         race: "human",
-
         role: "Priest",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Heboric_Light_Touch",
     },
     21: {
         name: ["Baudin"],
         race: "human",
-
         role: "Assassin",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Baudin",
     },
     22: {
         name: ["Tavore Paran"],
         race: "human",
-
         role: "Adjunct",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Tavore_Paran",
     },
     23: {
         name: ["Mappo Runt"],
         race: "trell",
-
         role: "Guard",
         series: ["MBOTF"],
         affiliation: ["Nameless Ones"],
+        wiki: "https://malazan.fandom.com/wiki/Mappo_Runt",
     },
     24: {
         name: ["Icarium"],
         race: "jaghurt",
-
         role: "Wanderer",
         series: ["MBOTF", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Icarium",
     },
     25: {
         name: ["Duiker"],
         race: "human",
-
         role: "Historian",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Duiker",
     },
     26: {
         name: ["Coltaine"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF", "NOME", "WITNESS"],
         affiliation: ["Malazan Empire", "Wikans"],
+        wiki: "https://malazan.fandom.com/wiki/Coltaine",
     },
     28: {
         name: ["Iskaral Pust"],
         race: "soultaken",
-
         role: "Priest",
         series: ["MBOTF"],
         affiliation: ["High House Shadow"],
+        wiki: "https://malazan.fandom.com/wiki/Iskaral_Pust",
     },
     29: {
         name: ["Kallor"],
         race: "human",
-
         role: "King",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
-        affiliation: [],
+        affiliation: ["Kallor"],
+        wiki: "https://malazan.fandom.com/wiki/Kallor",
     },
     30: {
         name: ["Gruntle"],
         race: "human",
-
         role: "Guard",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Gruntle",
     },
     31: {
-        name: ["K'rull"],
+        name: ["K'rul"],
         race: "ascended",
-
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/K%27rul",
     },
     32: {
         name: ["Bauchelain"],
         race: "soletaken",
-
         role: "Mage",
         series: ["MBOTF", "TALES"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Bauchelain",
     },
     35: {
         name: ["Korbal Broach"],
         race: "soultaken",
-
         role: "Mage",
         series: ["MBOTF", "TALES"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Korbal_Broach",
     },
     33: {
         name: ["Lady Envy"],
         race: "ascended",
-
         role: "God",
         series: ["MBOTF", "NOME", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Envy",
     },
     34: {
         name: ["Hetan"],
         race: "Barghast",
-
-        role: "Soldier",
+        role: "Warrior",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Hetan",
     },
     36: {
         name: ["Itkovian"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["The Grey Swords"],
+        wiki: "https://malazan.fandom.com/wiki/Itkovian",
     },
     37: {
         name: ["Korlat"],
         race: "soultaken",
-
         role: "Mage",
         series: ["MBOTF", "KHAR"],
         affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Korlat",
     },
     38: {
         name: ["Trull Sengar"],
         race: "tisti",
-
         role: "Warrior",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["House Sengar"],
+        wiki: "https://malazan.fandom.com/wiki/Trull_Sengar",
     },
     39: {
         name: ["Karsa Orlong"],
         race: "Teblor",
-
         role: "Warrior",
         series: ["MBOTF", "WITNESS"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Karsa_Orlong",
     },
     40: {
-        name: ["Admiral Nok"],
+        name: ["Nok"],
         race: "human",
-
-        role: "Soldier",
+        role: "Admiral",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Nok",
     },
     41: {
         name: ["Pearl"],
         race: "human",
-
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Pearl",
     },
     42: {
         name: ["Lostara Yil"],
         race: "human",
-
-        role: "Assassin",
+        role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Lostara_Yil",
     },
     43: {
         name: ["Gesler and Stormy"],
         race: "ascended",
-
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Gesler",
     },
     44: {
         name: ["Bottle"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Bottle",
     },
     45: {
         name: ["Smiles"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Smiles",
     },
     46: {
         name: ["Sinn"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Sinn",
     },
     47: {
         name: ["Braven Tooth"],
         race: "human",
-
         role: "Solider",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Braven_Tooth",
     },
     49: {
         name: ["Felisin Younger"],
         race: "human",
-
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
+        wiki: "https://malazan.fandom.com/wiki/Felisin_Younger",
     },
     50: {
-        name: ["Leoman of the Flails"],
+        name: ["Leoman", "Leoman of the Flails"],
         race: "human",
-
-        role: "Solider",
+        role: "Bodyguard",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
+        wiki: "https://malazan.fandom.com/wiki/Leoman",
     },
     51: {
         name: ["L'oric"],
-        race: "ascended",
-
-        role: "Solider",
+        race: "tiste",
+        role: "High Mage",
         series: ["MBOTF", "NOME"],
         affiliation: ["Army of the Whirlwind"],
+        wiki: "https://malazan.fandom.com/wiki/L%27oric",
     },
     52: {
         name: ["Scillara"],
         race: "human",
-
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
+        wiki: "https://malazan.fandom.com/wiki/Scillara",
     },
     53: {
         name: ["Corabb Bhilan Thenu'alas"],
         race: "human",
-
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Corabb_Bhilan_Thenu%27alas",
     },
     54: {
         name: ["Onrack T'emlava"],
         race: "T'lan Imass",
-
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["Logros T'lan Imass"],
+        wiki: "https://malazan.fandom.com/wiki/Onrack_T%27emlava",
     },
     55: {
         name: ["Dassem Ultor", "Traveller"],
         race: "human",
-
         role: "Solider",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire", "Dassem's First Sword"],
+        wiki: "https://malazan.fandom.com/wiki/Dassem_Ultor",
     },
     56: {
         name: ["Fear Sengar"],
         race: "tisti",
-
         role: "Warrior",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["House Sengar"],
+        wiki: "https://malazan.fandom.com/wiki/Fear_Sengar",
     },
     57: {
         name: ["Rhulad Sengar"],
         race: "tisti",
-
         role: "Emperor",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["House Sengar"],
+        wiki: "https://malazan.fandom.com/wiki/Rhulad_Sengar",
     },
     58: {
         name: ["Udinaas"],
         race: "human",
-
         role: "Slave",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["House Sengar"],
+        wiki: "https://malazan.fandom.com/wiki/Udinaas",
     },
     59: {
         name: ["Feather Witch"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["House Sengar"],
+        wiki: "https://malazan.fandom.com/wiki/Feather_Witch",
     },
     60: {
         name: ["Tehol Beddict"],
         race: "human",
-
-        role: "King",
+        role: "Merchant",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
+        wiki: "https://malazan.fandom.com/wiki/Tehol_Beddict",
     },
     61: {
         name: ["Brys Beddict"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
+        wiki: "https://malazan.fandom.com/wiki/Brys_Beddict",
     },
     62: {
         name: ["Seren Pedac"],
         race: "human",
-
-        role: "Diplomat",
+        role: "Acquitor",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
+        wiki: "https://malazan.fandom.com/wiki/Seren_Pedac",
     },
     63: {
         name: ["Yan Tovis", "Twilight"],
         race: "human",
-
         role: "Solider",
         series: ["MBOTF"],
-        affiliation: [],
+        affiliation: ["The Shake"],
+        wiki: "https://malazan.fandom.com/wiki/Yan_Tovis",
     },
     64: {
         name: ["Mael", "Bugg"],
         race: "ascended",
-
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Mael",
     },
     65: {
         name: ["Shurq Elalle"],
         race: "undead",
-
         role: "Pirate",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Shurq_Elalle",
     },
     66: {
         name: ["Withal", "Foreigner"],
         race: "human",
-
         role: "Blacksmith",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Withal",
     },
     67: {
         name: ["Silchas Ruin"],
         race: "soletaken",
-
         role: "God",
         series: ["MBOTF", "KHAR"],
         affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Silchas_Ruin",
     },
     68: {
-        name: ["Nimander"],
+        name: ["Nimander Golit"],
         race: "soletaken",
-
         role: "Wanderer",
         series: ["MBOTF", "KHAR"],
         affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Nimander_Golit",
     },
     69: {
         name: ["Gothos"],
         race: "Jaghut",
-
         role: "Author",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Gothos",
     },
     70: {
         name: ["Rud Elalle"],
         race: "soletaken",
-
         role: "Traveller",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Rud_Elalle",
     },
     71: {
         name: ["Iron Bars", "Bars"],
         race: "human",
-
         role: "Mercenary",
         series: ["MBOTF", "NOME"],
         affiliation: ["Crimson Guard"],
+        wiki: "https://malazan.fandom.com/wiki/Iron_Bars",
     },
     72: {
         name: ["Kilava Onass"],
-        race: "T'lan Imass",
-
-        role: "Mage",
+        race: "Imass",
+        role: "Bonecaster",
         series: ["MBOTF", "NOME"],
         affiliation: ["Logros T'lan Imass"],
+        wiki: "https://malazan.fandom.com/wiki/Kilava_Onass",
     },
     73: {
         name: ["Samar Dev"],
         race: "human",
-
         role: "Inventor",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Samar_Dev",
     },
     74: {
         name: ["Kellanved", "Wu", "Shadowthrone", "Ammanas"],
         race: "ascended",
-
         role: "Emperor",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "High House Shadow"],
+        wiki: "https://malazan.fandom.com/wiki/Kellanved",
     },
     75: {
         name: ["Dancer", "Cotillion", "Dorin Rav", "The Rope"],
         race: "ascended",
-
         role: "Assassin",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "High House Shadow"],
+        wiki: "https://malazan.fandom.com/wiki/Dancer",
     },
     76: {
         name: ["Hellian"],
         race: "human",
-
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
+        wiki: "https://malazan.fandom.com/wiki/Hellian",
     },
     77: {
         name: ["Barathol Mekhar"],
         race: "human",
-
         role: "Blacksmith",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Barathol_Mekhar",
     },
     78: {
-        name: ["Lady Spite"],
+        name: ["Sister Spite"],
         race: "ascended",
-
         role: "God",
         series: ["MBOTF", "NOME", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Spite",
     },
     79: {
         name: ["Telorast and Curdle"],
         race: "ascended",
-
         role: "Mage",
         series: ["MBOTF", "PATH", "KHAR"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Telorast_and_Curdle",
     },
     80: {
         name: ["Draconus"],
         race: "ascended",
-
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Draconus",
     },
     81: {
         name: ["Hood"],
         race: "ascended",
-
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Death"],
+        wiki: "https://malazan.fandom.com/wiki/Hood",
     },
     82: {
         name: ["Torrent"],
         race: "human",
-
         role: "Solider",
         series: ["MBOTF"],
         affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Torrent",
     },
     83: {
         name: ["Tayschrenn"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Tayschrenn",
     },
     84: {
         name: ["Mallick Rel"],
         race: "human",
-
         role: "Advisor",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Mallick_Rel",
     },
     85: {
         name: ["Greymane", "Orjin Samarr"],
         race: "human",
-
         role: "Soldier",
         series: ["MBOTF", "NOME", "PATH", "WITNESS"],
         affiliation: ["Malazan Empire", "Crimson Guard"],
+        wiki: "https://malazan.fandom.com/wiki/Greymane",
     },
     86: {
         name: ["Silk"],
         race: "human",
-
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Malazan Empire", "Li Heng"],
+        wiki: "https://malazan.fandom.com/wiki/Silk",
     },
     87: {
         name: ["Ho"],
         race: "soultaken",
-
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Li Heng"],
+        wiki: "https://malazan.fandom.com/wiki/Ho",
     },
     88: {
         name: ["Ullara", "Bird Mother"],
         race: "human",
-
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Li Heng"],
+        wiki: "https://malazan.fandom.com/wiki/Ullara",
     },
     89: {
         name: ["Shimmer", "Iko"],
         race: "human",
-
         role: "Mercenary",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Crimson Guard"],
+        wiki: "https://malazan.fandom.com/wiki/Shimmer",
     },
     90: {
         name: ["Blues", "Gregar Bluenth"],
         race: "human",
-
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Crimson Guard"],
+        wiki: "https://malazan.fandom.com/wiki/Blues",
     },
     91: {
         name: ["Hessa"],
         race: "human",
-
         role: "Pirate",
         series: ["PATH"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Hessa",
     },
     92: {
         name: ["Kiska", "Kiskatia"],
         race: "human",
-
         role: "Mage",
         series: ["NOME"],
         affiliation: ["Malazan Empire"],
+        wiki: "https://malazan.fandom.com/wiki/Kiskatia_Silamon_Tenesh",
     },
     93: {
         name: ["Redmask"],
         race: "human",
-
         role: "War Leader",
         series: ["MBOTF"],
         affiliation: ["Awl"],
+        wiki: "https://malazan.fandom.com/wiki/Redmask",
     },
 };
 

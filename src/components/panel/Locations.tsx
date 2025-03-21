@@ -53,7 +53,7 @@ export default function Locations({ onCloseHandler }: IPanel) {
             header: 'Wiki',
             accessorKey: 'wiki',
             enableSorting: false,
-            cell: (props: any) => <td className="panel__nohover-hover"><a href={props.getValue()}><FaExternalLinkAlt /></a></td>
+            cell: (props: any) => <td className="panel__nohover-hover"><a href={props.getValue()} target="_blank"><FaExternalLinkAlt /></a></td>
         },
         {
             header: 'Display',
