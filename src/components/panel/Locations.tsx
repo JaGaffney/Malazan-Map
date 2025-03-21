@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaWikipediaW } from "react-icons/fa";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -7,14 +7,23 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { updateActiveCity, resetActiveCity, setAreas, resetAreas } from "../../state/features/engine"
 import { cityData } from "../../data/city"
 
-import { validFilterQuery } from '../utils/helpers';
+import { findRaceByName, getCityIDByName, validFilterQuery } from '../utils/helpers';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 import Draggable from 'react-draggable';
 import Title from './Title';
 import { IPanel } from './panel.inteface';
+import { SortingState, useReactTable, getCoreRowModel, getSortedRowModel, flexRender } from '@tanstack/react-table';
+import { ReactSVG } from 'react-svg';
 
 export default function Locations({ onCloseHandler }: IPanel) {
+    const [data, setData] = useState(Object.values(cityData))
+    const [sorting, setSorting] = useState<SortingState>([
+        {
+            id: "name",
+            desc: false,
+        },
+    ])
 
     const activeCity = useSelector((state: any) => state.filter.activeCity)
     const areas = useSelector((state: any) => state.filter.areas)
@@ -26,7 +35,54 @@ export default function Locations({ onCloseHandler }: IPanel) {
         Object.keys(cityData).map((i, k) => dispatch(updateActiveCity(parseInt(i))))
     }
 
-    //const cityDataSorted: any = cityData.slice().sort((a, b) => a.name.localeCompare(b.name))
+
+    const columns: any = [
+        {
+            header: 'Name',
+            accessorKey: 'name',
+            sortingFn: 'alphanumeric',
+            cell: (props: any) => <td>{props.getValue()}</td>
+        },
+        {
+            header: 'Areas',
+            accessorKey: 'area',
+            sortingFn: 'alphanumeric',
+            cell: (props: any) => <td>{props.getValue()}</td>
+        },
+        {
+            header: 'Wiki',
+            accessorKey: 'wiki',
+            enableSorting: false,
+            cell: (props: any) => <td className="panel__nohover-hover"><a href={props.getValue()}><FaExternalLinkAlt /></a></td>
+        },
+        {
+            header: 'Display',
+            //accessorKey: 'type',
+            enableSorting: false,
+            cell: (props: any) =>
+                <td
+                    className="panel__nohover-hover"
+                    onClick={() => dispatch(updateActiveCity(getCityIDByName(props.row.original.name)))}
+                >
+                    {activeCity.includes(getCityIDByName(props.row.original.name)) ? <FiEyeOff /> : <FiEye />}
+                </td>
+
+        },
+
+    ]
+
+    const table = useReactTable({
+        data,
+        columns,
+        state: {
+            sorting
+        },
+        onSortingChange: setSorting,
+        getCoreRowModel: getCoreRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        enableSorting: true,
+    })
+
 
     return (
         <Draggable handle="h5" >
@@ -37,7 +93,7 @@ export default function Locations({ onCloseHandler }: IPanel) {
 
                         <div className="panel__item-container  panel__header-draggable">
 
-                            <Title name={"Labels for Points of interest"} onCloseHandler={onCloseHandler} />
+                            <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
 
 
                             <div className="panel__item-container-info" onClick={() => dispatch(areas ? resetAreas() : setAreas())}>
@@ -56,36 +112,40 @@ export default function Locations({ onCloseHandler }: IPanel) {
                             )}
 
                             <table className="panel__item-table">
-                                <thead>
-                                    <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                        <th>Name</th>
-                                        <th>Area</th>
-                                        <th>Wiki</th>
-                                        <th>Show</th>
-                                    </tr>
-                                </thead>
+                                {table.getHeaderGroups().map(headerGroup => {
+                                    return (
+                                        <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                            {headerGroup.headers.map((header) => {
+                                                return (
+                                                    <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                                        {flexRender(header.column.columnDef.header, header.getContext())}
+                                                    </th>
+                                                )
+                                            })}
+                                        </tr>)
+                                })}
 
                                 <tbody>
-                                    {Object.keys(cityData).map((i: any, k: number) => {
-                                        let active = ""
-                                        if (activeCity.includes(parseInt(i))) {
-                                            active = "panel__item-container-info-active"
-                                        }
-
+                                    {table.getRowModel().rows.map(row => {
                                         return (
-                                            <tr key={k}
-                                                className={`panel__item-container-info panel__item-container-info-inactive ${active} panel__nohover`}
+                                            <tr key={row.id}
+                                                className={`panel__item-container-info panel__item-container-info-inactive panel__item-container-info-active panel__nohover`}
                                                 style={{ display: "table-row", textAlign: "left" }}
+
                                             >
-                                                <td>{cityData[i].name}</td>
-                                                <td>{cityData[i].area}</td>
-                                                <td className="panel__nohover-hover"><a href={cityData[i].wiki} target="_blank"><FaExternalLinkAlt /></a></td>
-                                                <td className="panel__nohover-hover" onClick={() => dispatch(updateActiveCity(parseInt(i)))}>
-                                                    {active ? <HiCheckCircle /> : <HiOutlineCheckCircle />}</td>
+                                                {row.getVisibleCells().map(cell => {
+                                                    return (
+                                                        flexRender(
+                                                            cell.column.columnDef.cell,
+                                                            cell.getContext()
+                                                        )
+                                                    )
+                                                })}
                                             </tr>
                                         )
 
                                     })}
+
                                 </tbody>
 
                             </table>

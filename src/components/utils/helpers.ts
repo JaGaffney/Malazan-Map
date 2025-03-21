@@ -1,4 +1,5 @@
 import characters, { ICharacter } from "../../data/characters";
+import { cityData } from "../../data/city";
 import { eventIcons } from "../../data/icons";
 
 export const tileToPosition = (tileX: number, tileY: number): Array<number> => {
@@ -70,5 +71,10 @@ export const getCharacterIDByName = (names: string[]): number => {
     const name = names[0];
 
     const currentHeadingKey: any = Object.keys(characters).find((id: any) => [characters[id]].some((n) => n.name[0] === name));
+    return parseInt(currentHeadingKey);
+};
+
+export const getCityIDByName = (name: string): number => {
+    const currentHeadingKey: any = Object.keys(cityData).find((id: any) => [cityData[id]].some((n) => n.name === name));
     return parseInt(currentHeadingKey);
 };

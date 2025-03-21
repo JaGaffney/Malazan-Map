@@ -90,13 +90,13 @@ const cityData: ICityData = {
         type: 4,
         wiki: "https://malazan.fandom.com/wiki/Morn_(location)",
     },
-    // 12: {
-    //     name: "Tesem Temple",
-    //     loc: [231.0, 15, 34.0],
-    //     area: EAreas.SevenCities,
-    //     type: 4,
-    //     wiki: "https://malazan.fandom.com/wiki/Tesem"
-    // },
+    12: {
+        name: "Tesem Temple",
+        loc: [231.0, 15, 34.0],
+        area: EAreas.SevenCities,
+        type: 4,
+        wiki: "https://malazan.fandom.com/wiki/Tesem",
+    },
     13: {
         name: "Coral",
         loc: [310.0, 15, 62.0],
