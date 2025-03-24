@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { setNone } from "./state/features/settings"
 
 import { SceneContainerStandard } from "./components/three/Scene/SceneContainerStandard";
+import { resetActiveCity, resetAreas } from "./state/features/engine";
 
 function App() {
     const [landing, setLanding] = useState<boolean>(true)
@@ -24,6 +25,8 @@ function App() {
     const onModeHandler = (data: number): void => {
         if (data === 2) {
             dispatch(setNone())
+            dispatch(resetAreas())
+            dispatch(resetActiveCity())
         }
         setLanding(false)
         setMode(data)
@@ -56,8 +59,6 @@ function App() {
                             <Suspense fallback={null} >
                                 <SceneContainerBasic />
                             </Suspense>
-
-
                         </Canvas>
                     )}
 

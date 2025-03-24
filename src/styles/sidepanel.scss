@@ -315,15 +315,6 @@
     gap: 1rem;
     margin-block: 0.5rem;
     padding: 0.3rem 0.5rem;
-    &-reset {
-        padding: 0.5rem 1rem;
-        border-radius: 16px;
-        border: solid 2px var(--blue900);
-        background-color: var(--blue100);
-        color: var(--blue800);
-        cursor: pointer;
-        width: 8rem;
-    }
     &-item {
         border-radius: 16px;
         padding: 0.3rem 1rem;
@@ -337,6 +328,10 @@
         background-color: var(--gray800);
         color: var(--teal400);
         border: solid 1px var(--teal400);
+        &:hover {
+            transform: translateY(-2px);
+            border: solid 1px var(--teal800);
+        }
     }
 }
 

@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { FaWikipediaW } from "react-icons/fa";
+
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
+
+import Draggable from 'react-draggable';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import { SortingState, useReactTable, getCoreRowModel, getSortedRowModel, flexRender } from '@tanstack/react-table';
 
 import { updateActiveCity, resetActiveCity, setAreas, resetAreas } from "../../state/features/engine"
 import { cityData } from "../../data/city"
+import { getCityIDByName } from '../utils/helpers';
 
-import { findRaceByName, getCityIDByName, validFilterQuery } from '../utils/helpers';
-import ScrollContainer from 'react-indiana-drag-scroll';
-import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
-import Draggable from 'react-draggable';
-import Title from './Title';
+import Title from '../generics/Title';
+import Reset from '../generics/Reset';
 import { IPanel } from './panel.inteface';
-import { SortingState, useReactTable, getCoreRowModel, getSortedRowModel, flexRender } from '@tanstack/react-table';
-import { ReactSVG } from 'react-svg';
+
 
 export default function Locations({ onCloseHandler }: IPanel) {
     const [data, setData] = useState(Object.values(cityData))
@@ -27,14 +29,15 @@ export default function Locations({ onCloseHandler }: IPanel) {
 
     const activeCity = useSelector((state: any) => state.filter.activeCity)
     const areas = useSelector((state: any) => state.filter.areas)
-    const search = useSelector((state: any) => state.filter.search)
     const dispatch = useDispatch()
 
-    const showAllLocation = () => {
-        dispatch(resetActiveCity())
-        Object.keys(cityData).map((i, k) => dispatch(updateActiveCity(parseInt(i))))
-    }
 
+    const locationDisplayHandler = (update: boolean) => {
+        dispatch(resetActiveCity())
+        if (update) {
+            Object.keys(cityData).map((i, k) => dispatch(updateActiveCity(parseInt(i))))
+        }
+    }
 
     const columns: any = [
         {
@@ -102,14 +105,11 @@ export default function Locations({ onCloseHandler }: IPanel) {
                             </div>
 
                             {Object.keys(cityData).length === activeCity.length ? (
-                                <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveCity())}>
-                                    <button>Reset</button>
-                                </div>
+                                <Reset message="Reset" handler={() => locationDisplayHandler(false)} />
                             ) : (
-                                <div className="panel__item-container-info" onClick={() => showAllLocation()}>
-                                    <button>Display all</button>
-                                </div>
-                            )}
+                                <Reset message="Display all" handler={() => locationDisplayHandler(true)} />
+                            )
+                            }
 
                             <table className="panel__item-table">
                                 {table.getHeaderGroups().map(headerGroup => {

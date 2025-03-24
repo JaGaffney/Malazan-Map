@@ -24,13 +24,13 @@ const Landing = ({ onModeHandler }: ILanding) => {
                     </div>
 
                     <div className="landing__mode">
-                        <button className="landing__mode-button" onClick={() => onModeHandler(2)}>
+                        {/* <button className="landing__mode-button" onClick={() => onModeHandler(2)}>
                             <div className="landing__mode-button-title">
                                 <HiMap />
                                 <span>Basic</span>
                             </div>
                             <span className="landing__mode-button-description">few animations</span>
-                        </button>
+                        </button> */}
 
                         <button className="landing__mode-button" onClick={() => onModeHandler(1)}>
                             <div className="landing__mode-button-title">

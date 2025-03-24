@@ -1,14 +1,15 @@
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Draggable, { DraggableCore } from "react-draggable"
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { bookColor } from '../utils/color';
+
 import characters from "../../data/characters"
 import book from "../../data/books"
 
 import { resetActiveData, updateActiveCharacter } from "../../state/features/engine"
-import Title from './Title';
+import Title from '../generics/Title';
+import Note from '../generics/Note';
 
 export default function Description() {
     const activeData = useSelector((state: any) => state.filter.activeData)
@@ -18,7 +19,6 @@ export default function Description() {
     const onCloseHandler = () => {
         dispatch(resetActiveData())
     }
-
 
     return (
 
@@ -30,7 +30,7 @@ export default function Description() {
                         <div className="panel__item-container panel__header-draggable panel__item-maxWidth" >
 
                             <Title name={`${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
-                            <h4>Summary</h4>
+                            <h4>Chapter Summary</h4>
                             <div className="panel__item-container-info description-large">
                                 {activeData.description.map((i: string, k: number) => {
                                     return (
@@ -40,7 +40,8 @@ export default function Description() {
                             </div>
 
 
-                            <h4>Characters in chapter</h4>
+                            <h4>Key Characters in chapter</h4>
+                            <Note message={"select character to display their timeline events."} />
                             <div className="panel__item-container-table">
                                 {activeData.char.map((i: number, k: number) => {
                                     let active = ""

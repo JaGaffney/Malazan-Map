@@ -201,7 +201,7 @@ const timelineData: ITimelineData = {
             icon: eventIcons.travelBoat,
             description: ["The start of Book one for Novels of the Malazan Empire.", "Everything that happens during the book happens on Malaz Isle or in the Sea just south of the city."],
             citation: "",
-            char: [74, 75, 10, 83, 91],
+            char: [74, 75, 10, 83, 91, 92],
             loc: [420.0, 185.59],
         },
         {

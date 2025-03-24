@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { HiX } from "react-icons/hi";
-import { IPanel } from './panel.inteface';
+import { IPanel } from '../panel/panel.inteface';
 
 interface ITitle extends IPanel {
     nameColor?: string;

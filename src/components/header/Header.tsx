@@ -15,6 +15,7 @@ import { reset, resetActiveCharacter, resetActiveCity, resetActiveData, updateSe
 import Description from '../panel/Description';
 import Timeline from '../timeline/Timeline';
 import Info from '../panel/Info';
+import Reset from '../generics/Reset';
 
 export default function Header() {
     const [searching, setSearching] = useState<string>("")
@@ -70,7 +71,7 @@ export default function Header() {
                     <HiSearch className="header-search-button" onClick={(e) => onSearchSubmit(e)} />
                 </form>
 
-                <button className="resetButton" onClick={(e) => onHardReset(e)}><GrPowerReset /> Reset</button>
+                <Reset message="Reset" handler={onHardReset} />
 
                 <Buttons books={books} onBooksHandler={setBooks}
                     places={places} onPlacesHandler={setPlaces}

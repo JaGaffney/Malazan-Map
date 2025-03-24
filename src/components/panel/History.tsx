@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import Draggable from "react-draggable"
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { update, updateActiveData } from "../../state/features/engine"
-import { bookColor } from '../utils/color'
-import ScrollContainer from 'react-indiana-drag-scroll';
-import Title from './Title';
+import Title from '../generics/Title';
 import timelineData, { ITimelinePoint } from '../../data/timelineData';
 import { validFilterQueryArray } from '../utils/helpers';
 import characters from '../../data/characters';
@@ -14,17 +13,17 @@ import { filterArray } from '../utils/filter';
 import { IPanel } from './panel.inteface';
 import book from "../../data/books"
 
-let getNumberWithSuffix = (item: string): any => {
-    const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
-    let suffixMap = {
-        "one": "st",
-        "two": "nd",
-        "few": "rd",
-        "other": "th"
-    }
-    // @ts-expect-error
-    return suffixMap[plurals.select(item)]
-}
+// let getNumberWithSuffix = (item: string): any => {
+//     const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
+//     let suffixMap = {
+//         "one": "st",
+//         "two": "nd",
+//         "few": "rd",
+//         "other": "th"
+//     }
+//     // @ts-expect-error
+//     return suffixMap[plurals.select(item)]
+// }
 
 export default function History({ onCloseHandler }: IPanel) {
     const dispatch = useDispatch()

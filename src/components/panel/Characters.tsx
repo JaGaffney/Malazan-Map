@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 import ScrollContainer from 'react-indiana-drag-scroll';
@@ -7,15 +7,15 @@ import Draggable from 'react-draggable';
 
 import { updateActiveCharacter, resetActiveCharacter } from "../../state/features/engine"
 import characters, { ICharacter } from "../../data/characters"
-import { findRaceByName, getCharacterIDByName, validFilterQuery } from '../utils/helpers';
+import { findRaceByName, getCharacterIDByName } from '../utils/helpers';
 
-import { eventIcons } from "../../data/icons";
-import Title from './Title';
+import Title from '../generics/Title';
 import { IPanel } from './panel.inteface';
 import { defaultSeries } from '../../data/books';
 
-import { createColumnHelper, flexRender, getCoreRowModel, getSortedRowModel, SortingState, useReactTable } from "@tanstack/react-table"
+import { flexRender, getCoreRowModel, getSortedRowModel, SortingState, useReactTable } from "@tanstack/react-table"
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import Reset from '../generics/Reset';
 
 export default function Characters({ onCloseHandler }: IPanel) {
     // table settings
@@ -27,11 +27,8 @@ export default function Characters({ onCloseHandler }: IPanel) {
         },
     ])
 
-
     const [activeSeries, setActiveSeries] = useState(defaultSeries)
-
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
-    const search = useSelector((state: any) => state.filter.search)
 
     const dispatch = useDispatch()
 
@@ -40,11 +37,11 @@ export default function Characters({ onCloseHandler }: IPanel) {
         setActiveSeries(prevValue => ({ ...prevValue, [series]: !toggle }))
     }
 
-    const resetCharacters = () => {
+    const resetCharacters = (e: any) => {
+        e.preventDefault()
         setActiveSeries(defaultSeries)
         dispatch(resetActiveCharacter())
     }
-
 
     const columns: any = [
         {
@@ -109,9 +106,6 @@ export default function Characters({ onCloseHandler }: IPanel) {
         enableSorting: true,
     })
 
-
-
-
     return (
         <Draggable handle="h5" >
             <div className="panel panel__characters panel__draggable">
@@ -123,7 +117,8 @@ export default function Characters({ onCloseHandler }: IPanel) {
                             <Title name={"Main/POV Characters"} onCloseHandler={onCloseHandler} />
 
                             <div className="toggle__button">
-                                <button className="toggle__button-reset" onClick={() => resetCharacters()}>Reset</button>
+                                <Reset message="Reset" handler={resetCharacters} />
+
                                 {Object.keys(defaultSeries).map((i: string, k: number) => {
                                     return (
                                         <button className={`toggle__button-item ${activeSeries[i] ? "toggle__button-active" : ""}`} key={k} onClick={() => updateActiveSeries(i)}>{i}</button>

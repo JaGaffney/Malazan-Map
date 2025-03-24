@@ -1,15 +1,16 @@
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { HiStar, HiOutlineStar } from "react-icons/hi";
-import Draggable, { DraggableCore } from "react-draggable"
 
+import Draggable, { DraggableCore } from "react-draggable"
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { resetActiveBooks, updateActiveBooks } from "../../state/features/engine"
 import { bookColor, seriesColor } from '../utils/color'
 import books from "../../data/books"
-import ScrollContainer from 'react-indiana-drag-scroll';
-import Title from './Title';
+
+import Title from '../generics/Title';
+import Reset from '../generics/Reset';
 import { IPanel } from './panel.inteface';
+
 
 interface IBook {
     id: number;
@@ -39,11 +40,12 @@ export default function Books({ onCloseHandler }: IPanel) {
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 
-    const showAllBooks = () => {
+
+    const bookDisplayHandler = (update: boolean) => {
         dispatch(resetActiveBooks())
-        Object.keys(books).forEach((i, k) => {
-            dispatch(updateActiveBooks(parseInt(i)))
-        })
+        if (update) {
+            Object.keys(books).map((i, k) => dispatch(updateActiveBooks(parseInt(i))))
+        }
     }
 
     return (
@@ -56,15 +58,10 @@ export default function Books({ onCloseHandler }: IPanel) {
 
                             <Title name={"Books"} onCloseHandler={onCloseHandler} />
 
-
                             {Object.keys(books).length === activeBooks.length ? (
-                                <div className={`panel__item-container-info `} onClick={() => dispatch(resetActiveBooks())}>
-                                    <button>Reset</button>
-                                </div>
+                                <Reset message="Reset" handler={() => bookDisplayHandler(false)} />
                             ) : (
-                                <div className="panel__item-container-info" onClick={() => showAllBooks()}>
-                                    <button>Display all</button>
-                                </div>
+                                <Reset message="Display all" handler={() => bookDisplayHandler(true)} />
                             )
                             }
 

@@ -1,7 +1,7 @@
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 import Shape from './Shape';
-import Title from '../panel/Title';
+import Title from '../generics/Title';
 import UI from './UI';
 
 interface ISettings {

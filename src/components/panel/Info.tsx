@@ -2,11 +2,9 @@
 import Draggable, { DraggableCore } from "react-draggable"
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { HiBookOpen } from "react-icons/hi";
-import { FaPaintBrush, FaGithub, FaDiscord, FaGoogleDrive, FaRedditAlien } from "react-icons/fa";
+import { FaPaintBrush, FaDiscord, FaGoogleDrive, FaRedditAlien } from "react-icons/fa";
 
-
-
-import Title from './Title';
+import Title from '../generics/Title';
 import { IPanel } from './panel.inteface';
 
 const InfoItem = ({ name, role, description, link, image }: any) => {
