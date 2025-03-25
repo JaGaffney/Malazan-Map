@@ -13,7 +13,7 @@ const Landing = ({ onModeHandler }: ILanding) => {
                 <div className="landing__hero-content">
 
                     <div className="landing__hero-title">
-                        <h1><span><i>map of </i> </span> Malazan Book of the Fallen</h1>
+                        <h1><span><i>Malazan</i></span>  Map of the Fallen</h1>
                     </div>
                     <div className="landing__hero-description">
                         <p>Trace the tales of the Fallen and unravel the saga with the Interactive 3D Map and detailed timeline. </p>
@@ -34,7 +34,7 @@ const Landing = ({ onModeHandler }: ILanding) => {
 
                         <button className="landing__mode-button" onClick={() => onModeHandler(1)}>
                             <div className="landing__mode-button-title">
-                                <HiAcademicCap />
+                                <HiMap />
                                 <span>Standard</span>
                             </div>
                             <span className="landing__mode-button-description">recommended</span>

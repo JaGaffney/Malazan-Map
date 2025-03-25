@@ -109,12 +109,13 @@ export default function Characters({ onCloseHandler }: IPanel) {
     return (
         <Draggable handle="h5" >
             <div className="panel panel__characters panel__draggable">
+                <Title name={"Main/POV Characters"} onCloseHandler={onCloseHandler} />
+
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable">
 
-                            <Title name={"Main/POV Characters"} onCloseHandler={onCloseHandler} />
 
                             <div className="toggle__button">
                                 <Reset message="Reset" handler={resetCharacters} />

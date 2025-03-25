@@ -55,13 +55,14 @@ export default function History({ onCloseHandler }: IPanel) {
         <>
             <Draggable handle="h5">
                 <div className="panel panel__books panel__draggable">
+                    <Title name={"Events"} onCloseHandler={onCloseHandler} />
 
                     <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
 
                         <div className="panel__item">
                             <div className="panel__item-container panel__header-draggable">
 
-                                <Title name={"Events"} onCloseHandler={onCloseHandler} />
+
 
                                 {Object.keys(timelineData).sort((a: any, b: any) => a - b).map((i: string, k: number) => {
                                     const year: number = parseInt(i)

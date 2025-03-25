@@ -91,12 +91,13 @@ export default function Locations({ onCloseHandler }: IPanel) {
         <Draggable handle="h5" >
             <div className="panel panel__place panel__draggable">
 
+                <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
+
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
 
                         <div className="panel__item-container  panel__header-draggable">
 
-                            <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
 
 
                             <div className="panel__item-container-info" onClick={() => dispatch(areas ? resetAreas() : setAreas())}>

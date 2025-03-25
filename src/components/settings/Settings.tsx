@@ -3,6 +3,7 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import Shape from './Shape';
 import Title from '../generics/Title';
 import UI from './UI';
+import Draggable, { DraggableCore } from 'react-draggable';
 
 interface ISettings {
     timeline: boolean;
@@ -13,13 +14,18 @@ interface ISettings {
 }
 export default function Panel({ timeline, worldMap, onCloseHandler, onTimelineHandler, onMapHandler }: ISettings) {
     return (
-        <ScrollContainer className="panel panel-scroll" draggingClassName={"timeline__container-drag"} horizontal={false}>
-            <Title name={""} onCloseHandler={onCloseHandler} />
+        <Draggable handle="h5" >
+            <div className="panel panel__draggable ">
+                <Title name={"Settings"} onCloseHandler={onCloseHandler} />
 
-            <UI timeline={timeline} onTimelineHandler={onTimelineHandler} worldMap={worldMap} onMapHandler={onMapHandler} />
+                <ScrollContainer className="panel-scroll" draggingClassName={"timeline__container-drag"} horizontal={false}>
+                    <div className="panel__item">
 
-            <Shape />
-
-        </ScrollContainer>
+                        <UI timeline={timeline} onTimelineHandler={onTimelineHandler} worldMap={worldMap} onMapHandler={onMapHandler} />
+                        <Shape />
+                    </div>
+                </ScrollContainer>
+            </div >
+        </Draggable >
     )
 }

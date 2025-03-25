@@ -1,5 +1,6 @@
 
 import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
+import Note from "../generics/Note";
 
 interface IUI {
     timeline: boolean;
@@ -9,22 +10,20 @@ interface IUI {
 }
 export default function UI({ timeline, onTimelineHandler, worldMap, onMapHandler }: IUI) {
     return (
-        <div className="panel__item">
-            <div className="panel__item-container">
-                <h5>Interface</h5>
-
-                <div className="panel__item-container-info" onClick={() => onTimelineHandler(!timeline)}>
-                    <span>Timeline</span>
-                    <span>{!timeline ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-                </div>
-
-                <div className="panel__item-container-info" onClick={() => onMapHandler(!worldMap)}>
-                    <span>mini-Map</span>
-                    <span>{!worldMap ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-                </div>
-
-
+        <div className="">
+            <h5>Interface</h5>
+            <Note message="change how the UI is displayed" />
+            <div className="panel__item-container-line" onClick={() => onTimelineHandler(!timeline)}>
+                <span>Timeline</span>
+                <span>{!timeline ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
             </div>
+
+            <div className="panel__item-container-line" onClick={() => onMapHandler(!worldMap)}>
+                <span>mini-Map</span>
+                <span>{!worldMap ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
+            </div>
+            <hr />
         </div>
+
     )
 }

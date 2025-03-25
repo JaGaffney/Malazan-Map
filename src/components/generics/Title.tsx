@@ -10,7 +10,7 @@ interface ITitle extends IPanel {
 }
 export default function Title({ nameColor, name, onCloseHandler }: ITitle) {
     return (
-        <div className="panel__item-container-header">
+        <div className="taskbar">
             <h5 style={{ color: nameColor ? nameColor : "inherit" }}>{name}</h5>
             <button onClick={() => onCloseHandler(false)}><HiX /></button>
         </div>

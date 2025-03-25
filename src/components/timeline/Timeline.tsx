@@ -37,7 +37,7 @@ const Timeline = () => {
     useEffect(() => {
         if (ref.current) {
             if (typeof window !== "undefined") {
-                ref.current.scrollTo(1300, 0);
+                ref.current.scrollTo(1000, 0);
             }
 
         }

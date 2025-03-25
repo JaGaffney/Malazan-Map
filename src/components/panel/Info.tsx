@@ -31,12 +31,13 @@ export default function Info({ onCloseHandler }: IPanel) {
 
         <Draggable handle="h5" >
             <div className="panel panel__draggable panel__draggable-large">
+                <Title name={"Info"} onCloseHandler={onCloseHandler} />
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
                         <div className="panel__item-container panel__header-draggable" >
 
-                            <Title name={"Info"} onCloseHandler={onCloseHandler} />
+
 
                             <div className="panel__info">
                                 <h6>Acknowledgements</h6>

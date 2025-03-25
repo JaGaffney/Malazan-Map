@@ -24,12 +24,14 @@ export default function Description() {
 
         <Draggable handle="h5" >
             <div className="panel panel__books panel__draggable">
+                <Title name={`${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
+
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
-                        <div className="panel__item-container panel__header-draggable panel__item-maxWidth" >
 
-                            <Title name={`${activeData.name}`} nameColor={bookColor(activeData.book)} onCloseHandler={onCloseHandler} />
+
+                        <div className="panel__item-container panel__header-draggable panel__item-maxWidth" >
                             <h4>Chapter Summary</h4>
                             <div className="panel__item-container-info description-large">
                                 {activeData.description.map((i: string, k: number) => {

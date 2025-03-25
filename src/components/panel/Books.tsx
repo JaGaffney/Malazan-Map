@@ -51,12 +51,11 @@ export default function Books({ onCloseHandler }: IPanel) {
     return (
         <Draggable handle="h5" >
             <div className="panel panel__books panel__draggable">
+                <Title name={"Books"} onCloseHandler={onCloseHandler} />
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
-                        <div className="panel__item-container panel__header-draggable" >
-
-                            <Title name={"Books"} onCloseHandler={onCloseHandler} />
+                        <div className="panel__item-container" >
 
                             {Object.keys(books).length === activeBooks.length ? (
                                 <Reset message="Reset" handler={() => bookDisplayHandler(false)} />
