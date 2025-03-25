@@ -7,7 +7,7 @@ import WorldMap from '../map/WorldMap'
 import Books from '../panel/Books'
 import Characters from '../panel/Characters'
 import Locations from '../panel/Locations'
-import History from '../panel/History'
+import History from '../timeline/History'
 import Settings from '../settings/Settings'
 import Buttons from './Buttons'
 
