@@ -63,7 +63,10 @@ export default function History({ onCloseHandler }: IPanel) {
                             <div className="panel__item-table" key={k}>
 
                                 <div className="timeline__date-header">
-                                    <span className="timeline__date">{i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                    <span className="timeline__date">
+                                        {i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{getNumberWithSuffix(i)}
+                                        <i> year of Burns Sleep</i>
+                                    </span>
                                     <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(year) ? <HiEyeOff /> : <HiEye />}</button>
                                 </div>
 
@@ -98,8 +101,9 @@ export default function History({ onCloseHandler }: IPanel) {
 
                                                                 }
                                                             }}>
-                                                            <abbr title={book[ii.book].abbreviation} style={{ color: bookColor(ii.book) }}>{book[ii.book].abbreviation}</abbr>
-                                                            {ii.citation !== "" ? <span>: {ii.citation}</span> : <span></span>}
+                                                            <abbr title={book[ii.book].name} style={{ color: bookColor(ii.book) }}>{book[ii.book].abbreviation}</abbr>
+                                                            {ii.citation !== "" ? <span className="timeline__event-history-citation">: {ii.citation}</span> : <span></span>}
+
                                                             <span style={{ width: "100%", display: "flex", justifyContent: "space-between" }}>{ii.name}</span>
                                                         </div>
                                                     </>) : (null)

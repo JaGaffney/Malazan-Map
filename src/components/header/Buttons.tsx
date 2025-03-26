@@ -39,8 +39,8 @@ const Buttons = (props: IButtons) => {
     return (
         <div className="buttons__container">
             <Button name={props.books} displayName={"Books"} icon={<HiBookOpen />} onPressHandler={props.onBooksHandler} onSettingsHandler={props.onSettingsHandler} />
-            <Button name={props.places} displayName={"Labels"} icon={<HiFlag />} onPressHandler={props.onPlacesHandler} onSettingsHandler={props.onSettingsHandler} />
             <Button name={props.characters} displayName={"Characters"} icon={<HiUsers />} onPressHandler={props.onCharactersHandler} onSettingsHandler={props.onSettingsHandler} />
+            <Button name={props.places} displayName={"Locations"} icon={<HiFlag />} onPressHandler={props.onPlacesHandler} onSettingsHandler={props.onSettingsHandler} />
             <Button name={props.history} displayName={"Events"} icon={<HiOutlineMapPin />} onPressHandler={props.onHistoryHandler} onSettingsHandler={props.onSettingsHandler} />
 
             <button className={`buttons__item ${props.settings ? "buttons__item-active" : ""}`} onClick={() => {

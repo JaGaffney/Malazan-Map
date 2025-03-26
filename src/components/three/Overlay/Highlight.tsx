@@ -12,7 +12,7 @@ export default function Highlight() {
         activeID !== "" && activeCord.x !== 0 ? (
             <group>
                 <mesh position={[activeCord.x, 151.5, activeCord.y]}>
-                    <cylinderBufferGeometry args={[1.5, 1.5, 300, 6]} />
+                    <cylinderBufferGeometry args={[3.0, 2.0, 300, 6]} />
                     <FakeGlowMaterial
                         falloff={0.5}
                         glowInternalRadius={0.9}

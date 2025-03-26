@@ -20,7 +20,7 @@ export function SceneContainerStandard(props: any) {
     return (
         <Provider store={store}>
 
-            <PerspectiveCamera makeDefault fov={45} position={[0, 300, 85]} {...props} />
+            <PerspectiveCamera makeDefault fov={45} position={[0, 250, 150]} {...props} />
             <MapControls enableRotate={true} maxDistance={600} dampingFactor={0.1} enableDamping={true} {...props} />
 
             <Lighting />

@@ -22,7 +22,6 @@ export default function UI({ timeline, onTimelineHandler, worldMap, onMapHandler
                 <span>mini-Map</span>
                 <span>{!worldMap ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
             </div>
-            <hr />
         </div>
 
     )

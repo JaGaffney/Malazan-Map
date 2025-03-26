@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Toggle from 'react-toggle'
+import "react-toggle/style.css"
 
-import { FiEye, FiEyeOff } from "react-icons/fi";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 
 import Draggable from 'react-draggable';
 import ScrollContainer from 'react-indiana-drag-scroll';
@@ -16,6 +16,8 @@ import { getCityIDByName } from '../utils/helpers';
 import Title from '../generics/Title';
 import Reset from '../generics/Reset';
 import { IPanel } from './panel.inteface';
+import Note from '../generics/Note';
+import Spacer from '../generics/Spacer';
 
 
 export default function Locations({ onCloseHandler }: IPanel) {
@@ -63,13 +65,14 @@ export default function Locations({ onCloseHandler }: IPanel) {
             //accessorKey: 'type',
             enableSorting: false,
             cell: (props: any) =>
-                <td
-                    className="panel__nohover-hover"
-                    onClick={() => dispatch(updateActiveCity(getCityIDByName(props.row.original.name)))}
-                >
-                    {activeCity.includes(getCityIDByName(props.row.original.name)) ? <FiEyeOff /> : <FiEye />}
+                <td>
+                    <Toggle
+                        defaultChecked={activeCity.includes(getCityIDByName(props.row.original.name))}
+                        icons={false}
+                        onChange={() => dispatch(updateActiveCity(getCityIDByName(props.row.original.name)))}
+                        className="reactToggle"
+                    />
                 </td>
-
         },
 
     ]
@@ -91,24 +94,34 @@ export default function Locations({ onCloseHandler }: IPanel) {
         <Draggable handle="h5" >
             <div className="panel panel__place panel__draggable">
 
-                <Title name={"Points of interest"} onCloseHandler={onCloseHandler} />
+                <Title name={"Map Labels"} onCloseHandler={onCloseHandler} />
 
                 <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                     <div className="panel__item">
 
                         <div className="panel__item-container  panel__header-draggable">
 
+                            <h5>Areas</h5>
+                            <Note message="Displays labels above the map" />
+                            <div className="panel__item-container-line">
+                                <span>Continents</span>
+                                <Toggle
+                                    defaultChecked={areas}
+                                    icons={false}
+                                    onChange={() => dispatch(areas ? resetAreas() : setAreas())}
+                                    className="reactToggle"
+                                />
 
-
-                            <div className="panel__item-container-info" onClick={() => dispatch(areas ? resetAreas() : setAreas())}>
-                                <span>Show Area Names</span>
-                                <span>{!areas ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
                             </div>
 
+                            <Spacer />
+
+                            <h5>Citys / POI</h5>
+                            <Note message="Information and location of relevant POI" />
                             {Object.keys(cityData).length === activeCity.length ? (
                                 <Reset message="Reset" handler={() => locationDisplayHandler(false)} />
                             ) : (
-                                <Reset message="Display all" handler={() => locationDisplayHandler(true)} />
+                                <Reset message="Display all on map" handler={() => locationDisplayHandler(true)} />
                             )
                             }
 

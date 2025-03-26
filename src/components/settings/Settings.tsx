@@ -4,6 +4,7 @@ import Shape from './Shape';
 import Title from '../generics/Title';
 import UI from './UI';
 import Draggable, { DraggableCore } from 'react-draggable';
+import Spacer from '../generics/Spacer';
 
 interface ISettings {
     timeline: boolean;
@@ -22,6 +23,7 @@ export default function Panel({ timeline, worldMap, onCloseHandler, onTimelineHa
                     <div className="panel__item">
 
                         <UI timeline={timeline} onTimelineHandler={onTimelineHandler} worldMap={worldMap} onMapHandler={onMapHandler} />
+                        <Spacer />
                         <Shape />
                     </div>
                 </ScrollContainer>
