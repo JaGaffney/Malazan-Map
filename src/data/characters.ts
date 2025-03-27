@@ -739,6 +739,22 @@ const characters: ICharacters = {
         affiliation: ["Awl"],
         wiki: "https://malazan.fandom.com/wiki/Redmask",
     },
+    94: {
+        name: ["Endest Silann"],
+        race: "Tiste Andii",
+        role: "Mage",
+        series: ["MBOTF", "PATH", "KHAR"],
+        affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Endest_Silann",
+    },
+    95: {
+        name: ["Endest Silann"],
+        race: "Tiste Andii",
+        role: "Warrior",
+        series: ["MBOTF", "NOME", "PATH", "KHAR"],
+        affiliation: ["High House Dark"],
+        wiki: "https://malazan.fandom.com/wiki/Spinnock_Durav",
+    },
 };
 
 export default characters;

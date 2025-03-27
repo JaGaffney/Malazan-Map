@@ -105,6 +105,14 @@ div {
     }
 }
 
+.itemToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+// overrides
 .reactToggle.react-toggle--checked .react-toggle-track {
     background-color: var(--blue700);
     &:hover,
@@ -112,14 +120,12 @@ div {
         background-color: var(--blue700);
     }
 }
-
 .reactToggle.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
     background-color: var(--teal600);
     &:hover {
         background-color: var(--teal600);
     }
 }
-
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
     &:hover {
         background-color: var(--blue800);
@@ -128,13 +134,11 @@ div {
         background-color: var(--blue800);
     }
 }
-
 .reactToggle {
     .react-toggle-track {
         background-color: var(--gray800);
     }
 }
-
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
     background-color: var(--teal600) !important;
 }

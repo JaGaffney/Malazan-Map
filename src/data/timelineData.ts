@@ -182,7 +182,6 @@ const timelineData: ITimelineData = {
     1090: [
         {
             id: uuidv4(),
-
             book: 210,
             name: "Book 4 - Forge of the High Mage",
             icon: eventIcons.travelBoat,
@@ -383,7 +382,6 @@ const timelineData: ITimelineData = {
     1160: [
         {
             id: uuidv4(),
-
             book: 100,
             name: "Siege of Pale",
             icon: eventIcons.battle,
@@ -1857,18 +1855,62 @@ const timelineData: ITimelineData = {
     1168: [
         {
             id: uuidv4(),
-
             book: 108,
             name: "Start of Book 8 - Toll the Hounds",
             icon: eventIcons.warren,
-            description: ["Anomander Rake, Shadowthrone, Edgewalker and Hood meet up to discuss their plan."],
-            citation: "",
+            description: ["Anomander Rake, Shadowthrone, Edgewalker and Hood have a meeting ."],
+            citation: "Prologue 1",
             char: [8, 74, 81],
             loc: [0, 0],
         },
         {
             id: uuidv4(),
-
+            book: 108,
+            name: "Uryd Village - Children",
+            icon: eventIcons.tribal,
+            description: [
+                "In a Teblor Uryd village, a mangled dog had chosen to settle here. One day the dog traveled southward towards the Nathii lands below",
+                "Two girls a year before adulthood picked up weapons and followed after the dog, The girls were fearless and resolute, traits from a father they never met, The girls’ mothers, a mother and a daughter, were informed. The daughter cried, the mother did not",
+            ],
+            citation: "Prologue 4",
+            char: [],
+            loc: [532.77, 30.7],
+        },
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Darujhistan part 1",
+            icon: eventIcons.city,
+            description: ["Everything that happens in Darujhistan for the first section of the book."],
+            citation: "Chapter 1",
+            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 52, 80, 81],
+            loc: [522.65, 84.28],
+        },
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Black Coral - aftermath",
+            icon: eventIcons.city,
+            description: [
+                "Endest Silann is a retired High Mage of the Tiste Andii, presently works as the castellan for the New Andiian Palace, Feels like he retired from the military with PTSD and is unable to adjust to civilian life or be content with it",
+                "Spinnock Durav wins a five-hour long game of kef tanar against Seerdomin and three others in the Scour Tavern ",
+            ],
+            citation: "Chapter 2 - Scene 1",
+            char: [8, 94, 95],
+            loc: [549.045, 95.705],
+        },
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Forest by the Sea",
+            icon: eventIcons.travelFoot,
+            description: ["Nimander Golit, Skintick, Aranatha, Desra, Nenanda, and Kedeviss follow Clip through Kurald Galain"],
+            citation: "Chapter 2 - Scene 3",
+            char: [68],
+            loc: [553, 107.3],
+        },
+        {
+            id: uuidv4(),
             book: 108,
             name: "Toll the Hounds - Karsa group",
             icon: eventIcons.travelHorse,
@@ -1877,17 +1919,7 @@ const timelineData: ITimelineData = {
             char: [73, 55, 39],
             loc: [530.65, 135.28],
         },
-        {
-            id: uuidv4(),
 
-            book: 108,
-            name: "Toll the Hounds - Nimanders group",
-            icon: eventIcons.travelCart,
-            description: ["Nimanders group travels to Bastion where they meet the False God and then make there way to Coral."],
-            citation: "",
-            char: [68],
-            loc: [531, 101.3],
-        },
         {
             id: uuidv4(),
 

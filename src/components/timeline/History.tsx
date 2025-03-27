@@ -65,7 +65,7 @@ export default function History({ onCloseHandler }: IPanel) {
                                 <div className="timeline__date-header">
                                     <span className="timeline__date">
                                         {i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{getNumberWithSuffix(i)}
-                                        <i> year of Burns Sleep</i>
+                                        <i> year {parseInt(i) < 0 ? "before" : "of"} Burns Sleep</i>
                                     </span>
                                     <button onClick={() => onDateHandler(parseInt(i))}>{inactiveDates.includes(year) ? <HiEyeOff /> : <HiEye />}</button>
                                 </div>
@@ -119,6 +119,10 @@ export default function History({ onCloseHandler }: IPanel) {
 
 
                 </div >
+
+                <div className="vertTimeline-bottom">
+
+                </div>
             </ScrollContainer>
 
         </>

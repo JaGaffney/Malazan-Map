@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Toggle from 'react-toggle'
-import "react-toggle/style.css"
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -18,6 +17,7 @@ import Reset from '../generics/Reset';
 import { IPanel } from './panel.inteface';
 import Note from '../generics/Note';
 import Spacer from '../generics/Spacer';
+import ItemToggle from '../generics/ItemToggle';
 
 
 export default function Locations({ onCloseHandler }: IPanel) {
@@ -62,7 +62,6 @@ export default function Locations({ onCloseHandler }: IPanel) {
         },
         {
             header: 'Display',
-            //accessorKey: 'type',
             enableSorting: false,
             cell: (props: any) =>
                 <td>
@@ -89,7 +88,6 @@ export default function Locations({ onCloseHandler }: IPanel) {
         enableSorting: true,
     })
 
-
     return (
         <Draggable handle="h5" >
             <div className="panel panel__place panel__draggable">
@@ -103,16 +101,7 @@ export default function Locations({ onCloseHandler }: IPanel) {
 
                             <h5>Areas</h5>
                             <Note message="Displays labels above the map" />
-                            <div className="panel__item-container-line">
-                                <span>Continents</span>
-                                <Toggle
-                                    defaultChecked={areas}
-                                    icons={false}
-                                    onChange={() => dispatch(areas ? resetAreas() : setAreas())}
-                                    className="reactToggle"
-                                />
-
-                            </div>
+                            <ItemToggle name="Continents" data={areas} handler={() => dispatch(areas ? resetAreas() : setAreas())} />
 
                             <Spacer />
 

@@ -15,6 +15,7 @@ import "./styles/header.scss"
 import "./styles/landing.scss"
 import "./styles/generics.scss"
 import "./styles/responsive.scss"
+import "react-toggle/style.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

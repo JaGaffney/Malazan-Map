@@ -1,6 +1,6 @@
 
-import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 import Note from "../generics/Note";
+import ItemToggle from "../generics/ItemToggle";
 
 interface IUI {
     timeline: boolean;
@@ -12,16 +12,11 @@ export default function UI({ timeline, onTimelineHandler, worldMap, onMapHandler
     return (
         <div className="">
             <h5>Interface</h5>
-            <Note message="change how the UI is displayed" />
-            <div className="panel__item-container-line" onClick={() => onTimelineHandler(!timeline)}>
-                <span>Timeline</span>
-                <span>{!timeline ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-            </div>
+            <Note message="change how the UI is displayed (timeline may lag)" />
 
-            <div className="panel__item-container-line" onClick={() => onMapHandler(!worldMap)}>
-                <span>mini-Map</span>
-                <span>{!worldMap ? <HiOutlineCheckCircle /> : <HiCheckCircle />}</span>
-            </div>
+            <ItemToggle name="Timeline" data={timeline} handler={() => onTimelineHandler(!timeline)} />
+            <ItemToggle name="mini-Map" data={worldMap} handler={() => onMapHandler(!worldMap)} />
+
         </div>
 
     )

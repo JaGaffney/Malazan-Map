@@ -25,7 +25,6 @@ export function SceneContainerStandard(props: any) {
 
             <Lighting />
 
-
             <group position={[-400, 0, -100]}>
                 <InstanceHexContainer />
                 <Flags />
