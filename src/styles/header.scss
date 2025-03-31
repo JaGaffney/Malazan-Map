@@ -117,4 +117,11 @@
             color: var(--teal700);
         }
     }
+    &-mobile {
+        border-radius: 8px 8px 0 0;
+        &-active {
+            background-color: var(--teal700);
+            color: var(--teal100);
+        }
+    }
 }

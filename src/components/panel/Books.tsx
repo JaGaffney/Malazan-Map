@@ -1,16 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import Draggable, { DraggableCore } from "react-draggable"
-import ScrollContainer from 'react-indiana-drag-scroll';
-
 import { resetActiveBooks, updateActiveBooks } from "../../state/features/engine"
 import { bookColor, seriesColor } from '../utils/color'
 import books from "../../data/books"
 
-import Title from '../generics/Title';
 import Reset from '../generics/Reset';
-import { IPanel } from './panel.inteface';
-
+import Panel from './Panel';
+import { IClose } from '../interfaces/close.interface';
 
 interface IBook {
     id: number;
@@ -21,6 +17,8 @@ interface IBook {
     year: string;
 }
 const Book = ({ id, year, name, author, series, book }: IBook) => {
+
+
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 
@@ -36,10 +34,9 @@ const Book = ({ id, year, name, author, series, book }: IBook) => {
     )
 }
 
-export default function Books({ onCloseHandler }: IPanel) {
+export default function Books({ onCloseHandler }: IClose) {
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
-
 
     const bookDisplayHandler = (update: boolean) => {
         dispatch(resetActiveBooks())
@@ -49,56 +46,46 @@ export default function Books({ onCloseHandler }: IPanel) {
     }
 
     return (
-        <Draggable handle="h5" >
-            <div className="panel panel__books panel__draggable">
-                <Title name={"Books"} onCloseHandler={onCloseHandler} />
+        <Panel name="Books" screenLocation="left" onCloseHandler={onCloseHandler}>
+            <div className="panel__item-container" >
 
-                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
-                    <div className="panel__item">
-                        <div className="panel__item-container" >
+                {Object.keys(books).length === activeBooks.length ? (
+                    <Reset message="Reset" handler={() => bookDisplayHandler(false)} />
+                ) : (
+                    <Reset message="Display all" handler={() => bookDisplayHandler(true)} />
+                )
+                }
 
-                            {Object.keys(books).length === activeBooks.length ? (
-                                <Reset message="Reset" handler={() => bookDisplayHandler(false)} />
-                            ) : (
-                                <Reset message="Display all" handler={() => bookDisplayHandler(true)} />
+                <table className="panel__item-table">
+                    <thead>
+                        <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
+                            <th>Year (bs)</th>
+                            <th>Name</th>
+                            <th>Series</th>
+                            <th>Book</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {Object.keys(books).map((i: string, k: number) => {
+                            const id = parseInt(i)
+
+                            return (
+                                <Book key={k}
+                                    id={id}
+                                    book={books[id].book}
+                                    name={books[id].name}
+                                    year={books[id].year}
+                                    series={books[id].series}
+                                    author={books[id].author}
+                                />
                             )
-                            }
 
-                            <table className="panel__item-table">
-                                <thead>
-                                    <tr className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                        <th>Year (bs)</th>
-                                        <th>Name</th>
-                                        <th>Series</th>
-                                        <th>Book</th>
-                                    </tr>
-                                </thead>
+                        })}
+                    </tbody>
 
-                                <tbody>
-                                    {Object.keys(books).map((i: string, k: number) => {
-                                        const id = parseInt(i)
-
-                                        return (
-                                            <Book key={k}
-                                                id={id}
-                                                book={books[id].book}
-                                                name={books[id].name}
-                                                year={books[id].year}
-                                                series={books[id].series}
-                                                author={books[id].author}
-                                            />
-                                        )
-
-                                    })}
-                                </tbody>
-
-                            </table>
-                        </div>
-
-                    </div>
-                </ScrollContainer>
-
+                </table>
             </div>
-        </Draggable>
+        </Panel>
     )
 }

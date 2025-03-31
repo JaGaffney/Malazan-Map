@@ -4,23 +4,21 @@ import Toggle from 'react-toggle'
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-import Draggable from 'react-draggable';
-import ScrollContainer from 'react-indiana-drag-scroll';
 import { SortingState, useReactTable, getCoreRowModel, getSortedRowModel, flexRender } from '@tanstack/react-table';
 
 import { updateActiveCity, resetActiveCity, setAreas, resetAreas } from "../../state/features/engine"
 import { cityData } from "../../data/city"
 import { getCityIDByName } from '../utils/helpers';
 
-import Title from '../generics/Title';
 import Reset from '../generics/Reset';
-import { IPanel } from './panel.inteface';
 import Note from '../generics/Note';
 import Spacer from '../generics/Spacer';
 import ItemToggle from '../generics/ItemToggle';
+import Panel from './Panel';
+import { IClose } from '../interfaces/close.interface';
 
 
-export default function Locations({ onCloseHandler }: IPanel) {
+export default function Locations({ onCloseHandler }: IClose) {
     const [data, setData] = useState(Object.values(cityData))
     const [sorting, setSorting] = useState<SortingState>([
         {
@@ -89,81 +87,65 @@ export default function Locations({ onCloseHandler }: IPanel) {
     })
 
     return (
-        <Draggable handle="h5" >
-            <div className="panel panel__place panel__draggable">
+        <Panel name="Map Labels" screenLocation="right" onCloseHandler={onCloseHandler}>
+            <div className="panel__item">
 
-                <Title name={"Map Labels"} onCloseHandler={onCloseHandler} />
+                <div className="panel__item-container  panel__header-draggable">
 
-                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
-                    <div className="panel__item">
+                    <h5>Areas</h5>
+                    <Note message="Displays labels above the map" />
+                    <ItemToggle name="Continents" data={areas} handler={() => dispatch(areas ? resetAreas() : setAreas())} />
 
-                        <div className="panel__item-container  panel__header-draggable">
+                    <Spacer />
 
-                            <h5>Areas</h5>
-                            <Note message="Displays labels above the map" />
-                            <ItemToggle name="Continents" data={areas} handler={() => dispatch(areas ? resetAreas() : setAreas())} />
+                    <h5>Citys / POI</h5>
+                    <Note message="Information and location of relevant POI" />
+                    {Object.keys(cityData).length === activeCity.length ? (
+                        <Reset message="Reset" handler={() => locationDisplayHandler(false)} />
+                    ) : (
+                        <Reset message="Display all on map" handler={() => locationDisplayHandler(true)} />
+                    )
+                    }
 
-                            <Spacer />
-
-                            <h5>Citys / POI</h5>
-                            <Note message="Information and location of relevant POI" />
-                            {Object.keys(cityData).length === activeCity.length ? (
-                                <Reset message="Reset" handler={() => locationDisplayHandler(false)} />
-                            ) : (
-                                <Reset message="Display all on map" handler={() => locationDisplayHandler(true)} />
-                            )
-                            }
-
-                            <table className="panel__item-table">
-                                {table.getHeaderGroups().map(headerGroup => {
-                                    return (
-                                        <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                            {headerGroup.headers.map((header) => {
-                                                return (
-                                                    <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
-                                                        {flexRender(header.column.columnDef.header, header.getContext())}
-                                                    </th>
-                                                )
-                                            })}
-                                        </tr>)
-                                })}
-
-                                <tbody>
-                                    {table.getRowModel().rows.map(row => {
+                    <table className="panel__item-table">
+                        {table.getHeaderGroups().map(headerGroup => {
+                            return (
+                                <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                    {headerGroup.headers.map((header) => {
                                         return (
-                                            <tr key={row.id}
-                                                className={`panel__item-container-info panel__item-container-info-inactive panel__item-container-info-active panel__nohover`}
-                                                style={{ display: "table-row", textAlign: "left" }}
-
-                                            >
-                                                {row.getVisibleCells().map(cell => {
-                                                    return (
-                                                        flexRender(
-                                                            cell.column.columnDef.cell,
-                                                            cell.getContext()
-                                                        )
-                                                    )
-                                                })}
-                                            </tr>
+                                            <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                                {flexRender(header.column.columnDef.header, header.getContext())}
+                                            </th>
                                         )
-
                                     })}
+                                </tr>)
+                        })}
 
-                                </tbody>
+                        <tbody>
+                            {table.getRowModel().rows.map(row => {
+                                return (
+                                    <tr key={row.id}
+                                        className={`panel__item-container-info panel__item-container-info-inactive panel__item-container-info-active panel__nohover`}
+                                        style={{ display: "table-row", textAlign: "left" }}
 
-                            </table>
+                                    >
+                                        {row.getVisibleCells().map(cell => {
+                                            return (
+                                                flexRender(
+                                                    cell.column.columnDef.cell,
+                                                    cell.getContext()
+                                                )
+                                            )
+                                        })}
+                                    </tr>
+                                )
 
-                        </div>
+                            })}
 
-
-                    </div>
-
-                </ScrollContainer>
-
-
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </Draggable>
-
-
+        </Panel>
     )
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { HiSearch, HiX } from "react-icons/hi";
 import { useDispatch, useSelector } from 'react-redux'
-import { GrPowerReset } from "react-icons/gr";
+import { useMediaQuery } from 'react-responsive'
+
 
 import WorldMap from '../map/WorldMap'
 import Books from '../panel/Books'
@@ -17,7 +18,11 @@ import Timeline from '../timeline/Timeline';
 import Info from '../panel/Info';
 import Reset from '../generics/Reset';
 
+
 export default function Header() {
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
     const [searching, setSearching] = useState<string>("")
 
     const [books, setBooks] = useState<boolean>(false)
@@ -54,31 +59,68 @@ export default function Header() {
         dispatch(resetActiveData())
         dispatch(resetActiveCity())
         dispatch(resetActiveCharacter())
+    }
 
+    const navbarControlToggle = (value: boolean, section: string) => {
+        const deepCopy = value.toString()
+
+        if (!isDesktopOrLaptop) {
+            setBooks(false)
+            setCharacters(false)
+            setPlaces(false)
+            setHistory(false)
+            setSettings(false)
+            setInfo(false)
+        }
+
+        if (section === "Books") {
+            setBooks(!(deepCopy === 'true'));
+        }
+        if (section === "Characters") {
+            setCharacters(!(deepCopy === 'true'));
+        }
+        if (section === "Locations") {
+            setPlaces(!(deepCopy === 'true'));
+        }
+        if (section === "Events") {
+            setHistory(!(deepCopy === 'true'));
+        }
+        if (section === "Settings") {
+            setSettings(!(deepCopy === 'true'));
+        }
+        if (section === "Info") {
+            setInfo(!(deepCopy === 'true'));
+        }
     }
 
     return (
         <>
             <div className="header">
-                <div className="header-title">
-                    <h1><span><i>map of </i> </span> Malazan Book of the Fallen</h1>
-                </div>
+
+                {isDesktopOrLaptop && (
+                    <div className="header-title">
+                        <h1><span><i>Malazan</i></span>map of the Fallen</h1>
+                    </div>
+                )}
 
                 <form className="header-search" onSubmit={(e) => onSearchSubmit(e)}>
                     <label className="visually-hidden" htmlFor="search">Search</label>
-                    <input id="search" type="text" value={searching} placeholder="search for character, event, location, etc..." onChange={(e) => setSearching(e.target.value)} />
+                    <input id="search" type="text" value={searching} placeholder={` ${isTabletOrMobile ? "search..." : "search for character, event, location, etc..."}`} onChange={(e) => setSearching(e.target.value)} />
                     {searching !== "" && (<HiX className="header-search-leftButton" onClick={(e) => onSearchReset(e)} />)}
                     <HiSearch className="header-search-button" onClick={(e) => onSearchSubmit(e)} />
                 </form>
 
-                <Reset message="Reset" handler={onHardReset} />
+                {isDesktopOrLaptop && (
+                    <Reset message="Reset" handler={onHardReset} />
+                )}
 
-                <Buttons books={books} onBooksHandler={setBooks}
-                    places={places} onPlacesHandler={setPlaces}
-                    characters={characters} onCharactersHandler={setCharacters}
-                    settings={settings} onSettingsHandler={setSettings}
-                    history={history} onHistoryHandler={setHistory}
-                    info={info} onInfoHandler={setInfo}
+                <Buttons books={books}
+                    places={places}
+                    characters={characters}
+                    settings={settings}
+                    history={history}
+                    info={info}
+                    navbarControlToggle={navbarControlToggle}
                 />
             </div>
 
@@ -88,11 +130,9 @@ export default function Header() {
             {history && <History onCloseHandler={setHistory} />}
             {info && <Info onCloseHandler={setInfo} />}
 
-
             {settings && <Settings onCloseHandler={setSettings} timeline={timeline} onTimelineHandler={setTimeline} worldMap={worldMap} onMapHandler={setWorldMap} />}
             {worldMap && <WorldMap />}
             {timeline && <Timeline />}
-
 
             {activeID !== "" && <Description />}
 

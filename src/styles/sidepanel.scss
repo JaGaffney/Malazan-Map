@@ -5,13 +5,23 @@
     min-width: 10rem;
     height: auto;
     margin: 0;
-    top: var(--header-size);
+    top: calc(var(--header-size) + 1rem);
     left: 0;
     overflow: hidden;
     z-index: 2;
     background-color: var(--gray900a);
     color: var(--gray300);
     margin-bottom: 13rem;
+    &-left {
+        left: 1rem;
+    }
+    &-middle {
+        left: 35%;
+    }
+    &-right {
+        right: 1rem;
+        left: auto;
+    }
 }
 .panel-scroll {
     height: 100%;
@@ -22,24 +32,6 @@
     max-height: 25rem;
     border: solid 1px black;
     overflow-y: auto;
-}
-
-.panel__books {
-    position: absolute;
-    right: 1%;
-    top: 35%;
-    left: initial;
-    width: fit-content;
-}
-.panel__place {
-    position: absolute;
-    top: 20%;
-    left: 30%;
-}
-.panel__characters {
-    top: calc(var(--header-size) + 1%);
-    left: 1%;
-    max-height: 70%;
 }
 
 .panel__item {
@@ -289,6 +281,25 @@
                     fill: var(--teal500);
                 }
             }
+        }
+    }
+}
+
+.panel__mobile {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    top: 6rem;
+
+    .taskbar {
+        background-color: var(--teal700);
+        color: var(--teal100);
+        position: relative;
+        h5 {
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+            padding: 0 0.5rem;
+            text-align: center;
         }
     }
 }

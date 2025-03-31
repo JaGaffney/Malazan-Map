@@ -2,22 +2,20 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
-import ScrollContainer from 'react-indiana-drag-scroll';
-import Draggable from 'react-draggable';
 
 import { updateActiveCharacter, resetActiveCharacter } from "../../state/features/engine"
 import characters, { ICharacter } from "../../data/characters"
 import { findRaceByName, getCharacterIDByName } from '../utils/helpers';
 
-import Title from '../generics/Title';
-import { IPanel } from './panel.inteface';
 import { defaultSeries } from '../../data/books';
 
 import { flexRender, getCoreRowModel, getSortedRowModel, SortingState, useReactTable } from "@tanstack/react-table"
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import Reset from '../generics/Reset';
+import Panel from './Panel';
+import { IClose } from '../interfaces/close.interface';
 
-export default function Characters({ onCloseHandler }: IPanel) {
+export default function Characters({ onCloseHandler }: IClose) {
     // table settings
     const [data, setData] = useState<ICharacter[]>(Object.values(characters))
     const [sorting, setSorting] = useState<SortingState>([
@@ -107,94 +105,80 @@ export default function Characters({ onCloseHandler }: IPanel) {
     })
 
     return (
-        <Draggable handle="h5" >
-            <div className="panel panel__characters panel__draggable">
-                <Title name={"Characters"} onCloseHandler={onCloseHandler} />
+        <Panel name="Characters" screenLocation="middle" onCloseHandler={onCloseHandler}>
+            <div className="panel__item-container panel__header-draggable">
+                <div className="toggle__button">
+                    <Reset message="Reset" handler={resetCharacters} />
 
+                    {Object.keys(defaultSeries).map((i: string, k: number) => {
+                        return (
+                            <button className={`toggle__button-item ${activeSeries[i] ? "toggle__button-active" : ""}`} key={k} onClick={() => updateActiveSeries(i)}>{i}</button>
+                        )
+                    })}
 
-                <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
-                    <div className="panel__item">
-                        <div className="panel__item-container panel__header-draggable">
+                </div>
 
+                <table className="panel__item-table">
+                    <thead>
 
-                            <div className="toggle__button">
-                                <Reset message="Reset" handler={resetCharacters} />
-
-                                {Object.keys(defaultSeries).map((i: string, k: number) => {
-                                    return (
-                                        <button className={`toggle__button-item ${activeSeries[i] ? "toggle__button-active" : ""}`} key={k} onClick={() => updateActiveSeries(i)}>{i}</button>
-                                    )
-                                })}
-
-                            </div>
-
-                            <table className="panel__item-table">
-                                <thead>
-
-                                    {table.getHeaderGroups().map(headerGroup => {
+                        {table.getHeaderGroups().map(headerGroup => {
+                            return (
+                                <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                    {headerGroup.headers.map((header) => {
                                         return (
-                                            <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                                {headerGroup.headers.map((header) => {
-                                                    return (
-                                                        <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
-                                                            {flexRender(header.column.columnDef.header, header.getContext())}
-                                                        </th>
-                                                    )
-                                                })}
-                                            </tr>)
-                                    })}
-
-                                </thead>
-
-                                <tbody>
-                                    {table.getRowModel().rows.map(row => {
-                                        const characterID = getCharacterIDByName(row.original.name)
-
-                                        const contains = Object.keys(activeSeries).some(element => {
-                                            if (activeSeries[element]) {
-                                                return row.original.series.includes(element);
-                                            }
-
-                                        });
-                                        if (contains === false) {
-                                            return null
-                                        }
-
-                                        let active = ""
-                                        if (activeCharacter.includes(characterID) || activeCharacter.length === 0) {
-                                            active = "panel__item-container-info-active"
-                                        }
-
-                                        return (
-                                            <tr key={row.id}
-                                                className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
-                                                style={{ display: "table-row", textAlign: "left" }}
-                                                onClick={() => dispatch(updateActiveCharacter(characterID))}
-                                            >
-                                                {row.getVisibleCells().map(cell => {
-                                                    return (
-                                                        flexRender(
-                                                            cell.column.columnDef.cell,
-                                                            cell.getContext()
-                                                        )
-                                                    )
-                                                })}
-                                            </tr>
+                                            <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                                {flexRender(header.column.columnDef.header, header.getContext())}
+                                            </th>
                                         )
-
                                     })}
-                                </tbody>
+                                </tr>)
+                        })}
 
-                            </table>
+                    </thead>
 
-                        </div>
-                    </div>
+                    <tbody>
+                        {table.getRowModel().rows.map(row => {
+                            const characterID = getCharacterIDByName(row.original.name)
 
-                </ScrollContainer>
+                            const contains = Object.keys(activeSeries).some(element => {
+                                if (activeSeries[element]) {
+                                    return row.original.series.includes(element);
+                                }
 
-            </div >
+                            });
+                            if (contains === false) {
+                                return null
+                            }
 
-        </Draggable >
+                            let active = ""
+                            if (activeCharacter.includes(characterID) || activeCharacter.length === 0) {
+                                active = "panel__item-container-info-active"
+                            }
+
+                            return (
+                                <tr key={row.id}
+                                    className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
+                                    style={{ display: "table-row", textAlign: "left" }}
+                                    onClick={() => dispatch(updateActiveCharacter(characterID))}
+                                >
+                                    {row.getVisibleCells().map(cell => {
+                                        return (
+                                            flexRender(
+                                                cell.column.columnDef.cell,
+                                                cell.getContext()
+                                            )
+                                        )
+                                    })}
+                                </tr>
+                            )
+
+                        })}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </Panel>
     )
 }
 
