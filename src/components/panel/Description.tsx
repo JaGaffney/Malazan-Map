@@ -1,28 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux'
-import Draggable, { DraggableCore } from "react-draggable"
-import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { bookColor } from '../utils/color';
 
 import characters from "../../data/characters"
 import book from "../../data/books"
 
-import { resetActiveData, updateActiveCharacter, updateActiveDataDescription } from "../../state/features/engine"
+import { resetActiveData, updateActiveCharacter } from "../../state/features/engine"
 import Note from '../generics/Note';
 import Panel from './Panel';
 import { useMediaQuery } from 'react-responsive';
+import { SCREEN_SIZE_DESKTOP } from '../../state/CONSTANTS';
 
-export default function Description() {
+export default function Description({ onClickHandler }: any) {
     const activeData = useSelector((state: any) => state.filter.activeData)
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
     const dispatch = useDispatch()
 
     const onCloseHandler = () => {
         if (isDesktopOrLaptop) {
             dispatch(resetActiveData())
         } else {
-            dispatch(updateActiveDataDescription(""))
+            onClickHandler()
         }
     }
 
@@ -49,7 +48,6 @@ export default function Description() {
                         return (
                             <div key={k} className={`panel__item-container-info panel__item-container-info-inactive ${active}`} onClick={() => dispatch(updateActiveCharacter(i))}>
                                 <span>{characters[i].name[0]}</span>
-                                {/* <ReactSVG src={findRaceByName(characters[i].race)} className={active} /> */}
                             </div>
                         )
                     })}

@@ -2,6 +2,7 @@ import { HiBookOpen, HiUsers, HiCog, HiOutlineInformationCircle, HiOutlineClock 
 import { HiOutlineMapPin } from "react-icons/hi2";
 import { useMediaQuery } from 'react-responsive';
 import { Button } from './Button';
+import { SCREEN_SIZE_DESKTOP } from '../../state/CONSTANTS';
 
 interface IButtons {
     books: boolean;
@@ -10,58 +11,58 @@ interface IButtons {
     history: boolean;
     settings: boolean;
     info: boolean;
-    description: boolean;
-    navbarControlToggle: (name: boolean, section: string) => void;
+    description: string;
+    navbarControlToggle: (name: boolean | string, section: string) => void;
 }
 
-const Buttons = (props: IButtons) => {
-    const isDesktopOrLaptop: any = useMediaQuery({ query: '(min-width: 1224px)' })
+const Buttons = ({ books, places, characters, settings, history, info, description, navbarControlToggle }: IButtons) => {
+    const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
 
     return (
         <div className={`buttons__container ${!isDesktopOrLaptop && "buttons-mobile"}`}>
             <Button
-                name={props.books}
+                name={books}
                 displayName={"Books"}
                 icon={<HiBookOpen />}
-                onPressHandler={props.navbarControlToggle}
+                onPressHandler={navbarControlToggle}
             />
             <Button
-                name={props.characters}
+                name={characters}
                 displayName={"Characters"}
                 icon={<HiUsers />}
-                onPressHandler={props.navbarControlToggle}
+                onPressHandler={navbarControlToggle}
             />
             <Button
-                name={props.places}
+                name={places}
                 displayName={"Locations"}
                 icon={<HiOutlineMapPin />}
-                onPressHandler={props.navbarControlToggle}
+                onPressHandler={navbarControlToggle}
             />
             <Button
-                name={props.history}
+                name={history}
                 displayName={"Events"}
                 icon={<HiOutlineClock />}
-                onPressHandler={props.navbarControlToggle}
+                onPressHandler={navbarControlToggle}
             />
             <Button
-                name={props.settings}
+                name={settings}
                 displayName={"Settings"}
                 icon={<HiCog />}
-                onPressHandler={props.navbarControlToggle}
+                onPressHandler={navbarControlToggle}
             />
             {isDesktopOrLaptop ? (
                 <Button
-                    name={props.info}
+                    name={info}
                     displayName={"Info"}
                     icon={<HiOutlineInformationCircle />}
-                    onPressHandler={props.navbarControlToggle}
+                    onPressHandler={navbarControlToggle}
                 />
             ) : (
                 <Button
-                    name={props.description}
+                    name={description}
                     displayName={"Description"}
                     icon={<HiOutlineInformationCircle />}
-                    onPressHandler={props.navbarControlToggle}
+                    onPressHandler={navbarControlToggle}
                 />
             )}
 

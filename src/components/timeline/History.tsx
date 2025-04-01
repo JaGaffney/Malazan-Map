@@ -15,6 +15,7 @@ import { bookColor } from '../utils/color';
 import { IClose } from '../interfaces/close.interface';
 import { useMediaQuery } from 'react-responsive';
 import Panel from '../panel/Panel';
+import { SCREEN_SIZE_DESKTOP } from '../../state/CONSTANTS';
 
 let getNumberWithSuffix = (item: string): any => {
     const plurals = new Intl.PluralRules('en-US', { type: 'ordinal' });
@@ -29,7 +30,7 @@ let getNumberWithSuffix = (item: string): any => {
 }
 
 export default function History({ onCloseHandler }: IClose) {
-    const isDesktopOrLaptop: any = useMediaQuery({ query: '(min-width: 1224px)' })
+    const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
     const dispatch = useDispatch()
 
     const [inactiveDates, setInactiveDates] = useState<Array<any>>([])
@@ -56,7 +57,6 @@ export default function History({ onCloseHandler }: IClose) {
 
     return (
         isDesktopOrLaptop ? (
-
             <>
                 <ScrollContainer className="vertTimeline" hideScrollbars={false} horizontal={true}>
                     <div>

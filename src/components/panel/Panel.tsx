@@ -1,10 +1,11 @@
 
-import Draggable, { DraggableCore } from "react-draggable"
+import Draggable from "react-draggable"
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 import Title, { ITitle } from '../generics/Title';
 import { useMediaQuery } from 'react-responsive';
-import { ReactElement } from "react";
+import { ReactElement, useRef } from "react";
+import { SCREEN_SIZE_DESKTOP } from "../../state/CONSTANTS";
 
 
 interface IPanel extends ITitle {
@@ -14,12 +15,13 @@ interface IPanel extends ITitle {
 }
 
 export default function Panel({ children, screenLocation, name, onCloseHandler }: IPanel) {
-    const isDesktopOrLaptop: any = useMediaQuery({ query: '(min-width: 1224px)' })
+    const nodeRef = useRef(null);
+    const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
 
     return (
         isDesktopOrLaptop ? (
-            <Draggable handle="h5">
-                <div className={`panel panel__draggable panel-${screenLocation}`}>
+            <Draggable handle="h5" nodeRef={nodeRef}>
+                <div ref={nodeRef} className={`panel panel__draggable panel-${screenLocation}`}>
 
                     <Title name={name} onCloseHandler={onCloseHandler} />
                     <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>

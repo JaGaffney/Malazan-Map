@@ -1,13 +1,14 @@
 import { HiX } from "react-icons/hi";
 import { IClose } from '../interfaces/close.interface';
 import { useMediaQuery } from "react-responsive";
+import { SCREEN_SIZE_DESKTOP } from "../../state/CONSTANTS";
 export interface ITitle extends IClose {
     nameColor?: string;
     name: string;
 }
 
 export default function Title({ nameColor, name, onCloseHandler }: ITitle) {
-    const isDesktopOrLaptop: any = useMediaQuery({ query: '(min-width: 1224px)' })
+    const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
     return (
         isDesktopOrLaptop ? (
             <div className="taskbar">

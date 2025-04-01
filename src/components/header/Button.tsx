@@ -1,13 +1,15 @@
 import { useMediaQuery } from 'react-responsive';
+import { SCREEN_SIZE_DESKTOP } from '../../state/CONSTANTS';
 
 interface IButton {
-    name: boolean;
+    name: boolean | string;
     displayName: string;
     icon: any;
-    onPressHandler: (name: boolean, section: string) => void;
+    onPressHandler: (name: boolean | string, section: string) => void;
 }
+
 export const Button = ({ name, displayName, icon, onPressHandler }: IButton) => {
-    const isDesktopOrLaptop: any = useMediaQuery({ query: '(min-width: 1224px)' })
+    const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
 
     return (
         <button className={`buttons__item 

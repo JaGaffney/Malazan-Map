@@ -59,7 +59,7 @@ export default function Characters({ onCloseHandler }: IClose) {
             header: 'Aliases',
             cell: (props: any) => <td>{props.row.original.name.length > 1 ? (
                 props.row.original.name.filter((aliase: string) => aliase != props.row.original.name[0]).map((aliase: string, ii: number, row: string[]) => (
-                    <span>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
+                    <span key={ii}>{aliase}{ii + 1 === row.length ? "" : ", "}</span>
                 ))) : ""}</td>,
         },
         {
@@ -67,7 +67,7 @@ export default function Characters({ onCloseHandler }: IClose) {
             accessorKey: 'affiliation',
             sortingFn: 'myCustomSorting',
             cell: (props: any) => <td className="tablerow-minwidth">{props.getValue().map((aff: string, ii: number, row: string[]) => (
-                <span>{aff}{ii + 1 === row.length ? "" : ", "}</span>
+                <span key={ii}>{aff}{ii + 1 === row.length ? "" : ", "}</span>
             ))}</td>
         },
         {
@@ -121,12 +121,12 @@ export default function Characters({ onCloseHandler }: IClose) {
                 <table className="panel__item-table">
                     <thead>
 
-                        {table.getHeaderGroups().map(headerGroup => {
+                        {table.getHeaderGroups().map((headerGroup, k) => {
                             return (
-                                <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                    {headerGroup.headers.map((header) => {
+                                <tr key={k} id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                    {headerGroup.headers.map((header, kk) => {
                                         return (
-                                            <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                            <th key={kk} className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
                                                 {flexRender(header.column.columnDef.header, header.getContext())}
                                             </th>
                                         )
@@ -137,7 +137,7 @@ export default function Characters({ onCloseHandler }: IClose) {
                     </thead>
 
                     <tbody>
-                        {table.getRowModel().rows.map(row => {
+                        {table.getRowModel().rows.map((row, k) => {
                             const characterID = getCharacterIDByName(row.original.name)
 
                             const contains = Object.keys(activeSeries).some(element => {
@@ -156,7 +156,7 @@ export default function Characters({ onCloseHandler }: IClose) {
                             }
 
                             return (
-                                <tr key={row.id}
+                                <tr key={k}
                                     className={`panel__item-container-info panel__item-container-info-inactive ${active}`}
                                     style={{ display: "table-row", textAlign: "left" }}
                                     onClick={() => dispatch(updateActiveCharacter(characterID))}

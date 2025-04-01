@@ -5,7 +5,6 @@ import { SceneContainer } from "./components/three/Scene/SceneContainer";
 import { SceneContainerBasic } from "./components/three/Scene/SceneContainerBasic";
 import { BakeShadows, Stats } from "@react-three/drei";
 
-import Header from "./components/header/Header";
 import Landing from "./components/landing/Landing";
 
 import CustomLoader from "./components/three/CustomLoader/CustomLoader"
@@ -15,6 +14,7 @@ import { setNone } from "./state/features/settings"
 
 import { SceneContainerStandard } from "./components/three/Scene/SceneContainerStandard";
 import { resetActiveCity, resetAreas } from "./state/features/engine";
+import Body from "./components/body/Body";
 
 function App() {
     const [landing, setLanding] = useState<boolean>(true)
@@ -54,15 +54,15 @@ function App() {
                         </Canvas>
                     )}
 
-                    {mode === 2 && (
+                    {/* {mode === 2 && (
                         <Canvas frameloop={"demand"} >
                             <Suspense fallback={null} >
                                 <SceneContainerBasic />
                             </Suspense>
                         </Canvas>
-                    )}
+                    )} */}
 
-                    <Header />
+                    <Body />
                 </>
             ) : <Landing onModeHandler={onModeHandler} />}
         </>

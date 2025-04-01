@@ -106,23 +106,25 @@ export default function Locations({ onCloseHandler }: IClose) {
                 }
 
                 <table className="panel__item-table">
-                    {table.getHeaderGroups().map(headerGroup => {
-                        return (
-                            <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                {headerGroup.headers.map((header) => {
-                                    return (
-                                        <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
-                                            {flexRender(header.column.columnDef.header, header.getContext())}
-                                        </th>
-                                    )
-                                })}
-                            </tr>)
-                    })}
+                    <thead>
+                        {table.getHeaderGroups().map(headerGroup => {
+                            return (
+                                <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                    {headerGroup.headers.map((header, k) => {
+                                        return (
+                                            <th key={k} className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                                {flexRender(header.column.columnDef.header, header.getContext())}
+                                            </th>
+                                        )
+                                    })}
+                                </tr>)
+                        })}
+                    </thead>
 
                     <tbody>
-                        {table.getRowModel().rows.map(row => {
+                        {table.getRowModel().rows.map((row, k) => {
                             return (
-                                <tr key={row.id}
+                                <tr key={k}
                                     className={`panel__item-container-info panel__item-container-info-inactive panel__item-container-info-active panel__nohover`}
                                     style={{ display: "table-row", textAlign: "left" }}
 
