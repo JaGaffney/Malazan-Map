@@ -36,7 +36,9 @@ export default function Panel({ children, screenLocation, name, onCloseHandler }
                     <div className="panel__item">
                         {children}
                     </div>
+                    <div className="vertTimeline-bottom"></div>
                 </ScrollContainer>
+
             </div>
         )
 

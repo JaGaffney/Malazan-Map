@@ -12,7 +12,7 @@ import History from '../timeline/History'
 import Settings from '../settings/Settings'
 import Buttons from './Buttons'
 
-import { reset, resetActiveCharacter, resetActiveCity, resetActiveData, updateSearch } from "../../state/features/engine"
+import { reset, resetActiveCharacter, resetActiveCity, resetActiveData, updateActiveDataDescription, updateSearch } from "../../state/features/engine"
 import Description from '../panel/Description';
 import Timeline from '../timeline/Timeline';
 import Info from '../panel/Info';
@@ -34,7 +34,7 @@ export default function Header() {
     const [history, setHistory] = useState<boolean>(false)
     const [info, setInfo] = useState<boolean>(false)
 
-    const activeID = useSelector((state: any) => state.filter.activeData.id)
+    const activeDescription = useSelector((state: any) => state.filter.activeData.description)
 
     const dispatch = useDispatch()
 
@@ -91,6 +91,9 @@ export default function Header() {
         if (section === "Info") {
             setInfo(!(deepCopy === 'true'));
         }
+        if (section === "Description") {
+            dispatch(updateActiveDataDescription(""))
+        }
     }
 
     return (
@@ -120,6 +123,7 @@ export default function Header() {
                     settings={settings}
                     history={history}
                     info={info}
+                    description={activeDescription !== ""}
                     navbarControlToggle={navbarControlToggle}
                 />
             </div>
@@ -134,9 +138,7 @@ export default function Header() {
             {worldMap && <WorldMap />}
             {timeline && <Timeline />}
 
-            {activeID !== "" && <Description />}
-
-
+            {activeDescription !== "" && <Description />}
         </>
     )
 }

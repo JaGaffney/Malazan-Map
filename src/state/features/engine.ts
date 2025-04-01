@@ -68,6 +68,9 @@ export const filterSlice = createSlice({
         updateActiveData: (state, action) => {
             state.activeData = action.payload;
         },
+        updateActiveDataDescription: (state, action) => {
+            state.activeData.description = action.payload;
+        },
         resetActiveData: (state) => {
             state.activeData = defaultActiveData;
         },
@@ -107,6 +110,7 @@ export const {
     update,
     reset,
     updateActiveData,
+    updateActiveDataDescription,
     resetActiveData,
     updateActiveCity,
     resetActiveCity,

@@ -10,6 +10,7 @@ interface IButtons {
     history: boolean;
     settings: boolean;
     info: boolean;
+    description: boolean;
     navbarControlToggle: (name: boolean, section: string) => void;
 }
 
@@ -48,14 +49,23 @@ const Buttons = (props: IButtons) => {
                 icon={<HiCog />}
                 onPressHandler={props.navbarControlToggle}
             />
-            <Button
-                name={props.info}
-                displayName={"Info"}
-                icon={<HiOutlineInformationCircle />}
-                onPressHandler={props.navbarControlToggle}
-            />
-        </div>
+            {isDesktopOrLaptop ? (
+                <Button
+                    name={props.info}
+                    displayName={"Info"}
+                    icon={<HiOutlineInformationCircle />}
+                    onPressHandler={props.navbarControlToggle}
+                />
+            ) : (
+                <Button
+                    name={props.description}
+                    displayName={"Description"}
+                    icon={<HiOutlineInformationCircle />}
+                    onPressHandler={props.navbarControlToggle}
+                />
+            )}
 
+        </div>
     )
 }
 

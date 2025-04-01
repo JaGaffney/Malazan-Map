@@ -88,63 +88,60 @@ export default function Locations({ onCloseHandler }: IClose) {
 
     return (
         <Panel name="Map Labels" screenLocation="right" onCloseHandler={onCloseHandler}>
-            <div className="panel__item">
+            <div className="panel__item-container  panel__header-draggable">
 
-                <div className="panel__item-container  panel__header-draggable">
+                <h5>Areas</h5>
+                <Note message="Displays labels above the map" />
+                <ItemToggle name="Continents" data={areas} handler={() => dispatch(areas ? resetAreas() : setAreas())} />
 
-                    <h5>Areas</h5>
-                    <Note message="Displays labels above the map" />
-                    <ItemToggle name="Continents" data={areas} handler={() => dispatch(areas ? resetAreas() : setAreas())} />
+                <Spacer />
 
-                    <Spacer />
+                <h5>Citys / POI</h5>
+                <Note message="Information and location of relevant POI" />
+                {Object.keys(cityData).length === activeCity.length ? (
+                    <Reset message="Reset" handler={() => locationDisplayHandler(false)} />
+                ) : (
+                    <Reset message="Display all on map" handler={() => locationDisplayHandler(true)} />
+                )
+                }
 
-                    <h5>Citys / POI</h5>
-                    <Note message="Information and location of relevant POI" />
-                    {Object.keys(cityData).length === activeCity.length ? (
-                        <Reset message="Reset" handler={() => locationDisplayHandler(false)} />
-                    ) : (
-                        <Reset message="Display all on map" handler={() => locationDisplayHandler(true)} />
-                    )
-                    }
+                <table className="panel__item-table">
+                    {table.getHeaderGroups().map(headerGroup => {
+                        return (
+                            <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
+                                {headerGroup.headers.map((header) => {
+                                    return (
+                                        <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
+                                            {flexRender(header.column.columnDef.header, header.getContext())}
+                                        </th>
+                                    )
+                                })}
+                            </tr>)
+                    })}
 
-                    <table className="panel__item-table">
-                        {table.getHeaderGroups().map(headerGroup => {
+                    <tbody>
+                        {table.getRowModel().rows.map(row => {
                             return (
-                                <tr id={headerGroup.id} className="panel__item-table-item" style={{ textAlign: "left" }}>
-                                    {headerGroup.headers.map((header) => {
+                                <tr key={row.id}
+                                    className={`panel__item-container-info panel__item-container-info-inactive panel__item-container-info-active panel__nohover`}
+                                    style={{ display: "table-row", textAlign: "left" }}
+
+                                >
+                                    {row.getVisibleCells().map(cell => {
                                         return (
-                                            <th className={`${header.column.getCanSort() && "panel__item-table-header"}`} colSpan={header.colSpan} onClick={header.column.getToggleSortingHandler()}>
-                                                {flexRender(header.column.columnDef.header, header.getContext())}
-                                            </th>
+                                            flexRender(
+                                                cell.column.columnDef.cell,
+                                                cell.getContext()
+                                            )
                                         )
                                     })}
-                                </tr>)
+                                </tr>
+                            )
+
                         })}
 
-                        <tbody>
-                            {table.getRowModel().rows.map(row => {
-                                return (
-                                    <tr key={row.id}
-                                        className={`panel__item-container-info panel__item-container-info-inactive panel__item-container-info-active panel__nohover`}
-                                        style={{ display: "table-row", textAlign: "left" }}
-
-                                    >
-                                        {row.getVisibleCells().map(cell => {
-                                            return (
-                                                flexRender(
-                                                    cell.column.columnDef.cell,
-                                                    cell.getContext()
-                                                )
-                                            )
-                                        })}
-                                    </tr>
-                                )
-
-                            })}
-
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </Panel>
     )

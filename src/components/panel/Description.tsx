@@ -7,18 +7,23 @@ import { bookColor } from '../utils/color';
 import characters from "../../data/characters"
 import book from "../../data/books"
 
-import { resetActiveData, updateActiveCharacter } from "../../state/features/engine"
-import Title from '../generics/Title';
+import { resetActiveData, updateActiveCharacter, updateActiveDataDescription } from "../../state/features/engine"
 import Note from '../generics/Note';
 import Panel from './Panel';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Description() {
     const activeData = useSelector((state: any) => state.filter.activeData)
     const activeCharacter = useSelector((state: any) => state.filter.activeCharacter)
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' })
     const dispatch = useDispatch()
 
     const onCloseHandler = () => {
-        dispatch(resetActiveData())
+        if (isDesktopOrLaptop) {
+            dispatch(resetActiveData())
+        } else {
+            dispatch(updateActiveDataDescription(""))
+        }
     }
 
     return (
