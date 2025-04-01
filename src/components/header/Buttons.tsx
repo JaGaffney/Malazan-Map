@@ -11,7 +11,7 @@ interface IButtons {
     history: boolean;
     settings: boolean;
     info: boolean;
-    description: string;
+    description: any;
     navbarControlToggle: (name: boolean | string, section: string) => void;
 }
 

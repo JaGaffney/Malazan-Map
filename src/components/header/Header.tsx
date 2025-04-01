@@ -16,7 +16,7 @@ interface IHeader {
     history: boolean;
     info: boolean;
     description: string | boolean;
-    navbarControlToggle: (name: boolean, section: string) => void;
+    navbarControlToggle: (name: boolean | string, section: string) => void;
 }
 export default function Header({ books, places, characters, settings, history, info, description, navbarControlToggle }: IHeader) {
     const isDesktopOrLaptop = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
