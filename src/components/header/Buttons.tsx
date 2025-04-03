@@ -19,7 +19,7 @@ const Buttons = ({ books, places, characters, settings, history, info, descripti
     const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
 
     return (
-        <div className={`buttons__container ${!isDesktopOrLaptop && "buttons-mobile"}`}>
+        <div className={`buttons__container ${!isDesktopOrLaptop ? "buttons-mobile" : ""}`}>
             <Button
                 name={books}
                 displayName={"Books"}
@@ -43,6 +43,7 @@ const Buttons = ({ books, places, characters, settings, history, info, descripti
                 displayName={"Events"}
                 icon={<HiOutlineClock />}
                 onPressHandler={navbarControlToggle}
+
             />
             <Button
                 name={settings}

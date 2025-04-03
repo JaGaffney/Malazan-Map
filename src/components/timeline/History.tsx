@@ -127,7 +127,7 @@ export default function History({ onCloseHandler }: IClose) {
 
             </>
         ) : (
-            <Panel name="History" screenLocation="left" onCloseHandler={onCloseHandler}>
+            <Panel name="History" screenLocation="left" onCloseHandler={onCloseHandler} colorNumber={111}>
                 <div className="panel__item-container" >
 
                     <div>

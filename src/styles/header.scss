@@ -106,6 +106,7 @@
     svg {
         height: 1.5rem;
         width: 1.5rem;
+        color: var(--_buttonColourDark);
     }
     &:hover {
         transform: translateY(-2px);
@@ -120,8 +121,11 @@
     &-mobile {
         border-radius: 8px 8px 0 0;
         &-active {
-            background-color: var(--teal700);
-            color: var(--teal100);
+            background-color: var(--_buttonColourDark);
+            color: var(--_buttonColourLight);
+            svg {
+                color: var(--_buttonColourLight);
+            }
         }
     }
 }

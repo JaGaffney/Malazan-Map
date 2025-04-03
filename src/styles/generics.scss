@@ -59,7 +59,8 @@ div {
     height: fit-content;
 
     border-bottom: solid 2px var(--gray900);
-    background-color: var(--gray800);
+    background-color: var(--_buttonColourDark) !important;
+    color: var(--_buttonColourLight) !important;
     margin-bottom: 0.5rem;
     z-index: 5;
 

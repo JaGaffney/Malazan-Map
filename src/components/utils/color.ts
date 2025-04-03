@@ -2,7 +2,6 @@ export const bookColor = (bookNumber: number): string => {
     switch (bookNumber) {
         case 100:
             return "var(--gray600)";
-
         case 101: // "Gardens of the Moon"
         case 102: // "Deadhouse Gates"
         case 103: // "Memories of Ice"
@@ -14,7 +13,6 @@ export const bookColor = (bookNumber: number): string => {
         case 109: //  "Dust of Dreams"
         case 110: // "The Crippled God"
             return "var(--teal600)";
-
         case 201: // "Night of Knives"
         case 202: // "Return of the Crimson Guard"
         case 203: // "Stonewielder"
@@ -22,7 +20,6 @@ export const bookColor = (bookNumber: number): string => {
         case 205: // "Blood and Bone"
         case 206: // "Assail"
             return "var(--red600)";
-
         case 207: // "Dancer's Lament"
         case 208: // "Kellanved's Reach"
         case 209: // "Deadhouse Landing"
@@ -30,12 +27,10 @@ export const bookColor = (bookNumber: number): string => {
         case 211: // "Book 5"
         case 212: // "Book 6"
             return "var(--amber600)";
-
         case 111: // "Forge of Darkness"
         case 112: // "Fall of Light"
         case 113: // "Walk in Shadow"
             return "var(--violet500)";
-
         case 114: // "The God is Not Willing"
         case 115: // "Book 2"
         case 116: // "Book 3"
@@ -94,6 +89,44 @@ export const calculateColorCityType = (cityType: number): IColorCtyType => {
             color.hex = "#115e59";
             color.hexOverlay = "#105752";
             color.classname = "cityFour";
+            return color;
+        default:
+            return color;
+    }
+};
+
+export const headerColor = (name: string): any => {
+    const color = {
+        light: "var(--gray100)",
+        dark: "var(--gray800)",
+    };
+    switch (name) {
+        case "Books":
+            color.light = "var(--teal50)";
+            color.dark = "var(--teal700)";
+            return color;
+        case "Characters":
+            color.light = "var(--amber750)";
+            color.dark = "var(--amber200)";
+            return color;
+        case "Map Labels":
+        case "Locations":
+            color.light = "var(--blue50)";
+            color.dark = "var(--blue700)";
+            return color;
+        case "History":
+        case "Events":
+            color.light = "var(--violet50)";
+            color.dark = "var(--violet700)";
+            return color;
+        case "Settings":
+            color.light = "var(--blue700)";
+            color.dark = "var(--blue200)";
+            return color;
+        case "Info":
+        case "Description":
+            color.light = "var(--gray100)";
+            color.dark = "var(--gray700)";
             return color;
         default:
             return color;

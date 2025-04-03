@@ -32,6 +32,7 @@ function Body() {
 
     const activeDescription = useSelector((state: any) => state.filter.activeData.description)
 
+    // bad code need a better way of doing this, prob a hook
     const navbarControlToggle = (value: boolean | string, section: string) => {
         const deepCopy = value.toString()
 

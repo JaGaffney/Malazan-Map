@@ -17,8 +17,6 @@ interface IBook {
     year: string;
 }
 const Book = ({ id, year, name, author, series, book }: IBook) => {
-
-
     const activeBooks = useSelector((state: any) => state.filter.activeBooks)
     const dispatch = useDispatch()
 

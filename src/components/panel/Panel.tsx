@@ -7,14 +7,14 @@ import { useMediaQuery } from 'react-responsive';
 import { ReactElement, useRef } from "react";
 import { SCREEN_SIZE_DESKTOP } from "../../state/CONSTANTS";
 
-
 interface IPanel extends ITitle {
     children: ReactElement;
     screenLocation: string;
     name: string;
+    nameColor?: string;
 }
 
-export default function Panel({ children, screenLocation, name, onCloseHandler }: IPanel) {
+export default function Panel({ children, screenLocation, name, nameColor, onCloseHandler }: IPanel) {
     const nodeRef = useRef(null);
     const isDesktopOrLaptop: any = useMediaQuery({ query: SCREEN_SIZE_DESKTOP })
 
@@ -23,7 +23,7 @@ export default function Panel({ children, screenLocation, name, onCloseHandler }
             <Draggable handle="h5" nodeRef={nodeRef}>
                 <div ref={nodeRef} className={`panel panel__draggable panel-${screenLocation}`}>
 
-                    <Title name={name} onCloseHandler={onCloseHandler} />
+                    <Title name={name} onCloseHandler={onCloseHandler} nameColor={nameColor} />
                     <ScrollContainer hideScrollbars={false} horizontal={false} className="panel-scroll" draggingClassName={"timeline__container-drag"}>
                         <div className="panel__item">
                             {children}
@@ -33,7 +33,7 @@ export default function Panel({ children, screenLocation, name, onCloseHandler }
             </Draggable>
         ) : (
             <div className={"panel panel__mobile"}>
-                <Title name={name} onCloseHandler={onCloseHandler} />
+                <Title name={name} onCloseHandler={onCloseHandler} nameColor={nameColor} />
                 <ScrollContainer hideScrollbars={false} horizontal={true} className="panel-scroll">
                     <div className="panel__item">
                         {children}
