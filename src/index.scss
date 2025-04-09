@@ -22,6 +22,26 @@ body {
     --gray900: #181e2a;
     --gray900a: rgba(24, 30, 42, 0.96);
 
+    --zinc100: #f4f4f5;
+    --zinc200: #e4e4e7;
+    --zinc300: #d4d4d8;
+    --zinc400: #a1a1aa;
+    --zinc500: #71717a;
+    --zinc600: #52525b;
+    --zinc700: #3f3f46;
+    --zinc800: #27272a;
+    --zinc900: #18181b;
+
+    --stone100: #f5f5f4;
+    --stone200: #e7e5e4;
+    --stone300: #d6d3d1;
+    --stone400: #a8a29e;
+    --stone500: #78716c;
+    --stone600: #57534e;
+    --stone700: #44403c;
+    --stone800: #292524;
+    --stone900: #1c1917;
+
     --blue50: #eff6ff;
     --blue100: #ebf8ff;
     --blue200: #bee3f8;
@@ -33,6 +53,18 @@ body {
     --blue700: #296bb1;
     --blue800: #2c5282;
     --blue900: #2a4365;
+
+    --sky50: #f0f9ff;
+    --sky100: #e0f2fe;
+    --sky200: #bae6fd;
+    --sky300: #67e8f9;
+    --sky400: #22d3ee;
+    --sky500: #06b6d4;
+    --sky600: #0891b2;
+    --sky700: #0e7490;
+    --sky800: #155e75;
+    --sky900: #164e63;
+    --sky1000: #082f49;
 
     --green50: #f0fdf4;
     --green100: #d1fae5;
@@ -63,12 +95,11 @@ body {
     --amber400: #fbbf24;
     --amber500: #f59e0b;
     --amber600: #d97706;
-
     --amber700: #b45309;
     --amber750: #e17517;
     --amber800: #92400e;
     --amber900: #78350f;
-    --amber1000: #2c1102;
+    --amber1000: #451a03;
 
     --violet50: #f5f3ff;
     --violet100: #ede9fe;
@@ -92,6 +123,17 @@ body {
     --red800: #991b1b;
     --red900: #7f1d1d;
 
+    --rose50: #fdf2f8;
+    --rose100: #ffe4e6;
+    --rose200: #fecdd3;
+    --rose300: #fda4af;
+    --rose400: #fb7185;
+    --rose500: #f43f5e;
+    --rose600: #e11d48;
+    --rose700: #be123c;
+    --rose800: #9f1239;
+    --rose900: #881337;
+
     --pink50: #fdf2f8;
     --pink100: #fce7f3;
     --pink200: #fbcfe8;
@@ -109,10 +151,12 @@ body {
     --shadow500: 0 11px 25px -5px rgba(50, 50, 93, 0.25), 0 6px 14px -8px rgba(0, 0, 0, 0.3), 0 -6px 14px -6px rgba(0, 0, 0, 0.025);
     --shadow900: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 
-    // --dominant: var(--green);
-    --accent: var(--amber400);
-    // --third: var(--gold);
-    --background-main: var(--gray200);
+    // 5 colour challenge
+    --color1: #203442;
+    --color2: #fa7327;
+    --color3: #fbc23f;
+    --color4: #95b975;
+    --color5: #57907c;
 
     --header-size: 3rem;
 }

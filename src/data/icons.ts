@@ -30,6 +30,8 @@ import OLD from "../images/old.svg";
 import FLAME from "../images/flame.svg";
 import MASK from "../images/mask.svg";
 import TAVERN from "../images/tavern.svg";
+import CROWN from "../images/crown.svg";
+import THRONE from "../images/throne.svg";
 
 import HUMAN from "../images/human.svg";
 import TISTI from "../images/tisti.svg";
@@ -76,6 +78,8 @@ export const eventIcons = {
     flame: FLAME,
     mask: MASK,
     tavern: TAVERN,
+    throne: THRONE,
+    crown: CROWN,
 };
 
 import HISTORY from "../images/books/00-quill.svg";

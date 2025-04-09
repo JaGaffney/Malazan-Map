@@ -748,7 +748,7 @@ const characters: ICharacters = {
         wiki: "https://malazan.fandom.com/wiki/Endest_Silann",
     },
     95: {
-        name: ["Endest Silann"],
+        name: ["Spinnock Durav"],
         race: "Tiste Andii",
         role: "Warrior",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],

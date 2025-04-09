@@ -28,7 +28,7 @@ export default function Description({ onClickHandler }: any) {
     return (
         <Panel name={`${activeData.name}`} nameColor={bookColor(activeData.book)} screenLocation="middle" onCloseHandler={onCloseHandler}>
             <div className="panel__item-container panel__header-draggable panel__item-maxWidth" >
-                <h4>Chapter Summary</h4>
+                <h4>Summary</h4>
                 <div className="panel__item-container-info description-large">
                     {activeData.description.map((i: string, k: number) => {
                         return (
@@ -37,8 +37,8 @@ export default function Description({ onClickHandler }: any) {
                     })}
                 </div>
 
-                <h4>Key Characters in chapter</h4>
-                <Note message={"select character to display their timeline events."} />
+                <h4>Characters</h4>
+                <Note message={"Select character below to display their timeline events."} />
                 <div className="panel__item-container-table">
                     {activeData.char.map((i: number, k: number) => {
                         let active = ""
