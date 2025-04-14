@@ -1883,7 +1883,7 @@ const timelineData: ITimelineData = {
             icon: eventIcons.city,
             description: ["Everything that happens in Darujhistan for the first section of the book."],
             citation: "Chapter 1",
-            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 52, 80, 81],
+            char: [16, 14, 15, 23, 25, 28, 30, 31, 33, 52],
             loc: [522.65, 84.28],
         },
         {
@@ -1955,7 +1955,7 @@ const timelineData: ITimelineData = {
             icon: eventIcons.city,
             description: ["Everything that happens in Darujhistan for the second section of the book."],
             citation: "Chapter 5",
-            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52, 80, 81],
+            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52],
             loc: [522.65, 84.28],
         },
         {
@@ -2034,7 +2034,7 @@ const timelineData: ITimelineData = {
             icon: eventIcons.city,
             description: ["Everything that happens in Darujhistan for the 3rd section of the book."],
             citation: "Chapter 7",
-            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52, 80, 81],
+            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52],
             loc: [522.65, 84.28],
         },
         {
@@ -2074,7 +2074,7 @@ const timelineData: ITimelineData = {
             icon: eventIcons.city,
             description: ["Everything that happens in Darujhistan for the 4th section of the book."],
             citation: "Chapter 9",
-            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52, 80, 81],
+            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52],
             loc: [522.65, 84.28],
         },
         {
@@ -2101,7 +2101,7 @@ const timelineData: ITimelineData = {
                 "The group breaks into an inn, the well in the courtyard is stuffed with bloated corpses Nimander and Skintick scout first, Aranatha says they’ll know if they get in trouble The main thoroughfare led to an round clearing with a giant alter surrounded by people wearing threadbare clothes, weapons held above their heads, black streaks in their mouth The mob sings more ferociously as they walk towards Nimander and Skintick Kallor appears and approaches with his greatsword, the crowd screams and runs to get out of his way Kallor keeps walking to the altar unimpeded, the crowd surrounds him Nimander feels pity for the people, wants to try to sneak Clip to the altar using their abilities as children of Night",
             ],
             citation: "Chapter 10 - Scene 8",
-            char: [29, 68, 69],
+            char: [29, 68],
             loc: [531, 101.3],
         },
         {
@@ -2111,7 +2111,7 @@ const timelineData: ITimelineData = {
             icon: eventIcons.city,
             description: ["Everything that happens in Darujhistan for the 5th section of the book."],
             citation: "Chapter 11",
-            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52, 80, 81],
+            char: [14, 15, 16, 23, 25, 28, 30, 31, 33, 52],
             loc: [522.65, 84.28],
         },
         {
@@ -2137,7 +2137,7 @@ const timelineData: ITimelineData = {
                 "Kedeviss wants to slap Nenanda for having too much fun killing people, smiling and laughing,Nimander calls for Skintick to give him Clip, Skintick joins Kedeviss and Nenanda to defend their rear Nimander feels faint from the kelyk, cries out stop as he feels the Dying God waits for them in the altar chamber ahead Aranatha and Desra continue on.",
             ],
             citation: "Chapter 12 - Scene 8",
-            char: [29, 68, 69],
+            char: [29, 68],
             loc: [531, 101.3],
         },
         {
@@ -2169,8 +2169,138 @@ const timelineData: ITimelineData = {
                 "Kallor walks northwest away from Bastion Kallor recognized the Dying God as a pathetic remnant of Nightchill’s lover. Got bored and left I am the High King of Failures, am I not? Who else deserves the Broken Throne? Who else personifies the misery of the Crippled God?’ ",
             ],
             citation: "Chapter 12 - Scene 8",
-            char: [29, 68, 69],
+            char: [29, 68],
             loc: [531, 101.3],
+        },
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "The Trygalle Trade Guild",
+            icon: eventIcons.travelCart,
+            description: [
+                "Gruntle who now works for the Tygalle Trade Guild as a bodyguard is doing a job of taking Mappo to try and find Icarium. They travel in Hood's realm and then swarmed by undead",
+                "Suddenly, the Trygalle Trade Guild transports to a beach of a small island at night, other islands and coral reefs visible.",
+                "Master Quell says they didn’t reach the gate, there was no gate and Hood is missing from his realm.",
+            ],
+            citation: "Chapter 13 - Scene 1",
+            char: [23, 30],
+            loc: [29, 155.3],
+        },
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Civilization",
+            icon: eventIcons.travelHorse,
+            description: [
+                "The group continues north to Darajuistan, Traveler says they are being followed by the Hounds of Shadow and Karasa says he wants to meet with them alone",
+                "Karsa rides Havok to approach the Hounds of Shadow, The two white Hounds walked in opposite directions, a dust devil forms between them where Shadowthrone and Cotillion emerge. Cotillion says there is a temple in Darujhistan where a crown and throne wait for Karsa, but they don’t want or encourage him to take it",
+                "The Crippled God is trying to direct Karsa to it like a spike filled trap, Shadowthrone empathizes with Karsa as he and Cotillion left civilization behind",
+                "‘The scribblers were closing in on all sides, you see. The clerks with their purple tongues and darting eyes, their shuffling feet and sloped shoulders, their bloodless lists. Oh, to measure it all out! Acceptable levels of misery and suffering! Acceptable? Who the fuck says any level is acceptable? What sort of mind thinks that?' - Karsa grinned. ‘Why, a civilized one’",
+                "Karsa says Cotillion laughs at the lessons coming to the Crippled God, one day he'll laugh at the lessons coming to Cotillion and Shadowthrone ",
+            ],
+            citation: "Chapter 14 - Scene 7",
+            char: [39, 55, 73, 74, 75],
+            loc: [520, 95.3],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Kallor recalls",
+            icon: eventIcons.crown,
+            description: [
+                "Kallor wakes up and sees an undead dragon breathing in his face, His heartbeat spikes at first but calms down and does not bother to reach for his sword. The dragon looks towards the sun and says how it was brighter back then, Kallor recalls that the K’Chain Che’Malle believed there were ‘perturbations of orbit’",
+                "The undead dragon died fighting alongside armies of Jaghut that fought and lost against injustice, against Death itself The dragon dreamt of a throne, escaped Death to serve the Crippled God. Kallor is the King in Chains because he expects the Crippled God to fail, leaving the throne open for the taking",
+                "Grieve for the Jaghut, High King, when at last you sit on that throne. Grieve for the chains that bind all life, that you can never break. Weep for me and my fallen kin - who did not hesitate to join a war that could not be won. Know, for ever in your soul, Kallor Eidoran, that the Jaghut fought the war no other has dared to fight, Think of these people. Think of them, High King. The sacrifice they made for us all. Think of the Jaghut, and an impossible victory won in the heart of defeat. Think, and then you will come to understand all that is to come. Perhaps, then, you alone will know enough to honour their memory, the sacrifice they made for us all.’",
+                "Bless you, bless you all. Gothos, when we next meet, this High King owes you an apology",
+            ],
+            citation: "Chapter 16 - Scene 1",
+            char: [29],
+            loc: [527, 93.3],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Dwelling Plains",
+            icon: eventIcons.travelHorse,
+            description: [
+                "Karsa comes back after three days when he left to meet the Hounds of Shadow and flirts with Samar",
+                "An undead dragon lands and veers into a Tiste Edur, introduces himself as Tulas Shorn, Neither Karsa nor Traveller were scared, so Samar gave up panicking. Tulas greets Samar first in her native Ugari language, calls her a Priestess of Burn because she’s able to commune with spirits and the land. She does not use warrens or alien power, she uses earth, sky, water, and stone Burn dreams of Samar often, Tulas knows because there is ‘death in dreaming’",
+                "Karsa does not like him as a Tiste Edur, Traveller does not like him assuming he belongs to Hood Tulas feels unwelcomed, Samar is exasperated and welcomes him as a guest at her campfire Traveller apologizes, Karsa says he’s killed enough Edur making Tulas nervous",
+                "No one speaks anymore, the campfire burns out and everyone sleeps. In the morning Tulas and all the horses besides Havok are gone",
+                "Samar apologizes expecting to hear that it’s her fault: Karsa responds, ‘Witch, goodwill is not something that needs an apology. You were betrayed. Your trust was abused. If there are strangers who thrive on such things, they will ever remain strangers - because they have no other choice. Pity Tulas shorn and those like it. Even death taught it nothing.’ ",
+            ],
+            citation: "Chapter 16 - Scene 8",
+            char: [39, 55, 73],
+            loc: [518, 93.3],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Darujhistan part 6",
+            icon: eventIcons.city,
+            description: ["Everything that happens in Darujhistan for the 6th section of the book."],
+            citation: "Chapter 17",
+            char: [14, 15, 16, 25, 28, 31, 33, 52],
+            loc: [522.65, 84.28],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "God's Walk Mountains",
+            icon: eventIcons.tisti,
+            description: [
+                "Kedeviss walks over to Clip and sensed that Clip was no longer himself ever since he woke up, The K’Chain Che’Malle machine was used by Hairlock and Bellurdan Skullcrusher to escape the Abyss, The Dying God claims the machine’s nature in creating gates, traveling through realms, cast a wider net which captured a child god (referring to himself). Does not mention what happened to the Hairlock",
+                "The Dying God has been freed, plans to use Nimander’s kin to infiltrate Black Coral and kill Anomander Rake because he deserves it and take his power, However, the Dying God’s real goal is the Redeemer godling The Dying God grabs Kedeviss by the throat and mouth, forcing kelyk into her body and killing her brain, Kedeviss dies",
+                "Aranatha senses Clip had killed Kedeviss, threw her body in a fissure, and faked her footprints to make it appear as an accident, Aranatha tells Nimander to act follow along for now",
+            ],
+            citation: "Chapter 18 - Scene 21,  Chapter 20 - Scene 1",
+            char: [68],
+            loc: [539, 99.3],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Outside Darujhistan",
+            icon: eventIcons.travelHorse,
+            description: [
+                "Kallor approaches Darujhistan from the southwestern end of the Gadrobi Hills, Samar Dev, Karsa Orlong, and the Traveller are 9 miles west of Kallor, The Hounds of Shadow are 3 miles north of the trio, a Hound howls as the city bell strikes midnight",
+                "The Hound of Shadows’ howl",
+            ],
+            citation: "Chapter 20 - Scene 11",
+            char: [29, 39, 55, 73],
+            loc: [518, 93.3],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Darujhistan convergence",
+            icon: eventIcons.city,
+            description: ["Everything that happens in Darujhistan for the 7th section of the book."],
+            citation: "Chapter 21 - end of book",
+            char: [8, 9, 14, 15, 16, 25, 28, 31, 33, 37, 52, 29, 39, 55, 73, 74, 75, 77, 78, 81, 95],
+            loc: [522.65, 84.28],
+        },
+
+        {
+            id: uuidv4(),
+            book: 108,
+            name: "Mother Dark",
+            icon: eventIcons.city,
+            description: [
+                "Clip approaches the Temple of Dark to deliver vengeance for Andara and the Bluerose Tiste Andii, Walks inside, sees [Endest] on the mosaic floor and [High Priestess] standing in the back, Endest endures the attack with the Dying God’s power The Dying God possesses Clip as he attacks Endest ",
+                "Nimander is led through the unknown realm by Aranatha, Suspects someone has taken over her, Aranatha asks Nimander to defend her because he’s the only one left, High Priestess is horrified as she watches Endest dying under the Dying God, surprised he’s still holding it back away from the Tiste Andii",
+                "Nimander is led to the Temple of Dark by Aranatha, Aranatha whispers about the Gate and calling Anomander her son",
+                "Nimander unsheathed his sword, but Aranatha walks past him first and hovers into the air, Manifesting as Mother Dark, the tattoo patterns flow like silk Mother Dark says, ‘Ah, my son… I accept’",
+            ],
+            citation: "Chapter 24",
+            char: [36, 68, 94],
+            loc: [549.045, 95.705],
         },
 
         {
