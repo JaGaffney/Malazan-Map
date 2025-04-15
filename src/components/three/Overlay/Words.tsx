@@ -29,7 +29,7 @@ function Words(props: IWords) {
 
     const city: ICities = props.data
 
-    const defaultLength: number = 30 + (city.name.length / 2)
+    const defaultLength: number = 35 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
 
     const convertedPosition: Array<number> = tileToPosition(city.loc[0], city.loc[2])

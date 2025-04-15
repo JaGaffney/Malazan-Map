@@ -81,8 +81,8 @@ export const calculateColorCityType = (cityType: number): IColorCtyType => {
             color.classname = "cityTwo";
             return color;
         case 3:
-            color.hex = "#115e59";
-            color.hexOverlay = "#105752";
+            color.hex = "#92400e";
+            color.hexOverlay = "#92400e";
             color.classname = "cityThree";
             return color;
         case 4:

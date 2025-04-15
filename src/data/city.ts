@@ -66,7 +66,7 @@ const cityData: ICityData = {
         name: "Skullcup",
         loc: [245.0, 15, 34.0],
         area: EAreas.SevenCities,
-        type: 4,
+        type: 3,
         wiki: "https://malazan.fandom.com/wiki/Skullcup",
     },
     9: {
@@ -85,7 +85,7 @@ const cityData: ICityData = {
     },
     11: {
         name: "Morn",
-        loc: [294.0, 15, 89.0],
+        loc: [296.0, 15, 92.0],
         area: EAreas.Genabackis,
         type: 4,
         wiki: "https://malazan.fandom.com/wiki/Morn_(location)",
@@ -94,7 +94,7 @@ const cityData: ICityData = {
         name: "Tesem Temple",
         loc: [231.0, 15, 34.0],
         area: EAreas.SevenCities,
-        type: 4,
+        type: 3,
         wiki: "https://malazan.fandom.com/wiki/Tesem",
     },
     13: {
@@ -152,6 +152,20 @@ const cityData: ICityData = {
         area: EAreas.QuonTali,
         type: 2,
         wiki: "https://malazan.fandom.com/wiki/Quon_Tali_(city)",
+    },
+    21: {
+        name: "Seguleh Isle",
+        loc: [285.0, 15, 89.0],
+        area: EAreas.Genabackis,
+        type: 4,
+        wiki: "https://malazan.fandom.com/wiki/Seguleh",
+    },
+    22: {
+        name: "Stormwall",
+        loc: [237.0, 15, 140.0],
+        area: EAreas.StratemKorelri,
+        type: 4,
+        wiki: "https://malazan.fandom.com/wiki/Stormwall",
     },
 };
 

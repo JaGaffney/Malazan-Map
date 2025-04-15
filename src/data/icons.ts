@@ -32,6 +32,7 @@ import MASK from "../images/mask.svg";
 import TAVERN from "../images/tavern.svg";
 import CROWN from "../images/crown.svg";
 import THRONE from "../images/throne.svg";
+import SHORE from "../images/shore.svg";
 
 import HUMAN from "../images/human.svg";
 import TISTI from "../images/tisti.svg";
@@ -80,6 +81,7 @@ export const eventIcons = {
     tavern: TAVERN,
     throne: THRONE,
     crown: CROWN,
+    shore: SHORE,
 };
 
 import HISTORY from "../images/books/00-quill.svg";

@@ -259,14 +259,7 @@ const characters: ICharacters = {
         affiliation: [],
         wiki: "https://malazan.fandom.com/wiki/Bauchelain",
     },
-    35: {
-        name: ["Korbal Broach"],
-        race: "soultaken",
-        role: "Mage",
-        series: ["MBOTF", "TALES"],
-        affiliation: [],
-        wiki: "https://malazan.fandom.com/wiki/Korbal_Broach",
-    },
+
     33: {
         name: ["Lady Envy"],
         race: "ascended",
@@ -282,6 +275,14 @@ const characters: ICharacters = {
         series: ["MBOTF"],
         affiliation: [],
         wiki: "https://malazan.fandom.com/wiki/Hetan",
+    },
+    35: {
+        name: ["Korbal Broach"],
+        race: "soultaken",
+        role: "Mage",
+        series: ["MBOTF", "TALES"],
+        affiliation: [],
+        wiki: "https://malazan.fandom.com/wiki/Korbal_Broach",
     },
     36: {
         name: ["Itkovian"],
@@ -754,6 +755,14 @@ const characters: ICharacters = {
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Dark"],
         wiki: "https://malazan.fandom.com/wiki/Spinnock_Durav",
+    },
+    96: {
+        name: ["Yedan Derryg", "The Watch"],
+        race: "Human",
+        role: "Warrior",
+        series: ["MBOTF"],
+        affiliation: ["The Shake"],
+        wiki: "https://malazan.fandom.com/wiki/Yedan_Derryg",
     },
 };
 
