@@ -29,59 +29,64 @@ function Words(props: IWords) {
 
     const city: ICities = props.data
 
-    const defaultLength: number = 35 + (city.name.length / 2)
+    const defaultLength: number = 13 + (city.name.length / 2)
     const defaultColorType = calculateColorCityType(city.type)
 
     const convertedPosition: Array<number> = tileToPosition(city.loc[0], city.loc[2])
-    const newPos: Vector3 = new Vector3(convertedPosition[0], city.loc[1], convertedPosition[1])
+    const newPos: Vector3 = new Vector3(convertedPosition[0], city.loc[1] - 8, convertedPosition[1])
 
     const flagStandardMaterial: MeshBasicMaterial = new MeshBasicMaterial({ color: defaultColorType.hex })
 
     return (
         <group position={newPos}
         >
-            <mesh position={[0, -9, 0]}>
-                <cylinderBufferGeometry args={[1, 1, 10, 10]} />
+            {/* <mesh position={[0, -3, 0]}>
+                <cylinderBufferGeometry args={[1, 1, 5, 3]} />
                 <meshBasicMaterial
                     color={"white"}
                 />
-            </mesh>
+            </mesh> */}
 
             <Billboard
                 follow={true}
-                lockX={false}
-                lockY={false}
-                lockZ={false} // Lock the rotation on the z axis (default=false)
+                lockX={true}
+                lockY={true}
+                lockZ={true} // Lock the rotation on the z axis (default=false)
+                onClick={() => dispatch(updateActiveCity(props.cityKey))}
+                onPointerOver={() => setHovered(true)}
+                onPointerOut={() => setHovered(false)}
             >
-                <mesh position={[0, 1, 0]} material={flagStandardMaterial} renderOrder={1}>
-                    <planeBufferGeometry args={[defaultLength - 4, 9]} />
+                <mesh position={[0, -2, 0]} material={flagStandardMaterial} renderOrder={1}>
+                    <planeBufferGeometry args={[defaultLength, 5]} />
                 </mesh>
 
-                <mesh position={[0, 1, 0]} >
+                {/* <mesh position={[0, -2, 0]} >
                     <meshBasicMaterial color={"white"} />
-                    <planeGeometry args={[defaultLength - 3, 10]} />
-                </mesh>
+                    <planeGeometry args={[defaultLength - 1, 4]} />
+                </mesh> */}
 
                 <Text
                     color={"#f0fdf4"}
-                    position={[-1, 1, 2]}
+                    position={[0, -2, 0]}
                     characters="abcdefghijklmnopqrstuvwxyz0123456789!"
-                    fontSize={4}
+                    fontSize={2.2}
+                    anchorX="center"
+                    onClick={() => dispatch(updateActiveCity(props.cityKey))}
 
                 >
-                    {city.name}
+                    {`(x) ${city.name}`}
                 </Text>
-                <Text
-                    color={"#f0fdf4"}
-                    position={[defaultLength / 3, 1.5, 1]}
+                {/* <Text
+                    color={"#000000"}
+                    position={[defaultLength / 3 - 1, -2, 1]}
                     characters="x"
-                    fontSize={6}
+                    fontSize={3}
                     onClick={() => dispatch(updateActiveCity(props.cityKey))}
                     onPointerOver={() => setHovered(true)}
                     onPointerOut={() => setHovered(false)}
                 >
                     x
-                </Text>
+                </Text> */}
             </Billboard>
 
         </group>

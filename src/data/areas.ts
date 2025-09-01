@@ -20,7 +20,7 @@ const AREAS: IAreas[] = [
         name: EAreas.Genabackis,
     },
     {
-        loc: [370.0, 15, 65.0],
+        loc: [380.0, 15, 75.0],
         name: EAreas.SevenCities,
     },
     {
@@ -28,7 +28,7 @@ const AREAS: IAreas[] = [
         name: EAreas.QuonTali,
     },
     {
-        loc: [310.0, 15, 240.0],
+        loc: [330.0, 15, 250.0],
         name: EAreas.Jacuruku,
     },
     {
@@ -36,7 +36,7 @@ const AREAS: IAreas[] = [
         name: EAreas.StratemKorelri,
     },
     {
-        loc: [40.0, 15, 240.0],
+        loc: [45.0, 15, 250.0],
         name: EAreas.Lether,
     },
     {

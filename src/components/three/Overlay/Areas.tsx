@@ -11,7 +11,7 @@ interface IAreaWord {
     name: string;
 }
 function AreaWord({ loc, name }: IAreaWord) {
-    const newPos: Vector3 = new Vector3(loc[0], loc[1], loc[2])
+    const newPos: Vector3 = new Vector3(loc[0], loc[1] - 10, loc[2])
     const defaultLength: number = 10 + (name.length * 6)
     return (
         <group position={newPos} rotation-x={-Math.PI * 0.5}>

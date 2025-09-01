@@ -50,7 +50,7 @@ const initialState: IRootState = {
     activeData: defaultActiveData,
     activeBooks: onBookLoad(),
     activeCharacter: [],
-    activeCity: [1, 2],
+    activeCity: [1, 2, 3, 4, 5, 6, 8, 11, 13, 14, 15, 18, 20, 21, 22],
     areas: true,
     search: "",
 };
