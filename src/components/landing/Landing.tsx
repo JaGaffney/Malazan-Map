@@ -18,9 +18,9 @@ const Landing = ({ onModeHandler }: ILanding) => {
                     <div className="landing__hero-description">
                         <p>Trace the tales of the Fallen and unravel the saga with the Interactive 3D Map and detailed timeline. </p>
 
-                        <div>
+                        {/* <div>
                             <a className="landing__hero-socials" href="https://discord.gg/xmwVBjQ6"><FaDiscord /></a>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="landing__mode">
@@ -32,7 +32,7 @@ const Landing = ({ onModeHandler }: ILanding) => {
                             <span className="landing__mode-button-description">few animations</span>
                         </button> */}
 
-                        <button className="landing__mode-button" onClick={() => onModeHandler(1)}>
+                        <button className="landing__mode-button" data-testid="standard-button" onClick={() => onModeHandler(1)}>
                             <div className="landing__mode-button-title">
                                 <HiMap />
                                 <span>Standard</span>
