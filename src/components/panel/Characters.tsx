@@ -53,7 +53,8 @@ export default function Characters({ onCloseHandler }: IClose) {
             header: 'Race',
             accessorKey: 'race',
             sortingFn: 'alphanumeric', // use custom global sorting function
-            cell: (props: any) => <td>{<ReactSVG src={findRaceByName(props.getValue())} />}</td>
+            // cell: (props: any) => <td>{<ReactSVG src={findRaceByName(props.getValue())} />}</td>
+            cell: (props: any) => <td>{props.getValue()}</td>
         },
         {
             header: 'Aliases',

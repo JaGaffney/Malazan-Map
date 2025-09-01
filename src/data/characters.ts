@@ -13,7 +13,7 @@ interface ICharacters {
 const characters: ICharacters = {
     1: {
         name: ["Ganoes Paran"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -21,7 +21,7 @@ const characters: ICharacters = {
     },
     2: {
         name: ["Apsala", "Sorry"],
-        race: "human",
+        race: "Human",
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
@@ -29,7 +29,7 @@ const characters: ICharacters = {
     },
     3: {
         name: ["Tattersail", "Silverfox"],
-        race: "ascended",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "Imass"],
@@ -37,7 +37,7 @@ const characters: ICharacters = {
     },
     4: {
         name: ["Quick Ben"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -45,7 +45,7 @@ const characters: ICharacters = {
     },
     5: {
         name: ["Whiskeyjack", "Jack", "Iskar Jarak"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -53,7 +53,7 @@ const characters: ICharacters = {
     },
     6: {
         name: ["Hairlock"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -61,7 +61,7 @@ const characters: ICharacters = {
     },
     7: {
         name: ["Toc the Younger", "Toc Anaster"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -77,7 +77,7 @@ const characters: ICharacters = {
     },
     9: {
         name: ["Caladan Brood"],
-        race: "ascended",
+        race: "Azathanai",
         role: "Warlord",
         series: ["MBOTF", "NOME", "KHAR"],
         affiliation: [""],
@@ -85,7 +85,7 @@ const characters: ICharacters = {
     },
     10: {
         name: ["Laseen", "Surly"],
-        race: "human",
+        race: "Human",
         role: "Empress",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -93,7 +93,7 @@ const characters: ICharacters = {
     },
     11: {
         name: ["Kalam Mekhar"],
-        race: "human",
+        race: "Human",
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -101,7 +101,7 @@ const characters: ICharacters = {
     },
     12: {
         name: ["Fiddler", "Strings"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -109,7 +109,7 @@ const characters: ICharacters = {
     },
     13: {
         name: ["Dujek Onearm"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -117,7 +117,7 @@ const characters: ICharacters = {
     },
     14: {
         name: ["Crone"],
-        race: "soultaken",
+        race: "Soultaken",
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["High House Dark"],
@@ -125,7 +125,7 @@ const characters: ICharacters = {
     },
     15: {
         name: ["Crokus Younghand", "Cutter"],
-        race: "human",
+        race: "Human",
         role: "Thief",
         series: ["MBOTF"],
         affiliation: [],
@@ -133,7 +133,7 @@ const characters: ICharacters = {
     },
     16: {
         name: ["Kruppe"],
-        race: "ascended",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF"],
         affiliation: [],
@@ -141,7 +141,7 @@ const characters: ICharacters = {
     },
     17: {
         name: ["Lorn"],
-        race: "human",
+        race: "Human",
         role: "Adjunct",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
@@ -157,7 +157,7 @@ const characters: ICharacters = {
     },
     19: {
         name: ["Felisin Paran", "Sha'ik"],
-        race: "human",
+        race: "Human",
         role: "Nobel",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Army of the Whirlwind"],
@@ -165,7 +165,7 @@ const characters: ICharacters = {
     },
     20: {
         name: ["Heboric"],
-        race: "human",
+        race: "Human",
         role: "Priest",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -173,7 +173,7 @@ const characters: ICharacters = {
     },
     21: {
         name: ["Baudin"],
-        race: "human",
+        race: "Human",
         role: "Assassin",
         series: ["MBOTF", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -181,7 +181,7 @@ const characters: ICharacters = {
     },
     22: {
         name: ["Tavore Paran"],
-        race: "human",
+        race: "Human",
         role: "Adjunct",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -189,7 +189,7 @@ const characters: ICharacters = {
     },
     23: {
         name: ["Mappo Runt"],
-        race: "trell",
+        race: "Trell",
         role: "Guard",
         series: ["MBOTF"],
         affiliation: ["Nameless Ones"],
@@ -197,7 +197,7 @@ const characters: ICharacters = {
     },
     24: {
         name: ["Icarium"],
-        race: "jaghurt",
+        race: "Half-Jag",
         role: "Wanderer",
         series: ["MBOTF", "KHAR"],
         affiliation: [],
@@ -205,7 +205,7 @@ const characters: ICharacters = {
     },
     25: {
         name: ["Duiker"],
-        race: "human",
+        race: "Human",
         role: "Historian",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
@@ -213,7 +213,7 @@ const characters: ICharacters = {
     },
     26: {
         name: ["Coltaine"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF", "NOME", "WITNESS"],
         affiliation: ["Malazan Empire", "Wikans"],
@@ -221,7 +221,7 @@ const characters: ICharacters = {
     },
     28: {
         name: ["Iskaral Pust"],
-        race: "soultaken",
+        race: "Human",
         role: "Priest",
         series: ["MBOTF"],
         affiliation: ["High House Shadow"],
@@ -229,7 +229,7 @@ const characters: ICharacters = {
     },
     29: {
         name: ["Kallor"],
-        race: "human",
+        race: "Human",
         role: "King",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["Kallor"],
@@ -237,7 +237,7 @@ const characters: ICharacters = {
     },
     30: {
         name: ["Gruntle"],
-        race: "human",
+        race: "Human",
         role: "Guard",
         series: ["MBOTF"],
         affiliation: [],
@@ -245,7 +245,7 @@ const characters: ICharacters = {
     },
     31: {
         name: ["K'rul"],
-        race: "ascended",
+        race: "Azathanai",
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: [],
@@ -253,7 +253,7 @@ const characters: ICharacters = {
     },
     32: {
         name: ["Bauchelain"],
-        race: "soletaken",
+        race: "Soletaken",
         role: "Mage",
         series: ["MBOTF", "TALES"],
         affiliation: [],
@@ -262,7 +262,7 @@ const characters: ICharacters = {
 
     33: {
         name: ["Lady Envy"],
-        race: "ascended",
+        race: "Azathanai",
         role: "God",
         series: ["MBOTF", "NOME", "KHAR"],
         affiliation: [],
@@ -278,7 +278,7 @@ const characters: ICharacters = {
     },
     35: {
         name: ["Korbal Broach"],
-        race: "soultaken",
+        race: "Soultaken",
         role: "Mage",
         series: ["MBOTF", "TALES"],
         affiliation: [],
@@ -286,7 +286,7 @@ const characters: ICharacters = {
     },
     36: {
         name: ["Itkovian"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["The Grey Swords"],
@@ -294,7 +294,7 @@ const characters: ICharacters = {
     },
     37: {
         name: ["Korlat"],
-        race: "soultaken",
+        race: "Tiste Andii",
         role: "Mage",
         series: ["MBOTF", "KHAR"],
         affiliation: ["High House Dark"],
@@ -302,7 +302,7 @@ const characters: ICharacters = {
     },
     38: {
         name: ["Trull Sengar"],
-        race: "tisti",
+        race: "Tiste Edur",
         role: "Warrior",
         series: ["MBOTF"],
         affiliation: ["House Sengar"],
@@ -318,7 +318,7 @@ const characters: ICharacters = {
     },
     40: {
         name: ["Nok"],
-        race: "human",
+        race: "Human",
         role: "Admiral",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire"],
@@ -326,7 +326,7 @@ const characters: ICharacters = {
     },
     41: {
         name: ["Pearl"],
-        race: "human",
+        race: "Human",
         role: "Assassin",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire"],
@@ -334,7 +334,7 @@ const characters: ICharacters = {
     },
     42: {
         name: ["Lostara Yil"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -342,7 +342,7 @@ const characters: ICharacters = {
     },
     43: {
         name: ["Gesler and Stormy"],
-        race: "ascended",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -350,7 +350,7 @@ const characters: ICharacters = {
     },
     44: {
         name: ["Bottle"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -358,7 +358,7 @@ const characters: ICharacters = {
     },
     45: {
         name: ["Smiles"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -366,7 +366,7 @@ const characters: ICharacters = {
     },
     46: {
         name: ["Sinn"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -374,7 +374,7 @@ const characters: ICharacters = {
     },
     47: {
         name: ["Braven Tooth"],
-        race: "human",
+        race: "Human",
         role: "Solider",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire"],
@@ -382,7 +382,7 @@ const characters: ICharacters = {
     },
     49: {
         name: ["Felisin Younger"],
-        race: "human",
+        race: "Human",
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
@@ -390,7 +390,7 @@ const characters: ICharacters = {
     },
     50: {
         name: ["Leoman", "Leoman of the Flails"],
-        race: "human",
+        race: "Human",
         role: "Bodyguard",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
@@ -398,7 +398,7 @@ const characters: ICharacters = {
     },
     51: {
         name: ["L'oric"],
-        race: "tiste",
+        race: "Tiste Liosan",
         role: "High Mage",
         series: ["MBOTF", "NOME"],
         affiliation: ["Army of the Whirlwind"],
@@ -406,7 +406,7 @@ const characters: ICharacters = {
     },
     52: {
         name: ["Scillara"],
-        race: "human",
+        race: "Human",
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind"],
@@ -414,7 +414,7 @@ const characters: ICharacters = {
     },
     53: {
         name: ["Corabb Bhilan Thenu'alas"],
-        race: "human",
+        race: "Human",
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["Army of the Whirlwind", "Bonehunters"],
@@ -430,7 +430,7 @@ const characters: ICharacters = {
     },
     55: {
         name: ["Dassem Ultor", "Traveller"],
-        race: "human",
+        race: "Human",
         role: "Solider",
         series: ["MBOTF", "PATH", "NOME"],
         affiliation: ["Malazan Empire", "Dassem's First Sword"],
@@ -438,7 +438,7 @@ const characters: ICharacters = {
     },
     56: {
         name: ["Fear Sengar"],
-        race: "tisti",
+        race: "Tiste Edur",
         role: "Warrior",
         series: ["MBOTF"],
         affiliation: ["House Sengar"],
@@ -446,7 +446,7 @@ const characters: ICharacters = {
     },
     57: {
         name: ["Rhulad Sengar"],
-        race: "tisti",
+        race: "Tiste Edur",
         role: "Emperor",
         series: ["MBOTF"],
         affiliation: ["House Sengar"],
@@ -454,7 +454,7 @@ const characters: ICharacters = {
     },
     58: {
         name: ["Udinaas"],
-        race: "human",
+        race: "Human",
         role: "Slave",
         series: ["MBOTF"],
         affiliation: ["House Sengar"],
@@ -462,7 +462,7 @@ const characters: ICharacters = {
     },
     59: {
         name: ["Feather Witch"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF"],
         affiliation: ["House Sengar"],
@@ -470,7 +470,7 @@ const characters: ICharacters = {
     },
     60: {
         name: ["Tehol Beddict"],
-        race: "human",
+        race: "Human",
         role: "Merchant",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
@@ -478,7 +478,7 @@ const characters: ICharacters = {
     },
     61: {
         name: ["Brys Beddict"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
@@ -486,7 +486,7 @@ const characters: ICharacters = {
     },
     62: {
         name: ["Seren Pedac"],
-        race: "human",
+        race: "Human",
         role: "Acquitor",
         series: ["MBOTF"],
         affiliation: ["Kingdom of Lether"],
@@ -494,7 +494,7 @@ const characters: ICharacters = {
     },
     63: {
         name: ["Yan Tovis", "Twilight"],
-        race: "human",
+        race: "Human",
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["The Shake"],
@@ -502,7 +502,7 @@ const characters: ICharacters = {
     },
     64: {
         name: ["Mael", "Bugg"],
-        race: "ascended",
+        race: "Azathanai",
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: [],
@@ -510,7 +510,7 @@ const characters: ICharacters = {
     },
     65: {
         name: ["Shurq Elalle"],
-        race: "undead",
+        race: "Undead",
         role: "Pirate",
         series: ["MBOTF"],
         affiliation: [],
@@ -518,7 +518,7 @@ const characters: ICharacters = {
     },
     66: {
         name: ["Withal", "Foreigner"],
-        race: "human",
+        race: "Human",
         role: "Blacksmith",
         series: ["MBOTF"],
         affiliation: [],
@@ -526,7 +526,7 @@ const characters: ICharacters = {
     },
     67: {
         name: ["Silchas Ruin"],
-        race: "soletaken",
+        race: "Tiste Andii",
         role: "God",
         series: ["MBOTF", "KHAR"],
         affiliation: ["High House Dark"],
@@ -534,7 +534,7 @@ const characters: ICharacters = {
     },
     68: {
         name: ["Nimander Golit"],
-        race: "soletaken",
+        race: "Tiste Andii",
         role: "Wanderer",
         series: ["MBOTF", "KHAR"],
         affiliation: ["High House Dark"],
@@ -550,7 +550,7 @@ const characters: ICharacters = {
     },
     70: {
         name: ["Rud Elalle"],
-        race: "soletaken",
+        race: "Human/Tiste Liosan",
         role: "Traveller",
         series: ["MBOTF"],
         affiliation: [],
@@ -558,7 +558,7 @@ const characters: ICharacters = {
     },
     71: {
         name: ["Iron Bars", "Bars"],
-        race: "human",
+        race: "Human",
         role: "Mercenary",
         series: ["MBOTF", "NOME"],
         affiliation: ["Crimson Guard"],
@@ -574,7 +574,7 @@ const characters: ICharacters = {
     },
     73: {
         name: ["Samar Dev"],
-        race: "human",
+        race: "Human",
         role: "Inventor",
         series: ["MBOTF"],
         affiliation: [],
@@ -582,7 +582,7 @@ const characters: ICharacters = {
     },
     74: {
         name: ["Kellanved", "Wu", "Shadowthrone", "Ammanas"],
-        race: "ascended",
+        race: "Ascended",
         role: "Emperor",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "High House Shadow"],
@@ -590,7 +590,7 @@ const characters: ICharacters = {
     },
     75: {
         name: ["Dancer", "Cotillion", "Dorin Rav", "The Rope"],
-        race: "ascended",
+        race: "Ascended",
         role: "Assassin",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire", "High House Shadow"],
@@ -598,7 +598,7 @@ const characters: ICharacters = {
     },
     76: {
         name: ["Hellian"],
-        race: "human",
+        race: "Human",
         role: "Solider",
         series: ["MBOTF"],
         affiliation: ["Malazan Empire", "Bonehunters"],
@@ -606,7 +606,7 @@ const characters: ICharacters = {
     },
     77: {
         name: ["Barathol Mekhar"],
-        race: "human",
+        race: "Human",
         role: "Blacksmith",
         series: ["MBOTF"],
         affiliation: [],
@@ -614,7 +614,7 @@ const characters: ICharacters = {
     },
     78: {
         name: ["Sister Spite"],
-        race: "ascended",
+        race: "Azathanai",
         role: "God",
         series: ["MBOTF", "NOME", "KHAR"],
         affiliation: [],
@@ -622,7 +622,7 @@ const characters: ICharacters = {
     },
     79: {
         name: ["Telorast and Curdle"],
-        race: "ascended",
+        race: "Ghost",
         role: "Mage",
         series: ["MBOTF", "PATH", "KHAR"],
         affiliation: [],
@@ -630,7 +630,7 @@ const characters: ICharacters = {
     },
     80: {
         name: ["Draconus"],
-        race: "ascended",
+        race: "Azathanai",
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Dark"],
@@ -638,7 +638,7 @@ const characters: ICharacters = {
     },
     81: {
         name: ["Hood"],
-        race: "ascended",
+        race: "Jagurt",
         role: "God",
         series: ["MBOTF", "NOME", "PATH", "KHAR"],
         affiliation: ["High House Death"],
@@ -646,7 +646,7 @@ const characters: ICharacters = {
     },
     82: {
         name: ["Torrent"],
-        race: "human",
+        race: "Human",
         role: "Solider",
         series: ["MBOTF"],
         affiliation: [],
@@ -654,7 +654,7 @@ const characters: ICharacters = {
     },
     83: {
         name: ["Tayschrenn"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -662,7 +662,7 @@ const characters: ICharacters = {
     },
     84: {
         name: ["Mallick Rel"],
-        race: "human",
+        race: "Human",
         role: "Advisor",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Malazan Empire"],
@@ -670,7 +670,7 @@ const characters: ICharacters = {
     },
     85: {
         name: ["Greymane", "Orjin Samarr"],
-        race: "human",
+        race: "Human",
         role: "Soldier",
         series: ["MBOTF", "NOME", "PATH", "WITNESS"],
         affiliation: ["Malazan Empire", "Crimson Guard"],
@@ -678,7 +678,7 @@ const characters: ICharacters = {
     },
     86: {
         name: ["Silk"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Malazan Empire", "Li Heng"],
@@ -686,7 +686,7 @@ const characters: ICharacters = {
     },
     87: {
         name: ["Ho"],
-        race: "soultaken",
+        race: "Soultaken",
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Li Heng"],
@@ -694,7 +694,7 @@ const characters: ICharacters = {
     },
     88: {
         name: ["Ullara", "Bird Mother"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["NOME", "PATH"],
         affiliation: ["Li Heng"],
@@ -702,7 +702,7 @@ const characters: ICharacters = {
     },
     89: {
         name: ["Shimmer", "Iko"],
-        race: "human",
+        race: "Human",
         role: "Mercenary",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Crimson Guard"],
@@ -710,7 +710,7 @@ const characters: ICharacters = {
     },
     90: {
         name: ["Blues", "Gregar Bluenth"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["MBOTF", "NOME", "PATH"],
         affiliation: ["Crimson Guard"],
@@ -718,7 +718,7 @@ const characters: ICharacters = {
     },
     91: {
         name: ["Hessa"],
-        race: "human",
+        race: "Human",
         role: "Pirate",
         series: ["PATH"],
         affiliation: ["Malazan Empire"],
@@ -726,7 +726,7 @@ const characters: ICharacters = {
     },
     92: {
         name: ["Kiska", "Kiskatia"],
-        race: "human",
+        race: "Human",
         role: "Mage",
         series: ["NOME"],
         affiliation: ["Malazan Empire"],
@@ -734,7 +734,7 @@ const characters: ICharacters = {
     },
     93: {
         name: ["Redmask"],
-        race: "human",
+        race: "Human",
         role: "War Leader",
         series: ["MBOTF"],
         affiliation: ["Awl"],

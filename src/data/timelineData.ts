@@ -20,6 +20,28 @@ interface ITimelineData {
     [key: number]: ITimePeroid | any;
 }
 const timelineData: ITimelineData = {
+    [-300000]: [
+        {
+            id: uuidv4(),
+            book: 111,
+            name: "Forge of Darkness",
+            icon: eventIcons.death,
+            description: [""],
+            citation: "",
+            char: [],
+            loc: [0, 0],
+        },
+        {
+            id: uuidv4(),
+            book: 112,
+            name: "Fall of Light",
+            icon: eventIcons.battle,
+            description: [""],
+            citation: "",
+            char: [],
+            loc: [0, 0],
+        },
+    ],
     [-298655]: [
         {
             id: uuidv4(),
