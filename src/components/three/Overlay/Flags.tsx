@@ -15,6 +15,7 @@ const Flags = () => {
                     <Words key={k} data={data[i]} cityKey={i} />
                 )
             })}
+
         </>
     )
 }

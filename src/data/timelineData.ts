@@ -2523,14 +2523,23 @@ const timelineData: ITimelineData = {
     1178: [
         {
             id: uuidv4(),
-
             book: 114,
-            name: "Start of Book 1 - The God is Not Willing",
+            name: "Book 1 - The God is Not Willing",
             icon: eventIcons.warren,
-            description: ["set 10 years after the ending of Malazan Book of the Fallen."],
+            description: ["set 10 years after the ending of Malazan Book of the Fallen. Story happens in Northwest Genabackis"],
             citation: "",
             char: [],
-            loc: [0, 0],
+            loc: [530.77, 35.7],
+        },
+        {
+            id: uuidv4(),
+            book: 115,
+            name: "Book 2 - No Life Forsaken",
+            icon: eventIcons.warren,
+            description: ["Story happens in Seven cities near the Raraku sea."],
+            citation: "",
+            char: [],
+            loc: [408.77, 55.7],
         },
     ],
 };

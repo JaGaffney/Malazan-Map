@@ -14,21 +14,21 @@ interface ICityData {
 const cityData: ICityData = {
     1: {
         name: "Malaz City",
-        loc: [237.0, 15.0, 121.0],
+        loc: [237.0, 15.0, 123.0],
         area: EAreas.QuonTali,
         type: 1,
         wiki: "https://malazan.fandom.com/wiki/Malaz_City",
     },
     2: {
         name: "Pale",
-        loc: [294.0, 15, 49.0],
+        loc: [294.0, 15, 47.0],
         area: EAreas.Genabackis,
         type: 2,
         wiki: "https://malazan.fandom.com/wiki/Pale",
     },
     3: {
         name: "Darujhistan",
-        loc: [295.0, 15, 55.0],
+        loc: [295.0, 15, 57.0],
         area: EAreas.Genabackis,
         type: 2,
         wiki: "https://malazan.fandom.com/wiki/Darujhistan",
@@ -99,7 +99,7 @@ const cityData: ICityData = {
     },
     13: {
         name: "Coral",
-        loc: [310.0, 15, 62.0],
+        loc: [314.0, 15, 62.0],
         area: EAreas.Genabackis,
         type: 2,
         wiki: "https://malazan.fandom.com/wiki/Coral_(city)",
@@ -162,7 +162,7 @@ const cityData: ICityData = {
     },
     22: {
         name: "Stormwall",
-        loc: [237.0, 15, 140.0],
+        loc: [237.0, 15, 138.0],
         area: EAreas.StratemKorelri,
         type: 4,
         wiki: "https://malazan.fandom.com/wiki/Stormwall",
